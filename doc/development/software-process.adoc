@@ -1,5 +1,6 @@
 = Software Process at UCLouvain
 Hildeberto Mendonça, PhD
+v0.1, 2015-09-08
 :toc: right
 
 :sectnums!:
@@ -13,6 +14,13 @@ OSIS stands for Open Student Information System. It's an application designed to
 This application is designed as a module of Odoo, a modular ERP framework written in Python. It can be extended to accommodate your specific needs, which is the case of OSIS-Louvain.
 
 OSIS is an open source software sponsored by Université catholique de Louvain.
+
+=== The Fundamental Principals
+
+==== Traceability
+==== Previsibility
+==== Reactivity
+==== Measurability
 
 === Communication
 
@@ -46,7 +54,7 @@ https://www.openhub.net/p/OSIS.
 
 Organizations that support the development of OSIS through a context-specific module can follow their own internal rules of communication.
 
-=== Processes
+=== The Process
 
 Our software methodology is composed of 4 processes: *Analysis*, *Development*, *Test*, and *Support*. These processes run in two parallel iterations and one on-demand execution.
 
@@ -59,6 +67,14 @@ Development and test are in the same iteration because everything that is develo
 The support is an on-demand process, executed only when an issue in production is reported. Every issue starts an independent instance of the process. There is no fixed duration of the execution, but it has higher priority than other processes and the minimal waiting time is 12 working hours.
 
 More details about each one of these processes are described in the following sections.
+
+==== Sprints
+
+image::images/sprints.png[Sprints]
+
+==== Queuing
+
+==== Backlog
 
 === Roles
 
@@ -73,6 +89,29 @@ Developer:: Responsible for developing the application according to the instruct
 Tester:: Responsible for making sure the application behaves exactly as foreseen in the user manual. They have the technical knowledge to create test scripts to automate tests, checking whether everything works fine after every introduced change.
 
 Supporter:: Responsible for the support for users, explaining them how to use the application if the user manual is not sufficiently clear. In the case the application  is not behaving as expected, the supporter is responsible for reproducing the problem and create a high priority issue to be addressed by developers.
+
+=== Artefacts
+
+Process::
+User Manual::
+Technical User Manual::
+Work Breakdown Structure::
+Schedule::
+Source Code:: +
+
+=== Tools
+
+AsciiDoctor::
+Atom::
+Git::
+GitHub::
+Jenkins::
+Odoo::
+PyCharm::
+Runbot::
+Selenium::
+Visual Paradigm:: +
+
 
 :sectnums:
 
