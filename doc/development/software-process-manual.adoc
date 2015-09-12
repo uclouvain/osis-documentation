@@ -15,23 +15,34 @@ This application is designed as a module of Odoo, a modular ERP framework writte
 
 OSIS is an open source software sponsored by Université catholique de Louvain.
 
-=== The Fundamental Principals
+=== The Fundamental Principles
 
 ==== Traceability
+
+When an event occurs, it is easily possible to identify what needs attention, where it is located, who has changed it and when.
+
 ==== Previsibility
+
+The team is so reliable and known that their working behavior is predictable and they know by heart the effort to do anything.
+
 ==== Reactivity
+
+Everyone in the team knows how everything works, so they can easily resume a work in progress or assume new responsibilities. They work with the same environment and configuration, so they can easily reestablish operations.
+
 ==== Measurability
+
+Everything must be quantifiable to enable measurements. They can set goals and be compared. We manage better what we can measure.
 
 === Communication
 
-For being open source, the communication strategy changes from the traditional internal communication to a global and transparent one. We consider not only the participation of the internal team, but also developers and users all around the world. Therefore, to allow global and transparent communication, we have to comply with the following rules:
+For being open source, the communication strategy changes from the traditional internal communication to a global and transparent one. People should consider not only the participation of the internal team, but also developers and users all around the world. Therefore, to allow global and transparent communication, we have to comply with the following rules:
 
  1. Communication directed to the local community can be done in English or in the native language.
- 2. Communication directed to the global community is done in English only.
- 3. The code is written in English only.
+ 2. Communication directed to the global community should be done in English only.
+ 3. The code should be written in English only.
  4. The user interface is multilingual but it will initially support English and French. The support for additional languages depends on the adoption of the software and the contributions from the community.
  5. Since there is not private source, all the communication is done using public channels such as mailing lists, chats, wikis and others.
- 6. To be taken into account, a communication is registered textually and preserved historically in one of the repositories of the project. Direct email communication between two or more members of the team is not considered valid because all stakeholders are not equally informed.
+ 6. To be taken into account, a communication should be registered textually and preserved historically. Direct email communication between two or a subset of the team is not considered valid because all stakeholders should be equally informed.
 
 To support the communication rules, we have created the following channels:
 
@@ -60,9 +71,9 @@ Our software methodology is composed of 4 processes: *Analysis*, *Development*, 
 
 image::images/overview.png[Overview]
 
-The iteration of the analysis lasts for 2 weeks. This iteration is independent from the development, so analysts do not have to wait for the outcome of the development to advance with their analysis. It also means that we expect a release coming out from each iteration, just like application releases. Therefore, the analysis is planned, executed, integrated, tested and released, as traditionally done with code.
+The iteration of the analysis lasts for 2 weeks. This iteration is independent from the development, so analysts do not have to wait for the outcome of the development to advance with their analysis. It also means that we expect a release coming out from each iteration, just like application releases. Therefore, the analysis should be planned, executed, integrated, tested and released, as traditionally done with code.
 
-Development and test are in the same iteration because everything that is developed is tested before going into production. The tests are done by someone else not directly involved on the development of the ongoing version. This iteration also lasts from 2 weeks and occurs in the same time frame of the analysis. The output of the analysis serves as input for the development and test. However, the output is accumulated in a backlog before being allocated in the upcoming development iterations.
+Development and test are in the same iteration because everything that is developed should be tested before going into production. The tests should be done by someone else not directly involved on the development of the ongoing version. This iteration also lasts from 2 weeks and occurs in the same time frame of the analysis. The output of the analysis serves as input for the development and test. However, the output is accumulated in a backlog before being allocated in the upcoming development iterations.
 
 The support is an on-demand process, executed only when an issue in production is reported. Every issue starts an independent instance of the process. There is no fixed duration of the execution, but it has higher priority than other processes and the minimal waiting time is 12 working hours.
 
@@ -74,17 +85,21 @@ image::images/sprints.png[Sprints]
 
 ==== Queuing
 
+image::images/queues.png[Queues]
+
 ==== Backlog
+
+image::images/backlog.png[Backlog]
 
 === Roles
 
-User:: All those who use the application or lead other users. They can also be representatives of a larger group of users. They transmit to analysts the maximum amount of information possible about the need they have. They are available for questions and meetings as demanded by analysts once a RFC is created, minimizing the impact on the schedule. Users can only contact analysts. If they contact anybody else in the team, they risk to have their demand ignored.
+User:: All those who use the application or lead other users. They can also be representatives of a larger group of users. They should transmit to analysts the maximum amount of information possible about the need they have and be available for questions and meetings as demanded by analysts once a RFC is created, in order to minimize the impact on the schedule. Users can only contact analysts. If they contact anybody else in the team, they risk to have their demand ignored.
 s
 Analyst:: Responsible for documenting how the business works and translating the documentation into application functionalities. They produce the business process models and the user manual. The analysts are the only ones authorized to contact the users. If anybody else contact the user directly they risk to break the chain of traceability.
 
-Technical Leader:: Responsible for the leadership of the development team. It's the leader who create the tickets based on the RFCs, plan the releases and distribute the work among developers. The leader also monitors the project to detect and fix non-conformities, identify deficiencies that impact the team's productivity and act to overcome those deficiencies. The technical leader can only talk to a user if followed by an analyst.
+Technical Leader:: Responsible for the leadership of the development team. It's the leader who create the tickets based on the RFCs, plan the releases and distribute the work among developers. The leader should also monitor the project to detect and fix non-conformities, identify deficiencies that impact the team's productivity and act to overcome those deficiencies. The technical leader can only talk to a user if followed by an analyst.
 
-Developer:: Responsible for developing the application according to the instructions in the user manual. They have the technical knowledge to transform business needs into application features, but they do not necessarily have business knowledge because they rely on the user manual. It makes possible that any developer is capable of developing any part of the application even if s/he know nothing about it.
+Developer:: Responsible for developing the application according to the instructions in the user manual. They have the technical knowledge to transform business needs into application features, but they do not necessarily have business knowledge because they should always rely on the user manual. It makes possible that any developer is capable of developing any part of the application even if s/he know nothing about it.
 
 Tester:: Responsible for making sure the application behaves exactly as foreseen in the user manual. They have the technical knowledge to create test scripts to automate tests, checking whether everything works fine after every introduced change.
 
@@ -94,7 +109,7 @@ Supporter:: Responsible for the support for users, explaining them how to use th
 
 Process::
 User Manual::
-Technical User Manual::
+Technical User Manual:: Documentation maintained by developers to describe the domain model and other technical aspects of the system.
 Work Breakdown Structure::
 Schedule::
 Source Code:: +
@@ -117,7 +132,7 @@ Visual Paradigm:: +
 
 == Analysis
 
-
+A fundamental difference from this process to other popular ones, such as Scrum and eXtreme Programming, is the attention given to the analysis. Requirements are more than just post-its and short user stories, but they certainly are less than what suggests RUP templates. Analysts 
 
 image::images/analysis.png[Analyse]
 
@@ -127,7 +142,7 @@ The user can request new features or modifications in the application. It can be
 
 === Verify the impact on business processes
 
-New requests for change should be aligned with what already exists in terms of processes. They contribute to improve existing processes or add new processes connected to existing ones. Changes that are not aligned with existing processes or propose isolated processes must be rejected until the application evolves to a point that those changes make sense. In summary, changes must be contextualized.
+Requests for changes should be aligned with what already exists in terms of processes. They should contribute to improve existing processes or add new processes connected to existing ones. Changes that are not aligned with existing processes or propose isolated processes must be rejected until the application evolves to a point that those changes make sense. In summary, changes should be contextualized.
 
 === Create request for change
 
@@ -155,13 +170,13 @@ The criteria to create a new process are extensive and sometimes subjective. In 
 
 === Review business process
 
-The user reviews the process and approve it in order to move forward. Otherwise, analysts and users keep adjusting the process until it is in condition to be approved.
+The user should review the process and approve it in order to move forward. Otherwise, analysts and users keep adjusting the process until it is in condition to be approved.
 
 === Describe the execution of the process
 
 During this activity, analysts are actually writing the user manual.
 
-For the purpose of traceability, every new section or modification in an existing section has a dedicated branch.
+For the purpose of traceability, every new section or modification in an existing section should have a dedicated branch.
 
 === Review the execution of the process
 === Verify technical feasibility
@@ -177,10 +192,10 @@ image::images/development.png[Development]
 
 These are the types of effort:
 
-- *Unknown*: the team does not have the necessary knowledge to address the issue. Therefore, an investigation should be carried out and no estimation can be done.
+- *Unknown*: the team does not have the necessary knowledge to address the issue. Therefore, an investigation should be carried out and no extimation can be done.
 - *Complex*: the team has the necessary knowledge to address the issue but cannot estimate when the work will be finished.
 - *Heavy*: the team has the necessary knowledge to address the issue and estimate the work but the issue cannot be solved in less than 5 working days.
-- *Regular*: the team has the necessary knowledge to address the issue and estimate the work but the issue cannot be solved in less than 2 days.
+- *Regular*: the team has the neccessary knowledge to address the issue and estimate the work but the issue cannot be solved in less than 2 days.
 - *Easy*: the team has the necessary knowledge to address the issue, estimate the work and finish it in less than 2 days.
 - *Flash*: the issue can be solved in a couple of hours.
 
