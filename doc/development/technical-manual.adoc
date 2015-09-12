@@ -1,0 +1,34 @@
+= OSIS Technical Manual
+Hildeberto Mendonça, PhD
+v0.1, 2015-09-12
+:toc: right
+
+== Data Model
+
+=== EPC
+
+=== OSIS
+
+== Data Migration
+
+=== Strategies
+
+==== Synchronize data using a synchronization tool
+
+==== Write a program to migrate data from Oracle to PostgreSQL
+
+==== Change both applications to access each other's web services
+
+==== Change one of the applications to access other's web services
+
+==== Post on a queue every time an update in the database occurs
+
+== Historical Data
+
+== Change Management
+
+== Data Exchange
+
+=== CRM
+
+=== SAP
