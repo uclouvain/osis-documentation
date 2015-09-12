@@ -3,32 +3,68 @@ Hildeberto Mendonça, PhD
 v0.1, 2015-09-12
 :toc: right
 
-== Data Model
+== Data
 
-=== EPC
+=== Data Model
 
-=== OSIS
+==== EPC
 
-== Data Migration
 
-=== Strategies
+.EPC tables
+|===
+|Table |Type |Description |N. Columns
 
-==== Synchronize data using a synchronization tool
+|a
+|z
+|e
+|e
 
-==== Write a program to migrate data from Oracle to PostgreSQL
+|===
 
-==== Change both applications to access each other's web services
+==== OSIS
 
-==== Change one of the applications to access other's web services
+.OSIS entities
+|===
+|Entity |Type |Description |N. Columns
 
-==== Post on a queue every time an update in the database occurs
+|a
+|z
+|e
+|e
 
-== Historical Data
+|===
 
-== Change Management
+=== Data Migration
 
-== Data Exchange
+.EPC tables to OSIS entities
+|===
+|Table |Migrated |Entity
 
-=== CRM
+|a
+|z
+|e
 
-=== SAP
+|===
+
+
+==== Strategies
+
+===== Synchronize data using a synchronization tool
+
+===== Write a program to migrate data from Oracle to PostgreSQL
+
+===== Change both applications to access each other's web services
+
+===== Change one of the applications to access other's web services
+
+===== Post on a queue every time an update in the database occurs
+
+=== Historical Data
+
+=== Change Management
+
+=== Data Exchange
+
+==== CRM
+
+==== SAP
