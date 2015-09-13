@@ -132,7 +132,19 @@ Visual Paradigm:: +
 
 == Analysis
 
-A fundamental difference from this process to other popular ones, such as Scrum and eXtreme Programming, is the attention given to the analysis. Requirements are more than just post-its and short user stories, but they certainly are less than what suggests RUP templates. Analysts 
+A fundamental difference from this process to other popular ones, such as Scrum and eXtreme Programming, is the attention given to the analysis. Requirements are more than just post-its and short user stories, but they certainly are less than what suggests RUP and its templates. In general, analysts produce requirements that are consumed by the rest of the team to deliver usable software at the end of each iteration. The analysis targets such a narrow population that it is almost never useful for end users - sometimes even inaccessible - once the demanded functionality is available. This process changes that by introducing an unusual way of producing analysis: *writing the user manual before the functionalities even exist*.
+
+The user manual is, traditionally, the only document that reaches the user. It describes how the application works, which is basically what analysts try to do during the analysis. So, instead of producing several documents, the analysts concentrate all their effort in a single one, written in a way that serves both the development team and the users.
+
+Writing the user manual before developing the application is not a strange idea. In Test-Driven Development (TDD) developers are motivated to write the tests before reaching the code. The practice of doing useful things in advance is a form of continuously reason about what will be done in the code, which is the ultimate artifact to be delivered to users.
+
+:sectnums!:
+
+=== The Pre-Analysis
+
+
+
+:sectnums:
 
 image::images/analysis.png[Analyse]
 
