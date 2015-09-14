@@ -3,7 +3,34 @@ Hildeberto Mendonça, PhD
 v0.1, 2015-09-12
 :toc: right
 
-== Environments
+== Environment
+
+=== Team
+
+==== Accepting the invitation to join the project
+
+The email below is sent to
+
+[quote, GitHub Team]
+____
+Hi keniasousa,
+
+Hildeberto Mendonça has invited you to join the Université catholique de Louvain organization on GitHub. Head over to https://github.com/uclouvain to check out Université catholique de Louvain's profile.
+
+To join Université catholique de Louvain, follow this link:
+
+https://github.com/orgs/uclouvain/invitation?via_email=1
+
+Some helpful tips:
+
+- If you get a 404 page, make sure you’re signed in as keniasousa.
+- You can also accept the invitation by visiting the organization page directly at https://github.com/uclouvain
+
+If you were not expecting this invitation, you can ignore this email.
+
+Thanks,
+The GitHub Team
+____
 
 === Development
 
