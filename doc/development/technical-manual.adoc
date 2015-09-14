@@ -9,13 +9,13 @@ v0.1, 2015-09-12
 
 ==== Accepting the invitation to join the project
 
-The email below is sent to
+At this stage you already have a GitHub user account and the technical leader of the project is aware of that, so (s)he invites you to be part of one or more of the https://github.com/orgs/uclouvain/teams[existing teams]. GitHub sends the invitation to you by email containing the following message:
 
-[quote, GitHub Team]
+[quote, The GitHub Team]
 ____
-Hi keniasousa,
+Hi [username],
 
-Hildeberto Mendonça has invited you to join the Université catholique de Louvain organization on GitHub. Head over to https://github.com/uclouvain to check out Université catholique de Louvain's profile.
+[team-leader] has invited you to join the Université catholique de Louvain organization on GitHub. Head over to https://github.com/uclouvain to check out Université catholique de Louvain's profile.
 
 To join Université catholique de Louvain, follow this link:
 
@@ -28,17 +28,10 @@ Some helpful tips:
 
 If you were not expecting this invitation, you can ignore this email.
 
-Thanks,
-The GitHub Team
+Thanks
 ____
 
-=== Development
-
-=== Test
-
-=== QA
-
-=== Production
+Please, follow the instructions in the email to accept the invitation. It will add you to the organisation https://github.com/uclouvain[uclouvain] and to the team originally assigned. If you did not receive this email then check you spam folder. If the email was not received at all, please ask the technical leader to send the invitation again.
 
 == Data
 
@@ -165,11 +158,3 @@ The data within those categories can be:
 1. *Operational*: data frequently updated and retrieved from the database for on-line use or reporting. All categories above contains operational data.
 
 2. *Archivable*: data that are not used anymore in the current business context, unless for some historical reports. Business process and auditing data are strong candidates for archiving. Master and reference data are usually required for a longer period of time and should be analyzed case by case.
-
-=== Change Management
-
-=== Data Exchange
-
-==== CRM
-
-==== SAP
