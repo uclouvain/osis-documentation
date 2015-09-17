@@ -33,6 +33,54 @@ ____
 
 Please, follow the instructions in the email to accept the invitation. It will add you to the organisation https://github.com/uclouvain[uclouvain] and to the team originally assigned. If you did not receive this email then check you spam folder. If the email was not received at all, please ask the technical leader to send the invitation again.
 
+== Platform
+
+=== Odoo
+
+==== Installing Odoo
+
+1. Create the following directory in your home folder (`/home/[username]`):
+
+    $ mkdir ~/python
+
+2. Go to the new folder and clone Odoo source code locally:
+
+    $ cd ~/python
+    $ git clone https://github.com/odoo/odoo.git
+
+3. Go to the new folder `odoo` and execute Odoo with the parameter `-s` to create an initialization file (.openerp_serverrc):
+
+    $ cd odoo
+    $ ./odoo.py -s
+
+4. Test Odoo's installation visiting the URL http://localhost:8069
+5. Create a new database named `osis`.
+
+==== Installing OSIS modules on odoo
+
+1. Create the following directory structure in your python folder (`/home/[username]/python`):
+
+    $ cd ~/python
+    $ mkdir -p projects/osis
+
+2. Go to the new directory and clone OSIS modules:
+
+    $ cd projects/osis
+    $ git clone https://github.com/uclouvain/osis_core.git
+    $ git clone https://github.com/uclouvain/osis_louvain.git
+
+3. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
+
+    $ nano ~/.openerp_serverrc
+           ...
+           addons_path = ...,/home/[username]/python/projects/osis
+           ...
+
+4. Go to Odoo's folder and install the new modules:
+
+    $ cd ~/python/odoo
+    $ ./odoo.py -d osis -i osis_core,osis_louvain
+
 == Data
 
 === Data Model
