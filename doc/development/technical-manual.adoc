@@ -79,7 +79,7 @@ Please, follow the instructions in the email to accept the invitation. It will a
 4. Go to Odoo's folder and install the new modules:
 
     $ cd ~/python/odoo
-    $ ./odoo.py -d osis -i osis_core,osis_louvain
+    $ ./odoo.py -d osis -u base -i osis_core,osis_louvain
 
 == Data
 
