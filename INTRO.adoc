@@ -1,0 +1,5 @@
+= Introduction
+
+OSIS stands for Open Student Information System. It's an application designed to manage the core business of higher education institutions, such as universities, faculties, institutes and professional schools. The core business involves the administration of students, teachers, courses, programs and so on.
+
+This application is designed as a module of Odoo, a modular ERP framework written in Python. It can be extended to accommodate your specific needs, which is the case of OSIS-Louvain.
