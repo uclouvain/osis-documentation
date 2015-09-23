@@ -212,6 +212,14 @@ These are the types of effort:
 - *Flash*: the issue can be solved in a couple of hours.
 
 === Distribute requests in upcoming iterations
+
+These are the types of priority:
+
+- *Blocking*: The application is blocking the work of a user who may not complete his/her task on time. This is usually due to a bug and must be fixed as soon as possible.
+- *Essential*: It must have. It is so crucial to have the functionality implemented that the process couldn't run without it.
+- *Important*: It should have. The user can live without it, but his/her productivity is heavily impacted.
+- *Desirable*: It is nice to have. An existing functionality can be improved, so a user can perform his/her tasks faster.
+
 === Review project schedule
 === Inform user
 === Start upcoming iteration
