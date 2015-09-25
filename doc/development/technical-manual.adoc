@@ -108,7 +108,7 @@ Before installing new modules, we have to create a database for Odoo. For that, 
 . Go to Odoo's folder and install the new modules:
 
     $ cd ~/python/odoo
-    $ ./odoo.py -d osis -i osis_core,osis_louvain
+    $ ./odoo.py -d osis -u base -i osis_core,osis_louvain
 
 == Data
 
