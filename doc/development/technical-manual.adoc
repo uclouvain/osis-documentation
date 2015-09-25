@@ -37,46 +37,75 @@ Please, follow the instructions in the email to accept the invitation. It will a
 
 === Odoo
 
+Odoo is an open source platform for business applications.
+
 ==== Installing Odoo
 
-1. Create the following directory in your home folder (`/home/[username]`):
+The following steps describe how to install Odoo from the source code.
+
+We start by installing Git to be able to download the source:
+
+    $ sudo apt-get update
+    $ sudo apt-get install git
+
+Before downloading the source, let's create a directory in the home folder (`/home/[username]`) to keep together everything related to Python development:
 
     $ mkdir ~/python
 
-2. Go to the new folder and clone Odoo source code locally:
+Then, go to the new folder and clone Odoo source code locally:
 
     $ cd ~/python
     $ git clone https://github.com/odoo/odoo.git
 
-3. Go to the new folder `odoo` and execute Odoo with the parameter `-s` to create an initialization file (.openerp_serverrc):
+The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. Odoo is not yet ready to run. We have to install all its dependencies first. We start by installing the database:
+
+    $ sudo apt-get install postgresql
+    $ sudo su - postgres -c "createuser -s $USER"
+    $ sudo apt-get install libpq-dev
+
+PortgreSQL is installed and a new user is created with the same username of the current OS user. The library libpq-dev is also installed for development purposes. Then we continue with the installation of Python development dependencies:
+
+    $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev, libldap2-dev python-dev python-setuptools python-pip
+
+The basic development dependencies were installed to enable the environment to install all Odoo direct dependencies, which is what we are going to do next:
+
+    $ cd ~/python/odoo
+    $ sudo pip install -r requirements.txt
+
+The file `requirements.txt` contains a list of Odoo direct dependencies. The `pip` command allows the installation of all dependencies by passing this file by parameter.
+
+Now Odoo is ready to run. To test the installation, run Odoo from command line:
 
     $ cd odoo
     $ ./odoo.py -s
 
-4. Test Odoo's installation visiting the URL http://localhost:8069
-5. Create a new database named `osis`.
+The parameter `-s` creates an initialization file (.openerp_serverrc) that we are going to use to install custom modules in the next section. To see Odoo running, visit the URL http://localhost:8069.
 
-==== Installing OSIS modules on odoo
+==== Installing OSIS modules on Odoo
 
-1. Create the following directory structure in your python folder (`/home/[username]/python`):
+Before installing new modules, we have to create a database for Odoo. For that, let's go to go through enter in the application. Create a new database named `osis`.
+
+. Create the following directory structure in your python folder (`/home/[username]/python`):
 
     $ cd ~/python
     $ mkdir -p projects/osis
 
-2. Go to the new directory and clone OSIS modules:
+. Go to the new directory and clone OSIS modules:
 
     $ cd projects/osis
     $ git clone https://github.com/uclouvain/osis_core.git
     $ git clone https://github.com/uclouvain/osis_louvain.git
 
-3. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
+. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
 
     $ nano ~/.openerp_serverrc
            ...
            addons_path = ...,/home/[username]/python/projects/osis
            ...
 
-4. Go to Odoo's folder and install the new modules:
+. Create OSIS database: ???
+
+. Go to Odoo's folder and install the new modules:
 
     $ cd ~/python/odoo
     $ ./odoo.py -d osis -i osis_core,osis_louvain
