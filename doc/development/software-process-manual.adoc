@@ -105,6 +105,8 @@ Tester:: Responsible for making sure the application behaves exactly as foreseen
 
 Supporter:: Responsible for the support for users, explaining them how to use the application if the user manual is not sufficiently clear. In the case the application  is not behaving as expected, the supporter is responsible for reproducing the problem and create a high priority issue to be addressed by developers.
 
+image::images/teams.png[Teams]
+
 === Artefacts
 
 Process::
