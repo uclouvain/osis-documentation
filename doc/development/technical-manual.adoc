@@ -39,14 +39,16 @@ Please, follow the instructions in the email to accept the invitation. It will a
 
 Odoo is an open source platform for business applications.
 
-==== Installing Odoo
+==== Installing Odoo for Development Purposes
 
-The following steps describe how to install Odoo from the source code.
+The following steps describe how to install Odoo from the source code in a Debian-based system (Linux Debian, Ubuntu, Mint, etc.), the platform we use to develop.
 
-We start by installing Git to be able to download the source:
+We start by installing Git to be able to download the source code:
 
     $ sudo apt-get update
     $ sudo apt-get install git
+
+The `update` command downloads the package lists from the repositories to get information on the newest versions of packages and their dependencies. This way, we make sure we are getting the last version of Git and all other dependencies.
 
 Before downloading the source, let's create a directory in the home folder (`/home/[username]`) to keep together everything related to Python development:
 
@@ -57,7 +59,7 @@ Then, go to the new folder and clone Odoo source code locally:
     $ cd ~/python
     $ git clone https://github.com/odoo/odoo.git
 
-The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. Odoo is not yet ready to run. We have to install all its dependencies first. We start by installing the database:
+The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. At this point, Odoo is not yet ready to run. We still have to install all its dependencies. We start by installing the database:
 
     $ sudo apt-get install postgresql
     $ sudo su - postgres -c "createuser -s $USER"
@@ -67,14 +69,14 @@ PortgreSQL is installed and a new user is created with the same username of the 
 
     $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev, libldap2-dev python-dev python-setuptools python-pip
 
-The basic development dependencies were installed to enable the environment to install all Odoo direct dependencies, which is what we are going to do next:
+The basic development dependencies are installed to enable the environment to install Odoo's direct dependencies:
 
     $ cd ~/python/odoo
     $ sudo pip install -r requirements.txt
 
-The file `requirements.txt` contains a list of Odoo direct dependencies. The `pip` command allows the installation of all dependencies by passing this file by parameter.
+The file `requirements.txt` contains a list of Odoo's direct dependencies. The `pip` command allows the installation of all dependencies by passing this file by parameter.
 
-Now Odoo is ready to run. To test the installation, run Odoo from command line:
+Now, Odoo is ready to run. To test the installation, run Odoo from command line:
 
     $ cd odoo
     $ ./odoo.py -s
@@ -108,7 +110,7 @@ Before installing new modules, we have to create a database for Odoo. For that, 
 . Go to Odoo's folder and install the new modules:
 
     $ cd ~/python/odoo
-    $ ./odoo.py -d osis -u base -i osis_core,osis_louvain
+    $ ./odoo.py -d osis -i osis_core,osis_louvain
 
 == Data
 
