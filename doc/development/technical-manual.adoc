@@ -41,7 +41,7 @@ Odoo is an open source platform for business applications.
 
 ==== Installing Odoo for Development Purposes
 
-The following steps describe how to install Odoo from the source code in a Debian-based system (Linux Debian, Ubuntu, Mint, etc.), the platform we use to develop.
+The following steps describe how to install Odoo from the source code in a Debian-based distribution (Linux Debian, Ubuntu, Mint, etc.), the platform we use to develop.
 
 We start by installing Git to be able to download the source code:
 
