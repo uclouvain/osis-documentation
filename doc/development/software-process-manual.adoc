@@ -201,6 +201,16 @@ image::images/development.png[Development]
 
 === Create work breakdown structure
 === Create requests for change
+
+These are the states of requests for change:
+
+- *Created*: A ticket is created but not yet planned.
+- *Assigned*: An existing ticket is assigned to a person and a milestone.
+- *Finished*: The assigned person has finished the work as described in the ticket.
+- *Tested*: The tester has validated the work done in the ticket.
+- *Closed*: The technical leader has considered the ticket closed and ready to be released.
+- *Canceled*: The ticket was created by mistake.
+
 === Demand developers estimations
 === Estimate requests
 
