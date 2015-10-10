@@ -1,0 +1,9 @@
+# Sprint 15.10.2.0
+
+## Les changements introduits
+
+- 16h est l'heure limite pour demander un patch en QA.
+- Le deuxième mardi du sprint est le dernier jour pour demander un patch en QA.
+- Un échec en QA doit être considérée comme urgente et corrigé dans le sprint courant.
+- Un patch en QA après la release en QA doit être fait pour corriger un bug, pas pour poursuivre un ticket incomplet.
+- Les tickets sont affectés par la personne en charge de la gestion de la configuration.
