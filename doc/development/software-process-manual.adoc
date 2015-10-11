@@ -109,32 +109,29 @@ image::images/teams.png[Teams]
 
 === Artefacts
 
-Process::
-User Manual::
+Process:: A graphical model that describes what is done, by whom and  in which sequence.
+User Manual:: Documentation maintained by analysts to describe how the process is executed and how the application helps on the matter.
 Technical User Manual:: Documentation maintained by developers to describe the domain model and other technical aspects of the system.
-Work Breakdown Structure::
-Schedule::
-Source Code:: +
+Schedule:: A high level view of the project evolution in time. It is useful to analyze the impact of a delay on the final delivery date.
+Source Code:: Low level instructions, written according to the grammars of chosen programming languages, that technically describe how the application is expected to work and actually run it after compiled/interpreated.
 
 === Tools
 
-AsciiDoctor::
-Atom::
-Git::
-GitHub::
-Jenkins::
-Odoo::
-PyCharm::
-Runbot::
-Selenium::
-Visual Paradigm:: +
-
+AsciiDoctor:: A tool that interprets AsciiDoc instructions and generates stylish documents in different formats (html, pdf, etc.).
+Atom:: A text editor suitable to write AsciiDoc documents.
+Git:: A distributed version control system used to version the documentation produced in the project.
+GitHub:: An online Git service that adds an issue tracking system, a wiki and a collaborative code platform to Git.
+Jenkins:: An automation tool to implement continuous integration and delivery practices for Java applications.
+Odoo:: A ERP platform suitable for rapid software development using Python.
+PyCharm:: A Python programming IDE.
+Runbot:: A continuous integration tool for Odoo applications.
+Visual Paradigm:: A modeling tool used to materialize the abstractions behind the data model, the business process, the software user interface, and many others.
 
 :sectnums:
 
 == Analysis
 
-A fundamental difference from this process to other popular ones, such as Scrum and eXtreme Programming, is the attention given to the analysis. Requirements are more than just post-its and short user stories, but they certainly are less than what suggests RUP and its templates. In general, analysts produce requirements that are consumed by the rest of the team to deliver usable software at the end of each iteration. The analysis targets such a narrow population that it is almost never useful for end users - sometimes even inaccessible - once the demanded functionality is available. This process changes that by introducing an unusual way of producing analysis: *writing the user manual before the functionalities even exist*.
+Analysis is the part of the process that continuously investigates and document how the business work.
 
 The user manual is, traditionally, the only document that reaches the user. It describes how the application works, which is basically what analysts try to do during the analysis. So, instead of producing several documents, the analysts concentrate all their effort in a single one, written in a way that serves both the development team and the users.
 
@@ -268,26 +265,7 @@ image::images/support.png[Support]
 === Release in production
 === Inform user
 
-:sectnums!:
-
-[glossary]
-== Glossary
-
-Atom:: A very simple text editor to be used on the writing of the user manual and on the development of the applications.
-
-Context-free module:: A module that unifies the domain of higher education but doesn't consider the context where it is applied.
-
-Context-specific module:: A module that inherits the domain from the context-free module and implement context's needs based on the local culture, law enforcements, integration with local systems and so on.
-
-Git:: A distributed version control system.
-GitHub::
-Odoo::
-Planner::
-Python::
-RFC:: Request For Change
-Runbot::
-Selenium::
-Visual Paradigm::
+include::glossary.adoc[]
 
 [bibliography]
 == Bibliography

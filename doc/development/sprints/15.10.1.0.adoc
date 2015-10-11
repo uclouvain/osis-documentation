@@ -4,7 +4,7 @@
 
 - Les tickets pour le sprint courant peuvent être attribuées seulement au cours de la réunion de sprint. Après cette réunion, les tickets doivent être définis comme "à affecter". La seule exception sont les billets créés en raison d'un bogue signalé par le help desk. Les cas d'urgence sont le signe d'une faiblesse de la planification. Le ticket urgents peuvent être attribués seulement après l'autorisation de la hiérarchie.
 
-- Les tickets que vien du help desk sont acceptées seulement en cas de bugs. Les demandes de nouvelles fonctionnalités doivent être envoyés à Philippe Jamart pour approbation.
+- Les tickets que vien du help desk sont acceptées seulement en cas de bug. Les demandes de nouvelles fonctionnalités doivent être envoyés à Philippe Jamart pour approbation.
 
 ## Violations
 
@@ -14,4 +14,4 @@ EPC-9345:: Ce ticket n'a pas passé en QA et un patch n'a pas été appliquée p
 
 EPC-9401:: Ce ticket n'a pas été testé en QA!
 
-EPC-9415:: Ce ticket a été créé pour résoudre le problème de EPC-9345, mais au lieu de terminer dans la période d'assurance de la qualité, il a été reporté à la prochaine release, après la réunion du sprint.
+EPC-9415:: Ce ticket a été créé pour résoudre le problème du ticket EPC-9345, mais au lieu de terminer dans la période d'assurance de la qualité, il a été reporté à la prochaine release, après la réunion du sprint.

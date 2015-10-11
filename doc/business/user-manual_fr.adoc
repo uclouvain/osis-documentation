@@ -17,13 +17,12 @@
 == Admission
 == Inscription
 == Parcours academique
+=== Encodage de notes
 == Diplomation
-== Alumni
 
 :sectnums!:
 
-[glossary]
-== Glossary
+include::glossary.adoc[]
 
 [bibliography]
 == Bibliography
