@@ -1,0 +1,5 @@
+# Sprint 15.11.1.0
+
+## Les changements introduits
+
+- les deux valeurs possibles pour le champ "Version(s) corrigée(s)" dans le ticket sont: un numéro de version ou "affecter». Même si le ticket a été créé par erreur, parce que c'est le type de résolution qui importe.
