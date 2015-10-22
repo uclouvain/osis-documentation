@@ -5,6 +5,9 @@ v0.1, 2015-09-08
 
 :sectnums!:
 
+
+image::images/wireframes/wireframe.png[Wireframe]
+
 == Introduction
 
 This document describes the development process of the application OSIS-Louvain.

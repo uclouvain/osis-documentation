@@ -10,8 +10,14 @@
 
 ## Violations
 
+EPC-8750:: Ticket planifié mais pas fini dans le sprint.
+
+EPC-9369:: Absence de réponse de l'utilisateur. Cause externe a l'equipe.
+
 EPC-9425, EPC-9426:: Créé après la réunion de sprint, affecté dans le sprint actuel (15.10.2.0), en donnant l'impression qu'il était un ticket pour être patché, car cela c'est normalement une violation complète des règles, mais le ticket n'a pas été touché jusqu'à présent.
 
 EPC-9428:: Serait le changement d'un numéro de téléphone dans un document PDF assez urgentes pour être appliqué comme un patch?
 
 EPC-9438:: Ticket a été créé et attribué dans la release sans l'autorisation.
+
+EPC-9447:: non-planifié parce que l'utilisateur n'a pas répondu aux questions posées par l'analiste au ticket EPCPUB-208. Donc, c'est un ticket pour une solution alternative.
