@@ -39,7 +39,7 @@ The command above creates a folder named `odoo` containing the source code of th
 
 PortgreSQL is installed and a new user is created with the same username of the current OS user. The library libpq-dev is also installed for development purposes. Then we continue with the installation of Python development dependencies:
 
-    $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev libldap2-dev python-dev python-setuptools python-pip
+    $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev libldap2-dev python-dev python-setuptools python-pip python-unittest2
 
 The basic development dependencies are installed to enable the environment to install Odoo's direct dependencies:
 
