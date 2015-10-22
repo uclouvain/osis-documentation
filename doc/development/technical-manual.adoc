@@ -29,7 +29,7 @@ Before downloading the source, let's create a directory in the home folder (`/ho
 Then, go to the new folder and clone Odoo source code locally:
 
     $ cd ~/python
-    $ git clone https://github.com/odoo/odoo.git
+    $ git clone https://github.com/odoo/odoo.git -b 8.0
 
 The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. At this point, Odoo is not yet ready to run. We still have to install all its dependencies. We start by installing the database:
 
