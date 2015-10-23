@@ -1,0 +1,16 @@
+:sectnums!:
+
+[glossary]
+== Glossary
+
+Cycle :: cycle
+Etat d'inscription :: registration state
+Intitulé complet :: title
+Lettres finales :: offer type
+Niveau :: level
+Nom :: name
+Noma :: registration number
+Orientation :: orientation
+Prénom1 :: firstname1
+Sigle :: acronym
+
