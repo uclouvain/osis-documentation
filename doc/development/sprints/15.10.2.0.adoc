@@ -18,3 +18,5 @@ EPC-9428:: Serait le changement d'un numéro de téléphone dans un document PDF
 EPC-9438:: Ticket a été créé et attribué dans la release sans l'autorisation.
 
 EPC-9453:: Décrite comme une fonctionnalité manquante, pas comme un bogue résultant du sprint de développement.
+
+EPC-9447:: non-planifié parce que l'utilisateur n'a pas répondu aux questions posées par l'analiste au ticket EPCPUB-208. Donc, c'est un ticket pour une solution alternative.
