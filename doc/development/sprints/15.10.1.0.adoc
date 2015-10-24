@@ -6,7 +6,7 @@
 
 - Les tickets que vien du help desk sont acceptées seulement en cas de bug. Les demandes de nouvelles fonctionnalités doivent être envoyés à Philippe Jamart pour approbation.
 
-## Violations
+## Déviations
 
 EPC-9138:: Ce ticket n'a pas été testé en QA!
 
