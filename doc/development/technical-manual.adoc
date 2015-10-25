@@ -118,9 +118,16 @@ Django is a modern and lightweight web framework to support our front-end applic
 
 === Contributing to OSIS
 
-By convention, the source code can only be changed under the context of an issue created on the issue tracker tool. The issue tracker generates a unique id that we can use to link a branch with the issue. In general, we name a branch after the issue’s id. Considering an issue with the id 260, we can create a local branch with the following command:
+The code repository is organized in three fixed branches:
 
-    $ git pull origin dev
+- *dev*: agregates developers' contributions that are intended to be in production, but they still need to be validated.
+- *qa*: at the end of the sprint, when all features are frozen, the branch `dev` is merged into `qa` to allow testers to validate the release before it gets into production.
+- *master*: once the version in `qa` is fully validated, it is merged into the branch `master`, which is the one to be deployed in production.
+
+Developers should not commit directly to any of these branches. By convention, the source code can only be changed under the context of an issue created on the issue tracker tool. The issue tracker generates an incremental id that we can use to link a branch with the issue. In general, we name a branch after the issue’s id. Considering an issue with the id 260, we can create a local branch with the following commands:
+
+    $ git fetch origin dev
+    $ git checkout dev
     $ git checkout -b issue#260
 
 The branch `dev` is updated with the last changes on the server and the branch `issue#260` is created from the branch `dev`. The option `-b` immediately switches to the new branch, to make sure that every commit from this point on is attached to the correct branch.
