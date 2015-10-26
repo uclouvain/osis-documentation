@@ -118,19 +118,27 @@ Django is a modern and lightweight web framework to support our front-end applic
 
 === Contributing to OSIS
 
+image::images/git-state-diagram.png[Git State Diagram]
+
 The code repository is organized in three fixed branches:
 
 - *dev*: agregates developers' contributions that are intended to be in production, but they still need to be validated.
 - *qa*: at the end of the sprint, when all features are frozen, the branch `dev` is merged into `qa` to allow testers to validate the release before it gets into production.
 - *master*: once the version in `qa` is fully validated, it is merged into the branch `master`, which is the one to be deployed in production.
 
-Developers should not commit directly to any of these branches. By convention, the source code can only be changed under the context of an issue created on the issue tracker tool. The issue tracker generates an incremental id that we can use to link a branch with the issue. In general, we name a branch after the issue’s id. Considering an issue with the id 260, we can create a local branch with the following commands:
+Developers should not commit directly to any of these branches. By convention, the source code can only be changed under the context of an issue created on the issue tracker tool.
+
+==== Creating and Working in a Branch
+
+The issue tracker generates an incremental id that we can use to name branches. It helps to keep branches linked to issues. For example: considering an issue with the id 260, we can create a local branch with the following commands:
 
     $ git fetch origin dev
     $ git checkout dev
     $ git checkout -b issue#260
 
-The branch `dev` is updated with the last changes on the server and the branch `issue#260` is created from the branch `dev`. The option `-b` immediately switches to the new branch, to make sure that every commit from this point on is attached to the correct branch.
+The first command updates the branch `dev` with the last changes on the server. The second command moves from the branch we are at the moment to the branch `dev`. The last command creates the branch `issue#260` from `dev` and immediately moves to it. From this moment, every commit will be attached to the correct branch. If the branch `dev` already exists in local, then instead of fetching it we should pull it:
+
+    $ git pull origin dev
 
 As we work on the issue, two commands are very useful to keep track of what has been done:
 
@@ -147,9 +155,53 @@ To include a subset of files, we have to add each file individually:
     $ git add __init__.py
     $ git commit -m "New entities added."
 
-Committing often is encouraged. All commits are done locally, thus there is no risk of conflicts until all commits are sent to the server. The `push` option sends all commits in a local branch to the server, represented by `origin`.
+Committing often is encouraged. All commits are done locally, thus there is no risk of conflicts until all commits are sent to the server. The `push` option sends all commits in a local branch to the server, identified by `origin`.
 
     $ git push origin issue#260
+
+==== Fixing Mistakes
+
+Version control doesn’t always happens smoothly. We will certainly face some problems and fortunately Git is very gentile on which concerns recovering from mistakes. These are some common situations we may face during development.
+
+===== Moving to another branch before finishing the work in the current branch
+
+Sometimes we are working in a branch and a more urgent problem arrives, requiring us to move to or create another branch. In this case, we have to commit all changes in the current branch before moving to another one, otherwise we risk to have our changes to the current branch committed in another branch. So, first add your changes and commit:
+
+    $ git commit -a -m "New entities added but still incomplete."
+
+and then move to an existing branch:
+
+    $ git checkout issue#261
+
+or create another branch from `dev`:
+
+    $ git checkout dev
+    $ git checkout -b issue#261
+
+It also happens that we start fixing an issue but we forget to move to its respective branch. In this case, we have to commit the files related to the current branch and leave in the workspace the changes related to another branch:
+
+    $ git add calendar.py
+    $ git commit -m "Sort algorithm started."
+    $ git checkout issue#260
+
+The files that were not committed in the previous branch will be available for commit in the branch issue#260.
+
+===== Fixing the latest commit message
+
+    $ git commit --amend -m "message"
+
+When we work with branches it’s very common to fool with the commits. There are many branches locally and sometimes we forget to switch to the branch related to the issue
+and we end up committing on the wrong branch. When it happens before pushing the commits to the server, we can undo the last commit done with the command:
+
+    $ git reset --soft HEAD~1
+
+But if the commit was already pushed to the server, it is still possible to undo the push as long as other people have not pushed to the same branch after the wrong push. It is done with the following command:
+
+    $ git push origin master -f
+
+Stop tracking a file without deleting it locally:
+
+    $ git rm --cached [file]
 
 == Data
 
