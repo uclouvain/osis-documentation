@@ -24,6 +24,11 @@ We start by installing Git to be able to download Odoo's and OSIS' source code:
 
 The `update` command downloads package lists from repositories to get information on the newest versions of packages and their dependencies. This way, we make sure we are getting the last version of Git and all other dependencies.
 
+Then, we add some personal information in the local Git installation to make sure the author is well identified in all commits:
+
+    $ git config --global user.name "[Firstname] [Lastname]"
+    $ git config --global user.email "[firstname.lastname]@uclouvain.be"
+
 ==== Installing and Configuring PostgreSQL
 
 PostgreSQL is the only database supported by Odoo. There is no safe way to use another database, such as MySQL or Oracle. Fortunately, PostgreSQL has a very good reputation, a large community and a generous documentation. Execute the following commands to install it:
