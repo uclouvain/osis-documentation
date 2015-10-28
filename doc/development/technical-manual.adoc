@@ -29,6 +29,10 @@ Then, we add some personal information in the local Git installation to make sur
     $ git config --global user.name "[Firstname] [Lastname]"
     $ git config --global user.email "[firstname.lastname]@uclouvain.be"
 
+Since version 2.0, Git has adopted a new behavior to pull and push commits while in a branch. When you execute `git push` or `git pull` Git will consider pushing or pulling just for the current branch. Before, these commands would push and pull all branches. But the change to this new behavior is voluntary, not automatically imposed. So, we have to explicitly say we have to move from the old behavior to the new one. To do that, execute the following command:
+
+    $ git config --global push.default simple
+
 ==== Installing and Configuring PostgreSQL
 
 PostgreSQL is the only database supported by Odoo. There is no safe way to use another database, such as MySQL or Oracle. Fortunately, PostgreSQL has a very good reputation, a large community and a generous documentation. Execute the following commands to install it:
