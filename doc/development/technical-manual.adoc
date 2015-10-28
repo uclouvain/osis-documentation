@@ -191,6 +191,19 @@ It also happens that we start fixing an issue but we forget to move to its respe
 
 The files that were not committed in the previous branch will be available for commit in the branch issue#260.
 
+This practical approach of moving from a branch to another while leaving some files uncommitted may not work if at least one of the files we have changed locally was also changed remotely. We may see a message like this:
+
+    From https://github.com/uclouvain/osis-louvain
+    * branch            dev        -> FETCH_HEAD
+    Updating 57c4a6d..9839a25
+    error: Your local changes to the following files would be overwritten
+           by merge:
+           __openerp__.py
+    Please, commit your changes or stash them before you can merge.
+    Aborting
+
+In this case, we do have to commit local changes before moving to the other branch.
+
 ===== Fixing the latest commit message
 
     $ git commit --amend -m "message"
