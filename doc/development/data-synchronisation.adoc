@@ -1,0 +1,154 @@
+= Synchronisation de donnée entre EPC et OSIS
+Philippe Bruyère, Benoît Moreau, Hang Hoang, Hildeberto Mendonça
+v0.1, 2015-10-29
+:toc: right
+
+=== Signalétique student etd_signaletique
+
+Remarques:
+
+J'écarte donc les champs qui ne servent pas par défaut au business de l'encodage des notes.
+
+Dans EPC, on peut chercher par le phonème, ou par le nom_tri/prénom_tri
+je suppose que odoo fait mieux et que ces champs techniques ne sont pas nécessaires
+
+Je sélectionne les étudiants qui ont pu faire l'objet d'une inscription valable à l'année académique.
+
+J'écarte donc les étudiants en demande ou en erreur mais je reprends les décès.
+
+Je sélectionne des champs connexes à l'identification, qui pourraient servir à identifier précisément une personne ou servir à la contacter.
+
+Peut-être faut-il décoder les données potentiellement énumérées, à confirmer:
+
+    select t1.noma, t1.nom, t1.prenom1, t1.date_naissance,
+           t1.prenoms_suivants, t1.annee_naissance, t1.lieu_naissance,
+           t1.pays_naissance, t1.sexe, t1.etat_civil, t1.num_social,
+           t1.gsm, t1.email
+    from etd_signaletique t1 join etd_sign_anac t2 on t2.noma = t1.noma
+    where t2.anac = 2015 and t2.etat_role in ('1','3','4','5','6','7','8');
+
+=== res.partner fgs_fgs
+
+Je reprends tous les membres du personnel actifs, et les étudiants au moins une fois inscrits en 2015 qui ont reçu un matricule FGS:
+
+    select fgs_fgs.matric_fgs, fgs_fgs.nom, fgs_fgs.prenom,
+           fgs_fgs.dte_nais, fgs_fgs.leg_rue, fgs_fgs.leg_copo,
+           fgs_fgs.leg_comm, std_nation.iso
+    from fgs.fgs_fgs join fgs.fgs_four
+                     on fgs_four.matric_fgs = fgs_fgs.matric_fgs
+                     left join std.std_nation
+                     on std_nation.code_cref = fgs_fgs.leg_cpays
+    where fgs_four.fichier = 1
+          and fgs_four.type in (1,2)
+          union select fgs_fgs.matric_fgs, fgs_fgs.nom,
+                       fgs_fgs.prenom, fgs_fgs.dte_nais,
+                       fgs_fgs.leg_rue, fgs_fgs.leg_copo,
+                       fgs_fgs.leg_comm, std_nation.iso
+                from fgs.fgs_fgs join fgs.fgs_four
+                     on fgs_four.matric_fgs = fgs_fgs.matric_fgs
+                     join epc.etd_sign_anac
+                     on etd_sign_anac.noma = fgs_four.matric_four
+                     left join std.std_nation
+                     on std_nation.code_cref = fgs_fgs.leg_cpays
+                where fgs_four.fichier = 2
+                      and etd_sign_anac.anac = 2015;
+
+=== offer epc_offre_sigle_suivi, epc_offre_sigle, epc_offre_uclouvain, epc_offre
+
+    select offre_sigle_suivi_id, descrption
+    from epc_offre_sigle_suivi;
+
+    select offre_sigle_id, sigle, ocycle, niveau, lettres_finales,
+           orientation, offre_sigle_suivi_id
+    from epc_offre_sigle;
+
+Attention! 12 étudiants encore inscrits à des années de validité d'offre < 2015 en 2015.
+
+    select offre_uclouvain_id, validite, offre_sigle_id,
+           intit_complet, intit_abrege, intit_orientation,
+           intit_diplome, duree, typduree, nbr_epreuve, diplome,
+           inscriptible
+    from epc_offre_uclouvain
+    where validite in (2013, 2014, 2015);
+
+Attention! 12 étudiants encore inscrits à des années de validité d'offre < 2015 en 2015.
+
+Je pensais ne reprendre que sigle_gestion. 90% des secsigle sont identiques à sigle_gestion donc voir si pertinent.
+
+Les cours dont le sigle de gestion est une commission doctorale ont le secteur comme sigle d'administration; étudier l'impact pour le vrai odoo.
+
+À partir du moment où "on" souhaite distinguer les sessions dans les inscriptions aux examens, il me semblerait cohérent d'en faire autant pour les champs relatifs aux sessions dans epc_offre; à vous de voir.
+
+    select num_offre, sigle_gestion, sigle_admin, secsigle, validite,
+           offre_uclouvain_id, date_note1, date_note2, date_note3,
+           heure_note1, heure_note2, heure_note3
+    from epc_offre where validite in (2013, 2014, 2015);
+
+=== structure str.str_entite.
+
+Je considère que l'identifiant non unique num_entite n'est pas pertinent; seul le sigle identifie dans la période relative à l'année académique.
+
+Si l'adresse de l'entité est nécessaire, je devrai ajouter les champs de la table str.str_adresse mais les intégrer dans la structure, pas besoin d'une table dépendante.
+
+    select sigle, sigle_dpt, sigle_fac, sigle_eco, sigle_secteur,
+           denomination, debut_validite, fin_validite
+    from str.str_entite
+    where debut_validite <= '01/09/2015'
+
+=== learning_unit epc.epc_ele
+
+    select distinct num_ele, debut_ens, fin_ens
+    from epc_ele
+    where validite > 2008 and type_ele > 0;
+
+=== learning_unit_year
+
+Je reprends les activités 2015, les groupements sont d'office écartés. Faut-il reprendre les poids absolus, les volumes, les infos sur les quadrimestres? Peut-être faut-il écarter les cours en proposition de création.
+
+Attention! Il y a des inscriptions aux cours 2009 à 2016! en 2015.
+
+    select num_ele, validite, sigle_ele, cnum, subdivision,
+           intit_abrege, intit_complet, dpt_charge, dpt_attrib,
+           type_ele
+    from epc_ele
+    where validite > 2008 and type_ele > 0;
+
+=== attribution epc.epc_ele_itv
+
+Les candidatures et les causes de vacances sont éliminées.
+
+Attention! les attributions à somebody sont conservées.
+
+    select num_ele_itv, num_ele, matric_itv, debut_attr, duree_attr,
+           fonct_moyen
+    from epc_ele_itv, fgs_fgs
+    where validite = 2015 and candidature = 0
+          and matric_itv = matric_fgs and cause_vac = '0';
+
+=== learning_unit_enrollment  epc.etd_insc_cours
+
+Remarque: il y a déjà des notes reportées ou autres raisons en janvier.
+
+J'ai repris le numéro d'enregistrement des notes, seul Benoit et Evase savent si c'est encore utilisé.
+
+J'ai indiqué un champ session fictif juste pour mémoire, à vous de voir comment vous gérez cela.
+
+    select noma, num_ele, anac, anac_ref_ele, section, etat_cours
+    from etd_insc_cours
+    where anac = 2015;
+
+=== exam_enrollment epc.etd_insc_cours
+
+Remarque: il y a déjà des notes reportées ou autres raisons en janvier.
+
+J'ai repris le numéro d'enregistrement des notes, seul Benoit et Evase savent si c'est encore utilisé.
+
+J'ai indiqué un champ session fictif juste pour mémoire, à vous de voir comment vous gérez cela.
+
+    select noma, num_ele, anac, anac_ref_ele, section,
+          1 as "SESSION", etat_exam_1, note_1, apprec_1,
+          mention_1, credit_1, num_enr_note_1
+    from etd_insc_cours
+    where anac = 2015;
+
+Il y a actuellement 7.721.689 records dans etd_insc_cours; et 13.000.000 d'inscriptions aux examens. On va donc vers un système de 20.0000.0000 de records. Je ne conteste pas le nouveau modèle pour remplacer etd_insc_cours, mais il faut le savoir pour anticiper les questions de performances.
