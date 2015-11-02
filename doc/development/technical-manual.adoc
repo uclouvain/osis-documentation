@@ -3,17 +3,23 @@ Hildeberto Mendonça, PhD
 v0.1, 2015-09-12
 :toc: right
 
-== Environments
+== Contributing to OSIS
 
-=== Development
+This documentation explains how to contribute as a committer to OSIS project. A committer is an individual who is disciplined enough to gain the confidence of the project manager to commit directly to the repository without further bureaucracy. In fact, be accepted as a committer is a great recognition of the quality of your work as a programmer.
 
-During this section, we explain in details how to prepare the development environment in a Debian-based distribution (Linux Debian, Ubuntu, Mint, etc.). We have to:
+=== Development Environment
+
+The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Linux Debian, Ubuntu, Mint, etc.). The steps are:
 
  - install and configure Git;
  - install and configure PostgreSQL;
- - Install and configure Odoo;
- - Install and configure OSIS modules; and
+ - install and configure Odoo;
+ - install and configure OSIS modules;
+ - install and configure Django; and
  - create an account on Github and learn the social aspects of it
+
+ sudo apt-get install virtualbox-guest-dkms \
+virtualbox-guest-x11
 
 ==== Installing and Configuring Git
 
@@ -98,11 +104,11 @@ To keep everything organized, create the following directory structure in your p
     $ cd ~/python
     $ mkdir -p projects/osis
 
-Go to the new directory and clone OSIS modules:
+Go to the new directory and clone the `dev` branch of OSIS modules:
 
     $ cd projects/osis
-    $ git clone https://github.com/uclouvain/osis-core.git
-    $ git clone https://github.com/uclouvain/osis-louvain.git
+    $ git clone https://github.com/uclouvain/osis-core.git -b dev
+    $ git clone https://github.com/uclouvain/osis-louvain.git -b dev
 
 Go to Odoo's directory and create an initialization file:
 
@@ -121,11 +127,51 @@ Go to Odoo's folder and install the new modules:
     $ cd ~/python/odoo
     $ ./odoo.py -d osis -i osis-louvain
 
-==== Django
+==== Installing and Configuring Django
 
-Django is a modern and lightweight web framework to support our front-end applications.
+Django is a modern and lightweight web framework to support our front-end applications. The choice for Django was made thanks to its:
 
-=== Contributing to OSIS
+- low OI throughput;
+- low memory footprint; and
+- straightforward integration with Shibboleth.
+
+In addition, Django preserves the same runtime platform of our back-end applications and runs isolated for greater availability.
+
+Before starting, we need to install the Python virtual environment:
+
+    $ sudo apt-get install python-virtualenv
+
+The repository `osis-louvain-frontend` is a Django application. To contribute to that, clone the repository locally:
+
+    $ cd ~/python/projects/osis
+    $ git clone https://github.com/uclouvain/osis-louvain-frontend.git -b dev
+
+In the new repository, create a virtual environment to isolate all dependencies of the project:
+
+    $ cd osis-louvain-frontend
+    $ virtualenv --python=python3.4 venv
+
+Start the virtual environment and install Django:
+
+    $ source venv/bin/activate
+    (venv)$ pip install django==1.8
+
+Don't do it now, but if you want to deactivate the virtual environment, simply type:
+
+    (venv)$ deactivate
+
+Before running the application, let's create the database:
+
+    (venv)$ python manage.py makemigrations studies
+    (venv)$ python manage.py migrate
+
+And finally run the application:
+
+    (venv)$ python manage.py runserver
+
+    (venv)$ python manage.py createsuperuser
+
+=== Following the Git Workflow
 
 image::images/git-state-diagram.png[Git State Diagram]
 
@@ -224,6 +270,10 @@ But if the commit was already pushed to the server, it is still possible to undo
 Stop tracking a file without deleting it locally:
 
     $ git rm --cached [file]
+
+Deleting remote branches
+
+    $ git push origin --delete test
 
 == Data
 
