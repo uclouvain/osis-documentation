@@ -125,6 +125,7 @@ The file `.openerp_serverrc` is created in your home directory. Edit the initial
 Go to Odoo's folder and install the new modules:
 
     $ cd ~/python/odoo
+    $ ./odoo.py -d osis -u all
     $ ./odoo.py -d osis -i osis-louvain
 
 ==== Installing and Configuring Django
