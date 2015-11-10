@@ -39,6 +39,46 @@ The first thing to do to start contributing to the project is to prepare the dev
 
     sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11
 
+==== Configuration multi écrans VirtualBox
+
+Conseils :
+- Mettre un maximum de mémoire video (128mb min.)
+- Cocher l'accélération 3D dans les paramètres/Affichage de la machine virtuelle
+- Mettre au minimum 2Go de RAM 
+
+1. Lancer la machine virtuelle Ubuntu
+2. Une fois la machine démarrée, dans la fenêtre de VirtualBox, clic sur Périphériques -> Insert Guest Additions...
+
+image::images/virtualbox-1.png[]
+
+3. Run le virtual CD "VBOXADDITIONS_5.0.8_103449" (et insérer le mot de passe admin pour autoriser l'installation)
+
+image::images/virtualbox-2.png[]
+image::images/virtualbox-3.png[]
+
+4. Tapez "yes" pour commencer l'installation
+
+image::images/virtualbox-4.png[]
+image::images/virtualbox-5.png[]
+
+5. Une fois l'installation terminée, éteignez la machine.
+6. Dans les paramètres de la machine virtuelle (clic droit sur la VM -> Paramètres -> Affichage), indiquez le nombre d'écrans que vous désirez utiliser
+
+image::images/virtualbox-6.png[]
+
+7. Démarrez la machine virtuelle
+8. Dans la fenêtre de VirtualBox -> Ecran -> Ecran virtuel n°2 -> Activer. 
+
+Une seconde fenêtre de VirtualBox devrait s'ouvrir
+
+image::images/virtualbox-7.png[]
+
+9. Dans la VM ubuntu, System settings -> Displays, sélectionnez l'écran que vous avez activé, et mettez le sur "ON". Adaptez la résolution de votre écran selon vos besoins.
+   
+   Cliquez ensuite sur "Apply" pour appliquer les changements. Vous devriez avoir 2 fenêtres distinctes dans VirtualBox.
+
+image::images/virtualbox-8.png[]
+
 The next steps are:
 
  - install and configure Git;
