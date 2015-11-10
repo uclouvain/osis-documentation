@@ -11,7 +11,7 @@ This documentation explains how to contribute as a committer to OSIS project. A 
 
 ==== Modeling Tool
 
-We use http://www.visual-paradigm.com/[Visual Paradigm] to draw our business models. It is used mainly by analysts, but everybody in the team may install it to, at least, visualize the models. To install it, visit  http://www.visual-paradigm.com/download/[Visual Paradigm's download page] and download the version 12.2 or superior. Follow the installation instructions and lauch the tool. The follow screen is the first one we see after running Visual Paradigm for the first time. Click on "**Perpetual License**" to continue.
+We use http://www.visual-paradigm.com/[Visual Paradigm] to draw our business models. It is used mainly by analysts, but everybody in the team may install it to, at least, visualize the models. To install it, visit  http://www.visual-paradigm.com/download/[Visual Paradigm's download page] and download the version 12.2 or superior. Follow the installation instructions and launch the tool. The follow screen is the first one we see after running Visual Paradigm for the first time. Click on "**Perpetual License**" to continue.
 
 image::images/visual-paradigm-configuration-1.png[]
 
