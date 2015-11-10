@@ -223,6 +223,14 @@ These are the types of effort:
 
 === Distribute requests in upcoming iterations
 
+The distribution of requests is done to a maximum of 3 sprints: The one that is about to start and the two upcoming ones. The reasons why we cannot have more than three sprints are:
+
+- Old tickets tend to be forgotten. In practice, new tickets are created to solve a problem and when old tickets are revisited we finally notice they are duplications of more recent tickets.
+
+- Increase the management cost by adding more control mechanisms. For instance: the tickets must be revisited often to not be forgotten or duplicated.
+
+- Accumulation of non-planned tickets, which may freeze the size of the backlog.
+
 These are the types of priority:
 
 - *Blocking*: The application is blocking the work of a user who may not complete his/her task on time. This is usually due to a bug and must be fixed as soon as possible.

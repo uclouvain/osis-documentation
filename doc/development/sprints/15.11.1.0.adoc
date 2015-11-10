@@ -1,0 +1,11 @@
+# Sprint 15.11.1.0
+
+## Les changements introduits
+
+- Personne est autorisé à modifier le numéro de la version d'un ticket. Même pas le gestionnaire de configuration. Soit nous le faisons lors de la réunion de sprint, soit autorisés par l'hierarchie ou Jenkins fait le changement tout seul lors d'un patch.
+- Pendant la period de test en QA, Il faut lier les tickets à patcher en QA avec les tickets dans le sprint courant.
+- Il faut créer tous les ticket à planifier et examiner les tickets à affecter dans le backlog avant la reunion de sprint. Cette réunion est consacrée à la présentation de la performance et les déviations constatés dans le sprint précédente et l'attribution de nouveaux tickets pour les membres de l'équipe.
+
+## Déviations
+
+EPC-9452:: Un patch avec 47 fichiers modifié! Le risque d'avoir un conflit est trop élevé. C'était le cas. Cela a forcé 4 personne à travailler tard dans la soirée de vendredi (23/10). En fait, après analiser le code, c'est difficile de convaincre quelqu'un que le patch EPC-9452 a était un correctif lié a un ticket de sprint régulier parce que une grand quantité de logique a été ajouté au code.
