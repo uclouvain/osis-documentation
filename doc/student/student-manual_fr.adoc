@@ -1,0 +1,22 @@
+= Open Student Information System - OSIS
+:toc: right
+
+= Mode d'emploi
+
+:sectnums!:
+
+== Introduction
+
+=== Le but de l'application
+=== Les normes d'ergonomie
+=== Securité
+=== Support
+
+:sectnums:
+
+:sectnums!:
+
+include::glossary.adoc[]
+
+[bibliography]
+== Bibliography

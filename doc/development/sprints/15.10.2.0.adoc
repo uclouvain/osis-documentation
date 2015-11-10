@@ -6,4 +6,17 @@
 - Le deuxième mardi du sprint est le dernier jour pour demander un patch en QA.
 - Un échec en QA doit être considérée comme urgente et corrigé dans le sprint courant.
 - Un patch en QA après la release en QA doit être fait pour corriger un bug, pas pour poursuivre un ticket incomplet.
-- Les tickets sont affectés par la personne en charge de la gestion de la configuration.
+
+## Déviations
+
+EPC-8750, EPC-9096, EPC-9202, EPC-9369, EPCPUB-198:: reportées
+
+EPC-9425, EPC-9426:: Créé après la réunion de sprint, affecté dans le sprint actuel (15.10.2.0), en donnant l'impression qu'il était un ticket pour être patché. Effectivement, ce sont des bugs urgents, mais leur exécution a été reportée dangereusement très proche de la date de sortie.
+
+EPC-9428:: Serait le changement d'un numéro de téléphone dans un document PDF assez urgentes pour être appliqué comme un patch?
+
+EPC-9438:: Ticket a été créé et attribué dans la release sans l'autorisation.
+
+EPC-9453:: Décrite comme une fonctionnalité manquante, pas comme un bogue résultant du sprint de développement.
+
+EPC-9447:: non-planifié parce que l'utilisateur n'a pas répondu aux questions posées par l'analiste au ticket EPCPUB-208. Donc, c'est un ticket pour une solution alternative.
