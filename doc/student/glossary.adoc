@@ -1,0 +1,5 @@
+:sectnums!:
+
+[glossary]
+== Glossary
+

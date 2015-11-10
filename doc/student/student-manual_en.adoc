@@ -1,0 +1,17 @@
+= Open Student Information System - OSIS
+:toc: right
+
+= Student Manual
+
+:sectnums!:
+
+== Introduction
+
+:sectnums:
+
+:sectnums!:
+
+include::glossary.adoc[]
+
+[bibliography]
+== Bibliography

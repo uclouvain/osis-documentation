@@ -3,43 +3,66 @@ Hildeberto Mendonça, PhD
 v0.1, 2015-09-12
 :toc: right
 
-== Environments
+== Contributing to OSIS
 
-=== Development
+This documentation explains how to contribute as a committer to OSIS project. A committer is an individual who is disciplined enough to gain the confidence of the project manager to commit directly to the repository without further bureaucracy. In fact, be accepted as a committer is a great recognition of the quality of your work as a programmer.
 
-==== Odoo
+=== Development Environment
 
-Odoo is an open source platform for business applications.
+The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Linux Debian, Ubuntu, Mint, etc.). The steps are:
 
-==== Installing Odoo for Development Purposes
+ - install and configure Git;
+ - install and configure PostgreSQL;
+ - install and configure Odoo;
+ - install and configure OSIS modules;
+ - install and configure Django; and
+ - create an account on Github and learn the social aspects of it
 
-The following steps describe how to install Odoo from the source code in a Debian-based distribution (Linux Debian, Ubuntu, Mint, etc.), the platform we use to develop.
+ sudo apt-get install virtualbox-guest-dkms \
+virtualbox-guest-x11
 
-We start by installing Git to be able to download the source code:
+==== Installing and Configuring Git
+
+We start by installing Git to be able to download Odoo's and OSIS' source code:
 
     $ sudo apt-get update
     $ sudo apt-get install git
 
-The `update` command downloads the package lists from the repositories to get information on the newest versions of packages and their dependencies. This way, we make sure we are getting the last version of Git and all other dependencies.
+The `update` command downloads package lists from repositories to get information on the newest versions of packages and their dependencies. This way, we make sure we are getting the last version of Git and all other dependencies.
 
-Before downloading the source, let's create a directory in the home folder (`/home/[username]`) to keep together everything related to Python development:
+Then, we add some personal information in the local Git installation to make sure the author is well identified in all commits:
+
+    $ git config --global user.name "[Firstname] [Lastname]"
+    $ git config --global user.email "[firstname.lastname]@uclouvain.be"
+
+Since version 2.0, Git has adopted a new behavior to pull and push commits while in a branch. When you execute `git push` or `git pull` Git will consider pushing or pulling just for the current branch. Before, these commands would push and pull all branches. But the change to this new behavior is voluntary, not automatically imposed. So, we have to explicitly say we have to move from the old behavior to the new one. To do that, execute the following command:
+
+    $ git config --global push.default simple
+
+==== Installing and Configuring PostgreSQL
+
+PostgreSQL is the only database supported by Odoo. There is no safe way to use another database, such as MySQL or Oracle. Fortunately, PostgreSQL has a very good reputation, a large community and a generous documentation. Execute the following commands to install it:
+
+    $ sudo apt-get install postgresql
+    $ sudo su - postgres -c "createuser -s $USER"
+    $ sudo apt-get install libpq-dev
+
+The first command installs PortgreSQL and creates a database user named after the current logged OS user. The library libpq-dev is also installed for development purposes.
+
+==== Installing Odoo for Development Purpose
+
+The following steps describe how to install Odoo - an open source platform for business applications - from the source code. Before downloading the source, let's create a directory in the home folder (`/home/[username]`) to keep together everything related to Python development:
 
     $ mkdir ~/python
 
 Then, go to the new folder and clone Odoo source code locally:
 
     $ cd ~/python
-    $ git clone https://github.com/odoo/odoo.git
+    $ git clone https://github.com/odoo/odoo.git -b 8.0
 
-The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. At this point, Odoo is not yet ready to run. We still have to install all its dependencies. We start by installing the database:
+The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. At this point, Odoo is not yet ready to run. We still have to install all its dependencies. Then we continue with the installation of Python development dependencies:
 
-    $ sudo apt-get install postgresql
-    $ sudo su - postgres -c "createuser -s $USER"
-    $ sudo apt-get install libpq-dev
-
-PortgreSQL is installed and a new user is created with the same username of the current OS user. The library libpq-dev is also installed for development purposes. Then we continue with the installation of Python development dependencies:
-
-    $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev libldap2-dev python-dev python-setuptools python-pip
+    $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev libldap2-dev python-dev python-setuptools python-pip python-unittest2
 
 The basic development dependencies are installed to enable the environment to install Odoo's direct dependencies:
 
@@ -53,57 +76,205 @@ Now, Odoo is ready to run. To test the installation, run Odoo from command line:
     $ cd ~/python/odoo
     $ ./odoo.py
 
-To see Odoo running, visit the URL http://localhost:8069.
+To see Odoo running, visit the URL http://localhost:8069. To stop Odoo, go back to the terminal and type `Ctrl+C`. If it doesn't work, then try `Ctrl+Shift+C`.
 
 ==== Installing OSIS modules on Odoo
 
-Before installing new modules, we have to create a database for Odoo. For that, let's go to go through enter in the application. Create a new database named `osis`.
+Before installing the new modules, we have to create a database for Odoo. It is done through Odoo's user interface. Follow the steps below:
 
-. Create the following directory structure in your python folder (`/home/[username]/python`):
+. start Odoo and visit the address http://localhost:8069;
+. go to the section "Manage Databases";
+. select "Create" on the left menu;
+. fill in the form:
+.. inform the administration password;
+.. `osis` as the name of the new database;
+.. leave "Loading demonstration data" unchecked;
+.. select "English" as the database language; and
+.. define a secure password for the administrator.
+
+. activate "Technical Features":
+.. login as `admin` with the password you have just created for the new database;
+.. select "Settings" on the top menu and "Users" on the left menu;
+.. edit the "Administrator" user and go to "Access Rights" tab;
+.. check the checkbox "Technical Features" and click on "Save";
+.. reload the page and you will have access to many Odoo server internals.
+
+To keep everything organized, create the following directory structure in your python folder (`/home/[username]/python`):
 
     $ cd ~/python
     $ mkdir -p projects/osis
 
-. Go to the new directory and clone OSIS modules:
+Go to the new directory and clone the `dev` branch of OSIS modules:
 
     $ cd projects/osis
-    $ git clone https://github.com/uclouvain/osis_core.git
-    $ git clone https://github.com/uclouvain/osis_louvain.git
+    $ git clone https://github.com/uclouvain/osis-core.git -b dev
+    $ git clone https://github.com/uclouvain/osis-louvain.git -b dev
 
-. Go to Odoo's directory and create an initialization file:
+Go to Odoo's directory and create an initialization file:
 
     $ cd ~/python/odoo
     $ ./odoo.py --save --stop-after-init
 
-. The file `.openerp_serverrc` is created in your home directory. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
+The file `.openerp_serverrc` is created in your home directory. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
 
     $ nano ~/.openerp_serverrc
            ...
            addons_path = ...,/home/[username]/python/projects/osis
            ...
 
-. Create OSIS database:
-.. Start Odoo and go to the section "Manage Databases";
-.. Select "Create" on the left menu;
-.. Fill in the form:
-... informing the administration password;
-... `osis` as the name of the new database;
-... leaving "Loading demonstration data" unchecked;
-... selecting "English" as the database language; and
-... defining a secure password for the administrator.
-
-. Activate Technical Features:
-.. login as admin of your new database;
-.. select "Settings" on the top menu and "Users" on the left menu;
-.. edit the Administrator user and go to "Access Rights" tab;
-.. check the checkbox "Technical Features" and click on "Save";
-.. reload the page and you will have access to many Odoo server internals.
-
-
-. Go to Odoo's folder and install the new modules:
+Go to Odoo's folder and install the new modules:
 
     $ cd ~/python/odoo
-    $ ./odoo.py -d osis -i osis_core,osis_louvain
+    $ ./odoo.py -d osis -u all
+    $ ./odoo.py -d osis -i osis-louvain
+
+==== Installing and Configuring Django
+
+Django is a modern and lightweight web framework to support our front-end applications. The choice for Django was made thanks to its:
+
+- low OI throughput;
+- low memory footprint; and
+- straightforward integration with Shibboleth.
+
+In addition, Django preserves the same runtime platform of our back-end applications and runs isolated for greater availability.
+
+Before starting, we need to install the Python virtual environment:
+
+    $ sudo apt-get install python-virtualenv
+
+The repository `osis-louvain-frontend` is a Django application. To contribute to that, clone the repository locally:
+
+    $ cd ~/python/projects/osis
+    $ git clone https://github.com/uclouvain/osis-louvain-frontend.git -b dev
+
+In the new repository, create a virtual environment to isolate all dependencies of the project:
+
+    $ cd osis-louvain-frontend
+    $ virtualenv --python=python3.4 venv
+
+Start the virtual environment and install Django:
+
+    $ source venv/bin/activate
+    (venv)$ pip install django==1.8
+
+Don't do it now, but if you want to deactivate the virtual environment, simply type:
+
+    (venv)$ deactivate
+
+Before running the application, let's create the database:
+
+    (venv)$ python manage.py makemigrations studies
+    (venv)$ python manage.py migrate
+
+And finally run the application:
+
+    (venv)$ python manage.py runserver
+
+    (venv)$ python manage.py createsuperuser
+
+=== Following the Git Workflow
+
+image::images/git-state-diagram.png[Git State Diagram]
+
+The code repository is organized in three fixed branches:
+
+- *dev*: agregates developers' contributions that are intended to be in production, but they still need to be validated.
+- *qa*: at the end of the sprint, when all features are frozen, the branch `dev` is merged into `qa` to allow testers to validate the release before it gets into production.
+- *master*: once the version in `qa` is fully validated, it is merged into the branch `master`, which is the one to be deployed in production.
+
+Developers should not commit directly to any of these branches. By convention, the source code can only be changed under the context of an issue created on the issue tracker tool.
+
+==== Creating and Working in a Branch
+
+The issue tracker generates an incremental id that we can use to name branches. It helps to keep branches linked to issues. For example: considering an issue with the id 260, we can create a local branch with the following commands:
+
+    $ git fetch origin dev
+    $ git checkout dev
+    $ git checkout -b issue#260
+
+The first command updates the branch `dev` with the last changes on the server. The second command moves from the branch we are at the moment to the branch `dev`. The last command creates the branch `issue#260` from `dev` and immediately moves to it. From this moment, every commit will be attached to the correct branch. If the branch `dev` already exists in local, then instead of fetching it we should pull it:
+
+    $ git pull origin dev
+
+As we work on the issue, two commands are very useful to keep track of what has been done:
+
+    $ git status
+    $ git diff models.py
+
+The first command shows all created, modified and removed files that are candidates to be committed. The second shows the changes in one of the modified files. When we are ready to commit, we should decide whether all changed files will be included in the commit or just a subset of them. To include all files:
+
+    $ git commit -a -m "New entities added."
+
+To include a subset of files, we have to add each file individually:
+
+    $ git add models.py
+    $ git add __init__.py
+    $ git commit -m "New entities added."
+
+Committing often is encouraged. All commits are done locally, thus there is no risk of conflicts until all commits are sent to the server. The `push` option sends all commits in a local branch to the server, identified by `origin`.
+
+    $ git push origin issue#260
+
+==== Fixing Mistakes
+
+Version control doesn’t always happens smoothly. We will certainly face some problems and fortunately Git is very gentile on which concerns recovering from mistakes. These are some common situations we may face during development.
+
+===== Moving to another branch before finishing the work in the current branch
+
+Sometimes we are working in a branch and a more urgent problem arrives, requiring us to move to or create another branch. In this case, we have to commit all changes in the current branch before moving to another one, otherwise we risk to have our changes to the current branch committed in another branch. So, first add your changes and commit:
+
+    $ git commit -a -m "New entities added but still incomplete."
+
+and then move to an existing branch:
+
+    $ git checkout issue#261
+
+or create another branch from `dev`:
+
+    $ git checkout dev
+    $ git checkout -b issue#261
+
+It also happens that we start fixing an issue but we forget to move to its respective branch. In this case, we have to commit the files related to the current branch and leave in the workspace the changes related to another branch:
+
+    $ git add calendar.py
+    $ git commit -m "Sort algorithm started."
+    $ git checkout issue#260
+
+The files that were not committed in the previous branch will be available for commit in the branch issue#260.
+
+This practical approach of moving from a branch to another while leaving some files uncommitted may not work if at least one of the files we have changed locally was also changed remotely. We may see a message like this:
+
+    From https://github.com/uclouvain/osis-louvain
+    * branch            dev        -> FETCH_HEAD
+    Updating 57c4a6d..9839a25
+    error: Your local changes to the following files would be overwritten
+           by merge:
+           __openerp__.py
+    Please, commit your changes or stash them before you can merge.
+    Aborting
+
+In this case, we do have to commit local changes before moving to the other branch.
+
+===== Fixing the latest commit message
+
+    $ git commit --amend -m "message"
+
+When we work with branches it’s very common to fool with the commits. There are many branches locally and sometimes we forget to switch to the branch related to the issue
+and we end up committing on the wrong branch. When it happens before pushing the commits to the server, we can undo the last commit done with the command:
+
+    $ git reset --soft HEAD~1
+
+But if the commit was already pushed to the server, it is still possible to undo the push as long as other people have not pushed to the same branch after the wrong push. It is done with the following command:
+
+    $ git push origin master -f
+
+Stop tracking a file without deleting it locally:
+
+    $ git rm --cached [file]
+
+Deleting remote branches
+
+    $ git push origin --delete test
 
 == Data
 
@@ -119,29 +290,7 @@ There are 5 EPC databases, one for each EPC instance - *dev*, *test*, *qa*, *dem
 
 For performance reasons, files generated by EPC are stored in a network storage space. Only references for those files are kept in the database. It significantly improved performance and maintenance in comparison to storing files directly in the database, as it was done before. Documents have an expiration date which varies from 0, for temporary files, to 3 years for more relevant documents. Since no document is older than three years, historical data are not an issue.
 
-.EPC tables
-|===
-|Table |Type |Description |N. Columns
-
-|a
-|z
-|e
-|e
-
-|===
-
 ==== OSIS
-
-.OSIS entities
-|===
-|Entity |Type |Description |N. Columns
-
-|a
-|z
-|e
-|e
-
-|===
 
 === Data Migration
 
@@ -151,17 +300,6 @@ Odoo completely abstracts the database from programmers. The database model is c
 
 A clear evidence of that is the approach adopted by Odoo to define primary keys. While it always define a unique, numeric, auto-incremented identifier, the current physical model uses all sorts of approaches such as: single numeric column, single character column, multiple numeric columns, multiple heterogeneous columns and others. Therefore, preserving the referential integrity of the data is probably the most challenging issue to be addressed in this analysis.
 This document aims to support the decision making of the project manager by gathering technical information about the data, analyzing the implications and proposing solutions for the identified issues.
-
-.EPC tables to OSIS entities
-|===
-|Table |Migrated |Entity
-
-|a
-|z
-|e
-
-|===
-
 
 ==== Strategies
 

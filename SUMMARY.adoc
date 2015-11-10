@@ -1,5 +1,10 @@
 = Summary
 
-. link:doc/business/user-manual_fr.adoc[User Manual]
-. link:doc/development/software-process-manual.adoc[Software Process Manual]
-. link:doc/development/technical-manual.adoc[Technical Manual]
+== Business
+
+* link:doc/business/user-manual_fr.adoc[User Manual]
+
+== Technical
+
+* link:doc/development/software-process-manual.adoc[Software Process Manual]
+* link:doc/development/technical-manual.adoc[Technical Manual]
