@@ -84,15 +84,6 @@ Cliquez ensuite sur "Apply" pour appliquer les changements. Vous devriez avoir 2
 
 image::images/screenshots/virtualbox-8.png[]
 
-The next steps are:
-
- - install and configure Git;
- - install and configure PostgreSQL;
- - install and configure Odoo;
- - install and configure OSIS modules;
- - install and configure Django; and
- - create an account on Github and learn the social aspects of it
-
 ==== Installing and Configuring Git
 
 We start by installing Git to be able to download Odoo's and OSIS' source code:
@@ -110,6 +101,60 @@ Then, we add some personal information in the local Git installation to make sur
 Since version 2.0, Git has adopted a new behavior to pull and push commits while in a branch. When you execute `git push` or `git pull` Git will consider pushing or pulling just for the current branch. Before, these commands would push and pull all branches. But the change to this new behavior is voluntary, not automatically imposed. So, we have to explicitly say we have to move from the old behavior to the new one. To do that, execute the following command:
 
     $ git config --global push.default simple
+
+For the moment, every time we push code to GitHub the prompt asks for a username and password. We can bypass this step by registering a SSH key. To do that, we first check whether there is already an existing SSH key we can reuse:
+
+    $ ls -al ~/.ssh
+
+If files with the extention `.pub` are listed then one of them can be reused to authenticate to GitHub. If not, then we can create one:
+
+    $ ssh-keygen -t rsa -b 4096 -C "[firstname.lastname]@uclouvain.be"
+      Enter file in which to save the key (/Users/[user]/.ssh/id_rsa): [Press enter]
+      Enter passphrase (empty for no passphrase): [Type a passphrase]
+      Enter same passphrase again: [Type passphrase again]
+
+The next step is to add the new key, or an existing one, to the ssh-agent. This program runs the duration of a local login session, stores unencrypted keys in memory, and communicates with SSH clients using a Unix domain socket. Everyone who is able to connect to this socket also has access to the ssh-agent. First, we have to enable the ssh-agent:
+
+    $ eval "$(ssh-agent -s)"
+
+And add key to it:
+
+    $ ssh-add ~/.ssh/id_rsa
+
+The next step is to make GitHub aware of the key. For that, we have to copy the exact content of the file `id_rsa.pub` and paste into GitHub. To make no mistake about the copy, install a program called `xclip`:
+
+    $ sudo apt-get install xclip
+
+And then copy the content of the file `id_rsa.pub` in the clipboard:
+
+    $ xclip -sel clip < ~/.ssh/id_rsa.pub
+
+On the GitHub side:
+
+ . Login at https://github.com.
+ . In the top right corner of the page, click on the profile photo and select **Settings**.
+ . In the user settings sidebar, click **SSH keys**.
+ . Then click **Add SSH key**.
+ . In the form, define a friendly title for the new key and paste the key in the **Key** field.
+ . Click **Add Key** to finish with GitHub.
+
+To make sure everything is working, lets test the connection:
+
+    $ ssh -T git@github.com
+      The authenticity of host 'github.com (207.97.227.239)' can't be established.
+      RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+      Are you sure you want to continue connecting (yes/no)? yes
+      _
+      Hi username! You've successfully authenticated, but GitHub does not
+      provide shell access.
+
+The final step is to change the remote URL. Go to the project folder and check the remote url:
+
+    $ cd ~/python/projects/osis/osis-louvain
+    $ git remote -v
+
+    $ git remote set-url origin git@github.com:uclouvain/osis-louvain.git
+    
 
 ==== Installing and Configuring PostgreSQL
 
