@@ -145,6 +145,7 @@ Je reprends tous les membres du personnel actifs, et les étudiants au moins une
                       and etd_sign_anac.anac = 2015;
 
 === offer epc_offre_sigle_suivi, epc_offre_sigle, epc_offre_uclouvain, epc_offre
+  !!!!! Il faut absolument revoir comment on restructure des tables, des champs qui concernent l'Offre dans OSIS. On ne peut pas garder la même structure.
 
     select offre_sigle_suivi_id, descrption
     from epc_offre_sigle_suivi;
@@ -154,15 +155,16 @@ Je reprends tous les membres du personnel actifs, et les étudiants au moins une
     from epc_offre_sigle;
 
 Attention! 12 étudiants encore inscrits à des années de validité d'offre < 2015 en 2015.
+Il s'agit 1 offre "ALGO2FC" et une inscription par erreur à MD11BA. On va demander à l'utilisateur de changer.
+On n'injecte pas des offres avant 2015 pour l'encodage de notes cette année.
+
 
     select offre_uclouvain_id, validite, offre_sigle_id,
            intit_complet, intit_abrege, intit_orientation,
            intit_diplome, duree, typduree, nbr_epreuve, diplome,
            inscriptible
     from epc_offre_uclouvain
-    where validite in (2013, 2014, 2015);
-
-Attention! 12 étudiants encore inscrits à des années de validité d'offre < 2015 en 2015.
+    where validite = 2015;
 
 Je pensais ne reprendre que sigle_gestion. 90% des secsigle sont identiques à sigle_gestion donc voir si pertinent.
 
@@ -170,10 +172,10 @@ Les cours dont le sigle de gestion est une commission doctorale ont le secteur c
 
 À partir du moment où "on" souhaite distinguer les sessions dans les inscriptions aux examens, il me semblerait cohérent d'en faire autant pour les champs relatifs aux sessions dans epc_offre; à vous de voir.
 
-    select num_offre, sigle_gestion, sigle_admin, secsigle, validite,
+    select num_offre, sigle_gestion, secsigle, validite,
            offre_uclouvain_id, date_note1, date_note2, date_note3,
            heure_note1, heure_note2, heure_note3
-    from epc_offre where validite in (2013, 2014, 2015);
+    from epc_offre where validite = 2015;
 
 === structure str.str_entite.
 
@@ -185,24 +187,27 @@ Si l'adresse de l'entité est nécessaire, je devrai ajouter les champs de la ta
            denomination, debut_validite, fin_validite
     from str.str_entite
     where debut_validite <= '01/09/2015'
+          and fin_validite >= '31/12/2015'
+
+    On ne prend que les entités qui sont actifs en 2015 pour l'encodage de notes
 
 === learning_unit epc.epc_ele
 
     select distinct num_ele, debut_ens, fin_ens
     from epc_ele
-    where validite > 2008 and type_ele > 0;
+    where validite = 2015 and type_ele > 0;
 
 === learning_unit_year
 
 Je reprends les activités 2015, les groupements sont d'office écartés. Faut-il reprendre les poids absolus, les volumes, les infos sur les quadrimestres? Peut-être faut-il écarter les cours en proposition de création.
 
-Attention! Il y a des inscriptions aux cours 2009 à 2016! en 2015.
+Attention! Il y a des inscriptions aux cours 2009 à 2016! en 2015: On ne doit pas tenir compte de ces cours, car il s'agit des reports ou des dispenses
 
     select num_ele, validite, sigle_ele, cnum, subdivision,
            intit_abrege, intit_complet, dpt_charge, dpt_attrib,
            type_ele
     from epc_ele
-    where validite > 2008 and type_ele > 0;
+    where validite = 2015 and type_ele > 0;
 
 === attribution epc.epc_ele_itv
 
