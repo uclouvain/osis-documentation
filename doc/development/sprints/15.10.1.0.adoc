@@ -6,7 +6,7 @@
 
 - Les tickets que vien du help desk sont acceptées seulement en cas de bug. Les demandes de nouvelles fonctionnalités doivent être envoyés à Philippe Jamart pour approbation.
 
-## Violations
+## Déviations
 
 EPC-9138:: Ce ticket n'a pas été testé en QA!
 
@@ -15,3 +15,5 @@ EPC-9345:: Ce ticket n'a pas passé en QA et un patch n'a pas été appliquée p
 EPC-9401:: Ce ticket n'a pas été testé en QA!
 
 EPC-9415:: Ce ticket a été créé pour résoudre le problème du ticket EPC-9345, mais au lieu de terminer dans la période d'assurance de la qualité, il a été reporté à la prochaine release, après la réunion du sprint.
+
+EPC-8750, EPC-9354, EPC-9354 et EPC-9202:: Pas terminé avant la date limite comme prévu.

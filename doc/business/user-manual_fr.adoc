@@ -1,5 +1,6 @@
 = Open Student Information System - OSIS
 :toc: right
+:numbered:
 
 = Mode d'emploi
 
@@ -48,6 +49,20 @@ image::images/
 ===== Composition de programme
 ====== Inscription au mémoire
 ====== Inscription au stage
+
+== Carte du processus
+
+image::images/process-map.png[]
+
+:sectnums:
+
+== Admission
+== Inscription
+== Parcours academique
+=== Encodage de notes
+== Diplomation
+
+:sectnums!:
 
 include::glossary.adoc[]
 
