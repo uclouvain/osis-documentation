@@ -245,6 +245,20 @@ Go to Odoo's folder and install the new modules:
     $ ./odoo.py -d osis -u all
     $ ./odoo.py -d osis -i osis-louvain
 
+==== Installing wkhtmltopdf
+
+wkhtmltopdf is an open source (LGPLv3) command line tool to render HTML into PDF using the Qt WebKit rendering engine.
+
+Pour télécharger et installer la librairie :
+     1. télécharger d'abord le paquet libjpeg62-turbo, dont dépend wkhtmltopdf
+        https://packages.debian.org/fr/sid/amd64/libjpeg62-turbo/download
+     2. ouvrir le fichier avec l'installateur de paquets.
+     3. télécharger le paquet wkhtmltopdf
+        http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-jessie-amd64.deb
+     4. ouvrir le fichier avec l'installateur de paquets.
+
+Pour que la librairie soit prise en compte, redémarrer Odoo, se délogger, se logger à nouveau.
+
 ==== Installing and Configuring Django
 
 Django is a modern and lightweight web framework to support our front-end applications. The choice for Django was made thanks to its:
