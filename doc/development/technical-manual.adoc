@@ -33,7 +33,7 @@ When the following screen appears we are ready to go. Just click "Start" to laun
 
 image::images/screenshots/visual-paradigm-configuration-4.png[]
 
-=== Development Environment
+=== Backend Development Environment
 
 The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Debian Linux, Ubuntu, Mint, etc.).
 
@@ -258,6 +258,8 @@ Pour télécharger et installer la librairie :
      4. ouvrir le fichier avec l'installateur de paquets.
 
 Pour que la librairie soit prise en compte, redémarrer Odoo, se délogger, se logger à nouveau.
+
+=== Frontend Development Environment
 
 ==== Installing and Configuring Django
 
