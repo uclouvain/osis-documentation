@@ -25,6 +25,29 @@ image::images/process-map.png[]
 ==== Evaluation des acquis
 ===== Encodage de notes
 
+image::images/encoder-les-notes.png[]
+
+====== Selectioner un cours
+image::images/selectionner-un-cours.png[]
+====== Selectioner un ordre de tri
+image::images/selectioner-un-ordre-de-tri.png[]
+====== Choisir le type d'encodage
+image::images/
+====== Remplir le formulaire de notes
+image::images/
+====== Faire parvenir au secrétariat
+image::images/
+====== Encoder les notes
+image::images/
+====== Double-encoder les notes
+image::images/
+====== Comparer les notes
+image::images/
+====== Valider l'encodage
+image::images/
+====== Notifier le professeur de l'encodage
+image::images/
+
 include::glossary.adoc[]
 
 [bibliography]

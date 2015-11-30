@@ -33,7 +33,7 @@ When the following screen appears we are ready to go. Just click "Start" to laun
 
 image::images/screenshots/visual-paradigm-configuration-4.png[]
 
-=== Development Environment
+=== Backend Development Environment
 
 The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Debian Linux, Ubuntu, Mint, etc.).
 
@@ -244,6 +244,22 @@ Go to Odoo's folder and install the new modules:
     $ cd ~/python/odoo
     $ ./odoo.py -d osis -u all
     $ ./odoo.py -d osis -i osis-louvain
+
+==== Installing wkhtmltopdf
+
+wkhtmltopdf is an open source (LGPLv3) command line tool to render HTML into PDF using the Qt WebKit rendering engine.
+
+Pour télécharger et installer la librairie :
+     1. télécharger d'abord le paquet libjpeg62-turbo, dont dépend wkhtmltopdf
+        https://packages.debian.org/fr/sid/amd64/libjpeg62-turbo/download
+     2. ouvrir le fichier avec l'installateur de paquets.
+     3. télécharger le paquet wkhtmltopdf
+        http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-jessie-amd64.deb
+     4. ouvrir le fichier avec l'installateur de paquets.
+
+Pour que la librairie soit prise en compte, redémarrer Odoo, se délogger, se logger à nouveau.
+
+=== Frontend Development Environment
 
 ==== Installing and Configuring Django
 
