@@ -2,8 +2,6 @@
 :toc: right
 :numbered:
 
-= Mode d'emploi
-
 :sectnums!:
 
 == Introduction
@@ -17,30 +15,15 @@
 
 image::images/process-map.png[]
 
-:sectnums:
-
-== Gestion academique
-
-=== Gestion l'offre de formation
-=== Gestion des acteurs academiques
-==== Attribution
-==== Gestion des mandats pedagogique
-==== Renouvelement PST
-=== Gestion des étudiants
-==== Parcours d'étudiant
-===== Evaluation des acquis
-====== Encodage de notes
-===== Composition de programme
-====== Inscription au mémoire
-====== Inscription au stage
-
-== Admission
-== Inscription
-== Parcours academique
-=== Encodage de notes
-== Diplomation
-
-:sectnums!:
+== Gestion l'offre de formation
+== Gestion des acteurs academiques
+=== Attribution
+=== Gestion des mandats pedagogique
+=== Renouvelement PST
+== Gestion des étudiants
+=== Parcours d'étudiant
+==== Evaluation des acquis
+===== Encodage de notes
 
 include::glossary.adoc[]
 
