@@ -111,12 +111,17 @@ Je sélectionne des champs connexes à l'identification, qui pourraient servir �
 
 Peut-être faut-il décoder les données potentiellement énumérées, à confirmer:
 
+(On sélectionne uniquement les etd_signaletique qui ont un fgs_fgs associé)
+
     select t1.noma, t1.nom, t1.prenom1, t1.date_naissance,
-           t1.prenoms_suivants, t1.annee_naissance, t1.lieu_naissance,
-           t1.pays_naissance, t1.sexe, t1.etat_civil, t1.num_social,
-           t1.gsm, t1.email
-    from etd_signaletique t1 join etd_sign_anac t2 on t2.noma = t1.noma
-    where t2.anac = 2015 and t2.etat_role in ('1','3','4','5','6','7','8');
+        t1.prenoms_suivants, t1.annee_naissance, t1.lieu_naissance,
+        t1.pays_naissance, t1.sexe, t1.etat_civil, t1.num_social,
+        t1.gsm, t1.email
+    from etd_signaletique t1
+        join etd_sign_anac t2 on t2.noma = t1.noma
+        join fgs_four on matric_four = t1.noma and fichier = 2
+    where t2.anac = 2015
+        and t2.etat_role in ('1','3','4','5','6','7','8');
 
 === res.partner fgs_fgs
 
