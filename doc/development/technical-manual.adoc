@@ -35,11 +35,11 @@ image::images/screenshots/visual-paradigm-configuration-4.png[]
 
 === Backend Development Environment
 
-The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Debian Linux, Ubuntu, Mint, etc.).
+The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Debian Linux, Ubuntu, Mint, etc.). This is the recommended operating system for development and deployment, but if you are using a different operating system, such as Windows or Mac, then you can use a virtual machine that also offers good productivity.
 
 ==== Using an Ubuntu Virtual Machine
 
-If your system is not based on Debian Linux then you can follow the steps using a virtual machine. We suggest  https://www.virtualbox.org/wiki/Downloads[VirtualBox] as virtual rumtime and http://www.ubuntu.com/download/desktop[Ubuntu] as operating system. Follow the installation instructions on their website according to your own platform. When the Ubuntu virtual machine is created and running, execute the following command to make the operating system aware of the virtual runtime:
+If your operating system is not based on Debian Linux then you can rely on a virtual machine as a development environment, otherwise jump to the next section. For the virtual machine, we suggest  https://www.virtualbox.org/wiki/Downloads[VirtualBox] as virtual rumtime and http://www.ubuntu.com/download/desktop[Ubuntu] as operating system. Follow the installation instructions on their website according to your own platform. When the Ubuntu virtual machine is created and running, execute the following command to make the operating system aware of the virtual runtime:
 
     sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11
 
@@ -47,6 +47,8 @@ Conseils::
 - Mettre un maximum de mémoire video (128mb min.)
 - Cocher l'accélération 3D dans les paramètres/Affichage de la machine virtuelle
 - Mettre au minimum 2Go de RAM
+
+===== Configuring The Virtual Machine to Use Multiple Screens
 
 Lancer la machine virtuelle Ubuntu. Une fois la machine démarrée, dans la fenêtre de VirtualBox, clic sur Périphériques -> Insert Guest Additions...
 
@@ -84,6 +86,14 @@ Cliquez ensuite sur "Apply" pour appliquer les changements. Vous devriez avoir 2
 
 image::images/screenshots/virtualbox-8.png[]
 
+Now that you have a Debian-based Linux system available, you can start preparing the development environment in it. For that, you have to:
+
+- install and configure Git;
+- install and configure PortgreSQL;
+- install and configure Odoo;
+- install OSIS; and
+- install the `wkhtmltopdf` module for reporting purposes.
+
 ==== Installing and Configuring Git
 
 We start by installing Git to be able to download Odoo's and OSIS' source code:
@@ -101,6 +111,8 @@ Then, we add some personal information in the local Git installation to make sur
 Since version 2.0, Git has adopted a new behavior to pull and push commits while in a branch. When you execute `git push` or `git pull` Git will consider pushing or pulling just for the current branch. Before, these commands would push and pull all branches. But the change to this new behavior is voluntary, not automatically imposed. So, we have to explicitly say we have to move from the old behavior to the new one. To do that, execute the following command:
 
     $ git config --global push.default simple
+
+===== Configuring Git to simplify GitHub authentication
 
 For the moment, every time we push code to GitHub the prompt asks for a username and password. We can bypass this step by registering a SSH key. To do that, we first check whether there is already an existing SSH key we can reuse:
 
@@ -148,13 +160,16 @@ To make sure everything is working, lets test the connection:
       Hi username! You've successfully authenticated, but GitHub does not
       provide shell access.
 
-The final step is to change the remote URL. Go to the project folder and check the remote url:
+This configuration works only when we use a ssh connection to GitHub. To verify that, go to one of your local GitHub projects and check the url pointing to the server:
 
     $ cd ~/python/projects/osis/osis-louvain
     $ git remote -v
 
+If the url starts with `https://` then you are using `https` instead of `ssh`. In this case, you should change the url to the ssh one:
+
     $ git remote set-url origin git@github.com:uclouvain/osis-louvain.git
 
+The automatic authentication should work after that.
 
 ==== Installing and Configuring PostgreSQL
 
@@ -166,7 +181,7 @@ PostgreSQL is the only database supported by Odoo. There is no safe way to use a
 
 The first command installs PortgreSQL and creates a database user named after the current logged OS user. The library libpq-dev is also installed for development purposes.
 
-==== Installing Odoo for Development Purpose
+==== Installing Odoo
 
 The following steps describe how to install Odoo - an open source platform for business applications - from the source code. Before downloading the source, let's create a directory in the home folder (`/home/[username]`) to keep together everything related to Python development:
 
@@ -221,10 +236,9 @@ To keep everything organized, create the following directory structure in your p
     $ cd ~/python
     $ mkdir -p projects/osis
 
-Go to the new directory and clone the `dev` branch of OSIS modules:
+Go to the new directory and clone the `dev` branch of the OSIS module:
 
     $ cd projects/osis
-    $ git clone https://github.com/uclouvain/osis-core.git
     $ git clone https://github.com/uclouvain/osis-louvain.git
 
 Go to Odoo's directory and create an initialization file:
@@ -232,7 +246,7 @@ Go to Odoo's directory and create an initialization file:
     $ cd ~/python/odoo
     $ ./odoo.py --save --stop-after-init
 
-The file `.openerp_serverrc` is created in your home directory. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
+The file `.openerp_serverrc` is created in your home directory. Edit the initialization file (.openerp_serverrc) and add the location of the OSIS module in the attribute `addons_path`:
 
     $ nano ~/.openerp_serverrc
            ...
@@ -245,7 +259,7 @@ Go to Odoo's folder and install the new modules:
     $ ./odoo.py -d osis -u all
     $ ./odoo.py -d osis -i osis-louvain
 
-==== Installing wkhtmltopdf
+==== Installing wkhtmltopdf For PDF Reports
 
 wkhtmltopdf is an open source (LGPLv3) command line tool to render HTML into PDF using the Qt WebKit rendering engine.
 
@@ -309,8 +323,6 @@ You can leave the server running while you are developing. It will take into acc
 
 === Following the Git Workflow
 
-image::images/git-state-diagram.png[Git State Diagram]
-
 The code repository is organized in three fixed branches:
 
 - *dev*: agregates developers' contributions that are intended to be in production, but they still need to be validated.
@@ -318,6 +330,8 @@ The code repository is organized in three fixed branches:
 - *master*: once the version in `qa` is fully validated, it is merged into the branch `master`, which is the one to be deployed in production.
 
 Developers should not commit directly to any of these branches. By convention, the source code can only be changed under the context of an issue created on the issue tracker tool.
+
+image::images/git-state-diagram.png[Git State Diagram]
 
 ==== Creating and Working in a Branch
 
