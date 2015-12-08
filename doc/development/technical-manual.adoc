@@ -283,10 +283,11 @@ For better scalability and security, the frontend database is different from the
 Before moving forward, make sure you installed PostgreSQL, as explained in the section <<installing-postgresql>>. Then, follow the steps below to create the frontend database:
 
     $ createdb osis_frontend_dev
-    $ createuser osis_usr -P
+    $ createuser osis_usr -P    // Inform the password 'osis' when asked for.
     $ psql -d osis_frontend_dev
       =# grant connect on database osis_frontend_dev to osis_usr;
       =# revoke connect on database osis_frontend_dev from public;
+      =# \q
 
 Now, install the necessary dependencies to allow a Python application to connect to PostgreSQL:
 
@@ -304,7 +305,7 @@ In addition, Django preserves the same runtime platform of our back-end applicat
 
 Before starting, we need to install the Python virtual environment and :
 
-    $ sudo apt-get install python-virtualenv python3-dev
+    $ sudo apt-get install python-virtualenv
 
 The repository `osis-louvain-frontend` is a Django application. To contribute to that, clone the repository locally:
 
