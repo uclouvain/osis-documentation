@@ -7,19 +7,92 @@ v0.1, 2015-09-12
 
 This documentation explains how to contribute as a committer to OSIS project. A committer is an individual who is disciplined enough to gain the confidence of the project manager to commit directly to the repository without further bureaucracy. In fact, be accepted as a committer is a great recognition of the quality of your work as a programmer.
 
-=== Development Environment
+=== Analysis Environment
 
-The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Linux Debian, Ubuntu, Mint, etc.). The steps are:
+==== Modeling Tool
 
- - install and configure Git;
- - install and configure PostgreSQL;
- - install and configure Odoo;
- - install and configure OSIS modules;
- - install and configure Django; and
- - create an account on Github and learn the social aspects of it
+We use http://www.visual-paradigm.com/[Visual Paradigm] to draw our business models. It is used mainly by analysts, but everybody in the team may install it to, at least, visualize the models. To install it, visit  http://www.visual-paradigm.com/download/[Visual Paradigm's download page] and download the version 12.2 or superior. Follow the installation instructions and launch the tool. The follow screen is the first one we see after running Visual Paradigm for the first time. Click on "**Perpetual License**" to continue.
 
- sudo apt-get install virtualbox-guest-dkms \
-virtualbox-guest-x11
+image::images/screenshots/visual-paradigm-configuration-1.png[]
+
+The next screen shows a form to insert the activation code for one of two types of licenses: **Single Seat License** and **Floating License**. We use floating licenses, so click on the correspondent option to see the correct license form.
+
+image::images/screenshots/visual-paradigm-configuration-2.png[]
+
+In the floating license form, as shown below, fill-in the form with the following values:
+
+- Host: http://tools.epc.uclouvain.be/vpserver
+- Port: 80
+- Access Code: [provided by the administrator]
+
+and click on "Connect to Server". If the connection succeeds then the number of available licenses appears. Then press "Apply" to take one of the available licenses.
+
+image::images/screenshots/visual-paradigm-configuration-3.png[]
+
+When the following screen appears we are ready to go. Just click "Start" to launch the tool and start working!
+
+image::images/screenshots/visual-paradigm-configuration-4.png[]
+
+=== Backend Development Environment
+
+The first thing to do to start contributing to the project is to prepare the development environment. During this section, we explain in details how to do that in a Debian-based distribution (Debian Linux, Ubuntu, Mint, etc.). This is the recommended operating system for development and deployment, but if you are using a different operating system, such as Windows or Mac, then you can use a virtual machine that also offers good productivity.
+
+==== Using an Ubuntu Virtual Machine
+
+If your operating system is not based on Debian Linux then you can rely on a virtual machine as a development environment, otherwise jump to the next section. For the virtual machine, we suggest  https://www.virtualbox.org/wiki/Downloads[VirtualBox] as virtual rumtime and http://www.ubuntu.com/download/desktop[Ubuntu] as operating system. Follow the installation instructions on their website according to your own platform. When the Ubuntu virtual machine is created and running, execute the following command to make the operating system aware of the virtual runtime:
+
+    sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11
+
+Conseils::
+- Mettre un maximum de mémoire video (128mb min.)
+- Cocher l'accélération 3D dans les paramètres/Affichage de la machine virtuelle
+- Mettre au minimum 2Go de RAM
+
+===== Configuring The Virtual Machine to Use Multiple Screens
+
+Lancer la machine virtuelle Ubuntu. Une fois la machine démarrée, dans la fenêtre de VirtualBox, clic sur Périphériques -> Insert Guest Additions...
+
+image::images/screenshots/virtualbox-1.png[]
+
+Run le virtual CD "VBOXADDITIONS_5.0.8_103449".
+
+image::images/screenshots/virtualbox-2.png[]
+
+Insérer le mot de passe admin pour autoriser l'installation.
+
+image::images/screenshots/virtualbox-3.png[]
+
+Tapez "yes" pour commencer l'installation.
+
+image::images/screenshots/virtualbox-4.png[]
+
+Une fois l'installation terminée, éteignez la machine.
+
+Dans les paramètres de la machine virtuelle (clic droit sur la VM -> Paramètres -> Affichage), indiquez le nombre d'écrans que vous désirez utiliser.
+
+image::images/screenshots/virtualbox-6.png[]
+
+Démarrez la machine virtuelle.
+
+Dans la fenêtre de VirtualBox -> Ecran -> Ecran virtuel n°2 -> Activer.
+
+Une seconde fenêtre de VirtualBox devrait s'ouvrir.
+
+image::images/screenshots/virtualbox-7.png[]
+
+Dans la VM ubuntu, System settings -> Displays, sélectionnez l'écran que vous avez activé, et mettez le sur "ON". Adaptez la résolution de votre écran selon vos besoins.
+
+Cliquez ensuite sur "Apply" pour appliquer les changements. Vous devriez avoir 2 fenêtres distinctes dans VirtualBox.
+
+image::images/screenshots/virtualbox-8.png[]
+
+Now that you have a Debian-based Linux system available, you can start preparing the development environment in it. For that, you have to:
+
+- install and configure Git;
+- install and configure PortgreSQL;
+- install and configure Odoo;
+- install OSIS; and
+- install the `wkhtmltopdf` module for reporting purposes.
 
 ==== Installing and Configuring Git
 
@@ -39,6 +112,66 @@ Since version 2.0, Git has adopted a new behavior to pull and push commits while
 
     $ git config --global push.default simple
 
+===== Configuring Git to simplify GitHub authentication
+
+For the moment, every time we push code to GitHub the prompt asks for a username and password. We can bypass this step by registering a SSH key. To do that, we first check whether there is already an existing SSH key we can reuse:
+
+    $ ls -al ~/.ssh
+
+If files with the extention `.pub` are listed then one of them can be reused to authenticate to GitHub. If not, then we can create one:
+
+    $ ssh-keygen -t rsa -b 4096 -C "[firstname.lastname]@uclouvain.be"
+      Enter file in which to save the key (/Users/[user]/.ssh/id_rsa): [Press enter]
+      Enter passphrase (empty for no passphrase): [Type a passphrase]
+      Enter same passphrase again: [Type passphrase again]
+
+The next step is to add the new key, or an existing one, to the ssh-agent. This program runs the duration of a local login session, stores unencrypted keys in memory, and communicates with SSH clients using a Unix domain socket. Everyone who is able to connect to this socket also has access to the ssh-agent. First, we have to enable the ssh-agent:
+
+    $ eval "$(ssh-agent -s)"
+
+And add key to it:
+
+    $ ssh-add ~/.ssh/id_rsa
+
+The next step is to make GitHub aware of the key. For that, we have to copy the exact content of the file `id_rsa.pub` and paste into GitHub. To make no mistake about the copy, install a program called `xclip`:
+
+    $ sudo apt-get install xclip
+
+And then copy the content of the file `id_rsa.pub` in the clipboard:
+
+    $ xclip -sel clip < ~/.ssh/id_rsa.pub
+
+The command above is the equivalent of opening the file `~/.ssh/id_rsa.pub`, selecting the whole content and pressing `Ctrl+C`. This way, you can paste the content on GitHub when required in the next steps. On the GitHub side:
+
+ . Login at https://github.com.
+ . In the top right corner of the page, click on the profile photo and select **Settings**.
+ . In the user settings sidebar, click **SSH keys**.
+ . Then click **Add SSH key**.
+ . In the form, define a friendly title for the new key and paste the key in the **Key** field.
+ . Click **Add Key** to finish with GitHub.
+
+To make sure everything is working, lets test the connection:
+
+    $ ssh -T git@github.com
+      The authenticity of host 'github.com (207.97.227.239)' can't be established.
+      RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+      Are you sure you want to continue connecting (yes/no)? yes
+      _
+      Hi username! You've successfully authenticated, but GitHub does not
+      provide shell access.
+
+This configuration works only when we use a ssh connection to GitHub. To verify that, go to one of your local GitHub projects and check the url pointing to the server:
+
+    $ cd ~/python/projects/osis/osis-louvain
+    $ git remote -v
+
+If the url starts with `https://` then you are using `https` instead of `ssh`. In this case, you should change the url to the ssh one:
+
+    $ git remote set-url origin git@github.com:uclouvain/osis-louvain.git
+
+The automatic authentication should work after that.
+
+[[installing-postgresql]]
 ==== Installing and Configuring PostgreSQL
 
 PostgreSQL is the only database supported by Odoo. There is no safe way to use another database, such as MySQL or Oracle. Fortunately, PostgreSQL has a very good reputation, a large community and a generous documentation. Execute the following commands to install it:
@@ -49,7 +182,7 @@ PostgreSQL is the only database supported by Odoo. There is no safe way to use a
 
 The first command installs PortgreSQL and creates a database user named after the current logged OS user. The library libpq-dev is also installed for development purposes.
 
-==== Installing Odoo for Development Purpose
+==== Installing Odoo
 
 The following steps describe how to install Odoo - an open source platform for business applications - from the source code. Before downloading the source, let's create a directory in the home folder (`/home/[username]`) to keep together everything related to Python development:
 
@@ -58,11 +191,11 @@ The following steps describe how to install Odoo - an open source platform for b
 Then, go to the new folder and clone Odoo source code locally:
 
     $ cd ~/python
-    $ git clone https://github.com/odoo/odoo.git -b 8.0
+    $ git clone https://github.com/odoo/odoo.git -b 8.0 --depth=1
 
 The command above creates a folder named `odoo` containing the source code of the main branch on the server, which is usually related to the latest stable version. At this point, Odoo is not yet ready to run. We still have to install all its dependencies. Then we continue with the installation of Python development dependencies:
 
-    $ sudo apt-get install libxml2-dev libxslt-dev libevent-dev libsasl2-dev libldap2-dev python-dev python-setuptools python-pip python-unittest2
+    $ sudo apt-get install libxml2-dev libxslt1-dev libevent-dev libsasl2-dev libldap2-dev python-dev python-setuptools python-pip python-unittest2
 
 The basic development dependencies are installed to enable the environment to install Odoo's direct dependencies:
 
@@ -104,18 +237,17 @@ To keep everything organized, create the following directory structure in your p
     $ cd ~/python
     $ mkdir -p projects/osis
 
-Go to the new directory and clone the `dev` branch of OSIS modules:
+Go to the new directory and clone the `dev` branch of the OSIS module:
 
     $ cd projects/osis
-    $ git clone https://github.com/uclouvain/osis-core.git -b dev
-    $ git clone https://github.com/uclouvain/osis-louvain.git -b dev
+    $ git clone https://github.com/uclouvain/osis-louvain.git
 
 Go to Odoo's directory and create an initialization file:
 
     $ cd ~/python/odoo
     $ ./odoo.py --save --stop-after-init
 
-The file `.openerp_serverrc` is created in your home directory. Edit the initialization file (.openerp_serverrc) and add the location of OSIS modules in the attribute `addons_path`:
+The file `.openerp_serverrc` is created in your home directory. Edit the initialization file (.openerp_serverrc) and add the location of the OSIS module in the attribute `addons_path`:
 
     $ nano ~/.openerp_serverrc
            ...
@@ -128,6 +260,39 @@ Go to Odoo's folder and install the new modules:
     $ ./odoo.py -d osis -u all
     $ ./odoo.py -d osis -i osis-louvain
 
+==== Installing wkhtmltopdf For PDF Reports
+
+wkhtmltopdf is an open source (LGPLv3) command line tool to render HTML into PDF using the Qt WebKit rendering engine.
+
+Pour télécharger et installer la librairie :
+     1. télécharger d'abord le paquet libjpeg62-turbo, dont dépend wkhtmltopdf
+        https://packages.debian.org/fr/sid/amd64/libjpeg62-turbo/download
+     2. ouvrir le fichier avec l'installateur de paquets.
+     3. télécharger le paquet wkhtmltopdf
+        http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-jessie-amd64.deb
+     4. ouvrir le fichier avec l'installateur de paquets.
+
+Pour que la librairie soit prise en compte, redémarrer Odoo, se délogger, se logger à nouveau.
+
+=== Frontend Development Environment
+
+==== Creating the Frontend Database
+
+For better scalability and security, the frontend database is different from the backend database. This architectural decision was made because the volume of access comming from the portal can be several times higher than the internal demand, which can put both systems out of service at the same time. The frontend database contains only data that is publishable on the portal. The tables are indexed for maximum read performance, which might not be the case in the backend.
+
+Before moving forward, make sure you installed PostgreSQL, as explained in the section <<installing-postgresql>>. Then, follow the steps below to create the frontend database:
+
+    $ createdb osis_frontend_dev
+    $ createuser osis_usr -P    // Inform the password 'osis' when asked for.
+    $ psql -d osis_frontend_dev
+      =# grant connect on database osis_frontend_dev to osis_usr;
+      =# revoke connect on database osis_frontend_dev from public;
+      =# \q
+
+Now, install the necessary dependencies to allow a Python application to connect to PostgreSQL:
+
+    $ sudo apt-get install python3-dev libpq-dev
+
 ==== Installing and Configuring Django
 
 Django is a modern and lightweight web framework to support our front-end applications. The choice for Django was made thanks to its:
@@ -138,43 +303,44 @@ Django is a modern and lightweight web framework to support our front-end applic
 
 In addition, Django preserves the same runtime platform of our back-end applications and runs isolated for greater availability.
 
-Before starting, we need to install the Python virtual environment:
+Before starting, we need to install the Python virtual environment and :
 
     $ sudo apt-get install python-virtualenv
 
 The repository `osis-louvain-frontend` is a Django application. To contribute to that, clone the repository locally:
 
     $ cd ~/python/projects/osis
-    $ git clone https://github.com/uclouvain/osis-louvain-frontend.git -b dev
+    $ git clone https://github.com/uclouvain/osis-louvain-frontend.git
 
 In the new repository, create a virtual environment to isolate all dependencies of the project:
 
     $ cd osis-louvain-frontend
     $ virtualenv --python=python3.4 venv
 
-Start the virtual environment and install Django:
+Start the virtual environment and install Django and the PostgreSQL connector:
 
     $ source venv/bin/activate
     (venv)$ pip install django==1.8
-
-Don't do it now, but if you want to deactivate the virtual environment, simply type:
-
-    (venv)$ deactivate
+    (venv)$ pip install psycopg2
 
 Before running the application, let's create the database:
 
     (venv)$ python manage.py makemigrations studies
     (venv)$ python manage.py migrate
 
+And then a super user account to access the administration module:
+
+    (venv)$ python manage.py createsuperuser
+
 And finally run the application:
 
     (venv)$ python manage.py runserver
 
-    (venv)$ python manage.py createsuperuser
+You can leave the server running while you are developing. It will take into account all changes in your code, except the changes in the model. In this case, we have to stop the server to execute the commands `makemigrations` and `migrate` as shown above. When we have finished your daily work, we can deactivate the virtual environment:
+
+    (venv)$ deactivate
 
 === Following the Git Workflow
-
-image::images/git-state-diagram.png[Git State Diagram]
 
 The code repository is organized in three fixed branches:
 
@@ -183,6 +349,8 @@ The code repository is organized in three fixed branches:
 - *master*: once the version in `qa` is fully validated, it is merged into the branch `master`, which is the one to be deployed in production.
 
 Developers should not commit directly to any of these branches. By convention, the source code can only be changed under the context of an issue created on the issue tracker tool.
+
+image::images/git-state-diagram.png[Git State Diagram]
 
 ==== Creating and Working in a Branch
 
@@ -253,7 +421,21 @@ This practical approach of moving from a branch to another while leaving some fi
     Please, commit your changes or stash them before you can merge.
     Aborting
 
-In this case, we do have to commit local changes before moving to the other branch.
+In this case, we have to commit local changes before moving to another branch. But things can get worse because the current branch might be actually related to a closed issue, thus committing to it doesn't make sense anymore. In this case, we can use `git stash`. It moves all changes in the current workspace to a transit area that can be recovered later on. To move all changes to the stash area, simply type :
+
+    $ git stash
+
+Now, if we type `git status` we find the working directory clean, which means we can move to another branch. To see the stashes we have stored we can use:
+
+    $ git stash list
+
+After moving to another branch, we can recover the changes from the stash are using:
+
+    $ git stash apply
+
+but if there is more than one stash in the list we can apply a specific one by referencing its identifier:
+
+    $ git stash apply stash@{2}
 
 ===== Fixing the latest commit message
 
@@ -276,95 +458,60 @@ Deleting remote branches
 
     $ git push origin --delete test
 
-== Data
+=== Adding the license to the source code
 
-=== Data Model
+OSIS is an open source project licensed under AGPL. As such, it must respect certain rules of the license. The most important one is the addition of a license header in each one of the source files.
 
-==== EPC
+For Python 2.7 files, the following text should appear on the top of the file, before any Python code:
 
-===== Databases
+    # -*- coding: utf-8 -*-
+    ##############################################################################
+    #
+    #    OSIS stands for Open Student Information System. It's an application
+    #    designed to manage the core business of higher education institutions,
+    #    such as universities, faculties, institutes and professional schools.
+    #    The core business involves the administration of students, teachers,
+    #    courses, programs and so on.
+    #
+    #    Copyright (C) 2015-2016 Université catholique de Louvain (http://www.uclouvain.be)
+    #
+    #    This program is free software: you can redistribute it and/or modify
+    #    it under the terms of the GNU Affero General Public License as published by
+    #    the Free Software Foundation, either version 3 of the License, or
+    #    (at your option) any later version.
+    #
+    #    This program is distributed in the hope that it will be useful,
+    #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    #    GNU Affero General Public License for more details.
+    #
+    #    A copy of this license - GNU Affero General Public License - is available
+    #    at the root of the source code of this program.  If not,
+    #    see http://www.gnu.org/licenses/.
+    #
+    ##############################################################################
 
-There are 5 EPC databases, one for each EPC instance - *dev*, *test*, *qa*, *demo* and *production*. Within each database, EPC has access to 8 schemes - *epc*, *aid*, *fgs*, *mnd*, *pres*, *std*, *str* and *doctorats*. The schema epc depends on fgs, mnd, pres, std and str. The schema aid depends on epc. The schema doctorats is isolated. These schemes are in the scope of the database migration.
+For Python 3.4, the very first line `# -*- coding: utf-8 -*-` is not necessary and should be removed. For XML files, we change just the comment syntax:
 
-===== Files
-
-For performance reasons, files generated by EPC are stored in a network storage space. Only references for those files are kept in the database. It significantly improved performance and maintenance in comparison to storing files directly in the database, as it was done before. Documents have an expiration date which varies from 0, for temporary files, to 3 years for more relevant documents. Since no document is older than three years, historical data are not an issue.
-
-==== OSIS
-
-=== Data Migration
-
-Once the decision to migrate the applications to Odoo was made, a detailed technical analysis takes place to identify the implications of this migration in order to help decision makers to define priorities and conceive a realistic planning. The current assumption is that the data is probably the only resource that will be preserved in the process of rewriting all applications on Odoo's framework. Therefore, this document focus on the data migration only.
-
-Odoo completely abstracts the database from programmers. The database model is created using a object-relational model where classes are used to represent database tables. Objects from those classes represent data from their respective tables. The difference from the current architecture is that programmers are fully responsible for creating the physical model while Odoo takes full responsibility over this model. Therefore, there is a very low probability that the current data model is anyhow compatible with data models managed by Odoo.
-
-A clear evidence of that is the approach adopted by Odoo to define primary keys. While it always define a unique, numeric, auto-incremented identifier, the current physical model uses all sorts of approaches such as: single numeric column, single character column, multiple numeric columns, multiple heterogeneous columns and others. Therefore, preserving the referential integrity of the data is probably the most challenging issue to be addressed in this analysis.
-This document aims to support the decision making of the project manager by gathering technical information about the data, analyzing the implications and proposing solutions for the identified issues.
-
-==== Strategies
-
-The main issue identified in the previous section is how to preserve referential integrity when the data is spread in different database servers. We will probably never find a 100% reliable solution given the complexity of distributed systems, but we can considerably reduce the risk of data inconsistencies by carefully evaluating all possible alternatives and picking the one with the best cost-benefit. This is indeed an effort that cannot be postponed neither avoided. We have figured 5 migration strategies, as described hereafter.
-
-===== Synchronize data using a synchronization tool
-
-A off-the-shelf product is used to synchronize data between Oracle and PostgreSQL bidirectionally. This solution considers that the data model is identical or very similar in both databases. This strategy is very unlikely because EPC's data model do not follow standard rules, while Odoo follows strict rules enforced by its persistence mechanism. These discrepancies may force the implementation of very specific migration logic, which is not usually covered by migration tools.
-
-image::images/ots-sync-tool.png[]
-
-===== Write a program to migrate data from Oracle to PostgreSQL
-
-It seems to be inevitable the development of a custom migration tool to address this particular data migration scenario. Therefore, all the following strategies consider some level of additional development. This one, in particular, considers the development of a tool that is scheduled to run periodically, calculating the delta between both databases and updating the most out dated one.
-
-image::images/st-sync-tool.png[]
-
-The data model can be different because the tool encapsulates all data transformations between the models. The data model can evolve and solve current issues.
-
-It might be more complex and more time consuming and, since it does not use the business layer to process the data, it can become inconsistent over time if the tool does not follow carefully all changes in the business layer (i.e. boundaries of transactional business operations on multiple tables can guarantee consistency while unbounded transactions made by a synchronization tool may fail, causing inconsistency).
-
-===== Change both applications to access each other's web services
-
-This strategy address the disadvantages of the previous one by forcing the use of the business layer during the data migration. It is possible because all updates are done through web services that processes the data in the business layer before persisting then in the database.
-
-image::images/wsc-sync-tool.png[]
-
-The disadvantage is that it makes EPC and Odoo highly coupled because it forces both applications to be aware of each other. As a consequence, a locoincide comt of code would have to be removed from Odoo after the complete phase out of EPC. This is a hard task because we it is not easy to distinguish which code is concrete and which one is volatile.
-
-===== Change one of the applications to access other's web services
-
-We could reduce high coupling by concentrating all changes for data migration on the EPC side. This way, the migration code would be discarded with EPC, leaving Odoo free of volatile code. EPC would call Odoo's web services to update its own data for every table owned by Odoo. These  data would be available read-only on EPC.
-
-image::images/wsc-st-sync-tool.png[]
-
-Unfortunately, an additional tool would be necessary to keep Odoo up to date with data from those tables that are still owned by EPC.
-
-===== Post on a queue every time an update in the database occurs
-
-This is probability the strongest strategy because it addresses all previous drawbacks. Every update on tables not yet owned by Odoo would cause a post of a message in a queue. Messages in this queue would be read by a tool, which would call Odoo web services to pass through the business layer before updating the database.
-
-It is feasible because the business layer in EPC is implemented using EJBs and an interceptor can be attached to a EJB to have access to the data passed as arguments and returned to the caller. An interceptor would be responsible for posting on the queue.  This way, every update done by EPC is immediately available on Odoo's data model on demand.
-
-image::images/queue-sync-tool.png[]
-
-To identify potential drawbacks, it would be necessary to implement a proof-of-concept in order to address unforeseen issues before starting the migration to Odoo.
-
-=== Historical Data
-
-The current database stores data since 1984, which matches with the beginning of information systems adoption. These data are preserved, but most of them are not useful anymore for current operational processes. They actually contribute to slow down the application by constantly increasing the size of the indexes.
-
-Historical data cannot be simply ignored in a completely new application because the nature of EPC's data is historical by default. For example, data related to students should be available from the oldest active student until the newest one, making the studies history always available for regular reporting and updates. The period in which historical data are useful might be large, but more than 30 years of historical data certainly exceeds any reasonable limit.
-
-The challenge is to differentiate useful historical data from archivable ones. We start by classifying EPC data in four categories:
-
-1. *Master data*:  related to the core business but treated individually, outside of a process context. For example: offers, activities, courses, etc.
-
-2. *Business process data*: related to business processes, such as deliberation, registrations, activities approval, encodage des notes, etc.
-
-3. *Reference data*: not directly related to the business, but related to the education domain, complementing master data. For example: countries, languages, postal codes, etc.
-
-4. *Auditing data*: every time a record changes a version of it is preserved in an auditing table for possible data recovery.
-
-The data within those categories can be:
-
-1. *Operational*: data frequently updated and retrieved from the database for on-line use or reporting. All categories above contains operational data.
-
-2. *Archivable*: data that are not used anymore in the current business context, unless for some historical reports. Business process and auditing data are strong candidates for archiving. Master and reference data are usually required for a longer period of time and should be analyzed case by case.
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!-- OSIS stands for Open Student Information System. It's an application
+     *   designed to manage the core business of higher education institutions,
+     *   such as universities, faculties, institutes and professional schools.
+     *   The core business involves the administration of students, teachers,
+     *   courses, programs and so on.
+     *
+     *   Copyright (C) 2015-2016 Université catholique de Louvain (http://www.uclouvain.be)
+     *
+     *   This program is free software: you can redistribute it and/or modify
+     *   it under the terms of the GNU Affero General Public License as published by
+     *   the Free Software Foundation, either version 3 of the License, or
+     *   (at your option) any later version.
+     *
+     *   This program is distributed in the hope that it will be useful,
+     *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+     *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     *   GNU Affero General Public License for more details.
+     *
+     *   A copy of this license - GNU Affero General Public License - is available
+     *   at the root of the source code of this program.  If not,
+     *   see http://www.gnu.org/licenses/. -->
