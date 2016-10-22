@@ -1,0 +1,11 @@
+== Gestion du catalogue des formations
+
+test
+
+=== Gestion des formations
+
+=== Gestion des unités d'enseignement
+
+=== Gestion du contenu des formations
+
+=== Publication du catalogue des formations
