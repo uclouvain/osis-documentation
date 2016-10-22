@@ -1,0 +1,6 @@
+:sectnums!:
+
+[glossary]
+== Glossary
+
+OSIS:: OSIS signifie Open Student Information System (Système d'information de code ouvert pour les étudiants). C'est une application conçue pour gérer les activités de base des institutions d'enseignement supérieur, tels que les universités, facultés, instituts et écoles professionnelles. L'activité principale consiste en l'administration des étudiants, des enseignants, des cours, des programmes et ainsi de suite.
