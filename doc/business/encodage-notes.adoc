@@ -189,10 +189,19 @@ Un e-mail récapitulatif de la soumission envoyé à tous les enseignants du cou
 +
 image::images/encodage_notes/imprimer-la-feuille-de-notes.png[]
 +
+ - A gauche, c'est l'adresse "professionnelle" de l'enseignant qui est responsable de notes de cette unité d'enseignement.
++
+Pour le moment, dans OSIS n'a pas encore l'information concernant "Président de jury" ni "Secrétaire du jury" du programme.
+Il faut les ajouter dans des feuilles de notes quand on aura ces informations dans OSIS.
++
 "Date de délibération": Date de délibération du programme. +
-"Président de jury": le mandataire "président de jury" de l'offre. +
-"Secrétaire du jury" le mandataire "secrétaire du jury" de l'offre. +
-L'adresse interne de l'enseignant.
++
+ - A droite, c'est l'adresse (numéro de téleéphone, fax, email) à laquelle les enseignants envoient les feuilles de notes.
+Par défaut, c'est l'adresse de la faculté de gestion du programme.
+Les gestionnaires de programmes peuvent changer cette adresse en utilisant l'adresse d'entité de gestion du programme.
+Si c'est une autre adresse, des gestionnaires peuvent personnaliser l'adresse.
++
+ - En bas, à droit: c'est le numéro de page + la date d'impression la feuille de note
 +
 . *Affiner la recherche*
 +
