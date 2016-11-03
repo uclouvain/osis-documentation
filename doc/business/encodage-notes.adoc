@@ -196,8 +196,14 @@ Il faut les ajouter dans des feuilles de notes quand on aura ces informations da
 +
 "Date de délibération": Date de délibération du programme. +
 +
+Année académique et le numéro de la session actuelle.
++
+Le code et l'intitulé de l'unité d'enseignement.
++
+Le programme et le nombre d'étudiants qui sont inscrits aux examens à cette session.
++
  - A droite, c'est l'adresse (numéro de téleéphone, fax, email) à laquelle les enseignants envoient les feuilles de notes.
-Par défaut, c'est l'adresse de la faculté de gestion du programme.
+Par défaut, c'est l'adresse de la *faculté* de gestion du programme.
 Les gestionnaires de programmes peuvent changer cette adresse en utilisant l'adresse d'entité de gestion du programme.
 Si c'est une autre adresse, des gestionnaires peuvent personnaliser l'adresse.
 +
