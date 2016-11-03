@@ -201,6 +201,8 @@ Par défaut, c'est l'adresse de la faculté de gestion du programme.
 Les gestionnaires de programmes peuvent changer cette adresse en utilisant l'adresse d'entité de gestion du programme.
 Si c'est une autre adresse, des gestionnaires peuvent personnaliser l'adresse.
 +
+ - En bas, à droit: c'est le numéro de page + la date d'impression la feuille de note
++
 . *Affiner la recherche*
 +
 image::images/encodage_notes/affiner-la-recherche.png[]
