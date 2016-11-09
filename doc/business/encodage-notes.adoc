@@ -1,5 +1,7 @@
 [[scores_encoding]]
 ==== Encodage des notes
+image::images/encodage_notes/encodage-de-notes.png[]
+
 ===== Description générale et fonctionnalités
 Le module d'encodage des notes est destiné aux gestionnaires de programme et aux enseignants, pour leur permettre,
 à l'occasion des sessions d'examens, d'encoder de grandes quantités de notes. L'encodage peut se faire directement
@@ -40,25 +42,21 @@ vérifiées et valides.  Il peut soumettre (et donc valider) une partie seulemen
 pas nécessaire). Cette soumission transfère la responsabilité de la gestion ultérieure des notes au secrétariat
 facultaire (cfr. gestionnaire de programmes ci-dessous).  L'encodage (en ligne ou via importation excel) n'est alors plus disponible pour ces notes.
 
-Gestionnaire de programme:: pour chaque programme, le Directeur administratif de faculté (DAF) désigne un ou plusieurs gestionnaires.+
+Gestionnaire de programme:: pour chaque programme, le Directeur administratif de faculté (DAF) désigne un ou plusieurs gestionnaires.
 
-+
 IMPORTANT: Le gestionnaire du programme doit déterminer et encoder (pour l'instant dans EPC/Parcours), par programme, les date limite d'encodage des notes et de délibération.
 Une fois la date limite d'encodage des notes passée, les enseignants ne peuventt plus encoder de notes; il n'y a que les gestionnaires de programmes qui peuvent encore les encoder ou les modifier.
 De cette manière, les gestionnaires de programmes sont les seuls à garder la main sur la préparation des délibérations.
-+
+
 IMPORTANT: Tant que le programme n'a pas été délibéré, le gestionnaire du programme, peut encoder les notes des étudiants
-du (des) programme(s) qu'il gère: +
+du (des) programme(s) qu'il gère:
 - directement dans l'application (sur base p.ex. d'une feuille de note reçue d'un enseignant)
 - par importation d'un fichier excel reçu d'un enseignant
 A tout moment, et jusqu'à la délibération, il peut modifier les notes, y compris celles déjà soumise par le responsable des notes. +
 Après la délibération, (ou en dehors des sessions en cours) il doit passer à une autre fonctionnalité dans l'application
 (aujourd'hui EPC/Parcours, demain dans OSIS) pour modifier ou encoder une note, mais pour **un seul étudiant** à la fois.
-+
-
 
 ===== Les fonctionnalités d'encodage
-
 *Trois alternatives sont proposées aux enseignants pour l'encodage des notes:*
 
 . L'encodage direct par l'enseignant:
@@ -88,16 +86,16 @@ L'enseignant peut, si nécessaire, rajouter des lignes au fichier, mais en respe
 il peut également rajouter des colonnes après la dernière. +
 L'injection des notes via le fichier Excel est disponible pour le responsable de programme et le responsable de notes.
 
-
 ====== L'encodage de notes en détail
 
 . *Sélectionner une unité d'enseignement*
 +
-Cette page est la première étape sur le processus d'encodage de notes d'*un enseignant*. +
+Quand l'enseignant se connecte ou un gestionnaire choisi un enseignant,
+on obtient la liste des unités d'enseignement de cet enseignant
 +
 image::images/encodage_notes/selectionner-un-cours.png[]
 +
-Quand l'enseignant est connecté, son nom complet apparaît automatiquement. +
+Son nom complet apparaît automatiquement. +
 L'année académique et la session d'examen sont calculées en fonction de la date qui débute chaque session de l'année académique actuelle. +
 Le statut: nombre des notes qui sont encodés sur le total, calculé en fonction du nombre d'étudiants accessible par l'utilisateur. :
 +
@@ -112,7 +110,14 @@ Si l'enseignant choisit le processus traditionnel, il doit choisir des unités d
 +
 image::images/encodage_notes/chosir-le-type-d-encodage.png[]
 +
-Le tableau contient le résultat de la recherche avec des critères au-dessus du tableau. Toute la liste est présentée, il n'y a pas de pagination.
+Si c'est un enseignant qui se connecte, il voit la liste contient *tous* les étudiants qui s'inscrivent aux examens de la session actuelle.
++
+Si c'est un gestionnaire, il ne voit que les étudiants qu'il gère.
++
+Par défaut, la liste est triée par programme et puis par nom et prénom des étudiants.
+On peut afficher liste d'un programme en choisissant le programme souhaité.
++
+NOTE: Les caractères spéciaux (apostrophes, espaces, trait-d'union) ne sont pas considérés pour l'ordre de tri.
 +
 Le fichier exporté contient la liste de même nombre d'étudiants, même ordre que le tableau. Le fichier peut avoir plus des colonnes.
 +
@@ -125,13 +130,9 @@ Concrètement:
 +
 Le nombre d'étudiants inscrits et le nombre des notes changent en fonction du choix de "Programme".
 +
-Commentaire: un commentaire par cours, par année académique et par session.
-+
 L'unité d'enseignement qui ont le crédit absolu >= 15: décimal autorisé.
 +
 Les notes déjà encodés sont grisées.
-+
-On peut trier sur chaque colonne.
 +
 . *Encoder les notes*
 +
@@ -251,5 +252,3 @@ image::images/encodage_notes/recapituler-l-importation.png[]
 . *Confirmer l'importation*
 +
 image::images/encodage_notes/confirmer-l-importation.png[]
-
-image::images/encodage_notes/encodage-de-notes.png[]
