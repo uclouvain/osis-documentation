@@ -101,14 +101,6 @@ S'il est bien dans la période d'introduction la demande, on vérifie si le cand
 +
 image::images/inscription_en_ligne/choisir_l_offre_d_etude_state3.png[]
 +
-*Pour les offres "Bachelier", "Master Didactique", "Agrégation"* le bloc des questions concernant l'examen de maîtrise de la langue française apparait.
-+
-image::images/inscription_en_ligne/choisir_l_offre_d_etude_state7.png[]
-+
-Si le candidat répond "Oui" à la question de l'examen de maîtrise de la langue française, les autres questions apparaissent
-+
-image::images/inscription_en_ligne/choisir_l_offre_d_etude_state72.png[]
-+
 IMPORTANT: Il y a des exceptions pour déterminer le type de la demande (demande d'inscription ou demande d'admission) et pour déterminer des périodes d'introduire la demande, ça concerne des offres suivantes:
 +
  * Les offres d'études contingentées: KINE1BA, VETE1BA, LOGO1BA, MD1BA, DENT1BA
@@ -202,6 +194,15 @@ Si le candidat fait une demande d'inscription à un offre "Ingénieur civil" (FS
 Si le candidat n'a pas fait l'examen d'admission, les questions sur le VAE apparaissent
 +
 image::images/inscription_en_ligne/remplir_diplome_attestation_state34.png[]
++
+*Pour les offres "Bachelier", "Master Didactique", "Agrégation"* le bloc des questions concernant l'examen de maîtrise de la langue française apparait.
++
+image::images/inscription_en_ligne/remplir_diplome_attestation_state4.png[]
++
+Si le candidat répond "Oui" à la question de l'examen de maîtrise de la langue française, les autres questions apparaissent
++
+image::images/inscription_en_ligne/remplir_diplome_attestation_state42.png[]
++
 .	Remplir Curriculum
 +
 image::images/inscription_en_ligne/remplir_CV.png[]
