@@ -482,7 +482,8 @@ et en fonction de l'offre choisie et du site (localité) de l'offre.
 +
 Le lien URL dans le mail pour des demandes d'admission change en fonction du catégorie du décret: +
 - Bachelier : http://www.uclouvain.be/357537.html et http://www.uclouvain.be/en-357537.html si c’est en anglais +
-- Master en 60 crédit, Master en 180 ou en 240 crédits, Master en 120 crédits à finalité didactique, Master en 120 crédits à finalité didactique, Master en 120 crédits à finalité spécialisée: http://www.uclouvain.be/357538.html +
+- Master en 60 crédit, Master en 180 ou en 240 crédits, Master en 120 crédits à finalité didactique,
+Master en 120 crédits à finalité approfondie, Master en 120 crédits à finalité spécialisée: http://www.uclouvain.be/357538.html +
 - Master de spécialisation: http://www.uclouvain.be/357540.html +
 - Certificat en médecine: http://www.uclouvain.be/408906.html +
 - CAPAES: http://www.uclouvain.be/591795.html +
