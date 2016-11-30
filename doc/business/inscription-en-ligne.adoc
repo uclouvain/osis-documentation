@@ -2,25 +2,25 @@
 
 === Le workflow
 
-image::images/demande_d_inscription/gestion_demande_inscription_en_ligne.png[]
+image::images/inscription_en_ligne/gestion_demande_inscription_en_ligne.png[]
 
 === Les fonctionnalités
 . S'identifier
 +
-image::images/demande_d_inscription/se_connecter.png[]
+image::images/inscription_en_ligne/se_connecter.png[]
 . Créer un compte
 +
-image::images/demande_d_inscription/creer_un_compte.png[]
+image::images/inscription_en_ligne/creer_un_compte.png[]
 . Envoyer un e-mail
 +
-image::images/demande_d_inscription/envoyer_un_e-mail.png[]
+image::images/inscription_en_ligne/envoyer_un_e-mail.png[]
 . Compléter le profil
 +
-image::images/demande_d_inscription/valider_du_compte.png[]
+image::images/inscription_en_ligne/valider_du_compte.png[]
 +
 Pour les étudiants qui n’ont pas la nationalité dans UE, des questions d'assimilation apparaissent
 +
-image::images/demande_d_inscription/valider_du_compte_state2.png[]
+image::images/inscription_en_ligne/valider_du_compte_state2.png[]
 +
 La liste des documents à fournir par critère: http://uclouvain.be/14095.
 +
@@ -64,13 +64,13 @@ Attestation émanant de l’administration communale et la tutelle légale par u
 +
 S’il y a plus qu'un document à fournir :
 +
-image::images/demande_d_inscription/valider_du_compte_state22.png[]
+image::images/inscription_en_ligne/valider_du_compte_state22.png[]
 +
 La liste des types de documents à cocher réduite, il ne contient pas de types que le candidat a déjà cochés.
 +
 . Choisir l'offre d'études
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude.png[]
 +
 Après avoir choisi l'offre, le candidat doit répondre à une question (ou deux questions en fonction de la première réponse)
 pour indiquer la nationalité du titre d'accès.
@@ -84,30 +84,22 @@ Selon le schéma ci-dessous, on peut déterminer:
  - le type de la demande (une demande d'inscription ou une demande d'admission).
  - la période d'introduire la demande en ligne (l'ouverture et la fermeture).
 +
-image::images/demande_d_inscription/DistinctionEtudiants.png[]
+image::images/inscription_en_ligne/DistinctionEtudiants.png[]
 +
 Si la période d'introduction la demande en ligne n'est pas encore commencée, on met le message "La période d'inscription à ces études ne sera ouverte qu'à partir de ..."
 et le candidat ne peut pas poursuivre la demande.
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state5.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state5.png[]
 +
 Si la période d'introduction la demande en ligne est terminée, on met le message "Pour 2016-2017, la période d'inscription au Master de spécialisation est clôturée depuis le ... . Nous vous invitons à introduire une demande d'incription à partir du ... pour l'année académique 2017-2018.".
 Et le candidat ne peut pas poursuivre la demande.
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state2.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state2.png[]
 +
 S'il est bien dans la période d'introduction la demande, on vérifie si le candidat a choisi une offre "Bachelier" ou "Master" => on pose la question pour savoir si le candidat a déjà fait des études similaires et qu'il veut valoriser des crédits.
 (cette information est importante car elle demande des traitements spécifiques du côté des facultées par la suite.)
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state3.png[]
-+
-*Pour les offres "Bachelier", "Master Didactique", "Agrégation"* le bloc des questions concernant l'examen de maîtrise de la langue française apparait.
-+
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state7.png[]
-+
-Si le candidat répond "Oui" à la question de l'examen de maîtrise de la langue française, les autres questions apparaissent
-+
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state72.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state3.png[]
 +
 IMPORTANT: Il y a des exceptions pour déterminer le type de la demande (demande d'inscription ou demande d'admission) et pour déterminer des périodes d'introduire la demande, ça concerne des offres suivantes:
 +
@@ -119,24 +111,24 @@ IMPORTANT: Il y a des exceptions pour déterminer le type de la demande (demande
 +
 Les critères de distinction du type de demande et les dates pour des études contingentées sont:
 +
-image::images/demande_d_inscription/DistinctionEtudiants_EtudesContingentées.png[]
+image::images/inscription_en_ligne/DistinctionEtudiants_EtudesContingentées.png[]
 +
 Si le candidat choisit une offre contingentée (KINE1BA, VETE1BA, LOGO1BA, MD1BA, DENT1BA). La première question est pour savoir si le candidat est déjà inscrit au même programme dans un établissement de la communauté française.
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state4.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state4.png[]
 +
 - Si le candidat est déjà inscrit au même programme  => la demande est considérée comme une demande d'inscription (= les UE, diplôme UE et résident en Belgique). On vérifie la période d'introduction la demande:
 * S'il n'est pas dans la période d'introduction la demande => le message pour dire que c'est fermé ou ce n'est pas encore commencé (comme pour les autres offres)
 +
 * S'il est dans la période d'introduction => la question pour valoriser apparait
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state42.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state42.png[]
 +
 - Si le candidat n'est pas inscrit au même programme => on invite le candidat à aller voir la page réservée aux études contingentées et le candidat doit répondre à la question "Résident" ou "Non-résident".
 +
 IMPORTANT: Attention: la notion de résident dans des études contingentées est différente que la notion de résident pour les autres offres. Et donc la façon de déterminer une demande d'inscription ou une demande d'admission est différente.
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state43.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state43.png[]
 +
 * Si le candidat est résident => il ne doit pas passer la procédure de tirage au sort, on vérifie la période d'inscription pour des études contingentées correspond au profil du candidat:
 +
@@ -152,23 +144,23 @@ On vérifie la date d'ouverture pour les études contingentées correspond au pr
 +
 ** Si la période n'est pas encore commencée => le message pour demander au candidat de suivre les modalités prévues sur la page réservée aux études contingentées
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state432.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state432.png[]
 +
 ** Si la période est finie => le message pour dire que c'est fermé (comme pour les autres offres)
 +
 ** S'il est dans la période d'introduction: la question du numéro du tirage au sort apparait et le candidat est obligé d'encoder le numéro de tirage au sort afin de poursuivre la demande.
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state433.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state433.png[]
 +
 *Offre Certificats spécialisés en médecine (MSP9CE et MSC9CE)*
 +
 Les critères de distinction d'une demande d'inscription ou une demande d'admission et des dates pour ces offres sont:
 +
-image::images/demande_d_inscription/DistinctionEtudiantsMS_9CE.png[]
+image::images/inscription_en_ligne/DistinctionEtudiantsMS_9CE.png[]
 +
 Comme les critères pour déterminer le type de demande pour des certificats en médecine dépendent de la nationalité du titre d'accès => la question concernant la nationalité du diplôme est adaptée:
 +
-image::images/demande_d_inscription/choisir_l_offre_d_etude_state6.png[]
+image::images/inscription_en_ligne/choisir_l_offre_d_etude_state6.png[]
 +
 *Offre doctorats*
 +
@@ -178,39 +170,48 @@ Il n'y a pas de date d'ouverture, ni fermeture pour des demandes d'inscriptions 
 +
 . Remplir des diplômes et attestations
 +
-image::images/demande_d_inscription/remplir_diplome_attestation.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation.png[]
 Si le candidat a un diplôme de fin d'études secondaires ou va l'obtenir cette année
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state2.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state2.png[]
 Si le candidat a un diplôme de fin d'études secondaires en Belgique ou va l'obtenir cette année
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state22.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state22.png[]
 Si le candidat a un diplôme de fin d'études secondaires à l’étranger ou va l'obtenir cette année
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state23.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state23.png[]
 Si le candidat a un diplôme de fin d'études secondaires de type Baccalauréat national  à l’étranger ou va l'obtenir cette année
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state232.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state232.png[]
 Si le candidat n’a pas fait d'études secondaires, il doit répondre à la question pour l'examen d'admission
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state3.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state3.png[]
 Si le candidat a fait l'examen d'admission
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state33.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state33.png[]
 Si le candidat fait une demande d'inscription à un offre "Ingénieur civil" (FSA1BA ou ARCH1BA) => Il est obligé de cocher sur le 3e choix
 => une vérification pour pouvoir passer l'étape suivante, s'il ne choisit pas le 3e examen => il faut avoir un message.
 Si le candidat n'a pas fait l'examen d'admission, les questions sur le VAE apparaissent
 +
-image::images/demande_d_inscription/remplir_diplome_attestation_state34.png[]
+image::images/inscription_en_ligne/remplir_diplome_attestation_state34.png[]
++
+*Pour les offres "Bachelier", "Master Didactique", "Agrégation"* le bloc des questions concernant l'examen de maîtrise de la langue française apparait.
++
+image::images/inscription_en_ligne/remplir_diplome_attestation_state4.png[]
++
+Si le candidat répond "Oui" à la question de l'examen de maîtrise de la langue française, les autres questions apparaissent
++
+image::images/inscription_en_ligne/remplir_diplome_attestation_state42.png[]
++
 .	Remplir Curriculum
 +
-image::images/demande_d_inscription/remplir_CV.png[]
+image::images/inscription_en_ligne/remplir_CV.png[]
 Le candidat a fait "Université belge"
 +
-image::images/demande_d_inscription/remplir_CV_state2.png[]
+image::images/inscription_en_ligne/remplir_CV_state2.png[]
 Le candidat a fait "Université belge" et "Communauté française de Belgique"
 +
-image::images/demande_d_inscription/remplir_CV_state22.png[]
+image::images/inscription_en_ligne/remplir_CV_state22.png[]
 +
  Communauté d'enseignement: on peut le considérer comme le "régime linguistique" pour les études à l'étranger:
     - Communauté française de Belgique => en français
@@ -233,15 +234,15 @@ image::images/demande_d_inscription/remplir_CV_state22.png[]
 +
 Si l'étudiant a obtenu le diplôme pendant l'année indiquée
 +
-image::images/demande_d_inscription/remplir_CV_state222.png[]
+image::images/inscription_en_ligne/remplir_CV_state222.png[]
 +
 Si l'étudiant n'a pas obtenu le diplôme pendant l'année indiquée
 +
-image::images/demande_d_inscription/remplir_CV_state223.png[]
+image::images/inscription_en_ligne/remplir_CV_state223.png[]
 +
 L'étudiant a fait "Université étrangère"
 +
-image::images/demande_d_inscription/remplir_CV_state3.png[]
+image::images/inscription_en_ligne/remplir_CV_state3.png[]
 +
 NOTE: Pays de l'université: il faut utiliser la même liste des pays commune de l'application OSIS.
 +
@@ -253,11 +254,11 @@ NOTE: Pays de l'université: il faut utiliser la même liste des pays commune de
 +
 Si l'étudiant indique qu'il a obtenu le diplôme cette année:
 +
-image::images/demande_d_inscription/remplir_CV_state32.png[]
+image::images/inscription_en_ligne/remplir_CV_state32.png[]
 +
 L'étudiant a fait "SNU belge"
 +
-image::images/demande_d_inscription/remplir_CV_state4.png[]
+image::images/inscription_en_ligne/remplir_CV_state4.png[]
  Communauté d'enseignement: on peut le considérer comme le "régime linguistique" pour les études à l'étranger:
     - Communauté française de Belgique => en francais
     - Communauté flamande => en néerlandais
@@ -281,7 +282,7 @@ image::images/demande_d_inscription/remplir_CV_state4.png[]
 +
 L'étudiant a fait "SNU étranger"
 +
-image::images/demande_d_inscription/remplir_CV_state5.png[]
+image::images/inscription_en_ligne/remplir_CV_state5.png[]
 +
  Pays d'établissement: il faut utiliser la liste des pays standards de l'application OSIS
 +
@@ -295,19 +296,19 @@ image::images/demande_d_inscription/remplir_CV_state5.png[]
 +
 Si l'étudiant indique qu'il a obtenu le diplôme cette année: il doit joindre le diplôme et le relevé de notes.
 +
-image::images/demande_d_inscription/remplir_CV_state52.png[]
+image::images/inscription_en_ligne/remplir_CV_state52.png[]
 +
 Si l'étudiant n'a pas obtenu le diplôme pendant l'année indiquée: le candidat ne doit fournir que le relevé de notes.
 +
-image::images/demande_d_inscription/remplir_CV_state53.png[]
+image::images/inscription_en_ligne/remplir_CV_state53.png[]
 +
 Le candidat remplit "Autre":
 +
-image::images/demande_d_inscription/remplir_CV_state6.png[]
+image::images/inscription_en_ligne/remplir_CV_state6.png[]
 +
 Si le candidat remplit "Autre" et choisit: Travail, Stage, Bénévolat: la question "À quel endroit?" apparait
 +
-image::images/demande_d_inscription/remplir_CV_state62.png[]
+image::images/inscription_en_ligne/remplir_CV_state62.png[]
 +
 Si le candidat remplit "Autre" et choisit: Chomage ou Maladie => rien n'apparait
 +
@@ -315,30 +316,30 @@ Si le candidat choisit "Chomage", on vérifie si l'année >= année actuelle - 5
 +
 NOTE: On ne doit demander qu'une fois, même s'il est au "Chomage" plusieurs fois 5 dernières années.
 +
-image::images/demande_d_inscription/remplir_CV_state64.png[]
+image::images/inscription_en_ligne/remplir_CV_state64.png[]
 +
 Si le candidat remplit "Autre" et choisit "Autre" comme Type d'activité
 +
-image::images/demande_d_inscription/remplir_CV_state63.png[]
+image::images/inscription_en_ligne/remplir_CV_state63.png[]
 +
 . Ajouter les pièces jointes supplémentaires
 +
  - Pour les demandes d'inscription: le candidat n'est pas obligé de joindre des pièces.
  Mais s'il veut il peut ajouter des pièces jointes.
 +
-image::images/demande_d_inscription/ajouter_les_pieces_jointes_suppl_inscription.png[]
+image::images/inscription_en_ligne/ajouter_les_pieces_jointes_suppl_inscription.png[]
 +
  S'il y a plus d'une pièce jointe, le candidat clique sur le bouton "+" pour ajouter une autre pièce
 +
-image::images/demande_d_inscription/ajouter_les_pieces_jointes_suppl_inscription_state2.png[]
+image::images/inscription_en_ligne/ajouter_les_pieces_jointes_suppl_inscription_state2.png[]
 +
  Si le candidat ne trouve pas le type document dans la liste, il choisit "Autre" et précise le type du document.
 +
-image::images/demande_d_inscription/ajouter_les_pieces_jointes_suppl_inscription_state22.png[]
+image::images/inscription_en_ligne/ajouter_les_pieces_jointes_suppl_inscription_state22.png[]
 +
 - Pour les demandes d'admission: le candidat est obligé de joindre le CV et la lettre de motivation
 +
-image::images/demande_d_inscription/ajouter_les_pieces_jointes_suppl_admission.png[]
+image::images/inscription_en_ligne/ajouter_les_pieces_jointes_suppl_admission.png[]
 +
  Le candidat peut ajouter d'autres types de pièces jointes comme pour les demandes d'inscription.
 +
@@ -348,19 +349,19 @@ Pour la partie "Réduction": les questions changent en fonction du cycle d'offre
 +
  - Pour les offres du premier cycle: Bachelier (1BA), des Masters du 2eme cycle: Master en 1 an (2M1), Master Didactique (2MD), Master Approfondie (2MA), Master spécialisée (2MS/...):
 +
-image::images/demande_d_inscription/remplir_comptabilite_1er_2e_cycle.png[]
+image::images/inscription_en_ligne/remplir_comptabilite_1er_2e_cycle.png[]
 +
 Si le candidat répond "Oui" à la question "Allocation d'études"
 +
-image::images/demande_d_inscription/remplir_comptabilite_1er_2e_cycle_state2.png[]
+image::images/inscription_en_ligne/remplir_comptabilite_1er_2e_cycle_state2.png[]
 +
 Si le candidat répond "Non" à la question "Allocation d'études"
 +
-image::images/demande_d_inscription/remplir_comptabilite_1er_2e_cycle_state3.png[]
+image::images/inscription_en_ligne/remplir_comptabilite_1er_2e_cycle_state3.png[]
 +
  - Pour le 3 cycle Doctorat (3D) et Master Complémentaire (2MC)
 +
-image::images/demande_d_inscription/remplir_comptabilite_3e_cycle.png[]
+image::images/inscription_en_ligne/remplir_comptabilite_3e_cycle.png[]
 +
 *Pour la carte de sport:* en fonction du site de l'offre choisie.
 +
@@ -375,7 +376,7 @@ Pour la carte "Culture" et "Solidaire", pour le moment, c'est le même tarif pou
 +
 . Remplir l'enquête sociologique
 +
-image::images/demande_d_inscription/remplir_enquete_sociologique.png[]
+image::images/inscription_en_ligne/remplir_enquete_sociologique.png[]
 +
 Des études sont:
 +
@@ -419,14 +420,14 @@ Le liste ne contient pas: 00, 35, 36
 +
 Si le candidat choisit "Autre" comme Profession de son père, sa mère, lui même, ou son grande père, il doit préciser le titre de la profession.
 +
-image::images/demande_d_inscription/remplir_enquete_sociologique_state2.png[]
+image::images/inscription_en_ligne/remplir_enquete_sociologique_state2.png[]
 +
 . Confirmer la demande
 +
-image::images/demande_d_inscription/confirmer_la_demande.png[]
+image::images/inscription_en_ligne/confirmer_la_demande.png[]
 . Confirmer la soumission
 +
-image::images/demande_d_inscription/confirmer_la_soumission_d_inscription.png[]
+image::images/inscription_en_ligne/confirmer_la_soumission_d_inscription.png[]
 +
 *Le numéro de référence:*
 +
@@ -465,10 +466,10 @@ NOTE: Dans le mail de confirmation lors de la soumission, il contient le nom com
 +
 . Générer le nouveau mot de passe
 +
-image::images/demande_d_inscription/generer_le_nouveau_mot_de_passe.png[]
+image::images/inscription_en_ligne/generer_le_nouveau_mot_de_passe.png[]
 . Envoyer un e-mail pour le changement du mot de passe
 +
-image::images/demande_d_inscription/envoyer_un_e-mail_pour_le_changement_du_mot_de_passe.png[]
+image::images/inscription_en_ligne/envoyer_un_e-mail_pour_le_changement_du_mot_de_passe.png[]
 +
 . Envoyer le mail de confirmation
 +
@@ -481,7 +482,8 @@ et en fonction de l'offre choisie et du site (localité) de l'offre.
 +
 Le lien URL dans le mail pour des demandes d'admission change en fonction du catégorie du décret: +
 - Bachelier : http://www.uclouvain.be/357537.html et http://www.uclouvain.be/en-357537.html si c’est en anglais +
-- Master en 60 crédit, Master en 180 ou en 240 crédits, Master en 120 crédits à finalité didactique, Master en 120 crédits à finalité didactique, Master en 120 crédits à finalité spécialisée: http://www.uclouvain.be/357538.html +
+- Master en 60 crédit, Master en 180 ou en 240 crédits, Master en 120 crédits à finalité didactique,
+Master en 120 crédits à finalité approfondie, Master en 120 crédits à finalité spécialisée: http://www.uclouvain.be/357538.html +
 - Master de spécialisation: http://www.uclouvain.be/357540.html +
 - Certificat en médecine: http://www.uclouvain.be/408906.html +
 - CAPAES: http://www.uclouvain.be/591795.html +
@@ -493,17 +495,17 @@ Le mail envoyé au candidat contient un fichier pdf qui résume les informations
 doc/business/fichier_pdf_soumission.pdf
 . Visualiser le compte
 +
-image::images/demande_d_inscription/visualiser_le_compte.png[]
+image::images/inscription_en_ligne/visualiser_le_compte.png[]
 +
 CAUTION: L'étudiant a la possibilité d'introduire une nouvelle demande mais pour *une année académique* le candidat ne peut introduire maximum 2 demandes d'admission et 1 demande d'inscription
 +
 . Mettre à jour le profil
 +
-image::images/demande_d_inscription/mettre_a_jour_le_profil.png[]
+image::images/inscription_en_ligne/mettre_a_jour_le_profil.png[]
 +
 . Visualiser une demande
 +
-image::images/demande_d_inscription/visualiser_une_demande_d_inscription.png[]
+image::images/inscription_en_ligne/visualiser_une_inscription_en_ligne.png[]
 +
 Pour chaque année académique, le candidat peut créer 2 demandes d'admission et 1 demande d'inscription.
 +
@@ -519,24 +521,24 @@ Des critères peuvent être:
 +
 * Texte
 +
-image::images/demande_d_inscription/composantsDynamiques/texte.png[]
+image::images/inscription_en_ligne/composantsDynamiques/texte.png[]
 +
 * Champ de texte libre
 +
-image::images/demande_d_inscription/composantsDynamiques/champTexte.png[]
+image::images/inscription_en_ligne/composantsDynamiques/champTexte.png[]
 * Zone de texte libre
 +
-image::images/demande_d_inscription/composantsDynamiques/zoneTexte.png[]
+image::images/inscription_en_ligne/composantsDynamiques/zoneTexte.png[]
 * Lien hypertexte
 +
-image::images/demande_d_inscription/composantsDynamiques/lien.png[]
+image::images/inscription_en_ligne/composantsDynamiques/lien.png[]
 * Pièce jointe: peut etre une image ou un pdf
 +
-image::images/demande_d_inscription/composantsDynamiques/pieceJointe.png[]
+image::images/inscription_en_ligne/composantsDynamiques/pieceJointe.png[]
 +
 * Check box: qui peut contient un ou plusieurs lignes. Il peut avoir 1 ou plusieurs réponses
 +
-image::images/demande_d_inscription/composantsDynamiques/checkbox.png[]
+image::images/inscription_en_ligne/composantsDynamiques/checkbox.png[]
 +
 *Les outils de configuration:*
 * Les gestionnaires de SIC avec leur lettres initiales et les répartitions des offres
