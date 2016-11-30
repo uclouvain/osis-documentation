@@ -25,7 +25,7 @@ include::catalogue-formations.adoc[]
 
 == Les acteurs académiques
 
-include::demande-inscription-en-ligne.adoc[]
+include::inscription-en-ligne.adoc[]
 
 include::encodage-notes.adoc[]
 
