@@ -248,7 +248,7 @@ Il faut remplir toutes les notes finales pour pouvoir soumettre.
 
 image::images/encodage_notes/confirmer-la-soumission.png[]
 +
-. *Soumettre l'encodage*
+==== Soumettre l'encodage
 +
 Si des gestionnaires finisent l'encodage pour un programme (100% des notes encodées pour un programme), au moment d'enregistrer des notes, il y a un mail envoyé à tous les enseignants
 de cette unité d'enseignement.
@@ -259,7 +259,7 @@ Le mail contient le table des notes et un fichier .pdf avec des notes encodées/
 +
 image::images/encodage_notes/soumettre_encodage.png[]
 +
-. *Imprimer la feuille de notes*
+==== Imprimer la feuille de notes*
 +
 image::images/encodage_notes/imprimer-la-feuille-de-notes.png[]
 
