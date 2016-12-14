@@ -1,7 +1,5 @@
 == Gestion du catalogue des formations
 
-test
-
 === Gestion des formations
 
 === Gestion des unités d'enseignement
