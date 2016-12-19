@@ -247,6 +247,7 @@ Il faut remplir toutes les notes finales pour pouvoir soumettre.
 ==== Confirmer la soumission
 
 image::images/encodage_notes/confirmer-la-soumission.png[]
+<<<<<<< HEAD
 
 ==== Soumettre l'encodage
 
@@ -264,10 +265,6 @@ encodées/modifiées.
 image::images/encodage_notes/soumettre_encodage.png[]
 
 ==== Imprimer la feuille de notes
-
-Un e-mail récapitulatif de la soumission envoyé à tous les enseignants du cours.
-
-==== Imprimer la feuille de notes*
 
 image::images/encodage_notes/imprimer-la-feuille-de-notes.png[]
 
