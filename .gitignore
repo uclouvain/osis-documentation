@@ -1,7 +1,7 @@
 # AsciiDoctor build output
 *.html
-*.pdf
 *.pdfmarks
+*.pdf
 *.bak
 *.new
 *.working

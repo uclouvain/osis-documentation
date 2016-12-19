@@ -1,0 +1,7 @@
+== Attributions
+
+Cette application est chargée d'assigner des tuteurs aux unités d'enseignement.
+
+Un tutor peut être à la fois cotitulaire et coordinateur, cotitulaire et
+suppléant. Mais il ne peut pas être cotitulaire 2 fois ou titulaire et
+cotitulaire au même temps.

@@ -19,13 +19,15 @@
 
 image::images/process-map.png[]
 
+include::inscription-en-ligne.adoc[]
+
 == Gestion l'offre de formation
 
 include::catalogue-formations.adoc[]
 
-== Les acteurs académiques
+include::attributions.adoc[]
 
-include::demande-inscription-en-ligne.adoc[]
+== Les acteurs académiques
 
 include::encodage-notes.adoc[]
 
