@@ -1,5 +1,8 @@
 == Gestion du catalogue des formations
 
+|aaaa | bbbb |
+|---- | -----|
+|aa   | bb   |
 
 === Gestion des formations
 
@@ -131,8 +134,6 @@ au même conteneur. _Chaque UE d'un conteneur peut donc
   2. un _nombre d'étudiants inscrits_ ;
   3. un ou plusieurs _titulaires affectés_ à cette classe, avec un _pourcentage de la prise en charge_.
 
-.Super-UE, activités, classes, UE, inscriptions et affectations
-image::images/catalogue/Super-UE_concepts.jpg[Diagramme d'entités super-UE, acticité, classe, UE]
 
 
 
