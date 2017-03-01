@@ -143,21 +143,21 @@ image::images/catalogue/Super-UE_concepts.jpg[Diagramme d'entités super-UE, act
 
 ===== EU de type *cours* : création
 
-Une UE de type *cours* est rattachée à un conteneur qui possède deux composants, l'un de type *cours magistral*
+Une UE est rattachée à un conteneur de type *cours* qui possède deux composants, l'un de type *cours magistral*
 et l'autre de type *travaux pratiques*.
 
 
 .Quand un utilisateur souhaire créer une UE de type *cours*, le système créera
-. une super-UE,
-. une activité de type *cours magistral complet* (code /C),
-. avec une seule classe (code /C1),
-. une activité de type *travaux pratiques complets* (code /T),
-. avec une seule classe (série) également (code /T1),
-. et une UE composée des classes des 2 activités, /C1 et /T1.
+. un conteneur,
+. un composant de type *cours magistral* (code /C),
+. avec une seule classe (code /C01),
+. un composant de type *travaux pratiques* (code /T),
+. avec une seule classe (série) également (code /T01),
+. et une UE composée des classes des 2 activités, /C01 et /T01.
 
 
-.Super-UE de tout type: ajout de classe dans une activité
-. L'utilisateur ouvre l'activité concernée
+.Conteneur de tout type: ajout de classe dans une composant
+. L'utilisateur ouvre le composant concerné
 . L'utilisateur demande une classe supplémentaire
 . Quelles UE auront accès à cette classe ?
     - si la super-UE ne contient qu'une seule UE, le système donne
