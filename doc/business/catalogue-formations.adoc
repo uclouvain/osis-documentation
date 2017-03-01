@@ -104,26 +104,26 @@ Outre le point de vue académique, les UE peuvent être examinées du point de v
 leur organisation en activités et classes.
 Différentes UE apparentées (partims) peuvent partager des éléments
 d'organisation ; on les regroupe alors en un portefeuille nommé ici
-« super-UE ».
+« conteneur ».
 
-- Une super-UE est composée d’une ou plusieurs activités de différents types :
+- Un _conteneur_ est composé d’un ou plusieur _composants_ de différents types :
 cours magistral, travaux pratiques, mémoire, stage.
 
-- Une activité peut aussi exister comme variante d’une autre activité
+- Un composant peut aussi exister comme variante d’un autre composant
 (p. ex. un cours magistral restreint à un certain nombre de semaines); on
-considère ici qu'il s'agit d'une d'activité distincte.
+considère ici qu'il s'agit d'un d'un composant distinct.
 
-- Les activités sont instanciées en une ou plusieurs *classes*, qui possèdent
+- Les composants sont instanciés en une ou plusieurs *classes*, qui possèdent
 une existence horaire, indépendante ou non.
 
-- Une UE fait usage d'une ou plusieurs classes de la super-UE.
+- Une UE fait usage d'une ou plusieurs classes du conteneur.
 Chaque classe est utilisée par une ou plusieurs UE appartenant
-à la même super-UE. _Chaque UE d'une super-UE peut donc
+au même conteneur. _Chaque UE d'un conteneur peut donc
 être vue comme un « choix » parmi les classes de cette super-UE_.
 
-- Une super-UE possède une équipe d'enseignement (professeur(s) et assistant(s))
+- Un conteneur possède une équipe d'enseignement (professeur(s) et assistant(s))
 
-- Une activité possède un volume horaire
+- Un composant possède un volume horaire
 
 - Une classe possède
 
@@ -135,11 +135,6 @@ Chaque classe est utilisée par une ou plusieurs UE appartenant
 image::images/catalogue/Super-UE_concepts.jpg[Diagramme d'entités super-UE, acticité, classe, UE]
 
 
-IMPORTANT: Il faut distinguer l'activité de son type. Ainsi, une Super UE complexe
-peut comtenir une acticité de type *cours magistral complet* et 2 activités
-de type *cours magistral restreint*. Ces dernières pourraient par exemple avoir
-pour intitulé "Cours magistral 1ère partie" et "Cours magistral 2de partie".
-Ces 3 activités peuvent chacune avoir une ou plusieurs classes.
 
 
 ==== Création d'UE, activités, classes
@@ -148,7 +143,7 @@ Ces 3 activités peuvent chacune avoir une ou plusieurs classes.
 
 ===== EU de type *cours* : création
 
-Une UE de type *cours* est rattachée à une super-UE qui possède deux activités, l'une de type *cours magistral*
+Une UE de type *cours* est rattachée à un conteneur qui possède deux composants, l'un de type *cours magistral*
 et l'autre de type *travaux pratiques*.
 
 
