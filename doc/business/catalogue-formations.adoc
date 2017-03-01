@@ -230,21 +230,7 @@ dans le cadre de l'UE.
 idem
 
 
-image::images/inscription_en_ligne/gestion_demande_inscription_en_ligne.png[]
 
-image::https://cloud.githubusercontent.com/assets/14314622/23465916/ec7f205c-fe99-11e6-80e3-27bce8b84493.png[]
-![ue_composition_principe_tableau2](https://cloud.githubusercontent.com/assets/14314622/23465911/e9b7a06a-fe99-11e6-8692-e246eb2c723e.png)
-![ue_composition_principe_tableau3](https://cloud.githubusercontent.com/assets/14314622/23465910/e9917fe8-fe99-11e6-81c7-66a09465610e.png)
-![ue_details_composclasses-1](https://cloud.githubusercontent.com/assets/14314622/23465909/e969d39e-fe99-11e6-96ef-223119d3ef84.png)
-![ue_details_composclasses-2](https://cloud.githubusercontent.com/assets/14314622/23465900/e8d6c39c-fe99-11e6-9d93-41db759fa805.png)
-![ue_details_composprincipe-1](https://cloud.githubusercontent.com/assets/14314622/23465899/e8d19a52-fe99-11e6-8e03-548e546da711.png)
-![ue_details_composprincipe-2](https://cloud.githubusercontent.com/assets/14314622/23465901/e8ebdbce-fe99-11e6-8422-58d9d816d01e.png)
-![ue_details_onglet-identif](https://cloud.githubusercontent.com/assets/14314622/23465902/e8f879d8-fe99-11e6-9008-155d7f9ae942.png)
-![ue_details_onglet-org](https://cloud.githubusercontent.com/assets/14314622/23465905/e917270c-fe99-11e6-85d6-60cbc7a67e8a.png)
-![ue_inclusion_classes_1](https://cloud.githubusercontent.com/assets/14314622/23465904/e9121596-fe99-11e6-940c-b585e425b9f8.png)
-![ue_inclusion_classes_2](https://cloud.githubusercontent.com/assets/14314622/23465907/e935b546-fe99-11e6-9439-d665b39a1c86.png)
-![ue_inclusion_composants](https://cloud.githubusercontent.com/assets/14314622/23465908/e93ac34c-fe99-11e6-8eea-9b8ad317e3f5.png)
-![ue_interface_ue_autresmodules](https://cloud.githubusercontent.com/assets/14314622/23465912/ea568aa4-fe99-11e6-82f3-877ed6ca06c3.png)
 
 
 
