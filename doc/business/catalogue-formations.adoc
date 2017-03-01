@@ -1,8 +1,247 @@
 == Gestion du catalogue des formations
 
+
 === Gestion des formations
 
+==== Concepts généraux
+
+===== _Formations_ et autres _Organisations de formation_ (_OF_)
+Une _Formation_ est une organisation visant à soutenir un processus d'aquisition
+de connaissances et compétences, et sanctionnée par un diplôme ou un certificat.
+
+D'autres organisations visant à soutenir un processus d'acquisition de
+connaissances et compétences existent également, sans conduire à un diplôme ou
+certificat :
+
+- _Ensembles de formations_ (_EF_) : Intitulés principaux et Orientations ;
+- _Mini-formations_ (_MF_) : approfondissements, majeures EPL, mineures, options ;
+- _Regroupements de présentation_ : Groupements de _QF_ et/ou d'UE (unités d'enseignement).
+
+Ces organisations, ainsi que les _Formations_, sont ici dénommées collectivement
+par le terme _Quasi-formations_ (_QF_).
+
+Une _QF_ est représentée dans le système OSIS par un ensemble d'attributs
+et par un _contenu_. Un _contenu_ de _QF_ est une liste de _QF_ et/ou d'UE.
+
+
+===== Relation de contenu entre _QF_
+
+Une _QF_ peut figurer dans le _contenu_ d'une autre _QF_, avec les règles suivantes :
+
+====== Inclusion sous contrainte avec héritage d'attributs
+
+- une _Orientation_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_ ;
+une _Orientation_ hérite des attributs de son _Intitulé principal_
+(mais certains attributs peuvent être surchargés);
+- une _Finalité_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_,
+et si cet _Intitulé principal_ possède des _Orientations_, la _Finalité_
+n'existe que dans le contexte d'une et une seule de ces _Orientations_ ; une _Finalité_
+hérite des attributs de l'_Intitulé principal_, et, le cas échéant, de
+l'_Orientation_, auxquels appartient cette _Finalité_.
+
+====== Inclusion sans contrainte et sans héritage d'attributs
+
+- une _Mini-formation_ existe indépendammnent de tout contexte ; elle peut figurer
+dans le _contenu_ de toute _QF_, sans hériter des attributs de cette _QF_ ;
+- un _Regroupement_ peut exister en général indépendamment de tout contexte
+mais on peut restreindre son inclusion dans les contenus appartenant directement
+ou indirectement à une _Formation_ ou à un _Ensemble de formations_;
+il n'hérite pas des attributs des QF au contenu desquels il est inclus.
+
+==== Création d'une formation
+
+Les formations (offres inscriptibles menant à l'obtention d'un diplôme ou d'un
+certificat) sont classifiées selon 1, 2 ou 3 niveaux.
+Les niveaux de classification sont les suivants :
+
+1. Intitulé principal
+2. Orientation, localisation, type d'horaire
+3. Finalité
+
+Les informations propres à un niveau sont héritées par les niveaux inférieurs.
+Pour cette raison, les formations effectivement classifiées en 3 niveaux seront
+gérées en 3 écrans séparés ; l'écran de gestion du niveau 2 présente en lecture
+seule les informations héritées du niveau 1, et l'écran de gestion du niveau 3
+présente en lecture seule les informations héritées des niveaux 1 et 2.
+
+Toutes les formations possèdent un intitulé principal, mais les deux autres
+niveaux de classification ne sont pas toujours utilisés dans la classification
+décrite par le décret "paysage". *Exemple* :
+les formations de baccalauréat n'ont jamais de finalité et souvant pas d'orientation.
+
+Il arrive également qu'un niveau soit utilisé de manière purement formelle,
+avec une seule instanciation.
+
+* *Exemple* :
+les masters sont en principe toujours déclinés en finalités mais les masters
+de bioingénieurs n'en possèdent qu'une.
+
+Qu'un niveau existe en une seule instanciation ou que ce niveau n'existe pas
+se traduira dans les deux cas par la fusion de l'écran de gestion des informations
+de ce niveau avec l'écran de gestion du niveau directement supérieur.
+
+* *Exemple* :
+on traitera donc en un seul écran le cas des baccalauréats sans orientations,
+car les baccalauréats n'ont jamais de finalité. De même, les
+masters de bioingénieurs seront gérés un un seul écran.
+
+==== Création d'une _Mini-formation_ (_MF_)
+
+
+==== Création d'un _Regroupement_ de présentation ou de choix
+
+
 === Gestion des unités d'enseignement
+
+==== Concepts
+
+Les *UE* ont une signification académique univoque pour le parcours l’étudiant
+qui s’y inscrit.
+Ainsi, *chaque partim est une UE*, qui possède ses propres prérequis, AA,
+examens.
+
+Outre le point de vue académique, les UE peuvent être examinées du point de vue de
+leur organisation en activités et classes.
+Différentes UE apparentées (partims) peuvent partager des éléments
+d'organisation ; on les regroupe alors en un portefeuille nommé ici
+« super-UE ».
+
+- Une super-UE est composée d’une ou plusieurs activités de différents types :
+cours magistral, travaux pratiques, mémoire, stage.
+
+- Une activité peut aussi exister comme variante d’une autre activité
+(p. ex. un cours magistral restreint à un certain nombre de semaines); on
+considère ici qu'il s'agit d'une d'activité distincte.
+
+- Les activités sont instanciées en une ou plusieurs *classes*, qui possèdent
+une existence horaire, indépendante ou non.
+
+- Une UE fait usage d'une ou plusieurs classes de la super-UE.
+Chaque classe est utilisée par une ou plusieurs UE appartenant
+à la même super-UE. _Chaque UE d'une super-UE peut donc
+être vue comme un « choix » parmi les classes de cette super-UE_.
+
+- Une super-UE possède une équipe d'enseignement (professeur(s) et assistant(s))
+
+- Une activité possède un volume horaire
+
+- Une classe possède
+
+  1. une _charge horaire réelle_ ;
+  2. un _nombre d'étudiants inscrits_ ;
+  3. un ou plusieurs _titulaires affectés_ à cette classe, avec un _pourcentage de la prise en charge_.
+
+.Super-UE, activités, classes, UE, inscriptions et affectations
+image::images/catalogue/Super-UE_concepts.jpg[Diagramme d'entités super-UE, acticité, classe, UE]
+
+
+IMPORTANT: Il faut distinguer l'activité de son type. Ainsi, une Super UE complexe
+peut comtenir une acticité de type *cours magistral complet* et 2 activités
+de type *cours magistral restreint*. Ces dernières pourraient par exemple avoir
+pour intitulé "Cours magistral 1ère partie" et "Cours magistral 2de partie".
+Ces 3 activités peuvent chacune avoir une ou plusieurs classes.
+
+
+==== Création d'UE, activités, classes
+
+
+
+===== EU de type *cours* : création
+
+Une UE de type *cours* est rattachée à une super-UE qui possède deux activités, l'une de type *cours magistral*
+et l'autre de type *travaux pratiques*.
+
+
+.Quand un utilisateur souhaire créer une UE de type *cours*, le système créera
+. une super-UE,
+. une activité de type *cours magistral complet* (code /C),
+. avec une seule classe (code /C1),
+. une activité de type *travaux pratiques complets* (code /T),
+. avec une seule classe (série) également (code /T1),
+. et une UE composée des classes des 2 activités, /C1 et /T1.
+
+
+.Super-UE de tout type: ajout de classe dans une activité
+. L'utilisateur ouvre l'activité concernée
+. L'utilisateur demande une classe supplémentaire
+. Quelles UE auront accès à cette classe ?
+    - si la super-UE ne contient qu'une seule UE, le système donne
+      automatiquement accès à cette classe dans le cadre de l'UE ;
+    - si la super-UE contient plusieurs UE, le système demande pour
+      chaque UE si la classe doit y être accessible ; si
+      l'utilisateur répond non pour toutes les UE, le système
+      conclut à une impossibilité.
+. L'utilisateur complète les attributs de cette classe, parmi lesquels
+  il indique quels membres de l'équipe pédagogique de la super-UE seront
+  affectés à cette classe. La complétion de ce travail conditionne à ce
+  stade le statut de la classe créée.
+
+
+.Super-UE de tout type: ajout d'une activité
+. L'utilisateur demande une activité supplémentaire
+. Sera-t-elle de type "partiel" ?
+    - "cours magistral partiel"
+        * condition : une activité de type "cours magistral complet"
+          doit exister.
+        * première classe créée automatiquement : l'utilisateur doit
+          préciser si la classe est une réutilisation partielle d'une
+          classe de l'activité de type "cours magistral complet", et
+          si oui, laquelle. Pour chaque classe supplémentaire créée
+          l'utilisateur devra fournir ces précisions.
+     - "travaux pratiques partiels"
+        * condition : une activité de type "travaux pratiques complet"
+          doit exister.
+        * première classe (série) créée automatiquement : l'utilisateur
+          doit préciser si la classe est une réutilisation partielle d'une
+          classe de l'activité de type "cours magistral complet", et
+          si oui, laquelle. Pour chaque classe supplémentaire créée
+         l'utilisateur devra fournir ces précisions.
+. L'utilisateur complète les attributs de cette classe, parmi lesquels
+  il indique quels membres de l'équipe pédagogique de la super-UE seront
+  affectés à cette classe. La complétion de ce travail conditionne à ce
+  stade le statut de la classe créée.
+
+.EU de type partim : création
+. Faut-il une nouvelle activité (d'un type différent ou non) dans la super-UE ?
+  * Exemples
+  ** Seule existe l'activité "Cours magistral complet", de type "cours
+  magistral", et il faut créer une activité "Cours magistral
+  1ère partie", de type "cours magistral partiel".
+  ** Seules existent les activités "Cours magistral complet" et "Cours
+  magistral 1ère partie" il faut créer une nouvelle activité
+  de type "cours magistral partiel", nommée "Cours magistral 2è partie".
+. Faut-il ajouter une classe à une activité ?
+. Création de l'EU partim
+  1. L'utilisateur demande la création d'une UE partim
+  2. L'utilisateur doit indiquer quelle activités de la super-UE sont
+  requises dans ce partim
+  3. Pour chaque activité requise, l'utilisateur indique quelles classes
+  seront accessible dans le cadre de cette UE.
+  4. L'utilisateur édite les attributs. Le statut de l'UE dépend à ce
+  stade de la complétion des attributs obligatoires
+  5.
+
+
+
+.EU de type *mémoire*
+
+Une EU de type *mémoire* est rattachée à une super-UE
+ne possède qu'un seule activité, de type *mémoire*.
+Une classe est automatiquement créée pour chaque professeur de la faculté
+ou CE pour laquelle l'UE est créée, et toutes ces classes sont accessibles
+dans le cadre de l'UE.
+
+.UE de stype *stage*
+
+idem
+
+
+
+
+
+
+
+
 
 === Gestion du contenu des formations
 
