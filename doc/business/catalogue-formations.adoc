@@ -230,8 +230,9 @@ dans le cadre de l'UE.
 idem
 
 
+image::images/inscription_en_ligne/gestion_demande_inscription_en_ligne.png[]
 
-![ue_composition_principe_tableau1](https://cloud.githubusercontent.com/assets/14314622/23465916/ec7f205c-fe99-11e6-80e3-27bce8b84493.png)
+image::https://cloud.githubusercontent.com/assets/14314622/23465916/ec7f205c-fe99-11e6-80e3-27bce8b84493.png[]
 ![ue_composition_principe_tableau2](https://cloud.githubusercontent.com/assets/14314622/23465911/e9b7a06a-fe99-11e6-8692-e246eb2c723e.png)
 ![ue_composition_principe_tableau3](https://cloud.githubusercontent.com/assets/14314622/23465910/e9917fe8-fe99-11e6-81c7-66a09465610e.png)
 ![ue_details_composclasses-1](https://cloud.githubusercontent.com/assets/14314622/23465909/e969d39e-fe99-11e6-96ef-223119d3ef84.png)
