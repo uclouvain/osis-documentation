@@ -229,9 +229,11 @@ Toute classe d’un composant incluant peut être incluante.
 
 
 Exemples :
+
 image::images/UE_Inclusion_classes_1.png[]
 
 et pour les TP :
+
 image::images/UE_Inclusion_classes_2.png[]
 
 ====== Classes de cours magistral (complet, 1ère partie, 2ème partie)
