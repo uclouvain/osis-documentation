@@ -96,41 +96,399 @@ masters de bioingénieurs seront gérés un un seul écran.
 
 ==== Concepts
 
-Les *UE* ont une signification académique univoque pour le parcours l’étudiant
-qui s’y inscrit.
-Ainsi, *chaque partim est une UE*, qui possède ses propres prérequis, AA,
-examens.
+Les Unités d’enseignement (UE) sont les pièces de base des programmes d’études.
+À une UE correspond un intitulé, un cahier de charges, des acquis
+d’apprentissage (AA), un nombre d’unités de crédits ECTS (poids ECTS).
+L’inscription d’un étudiant à une UE, dans le cadre de son inscription à un
+programme d’études, conduit à l’obtention d’une note.
 
-Outre le point de vue académique, les UE peuvent être examinées du point de vue de
-leur organisation en activités et classes.
-Différentes UE apparentées (partims) peuvent partager des éléments
-d'organisation ; on les regroupe alors en un portefeuille nommé ici
-« conteneur ».
+Les UE ont donc une signification académique, indépendemment des aspects
+organisationnels, qui sont gérés dans les composants et classes associés aux UE.
 
-- Un _conteneur_ est composé d’un ou plusieur _composants_ de différents types :
-cours magistral, travaux pratiques, mémoire, stage.
+Les UE sont actuellement de l’un des types suivants : cours, mémoire, stage,
+cours externe, ??????
 
-- Un composant peut aussi exister comme variante d’un autre composant
-(p. ex. un cours magistral restreint à un certain nombre de semaines); on
-considère ici qu'il s'agit d'un d'un composant distinct.
+Le contenu des UE de type cours comporte souvent deux composants, le cours
+magistral (CM) et les travaux pratiques (TP). Les UE de type mémoire et stage ne comportent qu’un seul composant.
 
-- Les composants sont instanciés en une ou plusieurs *classes*, qui possèdent
-une existence horaire, indépendante ou non.
+Chacun des composants est organisé en un ou plusieurs horaires, les classes.
+Les classes peuvent être organisées avec des horaires, locaux, enseignants différents.
 
-- Une UE fait usage d'une ou plusieurs classes du conteneur.
-Chaque classe est utilisée par une ou plusieurs UE appartenant
-au même conteneur. _Chaque UE d'un conteneur peut donc
-être vue comme un « choix » parmi les classes de cette super-UE_.
+Un composant est peut être vu comme un groupe de classes de contenus
+identiques. Un composant désigne donc un contenu d’enseignement, et une
+classe désigne une organisation de ce contenu d’enseignement.
 
-- Un conteneur possède une équipe d'enseignement (professeur(s) et assistant(s))
+Un partim est une UE dont le contenu est une partie du contenu d’une UE
+principale (ou cours principal). Ses composants seront donc aussi des parties
+des composants de ce cours principal. Un partim est une UE autonome du point
+de vue académique, mais l’organisation de ses classes sera le plus souvent
+fortement liée à celle des classes de son cours principal.
 
-- Un composant possède un volume horaire
+Pour cette raison, une UE cours principal et des UE partim qui dérivent
+de ce cours principal sont regroupés en un conteneur, qui contient aussi
+les composants et leurs classes.
 
-- Une classe possède
+==== Objectifs
 
-  1. une _charge horaire réelle_ ;
-  2. un _nombre d'étudiants inscrits_ ;
-  3. un ou plusieurs _titulaires affectés_ à cette classe, avec un _pourcentage de la prise en charge_.
+La représentation des structures d’enseignement dans OSIS doit permettre :
+
+-	de bien distinguer les aspects académiques des aspects organisationnels des UE ;
+-	de représenter les charges réelles des professeurs et assistants ;
+-	de garantir la cohérence des aspects organisationnels : inscriptions aux
+classes, horaires, charges
+-	de détailler les « attributions au sens large », càd y compris sur les
+classes de TP.
+Ces objectifs nécessitent de représenter le détail réel des différents
+composants dont se compose une UE, leur organisation matérielle en classes
+(séries), et de représenter comment ces composants et classes sont parfois
+utilisés dans plusieurs UE, et comment une classe composant peut être
+incluse dans une classe d’un autre composant.
+
+Les UE présentent la vision académique de l’enseignement : objectifs, AA,
+inscriptions, crédits …
+Les composants et classes sont l’aspect organisationnel de l’enseignement.
+
+Ces différents éléments et leurs associations seront regroupés dans un objet
+technique nommé le conteneur, auquel correspond la partie commune de leurs
+acronymes respectifs.
+
+==== Notations
+
+
+
+Nous travaillerons sur un exemple fictif avec 4 UE liées par des contenus communs :
+
+LBIOLL 1515 Z  		Zoologie générale				cours complet
+LBIOLL 1515 A		Zoologie générale (sans laboratoire)		partim
+LBIOLL 1515 B		Zoologie générale (1ère partie : Invertébrés)	partim
+LBIOLL 1515 C		Zoologie générale (2è partie : Vertébrés)	partim
+
+
+
+===== Pour désigner le conteneur
+
+LBIOL 1515
+
+===== Pour désigner un composant
+
+Les différents composants seront désignées explicitement par une lettre
+précédée d’un ‘/’.
+On choisira de préférence les lettres
+-	/C, /D, /E, … pour les composants de type CM.
+-	/T, /U, /V, … pour les composants de type TP.
+-	/M pour le composant unique (de type mémoire) d’une UE de type mémoire.
+-	/S pour le composant unique (de type stage) d’une UE de type stage.
+
+Ainsi :
+LBIOL 1515 /C désigne un composant de type CM inclus dans le conteneur LBIOL 1515.
+LBIOL 1515 /T désigne un composant de type TP inclus dans le conteneur LBIOL 1515.
+
+
+===== Pour désigner une classe
+
+Les différentes instances (ou répétitions, ou réalisations) matérielles d’un composant seront désignées par un chiffre placé après la lettre désignant l’activité.
+
+LBIOL 1515 /C01 désigne la classe 1 du composant /C
+LBIOL 1515 /T02 désigne la classe 2 du composant /T
+
+===== Pour désigner une UE
+
+L’actuel champ « subdivision » sera réservée à l’identification des partim (et non plus des classes). La subdivision ‘Z’  sera réservée pour désigner explicitement le cours principal, dont l’enseignement est le plus complet.
+
+NB Cette UE existe nécessairement mais peut ne pas être active dans certains cas :
+-	quand le conteneur contient des activités dont le contenu alterne d’une année à l’autre.
+
+LBIOL 1515 Z : enseignement entier (la lettre Z est facultative s’il n’y a pas de partim)
+LBIOL 1515    : enseignement entier
+LBIOL 1515 A : partim A
+
+==== Inclusion de composants et de classes
+
+===== Inclusion de composants
+
+Si le contenu d’un composant /D est une partie du contenu d’un composant /C du même type, on dira que /D est inclus dans /C. Le composant /C est alors incluant.
+
+Un seul composant d’un type donné peut être incluant dans un container
+Il est parfois nécessaire de construire un composant incluant qui n’entre dans la composition d’aucune UE. Il faut alors aussi créer une classe non utilisée à l’inscription qui portera l’horaire de référence.
+
+
+
+Exemple :
+
+
+
+ 
+===== Inclusion de classes
+
+Si l’horaire d’une classe /D01 est une partie de l’horaire d’une classe /C02, avec le même local, on dira que la classe /D01 est incluse dans la classe /C02.
+
+Cela signifie que les étudiants inscrits à la classe LBIOL 1515 /D01 sont rassemblés avec les étudiants de la classe LBIOL 1515 /C02 (pour la durée du calendrier de la classe /D01). L’inclusion de classes porte sur l’organisation physique de l’enseignement, alors que l’inclusion de composants portait sur les contenus.
+
+Une classe qui n’est pas incluse est dite autonome.
+Toute classe d’un composant incluant peut être incluante.
+
+
+Exemples :
+
+====== Classes de cours magistral (complet, 1ère partie, 2ème partie)
+
+
+
+
+
+
+====== Classes de TP (complets, 1ère partie, 2ème partie) 
+Composants et classes : exemple détaillé
+
+Détaillons à présent les composants et classes dans notre exemple :
+```
+LBIOL 1515 Z  	Zoologie générale				cours complet	2 classes CM	4 classes TP
+LBIOL 1515 A	Zoologie générale (sans laboratoire)		partim		1 classe CM	0 classe TP
+LBIOL 1515 B	Zoologie générale (1ère partie : Invertébrés)	partim		1 classe CM	2 classes TP
+LBIOL 1515 C	Zoologie générale (2è partie : Vertébrés)	partim		1 classe CM	1 classe TP
+```
+Le cours principal, l’UE ‘Z’, a besoin de 2 composants, /C (cours magistral complet) avec 2 classes et /T (TP complets) avec 4 classes.
+Le partim A n’a besoin que d’une classe du cours magistral complet. On peut lui attribuer la classe /C01 ou la classe /C02, ou encore donner le choix aux étudiant. Quoi qu’il en soit il ne faut pas créer de composant pour le partim C.
+
+Dans le tableau ci-dessous, on voit que l’UE Z (cours principal) fait appel à toutes les classes qui ont été créées, tandis que le partim A ne fait appel qu’à la classe /C01. Pour construire le partim A, les composants et classes créés pour organiser le cours principal sont suffisants.
+
+
+Conteneur
+| LBIOL 1515	| CM	| TP  |
+|-------------|-----|-----|
+Composant	/C	/T
+Classe	/C01	/C02	/T01	/T02	/T03	/T04
+Cours principal
+Z	X	X	X	X	X	X
+Partim A	X
+
+
+ 
+Pour le partim B, en revanche, il faut définir un nouveau composant
+« Cours magistral 1ère partie », dont le contenu correspond à la première
+partie du contenu du composant /C. Il sera désigné ici par la lettre /D.
+De même, il faut définir un composant « TP 1ère partie », dont le contenu
+correspond à la première partie du contenu du composant /T. Il sera désigné
+par la lettre /U.
+
+Dans le tableau ci-dessous, les signes (+) signalent que l’inscription
+d’étudiants aux classes /D01 et /U01 ont pour conséquence la présence de
+ces étudiants à une partie du calendrier des classes /C02 et /T03, étant
+données les inclusions de classes. Donc les classes /D01 et /U01 ne nécessitent
+pas de réservations de locaux et d’enseignant  supplémentaires, mais le local
+réservé pour la classe /C02 devra accueillir aussi les étudiants inscrits à
+la classe /D01, et le local réservé pour la classe /T03 devra accueillir
+aussi les étudiants inscrits à la classe /U01, pour la partie du calendrier
+correspondant à la première partie de la matière.
+
+Conteneur
+LBIOL 1515	CM	TP
+Composant	/C	/D	/T	/U
+Inclusion de composant	Incluant	-> /C	Incluant	-> /T
+	/C01	/C02	/D01	/T01	/T02	/T03	/T04	/U01
+Inclusion de classe		incluante	-> /C02			incluante		-> /T03
+Cours principal
+Z	X	X		X	X	X	X
+Partim A	X
+Partim B		(+)	X			(+)		X
+
+
+De même, pour le partim C, il faut définir un composant « Cours magistral
+2ème partie », dont le contenu correspond à la seconde partie du composant
+/C. Il sera désigné ici par la lettre /E. De même, il faut définir un
+composant « TP 2ème partie », dont le contenu correspond à la seconde partie du composant /T. Il sera désigné par la lettre /V.
+
+Dans le tableau ci-dessous, la classe /V02 n’est pas incluse dans une classe
+de /C, elle est alors dite autonome.
+
+Conteneur
+LBIOL 1515	CM	TP
+Composant	/C
+45 h	/D
+15h	/E
+30h	/T
+30h	/U
+10h	/V
+20h
+Inclusion de composant	Incluant	-> /C	-> /C	Incluant	-> /T	-> /T
+Classe	/C01	/C02	/D01	/E01	/T01	/T02	/T03	/T04	/U01	/V01	/V02
+Inclusion de classe		incluante	-> /C02	-> /C01			incluante	incluante	-> /T03	-> /T04	autono.
+Cours princ. Z	X	X			X	X	X	X
+Partim A	X
+Partim B		(+)	X				(+)		X
+Partim C	(+)			X				(+)		X	X
+
+Articulation entre UE, Parcours et attributions
+
+
+ 
+Types de conteneurs
+
+Actuellement : cours, mémoire, stage, cours externe
+Toutes les UE d’un conteneur sont du même type, et héritent du type du conteneur.
+
+Types de composants
+
+Actuellement : cours magistral (CM), travaux pratiques (TP), mémoire (M),
+stage (ST), composant externe (EXT).
+NB : les composants de type Stage ou Mémoire possèderont autant de classes
+que de promoteurs.
+
+Statuts d’UE
+(à discuter)
+Statut	Signification	Condition	Utilisation / droits d’accès
+Préparation	L’UE a été créée.		Les auteurs de la proposition peuvent y
+travailler.
+Proposition	L’UE fait partie d’une proposition soumise à QOPA, qui peut
+l’étrudier.	Les attributs et éléments de composition nécessaires à une
+proposition sont introduits.	QOPA peut étudier la proposition.
+Vérifié	QOPA a approuvé la proposition.		La faculté ou CE concernée peut
+préparer les classes (locaux, horaires, titulaires).
+Publiable	Feu vert.		L’UE peut apparaître sur le portail, notamment dans
+des programmes-types.
+
+Organisé	Les classes sont prêtes.	Pour chaque composant associé à l’UE,
+au moins une classe doit être associée à l’UE.
+
+
+
+Après prolongation, un nouveau record annuel reçoit le statut Publiable.
+
+
+Statuts de composant
+
+Non sélectionnable, En préparation, Prêt
+
+Statuts de classe
+
+
+
+Actualisation
+•	Un conteneur, une UE, un composant qui possèdent une anac de fin antérieure
+à l’anac en cours, ou une année de début postérieure à l’anac en cours,
+peuvent être actualisés à l’anac en cours ou l’une des deux suivantes
+o	 si l’UE possède une anac de fin antérieure à l’anac en cours, celle-ci
+est remplacée par une anac >= anac en cours ; une instanciation annuelle
+est créée pour l’anac de départ demandée.
+o	si l’UE possède une anac de début postérieure à l’anac en cours, une
+instanciation annuelle est créée pour l’anac de départ demandée.
+Contraintes sur les années de fin
+•	changer l’année de fin d’une UE
+o	si l’année de fin du container < nouvelle année de fin de l’UE, alors son
+année de fin prend cette nouvelle valeur
+o	pour chaque composant qui entre dans la composition de principe de l’UE, si
+son année de fin < nouvelle année de fin de l’UE, alors son année de fin prend
+cette nouvelle valeur
+o	pour chaque classe qui entre dans la composition en classes de l’UE, si
+son année de fin < nouvelle année de fin de l’UE, alors son année de fin
+prend cette nouvelle valeur
+•	on ne peut pas changer directement les anac de fin des composants ni des
+classes ni du conteneur
+•	si une classe ou un composant est retiré de la composition d’un UE dans
+le cadre de l’anac « anac de sortie »
+o	s’il entre dans la composition d’autres UE, son anac de fin prend la
+valeur du maximum des anac de fin de ces autres UE
+o	s’il n’entre plus dans la composition d’aucune UE, son anac de fin prend
+la valeur précédent celle de l’« anac de sortie »
+•
+•	si une classe ou un composant est ajouté à la composition d’un UE dans le
+cadre de l’anac « anac de sortie »
+o	son anac de fin prend la valeur du maximum des anac de fin des UE dans la
+composition desquelles il entre
+
+Contraintes de Quadri et volumes horaires : règles de cohérence entre
+composants inclus et incluant
+•	si un composant /D est inclus dans un composant /C,
+o	le volume horaire nominal de /D est inférieur ou égal à celui de /C
+o	le quadrimestre de /D est égal à, ou compris dans, celui de /C
+
+/C	/D
+Q1	Q1
+Q2	Q2
+Q1&2	Q1&2, Q1|2, Q1, Q2
+Q1|2	Q1|2, Q1, Q2
+
+
+
+Prolongation
+
+
+
+
+
+ 
+
+
+Volet académique
+
+Identification
+•	Code (+ historique)
+•	Intitulé complet (+ historique)
+•	Intitulé complet en anglais (+ historique)
+•	Intitulé abrégé
+
+•	Partim (Oui / Non)
+•	Activités (Cours mag., TP, Stage, etc)
+•	Langue(s)
+
+Volume
+•	Nb de crédits
+•	Volumes des activités
+•	Répartition …………..
+
+Volet Organisation
+•	Prise en charge
+o	Cahier de charges
+o	Attribution
+•	Titulaires
+•	Début, Fin
+•	Actif
+•	Périodicité
+•	Site
+Volet Vacance et attribution
+…….
+Volet Workflow
+•	Type de proposition
+•	Etat
+•	N° de dossier
+
+Container annualisée
+•	acronyme : sigle_cours et CNum
+•	Intitulé principal
+•	anac de clôture (avec subsudiarité)
+•	site (avec subsidiariité)
+•	Organisation :
+o	entité de charge (avec subs)
+o	entité d’attribution (avec subs)
+•	Type
+•	Langue (avec subs dans UE et dans Classe)
+UE
+•	Année de clôture subsidiaire
+•	Périodicité : UE non annualisée
+UE annualisée
+•	acronyme (détermine aussi le sous-type principal/partim)
+•	Intitulé complémentaire
+•	Organisation
+o	entité de charge subsidiaire
+o	entité d’attribution subsidiaire
+o	Actif
+o	Site subsidiaire
+•	Volume
+o	Nb de crédits
+o	Quadris
+o	session par dérogation
+•	Langue subsidiaire à celle du conteneur
+Composant
+•	Type de composant
+•	Intitulé de composant
+Composant annualisé
+•	Volumes des activités
+o	Crédits ECTS
+o	Volume horaire
+o	Quadris (avac subs. des classes)
+Classe annualisée
+•	Langue subsidiaire à celle du conteneur
+•	Quadri subsidiaire
 
 
 
