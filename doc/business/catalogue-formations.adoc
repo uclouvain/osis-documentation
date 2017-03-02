@@ -366,26 +366,27 @@ composition desquelles il entre
 **	le volume horaire nominal de /D est inférieur ou égal à celui de /C
 **	le quadrimestre de /D est égal à, ou compris dans, celui de /C
 
-/C	/D
-Q1	Q1
-Q2	Q2
-Q1&2	Q1&2, Q1|2, Q1, Q2
-Q1|2	Q1|2, Q1, Q2
+|===
+| */C*  | */D*
+| Q1	| Q1
+| Q2	|Q2
+| Q1&2	| Q1&2, Q1|2, Q1, Q2
+| Q1|2	| Q1|2, Q1, Q2
+|===
 
 
-
-Prolongation
+==== Prolongation
 
 
 
 
 
  
+==== Attributs
 
+===== Volet académique
 
-Volet académique
-
-Identification
+====== Identification
 
 *	Code (+ historique)
 *	Intitulé complet (+ historique)
@@ -396,13 +397,13 @@ Identification
 *	Activités (Cours mag., TP, Stage, etc)
 *	Langue(s)
 
-Volume
+====== Volume
 
 *	Nb de crédits
 *	Volumes des activités
 *	Répartition …………..
 
-Volet Organisation
+====== Volet Organisation
 
 *	Prise en charge
 **	Cahier de charges
@@ -413,10 +414,10 @@ Volet Organisation
 *	Périodicité
 *	Site
 
-Volet Vacance et attribution
+====== Volet Vacance et attribution
 
 
-Volet Workflow
+====== Volet Workflow
 
 *	Type de proposition
 *	Etat
