@@ -289,7 +289,7 @@ image::images/UE_Composition_principe_tableau3.png[]
 
 image::images/UE_Interface_UE_autresModules.png[]
  
-Types de conteneurs
+==== Types de conteneurs
 
 Actuellement : cours, mémoire, stage, cours externe
 Toutes les UE d’un conteneur sont du même type, et héritent du type du conteneur.
@@ -332,36 +332,36 @@ Non sélectionnable, En préparation, Prêt
 
 ==== Actualisation
 
-•	Un conteneur, une UE, un composant qui possèdent une anac de fin antérieure
+*	Un conteneur, une UE, un composant qui possèdent une anac de fin antérieure
 à l’anac en cours, ou une année de début postérieure à l’anac en cours,
 peuvent être actualisés à l’anac en cours ou l’une des deux suivantes
-o	 si l’UE possède une anac de fin antérieure à l’anac en cours, celle-ci
+**	 si l’UE possède une anac de fin antérieure à l’anac en cours, celle-ci
 est remplacée par une anac >= anac en cours ; une instanciation annuelle
 est créée pour l’anac de départ demandée.
-o	si l’UE possède une anac de début postérieure à l’anac en cours, une
+**	si l’UE possède une anac de début postérieure à l’anac en cours, une
 instanciation annuelle est créée pour l’anac de départ demandée.
-Contraintes sur les années de fin
-•	changer l’année de fin d’une UE
-o	si l’année de fin du container < nouvelle année de fin de l’UE, alors son
+
+==== Contraintes sur les années de fin
+*	changer l’année de fin d’une UE
+**	si l’année de fin du container < nouvelle année de fin de l’UE, alors son
 année de fin prend cette nouvelle valeur
-o	pour chaque composant qui entre dans la composition de principe de l’UE, si
+**	pour chaque composant qui entre dans la composition de principe de l’UE, si
 son année de fin < nouvelle année de fin de l’UE, alors son année de fin prend
 cette nouvelle valeur
-o	pour chaque classe qui entre dans la composition en classes de l’UE, si
+**	pour chaque classe qui entre dans la composition en classes de l’UE, si
 son année de fin < nouvelle année de fin de l’UE, alors son année de fin
 prend cette nouvelle valeur
-•	on ne peut pas changer directement les anac de fin des composants ni des
+*	on ne peut pas changer directement les anac de fin des composants ni des
 classes ni du conteneur
-•	si une classe ou un composant est retiré de la composition d’un UE dans
+*	si une classe ou un composant est retiré de la composition d’un UE dans
 le cadre de l’anac « anac de sortie »
-o	s’il entre dans la composition d’autres UE, son anac de fin prend la
+**	s’il entre dans la composition d’autres UE, son anac de fin prend la
 valeur du maximum des anac de fin de ces autres UE
-o	s’il n’entre plus dans la composition d’aucune UE, son anac de fin prend
-la valeur précédent celle de l’« anac de sortie »
-•
-•	si une classe ou un composant est ajouté à la composition d’un UE dans le
+**	s’il n’entre plus dans la composition d’aucune UE, son anac de fin prend
+la valeur précédent celle de l’« anac de sortie ».
+*	si une classe ou un composant est ajouté à la composition d’un UE dans le
 cadre de l’anac « anac de sortie »
-o	son anac de fin prend la valeur du maximum des anac de fin des UE dans la
+**	son anac de fin prend la valeur du maximum des anac de fin des UE dans la
 composition desquelles il entre
 
 ==== Contraintes de Quadri et volumes horaires : règles de cohérence entre
