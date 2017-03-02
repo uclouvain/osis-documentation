@@ -215,7 +215,7 @@ Il est parfois nécessaire de construire un composant incluant qui n’entre dan
 
 Exemple :
 
-
+image::images/UE_Inclusion_composants.png[]
 
  
 ===== Inclusion de classes
@@ -229,6 +229,10 @@ Toute classe d’un composant incluant peut être incluante.
 
 
 Exemples :
+image::images/UE_Inclusion_classes_1.png[]
+
+
+image::images/UE_Inclusion_classes_2.png[]
 
 ====== Classes de cours magistral (complet, 1ère partie, 2ème partie)
 
@@ -273,16 +277,7 @@ la classe /D01, et le local réservé pour la classe /T03 devra accueillir
 aussi les étudiants inscrits à la classe /U01, pour la partie du calendrier
 correspondant à la première partie de la matière.
 
-Conteneur
-LBIOL 1515	CM	TP
-Composant	/C	/D	/T	/U
-Inclusion de composant	Incluant	-> /C	Incluant	-> /T
-	/C01	/C02	/D01	/T01	/T02	/T03	/T04	/U01
-Inclusion de classe		incluante	-> /C02			incluante		-> /T03
-Cours principal
-Z	X	X		X	X	X	X
-Partim A	X
-Partim B		(+)	X			(+)		X
+image::images/UE_Composition_principe_tableau2.png[]
 
 
 De même, pour le partim C, il faut définir un composant « Cours magistral
@@ -293,26 +288,11 @@ composant « TP 2ème partie », dont le contenu correspond à la seconde partie
 Dans le tableau ci-dessous, la classe /V02 n’est pas incluse dans une classe
 de /C, elle est alors dite autonome.
 
-Conteneur
-LBIOL 1515	CM	TP
-Composant	/C
-45 h	/D
-15h	/E
-30h	/T
-30h	/U
-10h	/V
-20h
-Inclusion de composant	Incluant	-> /C	-> /C	Incluant	-> /T	-> /T
-Classe	/C01	/C02	/D01	/E01	/T01	/T02	/T03	/T04	/U01	/V01	/V02
-Inclusion de classe		incluante	-> /C02	-> /C01			incluante	incluante	-> /T03	-> /T04	autono.
-Cours princ. Z	X	X			X	X	X	X
-Partim A	X
-Partim B		(+)	X				(+)		X
-Partim C	(+)			X				(+)		X	X
+image::images/UE_Composition_principe_tableau3.png[]
 
 Articulation entre UE, Parcours et attributions
 
-
+image::images/UE_Interface_UE_autresModules.png[]
  
 Types de conteneurs
 
