@@ -305,13 +305,12 @@ que de promoteurs.
 (à discuter)
 
 |===
-| Statut	     | Signification	   | Condition	| Utilisation, droits d’accès |
-| -------------- | ------------------- | ---------- | --------------------------- |
-|Préparation	 | L’UE a été créée.   |          	| Les auteurs de la proposition peuvent y travailler.|
-|Proposition	 | L’UE fait partie d’une proposition soumise à QOPA, qui peut l’étudier. | Les attributs et éléments de composition nécessaires à une proposition sont introduits.	QOPA peut étudier la proposition. | |
-| Vérifié	     | QOPA a approuvé la proposition.	| | La faculté ou CE concernée peut préparer les classes (locaux, horaires, titulaires). |
-| Publiable	    | Feu vert.		| L’UE peut apparaître sur le portail, notamment dans des programmes-types. | | 
-| Organisé	    | Les classes sont prêtes.	| Pour chaque composant associé à l’UE, au moins une classe doit être associée à l’UE. | |
+| *Statut*       | * Signification*    | *Condition* | *Utilisation, droits d’accès* |
+| _Préparation_  | L’UE a été créée.   |          	 | Les auteurs de la proposition peuvent y travailler.|
+| _Proposition_  | L’UE fait partie d’une proposition soumise à QOPA, qui peut l’étudier. | Les attributs et éléments de composition nécessaires à une proposition sont introduits.	QOPA peut étudier la proposition. | |
+| _Vérifié_      | QOPA a approuvé la proposition.	| | La faculté ou CE concernée peut préparer les classes (locaux, horaires, titulaires). |
+| _Publiable_    | Feu vert.		    | L’UE peut apparaître sur le portail, notamment dans des programmes-types. | | 
+| _Organisé_     | Les classes sont prêtes.	| Pour chaque composant associé à l’UE, au moins une classe doit être associée à l’UE. | |
 |===
 
 
