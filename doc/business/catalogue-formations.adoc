@@ -229,7 +229,7 @@ Une classe qui n’est pas incluse est dite autonome.
 Toute classe d’un composant incluant peut être incluante.
 
 
-Exemples :
+_Exemples_
 
 ====== Classes de cours magistral (complet, 1ère partie, 2ème partie)
 
@@ -245,7 +245,7 @@ image::images/UE_Inclusion_classes_2.png[]
 
 
 
-Composants et classes : exemple détaillé
+==== Composants et classes : exemple détaillé
 
 Détaillons à présent les composants et classes dans notre exemple :
 ```
@@ -293,7 +293,7 @@ de /C, elle est alors dite autonome.
 
 image::images/UE_Composition_principe_tableau3.png[]
 
-Articulation entre UE, Parcours et attributions
+==== Articulation entre UE, Parcours et attributions
 
 image::images/UE_Interface_UE_autresModules.png[]
  
@@ -302,14 +302,14 @@ Types de conteneurs
 Actuellement : cours, mémoire, stage, cours externe
 Toutes les UE d’un conteneur sont du même type, et héritent du type du conteneur.
 
-Types de composants
+==== Types de composants
 
 Actuellement : cours magistral (CM), travaux pratiques (TP), mémoire (M),
 stage (ST), composant externe (EXT).
 NB : les composants de type Stage ou Mémoire possèderont autant de classes
 que de promoteurs.
 
-Statuts d’UE
+==== Statuts d’UE
 (à discuter)
 Statut	Signification	Condition	Utilisation / droits d’accès
 Préparation	L’UE a été créée.		Les auteurs de la proposition peuvent y
@@ -330,15 +330,16 @@ au moins une classe doit être associée à l’UE.
 Après prolongation, un nouveau record annuel reçoit le statut Publiable.
 
 
-Statuts de composant
+==== Statuts de composant
 
 Non sélectionnable, En préparation, Prêt
 
-Statuts de classe
+==== Statuts de classe
 
 
 
-Actualisation
+==== Actualisation
+
 •	Un conteneur, une UE, un composant qui possèdent une anac de fin antérieure
 à l’anac en cours, ou une année de début postérieure à l’anac en cours,
 peuvent être actualisés à l’anac en cours ou l’une des deux suivantes
@@ -371,7 +372,7 @@ cadre de l’anac « anac de sortie »
 o	son anac de fin prend la valeur du maximum des anac de fin des UE dans la
 composition desquelles il entre
 
-Contraintes de Quadri et volumes horaires : règles de cohérence entre
+==== Contraintes de Quadri et volumes horaires : règles de cohérence entre
 composants inclus et incluant
 •	si un composant /D est inclus dans un composant /C,
 o	le volume horaire nominal de /D est inférieur ou égal à celui de /C
