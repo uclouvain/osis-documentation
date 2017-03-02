@@ -213,11 +213,10 @@ Il est parfois nécessaire de construire un composant incluant qui n’entre dan
 
 
 
-Exemple :
+_Exemple_
 
 image::images/UE_Inclusion_composants.png[]
 
-aaa
 
 ===== Inclusion de classes
 
@@ -240,11 +239,6 @@ image::images/UE_Inclusion_classes_1.png[]
 image::images/UE_Inclusion_classes_2.png[]
 
 
-
-
-
-
-
 ==== Composants et classes : exemple détaillé
 
 Détaillons à présent les composants et classes dans notre exemple :
@@ -259,10 +253,8 @@ Le partim A n’a besoin que d’une classe du cours magistral complet. On peut 
 
 Dans le tableau ci-dessous, on voit que l’UE Z (cours principal) fait appel à toutes les classes qui ont été créées, tandis que le partim A ne fait appel qu’à la classe /C01. Pour construire le partim A, les composants et classes créés pour organiser le cours principal sont suffisants.
 
-
 image::images/UE_Composition_principe_tableau1.png[]
 
- 
 Pour le partim B, en revanche, il faut définir un nouveau composant
 « Cours magistral 1ère partie », dont le contenu correspond à la première
 partie du contenu du composant /C. Il sera désigné ici par la lettre /D.
