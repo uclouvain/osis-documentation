@@ -342,6 +342,7 @@ est créée pour l’anac de départ demandée.
 instanciation annuelle est créée pour l’anac de départ demandée.
 
 ==== Contraintes sur les années de fin
+
 *	changer l’année de fin d’une UE
 **	si l’année de fin du container < nouvelle année de fin de l’UE, alors son
 année de fin prend cette nouvelle valeur
@@ -364,11 +365,11 @@ cadre de l’anac « anac de sortie »
 **	son anac de fin prend la valeur du maximum des anac de fin des UE dans la
 composition desquelles il entre
 
-==== Contraintes de Quadri et volumes horaires : règles de cohérence entre
-composants inclus et incluant
-•	si un composant /D est inclus dans un composant /C,
-o	le volume horaire nominal de /D est inférieur ou égal à celui de /C
-o	le quadrimestre de /D est égal à, ou compris dans, celui de /C
+==== Contraintes de Quadri et volumes horaires : règles de cohérence entre composants inclus et incluant
+
+*	si un composant /D est inclus dans un composant /C,
+**	le volume horaire nominal de /D est inférieur ou égal à celui de /C
+**	le quadrimestre de /D est égal à, ou compris dans, celui de /C
 
 /C	/D
 Q1	Q1
@@ -390,76 +391,90 @@ Prolongation
 Volet académique
 
 Identification
-•	Code (+ historique)
-•	Intitulé complet (+ historique)
-•	Intitulé complet en anglais (+ historique)
-•	Intitulé abrégé
 
-•	Partim (Oui / Non)
-•	Activités (Cours mag., TP, Stage, etc)
-•	Langue(s)
+*	Code (+ historique)
+*	Intitulé complet (+ historique)
+*	Intitulé complet en anglais (+ historique)
+*	Intitulé abrégé
+
+*	Partim (Oui / Non)
+*	Activités (Cours mag., TP, Stage, etc)
+*	Langue(s)
 
 Volume
-•	Nb de crédits
-•	Volumes des activités
-•	Répartition …………..
+
+*	Nb de crédits
+*	Volumes des activités
+*	Répartition …………..
 
 Volet Organisation
-•	Prise en charge
-o	Cahier de charges
-o	Attribution
-•	Titulaires
-•	Début, Fin
-•	Actif
-•	Périodicité
-•	Site
+
+*	Prise en charge
+**	Cahier de charges
+**	Attribution
+*	Titulaires
+*	Début, Fin
+*	Actif
+*	Périodicité
+*	Site
+
 Volet Vacance et attribution
-…….
+
+
 Volet Workflow
-•	Type de proposition
-•	Etat
-•	N° de dossier
+
+*	Type de proposition
+*	Etat
+*	N° de dossier
 
 Container annualisée
-•	acronyme : sigle_cours et CNum
-•	Intitulé principal
-•	anac de clôture (avec subsudiarité)
-•	site (avec subsidiariité)
-•	Organisation :
-o	entité de charge (avec subs)
-o	entité d’attribution (avec subs)
-•	Type
-•	Langue (avec subs dans UE et dans Classe)
+
+*	acronyme : sigle_cours et CNum
+*	Intitulé principal
+*	anac de clôture (avec subsudiarité)
+*	site (avec subsidiariité)
+*	Organisation :
+**	entité de charge (avec subs)
+**	entité d’attribution (avec subs)
+*	Type
+*	Langue (avec subs dans UE et dans Classe)
+
 UE
-•	Année de clôture subsidiaire
-•	Périodicité : UE non annualisée
+
+*	Année de clôture subsidiaire
+*	Périodicité : UE non annualisée
+
 UE annualisée
-•	acronyme (détermine aussi le sous-type principal/partim)
-•	Intitulé complémentaire
-•	Organisation
-o	entité de charge subsidiaire
-o	entité d’attribution subsidiaire
-o	Actif
-o	Site subsidiaire
-•	Volume
-o	Nb de crédits
-o	Quadris
-o	session par dérogation
-•	Langue subsidiaire à celle du conteneur
+
+*	acronyme (détermine aussi le sous-type principal/partim)
+*	Intitulé complémentaire
+*	Organisation
+**	entité de charge subsidiaire
+**	entité d’attribution subsidiaire
+**	Actif
+**	Site subsidiaire
+*	Volume
+**	Nb de crédits
+**	Quadris
+**	session par dérogation
+*	Langue subsidiaire à celle du conteneur
+
 Composant
-•	Type de composant
-•	Intitulé de composant
+
+*	Type de composant
+*	Intitulé de composant
+
 Composant annualisé
-•	Volumes des activités
-o	Crédits ECTS
-o	Volume horaire
-o	Quadris (avac subs. des classes)
+
+*	Volumes des activités
+**	Crédits ECTS
+**	Volume horaire
+**	Quadris (avac subs. des classes)
+
 Classe annualisée
-•	Langue subsidiaire à celle du conteneur
-•	Quadri subsidiaire
 
-
-
+*	Langue subsidiaire à celle du conteneur
+*	Quadri subsidiaire
 
 
 ==== Création d'UE, activités, classes
