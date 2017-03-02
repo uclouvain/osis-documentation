@@ -253,7 +253,7 @@ Le partim A n’a besoin que d’une classe du cours magistral complet. On peut 
 Dans le tableau ci-dessous, on voit que l’UE Z (cours principal) fait appel à toutes les classes qui ont été créées, tandis que le partim A ne fait appel qu’à la classe /C01. Pour construire le partim A, les composants et classes créés pour organiser le cours principal sont suffisants.
 
 
-image:image/UE_Composition_principe_tableau1.png[]
+image::image/UE_Composition_principe_tableau1.png[]
 
  
 Pour le partim B, en revanche, il faut définir un nouveau composant
