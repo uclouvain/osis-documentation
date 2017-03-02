@@ -378,7 +378,8 @@ composition desquelles il entre
 ==== Prolongation
 
 Chaque année, les entités doivent être instanciées pour une année académique supplémentaire.
- 
+
+
 ==== Attributs
 
 On veille à séparer le mieux possible les informations à carctère académique de celle qui relèvent de l'organisation.
@@ -470,6 +471,226 @@ Classe annualisée
 
 *	Langue subsidiaire à celle du conteneur
 *	Quadri subsidiaire
+
+==== Gestion des UE
+
+===== Approche utilisateur
+
+====== Container 
+Il sera seulement perçu comme le code commun des acronymes d’un groupe des cours reliés. Il est pertinent de ne pas le montrer. Les attributs liés à cet objetsont hérités par l’UE cours principal, et peuvent donc être géré dans le cadre de celle-ci.
+
+====== Composant
+Le plus souvent, pour le gestionnaire, le composant n’a de sens compréhensible que dans le contexte d’une UE. Pour la bonne compréhension, nous ne donnerons accès aux composants que dans le cadre d’une UE. Cependant nous présenterons toujours la liste complète des composants du container.
+
+====== Classe
+Le plus souvent, pour le gestionnaire, la classe n’est compréhensible que dans le contexte d’une UE. Pour la bonne compréhension, nous ne donnerons accès aux classes que dans le cadre d’une UE. Cependant nous présenterons toujours toutes les classes des composants associés à l’UE concernée.
+
+====== UE
+L’UE reste donc le point  
+Recherche et création d’UE
+
+===== Formulaire
+*	Anac (intialisée à l’anac en cours, et disposant d’un menu avec « blanc », anac « Plus récente », et les 10 dernières anac)
+*	Type d’UE
+*	Acronyme ou partie d’acronyme
+*	Mots d’un titre ou mots-clefs
+*	Entité d’attribution
+*	Entité de charge
+
+Le bouton [ Recherche ] est toujours visible, et actif à condition que le formulaire dispose de valeur pour au moins l’une des combinaisons de champs suivantes :
+
+*	Anac et Sigle
+*	Anac et Mot d’un titre
+*	Anac et Entité de charge
+*	Anac et Entité d’attribution
+*	Signe et CNum
+
+Si le formulaire a été rempli
+-	en spécifiant l’anac la « Plus récente »,
+-	en introduisant un acronyme comportant 4 chiffres après les lettres
+
+*	si la liste produite contient un et un seul container,
+**	les UE arrêtées sont accessibles et peuvent donc être actualisées
+**	le bouton [ Créer une UE partim ] est actif
+**	si toutes les UE sont arrêtées depuis au moins 5 ans, le bouton [Recréer une nouvelle UE principale avec ce code ] est actif (cette opération créera un nouveau container)
+*	si les autres champs du formulaire sont vides et que la liste produite est vide (zéro container),
+**	le bouton [ Créer une UE principale ] est actif
+
+ 
+ 
+
+
+
+ 
+===== Onglet « Identification de l’UE »
+
+
+Règles
+
+Code cour principal, Intitulé officiel principal et  intitulé abrégé principal (et leurs traductions anglaises)
+Attribut du conteneur, éditable dans l’UE « cours principal », en lecture seul dans les partims. Si des partims (d’autres UE) existent dans le container, un changement de code donnra lieu à un avertissement.
+
+Intitulé officiel secondaire et l’intitulé abrégé sedondaire
+Obligatoire pour les partims.
+Libre pour l’UE « cours principal », mais obligatoire si l’intitulé principal correspondant est vide.
+
+
+
+
+image::images/UE_details_onglet-Identif.pgn[]
+
+
+
+
+
+
+
+
+
+
+ 
+===== Onglet « Composition de principe de l’UE »
+
+Règles
+*	Le système présente tous les composants existants (learning_component_year)
+**	ils sont triés par type (CM, TP, ST (Stage), M (Mémoire))
+**	Attributs présentés 
+***	code
+***	type de composant
+***	Intitulé du composant
+***	inclusion
+***	statut ou dernière année d’existence si le composant n’existe pas pour l’anac concernée
+***	volume horaire nominal (+ code couleur pour signaler la conformité des classes)
+***	quadrimestre nominal (+ code couleur pour signaler la conformité des classes)
+***	nombre de classes prévu
+***	nombre de classes existantes dans l’anac concernée (valeur calculée) (+ code couleur pour signaler la conformité du nombre réel de classes avec le nombre prévu)
+
+*	coche de sélection permettant de définir la composition de principe de l’UE (learning_unit_component)
+**	Le bouton [ Modifier la composition ] permet d’éditer les coches d’association
+**	Il existe un statut de composant « Non sélectionnable »
+
+
+ 
+image::images/UE_details_composPrincipe-1.pgn[]
+
+image::images/UE_details_composPrincipe-2.pgn[]
+
+
+
+===== Onglet « Composition en classes de l’UE »
+
+Règles
+
+-	le système présente toutes les classes existantes pour les composants sélectionnés
+o	Attributs présentés (tous en lecture seule)
+	code
+	filiation
+	titulaires
+	langue (calculée par subsidiarité à partir du container)
+	statut
+o	2 volumes horaires effectifs (calculé dynamiquement à partir des règles horaires des classes si elles existent) (+ codes couleur pour signaler la conformité de chaque classe avec les valeur nominales du composant)
+
+
+-	coche de sélection permettant de definir la composition en classes de l’UE
+
+
+ 
+image::images/UE_details_composClasses-1.pgn[]
+
+image::images/UE_details_composClasses-2.pgn[]
+
+
+
+ 
+Organisation de l’UE
+Règles
+
+	Entité	Surcharge	
+Entité de cahier de charge	UE_year		
+Entité d’attribution	Container_year
+(enregistré dans les détails de l’UE principale)	UE_year (partims)	
+Anac de début	-	-	Calculé en recherchant le plus ancien record annuel de l’UE
+Anac de fin	UE (petit chapeau)		
+Site 	Container_year
+(enregistré dans les détails de l’UE principale)	UE_year (partims)	
+Périodicité 	UE (petit chapeau)		
+Langue	Container_year
+(enregistré dans les détails de l’UE principale)	Classe_year	
+
+Les volumes horaires et quadrimestres sont ceux des composants.
+
+
+ 
+
+Onglet Organisation
+
+
+image::images/UE_details_onglet-Org.pgn[]
+
+ 
+Onglet Informations pédagogiques
+
+•	Préalables
+•	Thèmes
+•	Acquis d’apprentissage
+•	Modes d’évaluation
+•	Méthodes d’enseignement
+•	Contenu
+•	Bibliographie
+•	Autres informations
+
+
+
+
+
+ 
+Gestion des détails d’une Classe
+
+Règles horaires d’une Classe autonome ou (ici) incluante
+
+T01	T01/1	Quadrimestre	Q1
+		Semaine début	1
+		Nb semaines	14
+		Excepté semaine n°	-
+		Jour semaine	Lundi
+		Heure début	14
+		Durée	1
+	T01/2	Quadrimestre	Q2
+		Semaine début	1
+		Nb semaines	14
+		Excepté semaine n°	-
+		Jour semaine	Jeudi
+		Heure début	14 :15
+		Durée	1
+
+Volume horaire effectif = 14 sem X 1 h/sem = 14 h
+ 
+Règles horaires d’une Classe incluse
+
+Les classes incluses héritent des règles horaires d’une classe incluante, munies de restrictions : suppression totale ou partielle des nos de semaines d’une règle.
+Mots clefs : Suivre, Suivre excepté semaine(s) …, Supprimer
+Classe
+incluse	Classe incluante	Règles de la classe incluantes	Règles de la classe incluse
+U02	T01	T01/1	Quadrimestre	Q1	Suivre excepté semaine 14
+			Semaine début	1	
+			Nb semaines	14	
+			Excepté semaine n°		
+			Jour semaine	Lundi	
+			Heure début	14 :00	
+			Durée	1	
+		T01/2	Quadrimestre	Q2	Supprimer
+			Semaine début	1	
+			Nb semaines	14	
+			Excepté semaine n°	--	
+			Jour semaine	Lundi	
+			Heure début	14 :00	
+			Durée	1	
+
+Volume horaire effectif = 14 X 1 + 0 = 14 h
+
+
+
+
 
 
 ==== Création d'UE, activités, classes
