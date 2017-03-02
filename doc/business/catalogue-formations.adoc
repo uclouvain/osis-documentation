@@ -217,7 +217,8 @@ Exemple :
 
 image::images/UE_Inclusion_composants.png[]
 
- 
+aaa
+
 ===== Inclusion de classes
 
 Si l’horaire d’une classe /D01 est une partie de l’horaire d’une classe /C02, avec le même local, on dira que la classe /D01 est incluse dans la classe /C02.
