@@ -377,9 +377,11 @@ composition desquelles il entre
 
 ==== Prolongation
 
-aaa
+Chaque année, les entités doivent être instanciées pour une année académique supplémentaire.
  
 ==== Attributs
+
+On veille à séparer le mieux possible les informations à carctère académique de celle qui relèvent de l'organisation.
 
 ===== Volet académique
 
