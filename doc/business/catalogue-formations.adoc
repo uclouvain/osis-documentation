@@ -516,14 +516,8 @@ Si le formulaire a été rempli
 *	si les autres champs du formulaire sont vides et que la liste produite est vide (zéro container),
 **	le bouton [ Créer une UE principale ] est actif
 
- 
- 
 
-
-
- 
-===== Onglet « Identification de l’UE »
-
+===== Onglet Identification de l'UE
 
 Règles
 
@@ -539,18 +533,7 @@ Libre pour l’UE « cours principal », mais obligatoire si l’intitulé princ
 
 image::images/UE_details_onglet-Identif.png[]
 
-
-
-
-
-
-
-
-
-
- 
-===== Onglet « Composition de principe de l’UE »
-
+===== Onglet Composition de principe de l'UE
 Règles
 *	Le système présente tous les composants existants (learning_component_year)
 **	ils sont triés par type (CM, TP, ST (Stage), M (Mémoire))
@@ -569,8 +552,9 @@ Règles
 **	Le bouton [ Modifier la composition ] permet d’éditer les coches d’association
 **	Il existe un statut de composant « Non sélectionnable »
 
+Exemples d'écrans :
 
- 
+
 image::images/UE_details_composPrincipe-1.png[]
 
 image::images/UE_details_composPrincipe-2.png[]
@@ -582,19 +566,19 @@ image::images/UE_details_composPrincipe-2.png[]
 
 Règles
 
--	le système présente toutes les classes existantes pour les composants sélectionnés
-o	Attributs présentés (tous en lecture seule)
-	code
-	filiation
-	titulaires
-	langue (calculée par subsidiarité à partir du container)
-	statut
-o	2 volumes horaires effectifs (calculé dynamiquement à partir des règles horaires des classes si elles existent) (+ codes couleur pour signaler la conformité de chaque classe avec les valeur nominales du composant)
+*	le système présente toutes les classes existantes pour les composants sélectionnés
+**	Attributs présentés (tous en lecture seule)
+***	code
+***	filiation
+***	titulaires
+***	langue (calculée par subsidiarité à partir du container)
+***	statut
+**	2 volumes horaires effectifs (calculé dynamiquement à partir des règles horaires des classes si elles existent) (+ codes couleur pour signaler la conformité de chaque classe avec les valeur nominales du composant)
 
 
--	coche de sélection permettant de definir la composition en classes de l’UE
+*	coche de sélection permettant de definir la composition en classes de l’UE
 
-
+Exemples d'écrans :
  
 image::images/UE_details_composClasses-1.png[]
 
