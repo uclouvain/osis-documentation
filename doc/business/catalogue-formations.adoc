@@ -537,7 +537,7 @@ Libre pour l’UE « cours principal », mais obligatoire si l’intitulé princ
 
 
 
-image::images/UE_details_onglet-Identif.pgn[]
+image::images/UE_details_onglet-Identif.png[]
 
 
 
@@ -571,9 +571,10 @@ Règles
 
 
  
-image::images/UE_details_composPrincipe-1.pgn[]
+image::images/UE_details_composPrincipe-1.png[]
 
-image::images/UE_details_composPrincipe-2.pgn[]
+image::images/UE_details_composPrincipe-2.png[]
+
 
 
 
@@ -595,9 +596,9 @@ o	2 volumes horaires effectifs (calculé dynamiquement à partir des règles hor
 
 
  
-image::images/UE_details_composClasses-1.pgn[]
+image::images/UE_details_composClasses-1.png[]
 
-image::images/UE_details_composClasses-2.pgn[]
+image::images/UE_details_composClasses-2.png[]
 
 
 
