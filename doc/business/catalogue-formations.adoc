@@ -579,7 +579,7 @@ Règles
 *	coche de sélection permettant de definir la composition en classes de l’UE
 
 Exemples d'écrans :
- 
+
 image::images/UE_details_composClasses-1.png[]
 
 image::images/UE_details_composClasses-2.png[]
@@ -587,7 +587,7 @@ image::images/UE_details_composClasses-2.png[]
 
 
  
-Organisation de l’UE
+===== Onglet Organisation de l’UE
 Règles
 
 	Entité	Surcharge	
