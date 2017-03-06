@@ -78,10 +78,10 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 ****** Choix/présentations d'UE
 ******* UE
 ****** Choix de Mini-formations
-******* Mini-formation
-******** UE
-******** Choix/présentations d'UE
-********* UE
+***** Mini-formation
+****** UE
+****** Choix/présentations d'UE
+******* UE
 
 - une _Mini-formation_ existe indépendammnent de tout contexte ; elle peut figurer
 dans le _contenu_ de toute _QF_, sans hériter des attributs de cette _QF_ ;
