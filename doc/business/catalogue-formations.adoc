@@ -8,10 +8,10 @@
 
 ===== Organisations de formation (OF)
 
-Une _OF_ est organisation qui soutient un processus d’apprentissage, possédant
+Une _OF_ est organisation qui soutient un processus d’apprentissage,
 
-* des attributs
-* et un _contenu_, qui est une liste d’UE et d’OF.
+* définie par des attributs
+* et possédant un _contenu_, qui est une liste d’UE et/ou d’OF.
 
 On distingue le contenu du premier degré, du second degré, et récursif.
 
