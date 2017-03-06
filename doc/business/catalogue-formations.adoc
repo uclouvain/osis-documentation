@@ -70,22 +70,22 @@ il n'hérite pas des attributs des QF au contenu desquels il est inclus.
 ====== Exemple typique de structure de programme-type
 
 |===
-|Intitulé principal  |   |   |   |   |   |   |
-|  | TC d'intit. princ. (inutilisé)  |   |   |   |   |   
-|  | Orien- tation  |   |   |   |   |  
-|  |   | TC d'orien- tation  |   |   |  |   
-|  |   |   | UE  |   |   | 
-|  |   |   | Choix/ présen- tations d'UE |   |   |  
-|  |   |   |   | UE |   |  
-|  |   | Finalité |   |   |   |   
-|  |   |   | UE  |   |   |   
-|  |   |   | Choix/ présen- tations d'UE  |   |   |   
-|  |   |   |   | UE  |   |   
-|  |   |   | Choix de Mini- forma- tions  |   |   |   
-|  |   |   |   | Mini- forma- tion |   |   
-|  |   |   |   |   | UE  |   
-|  |   |   |   |   | Choix/ présen- tations d'UE  |   
-|  |   |   |   |   |  | UE  
+| Intitulé principal |   |   |   |   |   |
+|   | TC d'intit. princ. (inutilisé) |   |   |   |   |
+|   | Orientation  |   |   |   |   |
+|   |   | TC d'orientation  |   |   |   |
+|   |   |   | UE  |   |   |
+|   |   |   | Choix/ présen- tations d'UE |   |   |
+|   |   |   |   |  UE  |   |
+|   |   | Finalité  |   |   |   |
+|   |   |   | UE  |   |   |
+|   |   |   | Choix/ présen- tations d'UE |   |   |
+|   |   |   |   | UE |   |
+|   |   |   | Choix de Mini- forma- tions  |   |   |
+|   |   |   |   | Mini- formation  |   |
+|   |   |   |   |   | UE  |
+|   |   |   |   |   | Choix/ présen- tations d'UE |
+|   |   |   |   |   |   | UE  
 |===
 
 
