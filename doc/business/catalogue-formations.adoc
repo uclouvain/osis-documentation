@@ -20,8 +20,16 @@ Chaque type d'OF possède des règles d'utilisation des attributs et de construc
 Types d'OF :
 
 * Intitulé principal (= Choix d'orientations)
+** de 1er cycle (niv. européen 6)
+** de 2è cycle (niv. européen 7)
+** de 3è cycle (niv. européen 8)
 * Orientation  (= Choix de finalités)
+** de 1er cycle (niv. européen 6)
+** de 2è cycle (niv. européen 7)
+** de 3è cycle (niv. européen 8)
 * Finalité
+** pseudo-finalité de 1er cycle (niv. européen 6)
+** de 2è cycle (niv. européen 7)
 * Mini-formation : ensemble structuré d’UE et/ de Groupements conçus pour être inclus dans les Formations, sur base d’objectifs académiques et pédagogiques explicites
 ** Mineure
 ** Approfondissement
@@ -30,7 +38,18 @@ Types d'OF :
 * Groupements autres (présentation et choix)
 ** Tronc commun d'orientation
 ** Choix de Mini-formations
-** Choix / Présentation de cours (faut-il différentier ?) 
+*** Choix de mineure et approfondissements
+*** Choix de majeures
+*** Choix d'options
+** Choix/présentation de cours 
+
+NB : types de mineures :
+
+*** Mineure de sensibilisation
+*** Mineure d'ouverture
+*** Mineure de complément
+*** Mineure d'accès
+
 
 ===== Formation
 
@@ -65,18 +84,24 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 
 Inclusion
 |===
-| Intitulé principal | TC d'i.pr. (inutilisé) 
-| Intitulé principal | Orientation
-| Orientation        | TC d'orientation
-| Orientation        | Finalité
-| TC d'orientation   | UE
-| TC d'orientation   | Choix / Présentation de cours
+| Intitulé principal | unique | TC d'i.pr. (inutilisé) 
+| Intitulé principal | unique | Orientation
+| Orientation        | unique | TC d'orientation
+| Orientation        | unique | Finalité
+| TC d'orientation   |        | UE
+| TC d'orientation   |        | Choix / Présentation de cours
+| TC d'orientation   | unique | Choix de MF ??
+| Finalité           |        | UE
+| Finalité           |        | Choix / Présentation de cours
+| Finalité           | ?      | Choix de MF (1)
+| Choix de MF        |        | MF
+| Choix 
 |===
 
-- un _Regroupement_ peut exister en général indépendamment de tout contexte
-mais on peut restreindre son inclusion dans les contenus appartenant directement
-ou indirectement à une _Formation_ ou à un _Ensemble de formations_;
-il n'hérite pas des attributs des QF au contenu desquels il est inclus.
+(1) restrictions propres au cycle
+| Finalité muette de Bac | unique | Choix de mineures / approfondissements |
+| Finalité muette de Bac | unique | Choix de majeures EPL        |
+| Finalité de master     | ?      | Choix d'options              |
  
 ====== Exemple typique de structure de programme-type
 
