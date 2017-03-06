@@ -288,7 +288,7 @@ image::images/UE_Composition_principe_tableau3.png[]
 ==== Articulation entre UE, Parcours et attributions
 
 image::images/UE_Interface_UE_autresModules.png[]
- 
+
 ==== Types de conteneurs
 
 Actuellement : cours, mémoire, stage, cours externe
@@ -584,25 +584,22 @@ image::images/UE_details_composClasses-1.png[]
 
 image::images/UE_details_composClasses-2.png[]
 
+===== Onglet Organisation de l'UE
 
-
- 
-===== Onglet Organisation de l’UE
 Règles
 
-	Entité	Surcharge	
-Entité de cahier de charge	UE_year		
-Entité d’attribution	Container_year
-(enregistré dans les détails de l’UE principale)	UE_year (partims)	
-Anac de début	-	-	Calculé en recherchant le plus ancien record annuel de l’UE
-Anac de fin	UE (petit chapeau)		
-Site 	Container_year
-(enregistré dans les détails de l’UE principale)	UE_year (partims)	
-Périodicité 	UE (petit chapeau)		
-Langue	Container_year
-(enregistré dans les détails de l’UE principale)	Classe_year	
+|====
+|                        	| Entité			| Surcharge	
+| Entité de cahier de charge	| UE_year		        |	
+| Entité d’attribution		| Container_year (via détails de l’UE principale) |	UE_year (partims)
+| Anac de fin			| UE (petit chapeau)		|	
+| Site 				| Container_year (via détails de l’UE principale)  |	UE_year (partims)	
+|Périodicité 			| UE (petit chapeau)		|	
+| Langue			| Container_year (via UE principale) |	Classe_year
+|====
 
-Les volumes horaires et quadrimestres sont ceux des composants.
+* L'anac de début	est calculée en recherchant le plus ancien record annuel de l’UE.
+* Les volumes horaires et quadrimestres sont ceux des composants.
 
 
  
