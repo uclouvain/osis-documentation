@@ -8,24 +8,24 @@
 
 ===== Formations et Organisations de formation (OF)
 
-**Organisation de formation (OF)** : toute organisation qui soutient un processus d’apprentissage, et dont le contenu est un ensemble structuré d’UE et d’OF de niveaux inférieurs. Type d'OF :
+**Organisation de formation (OF)** : toute organisation qui soutient un processus d’apprentissage, et dont le contenu est un ensemble structuré d’UE et d’OF de niveaux inférieurs. Types d'OF :
+
 * Intitulé principal
 * Orientation
 * Finalité
-* Mini-formation
+* Mini-formation : ensemble structuré d’UE et/ de Groupements conçus pour être inclus dans les Formations, sur base d’objectifs académiques et pédagogiques explicites
 ** Mineure
 ** Approfondissement
 ** Majeure EPL
 ** Option de master
 * Groupements autres (présentation et choix)
 
+Le constituant atomique de toute OF est l’UE.
+
 **Formation** : organisation qui soutient un processus d’apprentissage sanctionné par un diplôme ou un certificat. Elle est spécifiée par un triplet d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ; seule la composante Intitulé principal est toujours nommée ; les composantes Orientation et Finalité peuvent soit rester muettes, soit être nommées, càd posséder un intitulé.
 
-**Mini-formation** : ensembles structurés d’UE conçus pour être inclus dans les Formations, sur base d’objectifs académiques et pédagogiques explicites. Types : approfondissement, majeures EPL, mineures, options.
 
-**Groupement** : ensemble structuré d’UE sans objectifs académiques et pédagogiques explicites. La raison d’être des groupements est d’organiser le contenu des OF et de présenter des choix.
 
-Le constituant atomique de toute OF est l’UE.
 
 
 
