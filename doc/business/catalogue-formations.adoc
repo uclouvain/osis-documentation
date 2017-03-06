@@ -8,10 +8,12 @@
 
 ===== Organisations de formation (OF)
 
-Une _OF_ est organisation qui soutient un processus d’apprentissage, 
+Une _OF_ est organisation qui soutient un processus d’apprentissage, possédant
 
-* définie par des attributs
-* et dont le contenu est un ensemble structuré d’UE et d’OF de niveaux inférieurs. 
+* des attributs
+* et un contenu, qui est une liste d’UE et d’OF.
+
+Chaque type d'OF possède des règles d'utilisation des attributs et de construction de son contenu.
 
 Types d'OF :
 
@@ -28,10 +30,6 @@ Types d'OF :
 ** Choix de Finalités
 ** Choix de Mini-formations
 ** Choix / Présentation de cours (faut-il différentier ?) 
-
-Une _OF_ possède des attributs et un contenu, liste d'OF et/ou d'UE.
-
-Chaque type d'OF possède des règles d'utilisation des attributs et des règles d'inclusion d'OF et UE dans son contenu.
 
 ===== Formation
 
