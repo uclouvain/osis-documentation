@@ -19,8 +19,12 @@ Une _OF_ est organisation qui soutient un processus d’apprentissage, et dont l
 ** Majeure EPL
 ** Option de master
 * Groupements autres (présentation et choix)
+** Choix d'orientations
+** Choix de Finalités
+** Choix de Mini-formations
+** Choix / Présentation de cours (faut-il différentier ?) 
 
-Une _OF_ possède des attributs et un contenu propre, liste d'OF et/ou d'UE.
+Une _OF_ possède des attributs et un contenu, liste d'OF et/ou d'UE.
 
 Chaque type d'OF possède des règles d'utilisation des attributs et des règles d'inclusion d'OF et UE dans son contenu.
 
@@ -41,7 +45,13 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 
 ====== Relations entre Intitulé principal, Orientation, Finalité 
 *	les 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
+** 	une _Orientation_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_ ;
+** 	une _Finalité_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_,
+et si cet _Intitulé principal_ possède des _Orientations_, la _Finalité_
+n'existe que dans le contexte d'une et une seule de ces _Orientations_ ; 
 *	héritage des attributs et du contenu
+**	une _Orientation_ hérite des attributs de son _Intitulé principal_
+**	une _Finalité_ hérite des attributs de l'_Intitulé principal_, et, le cas échéant, de l'_Orientation_, auxquels elle appartient.
 *	certains attributs peuvent être surchargés
 
 ====== Relations entre MF, Grpm et UE et avec F
@@ -50,18 +60,6 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 *	certains attributs sont contextuels ou contextualisables (« relatifs ») 
  
 
-====== Inclusion sous contrainte avec héritage d'attributs
-
-- une _Orientation_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_ ;
-une _Orientation_ hérite des attributs de son _Intitulé principal_
-(mais certains attributs peuvent être surchargés);
-- une _Finalité_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_,
-et si cet _Intitulé principal_ possède des _Orientations_, la _Finalité_
-n'existe que dans le contexte d'une et une seule de ces _Orientations_ ; une _Finalité_
-hérite des attributs de l'_Intitulé principal_, et, le cas échéant, de
-l'_Orientation_, auxquels appartient cette _Finalité_.
-
-====== Inclusion sans contrainte et sans héritage d'attributs
 
 - une _Mini-formation_ existe indépendammnent de tout contexte ; elle peut figurer
 dans le _contenu_ de toute _QF_, sans hériter des attributs de cette _QF_ ;
