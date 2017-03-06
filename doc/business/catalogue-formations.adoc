@@ -74,6 +74,14 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 ****** UE
 **** Choix de finalités
 ***** Finalité
+
+
+
+
+***** Finalité
+****** UE
+
+
 ****** UE
 ****** Choix/présentations d'UE
 ******* UE
