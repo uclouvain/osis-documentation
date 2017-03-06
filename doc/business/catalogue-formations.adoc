@@ -20,41 +20,13 @@ Une _OF_ est organisation qui soutient un processus d’apprentissage, et dont l
 ** Option de master
 * Groupements autres (présentation et choix)
 
-Le constituant atomique de toute OF est l’UE.
+Une _OF_ possède des attributs et un contenu propre, liste d'OF et/ou d'UE.
+
+Chaque type d'OF possède des règles d'utilisation des attributs et des règles d'inclusion d'OF et UE dans son contenu.
 
 ===== Formation
 
 Une **Formation** est une organisation qui soutient un processus d’apprentissage sanctionné par un diplôme ou un certificat. Elle est spécifiée par un triplet d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ; seule la composante Intitulé principal est toujours _nommée_ càd possède toujours un intitulé ; les composantes Orientation et Finalité peuvent soit rester _muettes_, soit être _nommées_.
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-Relations d’inclusion de contenu entre OF
-
-  
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-Une formation est représentée par un triplet d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ; seule la composante Intitulé principal est toujours nommée ; les composantes Orientation et Finalité peuvent soit rester muettes, soit être nommées, càd posséder un intitulé. 
 
 Donc, quand un Intitulé principal ne possède pas d’orientation, une orientation muette lui est cependant adjointe et permet de représenter les attributs communs et le contenu commun (TC) des finalités. (Dans l’arborescence des OF cette orientation muette sera présentée de la même manière que les orientations réelles.)
 
@@ -63,11 +35,20 @@ De même, quand un Intitulé principal ou ses orientations ne possèdent pas de 
 Une orientation ne peut rester muette que si elle est seule à appartenir à son intitulé principal.
 Une finalité ne peut rester muette que si elle est seule à appartenir à son orientation (que celle-ci soit muette ou nommée).
 
+Une Formation possède un programme-type, contenu _construit_ à partir des contenus _propres_ aux OF du triplet définissant la formation.
 
+===== Relations d’inclusion de contenu entre OF
 
-===== Relation de contenu entre _QF_
+====== Relations entre Intitulé principal, Orientation, Finalité 
+*	les 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
+*	héritage des attributs et du contenu
+*	certains attributs peuvent être surchargés
 
-Une _QF_ peut figurer dans le _contenu_ d'une autre _QF_, avec les règles suivantes :
+====== Relations entre MF, Grpm et UE et avec F
+*	existence indépendante 
+*	pas d’héritage des attributs
+*	certains attributs sont contextuels ou contextualisables (« relatifs ») 
+ 
 
 ====== Inclusion sous contrainte avec héritage d'attributs
 
