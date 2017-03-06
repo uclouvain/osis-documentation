@@ -62,6 +62,8 @@ De même, quand un Intitulé principal ou ses orientations ne possèdent pas de 
 Une orientation ne peut rester muette que si elle est seule à appartenir à son intitulé principal.
 Une finalité ne peut rester muette que si elle est seule à appartenir à son orientation (que celle-ci soit muette ou nommée).
 
+image::images/OF_Formations_Situations-possibles.png[]
+
 Une Formation possède un programme-type, contenu _construit_ à partir des contenus _propres_ aux OF du triplet définissant la formation.
 
 ===== Relations d’inclusion de contenu entre OF
@@ -124,6 +126,38 @@ Inclusion
 |   |   |   |   |   |   | UE  
 |===
 
+====== Attributs des OF
+
+|===
+|                  | Intit. princ. | Orientation | Finalité | Mini-F  | Choix/prés. UE |
+| Intitulé         | x             | x           | x        | x       | x              |
+| Intitulé diplôme |               |             | x        |         |                |
+| Attendus         |               |             | x        |         |                |
+| Nature du grade  | x             |             |          |         |                |
+| Certif. univ.    | x             |             |          |         |                |
+| Catég. décret    |               | x           |          |         |                |
+| Dom. études      |               | x           |          |         |                |
+| Type horaire     |               | x           |          | ?       | ?              |
+| TFE              | x             |             |          |         |                |
+| Stage            | x             |             |          |         |                |
+| Sous-épreuve     |               |             | x        |         |                |
+| Crédits formation| x             | x           | x        |         |                |
+| Crédits propres  | x             | x           | x        | x       | x              |
+| Bornes crédits   |               |             | x        | x       | x              |
+| Langue principale|               | x           | x        | x       | x              |
+| Activ. en anglais|               | x           | x        | x       | x              |
+| Autres langues   |               | x           | x        | x       | x              |
+| Compétence et acquis   | x       | x           | x        | x       | x              |
+| Structure progr. | x             | x           | x        | x       | x              |
+| Acronyme         |               | x           | x        | x       | x              |
+| Anac début       | x             | x           | x        | x       | x              |
+| Anac fin         | x             | x           | x        | x       | x              |
+| Statut           | x             | x           | x        | x       | x              |
+| Resp. admin.     | x             | x           | x        | x       | x              |
+| Resp. académique | x             | x           | x        | x       | x              |
+| Qualité          | x             | x           | x        | x       | x              |
+| Caract. inter-univ.|  x          | x           | x        | x       | x              |
+|===
 
 ==== Création d'une formation
 
