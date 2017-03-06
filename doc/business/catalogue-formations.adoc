@@ -28,6 +28,7 @@ Types d'OF :
 ** Majeure EPL
 ** Option de master
 * Groupements autres (présentation et choix)
+** Tronc commun d'orientation
 ** Choix de Mini-formations
 ** Choix / Présentation de cours (faut-il différentier ?) 
 
@@ -60,6 +61,16 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 * 	une Mini-formation peut être incluse dans le contenu de plusieurs Choix de mini-formations, appartenant à des foramtions différentes
 *	pas d’héritage des attributs
 *	certains attributs sont contextuels ou contextualisables (« relatifs »)
+
+
+Inclusion
+|===
+| Intitulé principal | TC d'i.pr. (inutilisé) 
+| Intitulé principal | Orientation
+| Orientation        | TC d'orientation
+| Orientation        | Finalité
+| TC d'orientation   | UE
+| TC d'orientation   | Choix / Présentation de cours
 
 
 - un _Regroupement_ peut exister en général indépendamment de tout contexte
