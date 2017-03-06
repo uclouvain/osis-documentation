@@ -75,13 +75,13 @@ il n'hérite pas des attributs des QF au contenu desquels il est inclus.
 |   | Orientation  |   |   |   |   |
 |   |   | TC d'orientation  |   |   |   |
 |   |   |   | UE  |   |   |
-|   |   |   | Choix/ présen- tations d'UE |   |   |
+|   |   |   | Choix/ présentations d'UE |   |   |
 |   |   |   |   |  UE  |   |
 |   |   | Finalité  |   |   |   |
 |   |   |   | UE  |   |   |
-|   |   |   | Choix/ présen- tations d'UE |   |   |
+|   |   |   | Choix/ présentations d'UE |   |   |
 |   |   |   |   | UE |   |
-|   |   |   | Choix de Mini- forma- tions  |   |   |
+|   |   |   | Choix de Mini- formations  |   |   |
 |   |   |   |   | Mini- formation  |   |
 |   |   |   |   |   | UE  |
 |   |   |   |   |   | Choix/ présen- tations d'UE |
