@@ -69,7 +69,7 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 ===== Relations d’inclusion de contenu entre OF
 
 ====== Relations entre Intitulé principal, Orientation, Finalité 
-*	les 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
+*	ces 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
 ** 	une _Orientation_ ne peut être incluse que dans le contenu d'un et un seul _Intitulé principal_ ;
 ** 	une _Finalité_ ne peut être incluse que dans le contenu (de second degré) d'une et une seule _Orientation_ (qui peut être muette), et dans le contenu (de quatrième degré) d'un et un seul _Intitulé principal_ ; 
 *	héritage des attributs et du contenu, avec possibilité de surcharge
@@ -81,10 +81,13 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 *	existence indépendante 
 * 	une Mini-formation peut être incluse dans le contenu de plusieurs Choix de mini-formations, appartenant à des foramtions différentes
 *	pas d’héritage des attributs
-*	certains attributs sont contextuels ou contextualisables (« relatifs »)
+*	certains attributs sont 
+**	toujours contextuels (ex.: attribut "Obligatoire")
+**	intrinsèques avec une possibilité de surcharge contextuelle (Poids absolu + Poids relatif)
 
 
-Inclusion
+Permission d'Inclusion et unicité
+
 |===
 | Intitulé principal | unique | TC d'i.pr. (inutilisé) 
 | Intitulé principal | unique | Orientation
@@ -126,7 +129,7 @@ Inclusion
 |   |   |   |   |   |   | UE  
 |===
 
-====== Attributs des OF
+====== Attributs des OF 
 
 |===
 |                  | Intit. princ. | Orientation | Finalité | Mini-F  | Choix/prés. UE |
@@ -158,6 +161,12 @@ Inclusion
 | Qualité          | x             | x           | x        | x       | x              |
 | Caract. inter-univ.|  x          | x           | x        | x       | x              |
 |===
+
+====== Héritage et surcharges des attributs 
+
+
+
+
 
 ==== Création d'une formation
 
