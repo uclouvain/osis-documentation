@@ -71,7 +71,7 @@ Inclusion
 | Orientation        | Finalité
 | TC d'orientation   | UE
 | TC d'orientation   | Choix / Présentation de cours
-
+|===
 
 - un _Regroupement_ peut exister en général indépendamment de tout contexte
 mais on peut restreindre son inclusion dans les contenus appartenant directement
