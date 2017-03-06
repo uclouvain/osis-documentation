@@ -48,8 +48,8 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 
 ====== Relations entre Intitulé principal, Orientation, Finalité 
 *	les 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
-** 	une _Orientation_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_ ;
-** 	une _Finalité_ ne peut exister que dans le contexte d'un et un seul _Intitulé principal_, et dans le contexte d'une et une seule  _Orientation_ (qui peut être muette) ; 
+** 	une _Orientation_ ne peut être incluse que dans le contenu d'un et un seul _Intitulé principal_ ;
+** 	une _Finalité_ ne peut être incluse que dans le contenu d'un et un seul _Intitulé principal_, et dans le contenu d'une et une seule  _Orientation_ (qui peut être muette) ; 
 *	héritage des attributs et du contenu
 **	une _Orientation_ hérite des attributs de son _Intitulé principal_
 **	une _Finalité_ hérite des attributs de l'_Intitulé principal_, et, le cas échéant, de l'_Orientation_, auxquels elle appartient.
