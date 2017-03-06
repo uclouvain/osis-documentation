@@ -19,8 +19,8 @@ Chaque type d'OF possède des règles d'utilisation des attributs et de construc
 
 Types d'OF :
 
-* Intitulé principal
-* Orientation
+* Intitulé principal (= Choix d'orientations)
+* Orientation  (= Choix de finalités)
 * Finalité
 * Mini-formation : ensemble structuré d’UE et/ de Groupements conçus pour être inclus dans les Formations, sur base d’objectifs académiques et pédagogiques explicites
 ** Mineure
@@ -28,8 +28,6 @@ Types d'OF :
 ** Majeure EPL
 ** Option de master
 * Groupements autres (présentation et choix)
-** Choix d'orientations
-** Choix de Finalités
 ** Choix de Mini-formations
 ** Choix / Présentation de cours (faut-il différentier ?) 
 
@@ -52,52 +50,45 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 *	les 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
 ** 	une _Orientation_ ne peut être incluse que dans le contenu d'un et un seul _Intitulé principal_ ;
 ** 	une _Finalité_ ne peut être incluse que dans le contenu (de second degré) d'une et une seule _Orientation_ (qui peut être muette), et dans le contenu (de quatrième degré) d'un et un seul _Intitulé principal_ ; 
-*	héritage des attributs et du contenu
+*	héritage des attributs et du contenu, avec possibilité de surcharge
 **	une _Orientation_ hérite des attributs de son _Intitulé principal_
 **	une _Finalité_ hérite des attributs de l'_Intitulé principal_, et, le cas échéant, de l'_Orientation_, auxquels elle appartient.
-*	certains attributs peuvent être surchargés
+
 
 ====== Relations entre MF, Grpm et UE et avec F
 *	existence indépendante 
+* 	une Mini-formation peut être incluse dans le contenu de plusieurs Choix de mini-formations, appartenant à des foramtions différentes
 *	pas d’héritage des attributs
-*	certains attributs sont contextuels ou contextualisables (« relatifs ») 
- 
-====== Exemple typique
-
-* Intitulé principal
-** Tronc commun d'intitulé principal, inutilisé
-** Choix d'orientations
-*** Orientation
-**** Tronc commun d'orientation
-***** UE
-***** Choix/présentations d'UE
-****** UE
-**** Choix de finalités
-***** Finalité
-****** UE
+*	certains attributs sont contextuels ou contextualisables (« relatifs »)
 
 
-aaaaaaaaaaaaaaaaaaaaaaa
-
-***** Finalité
-****** UE
-
-
-****** UE
-****** Choix/présentations d'UE
-******* UE
-****** Choix de Mini-formations
-***** Mini-formation
-****** UE
-****** Choix/présentations d'UE
-******* UE
-
-- une _Mini-formation_ existe indépendammnent de tout contexte ; elle peut figurer
-dans le _contenu_ de toute _QF_, sans hériter des attributs de cette _QF_ ;
 - un _Regroupement_ peut exister en général indépendamment de tout contexte
 mais on peut restreindre son inclusion dans les contenus appartenant directement
 ou indirectement à une _Formation_ ou à un _Ensemble de formations_;
 il n'hérite pas des attributs des QF au contenu desquels il est inclus.
+ 
+====== Exemple typique de structure de programme-type
+
+|===
+|  |   |   |   |   |   |   |   |   
+|Intitulé principal  |   |   |   |   |   |   |   |   
+|  | TC d'intit. princ., inuti- lisé  |   |   |   |   |   |   |   
+|  | Orien- tation  |   |   |   |   |   |   
+|  |   | TC d'orien- tation  |   |   |   |   |   
+|  |   |   | UE  |   |   |   |   
+|  |   |   | Choix/ présen- tations d'UE |   |   |   |  
+|  |   |   |   | UE |   |   |    
+|  |   | Finalité |   |   |   |   
+|  |   |   | UE  |   |   |   
+|  |   |   | Choix/ présen- tations d'UE  |   |   |   
+|  |   |   |   | UE  |   |   
+|  |   |   | Choix de Mini- forma- tions  |   |   |   
+|  |   |   |   | Mini- forma- tion |   |   
+|  |   |   |   |   | UE  |   
+|  |   |   |   |   | Choix/ présen- tations d'UE  |   
+|  |   |   |   |   |  | UE  
+|===
+
 
 ==== Création d'une formation
 
