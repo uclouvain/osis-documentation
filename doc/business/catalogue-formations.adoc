@@ -6,23 +6,61 @@
 
 ==== Concepts généraux
 
-===== _Formations_ et autres _Organisations de formation_ (_OF_)
-Une _Formation_ est une organisation visant à soutenir un processus d'aquisition
-de connaissances et compétences, et sanctionnée par un diplôme ou un certificat.
+===== Formations et Organisations de formation (OF)
 
-D'autres organisations visant à soutenir un processus d'acquisition de
-connaissances et compétences existent également, sans conduire à un diplôme ou
-certificat :
+**Organisation de formation (OF)** : toute organisation qui soutient un processus d’apprentissage, et dont le contenu est un ensemble structuré d’UE et d’OF de niveaux inférieurs. Type d'OF :
+* Intitulé principal
+* Orientation
+* Finalité
+* Mini-formation
+** Mineure
+** Approfondissement
+** Majeure EPL
+** Option de master
+* Groupements autres (présentation et choix)
 
-- _Ensembles de formations_ (_EF_) : Intitulés principaux et Orientations ;
-- _Mini-formations_ (_MF_) : approfondissements, majeures EPL, mineures, options ;
-- _Regroupements de présentation_ : Groupements de _QF_ et/ou d'UE (unités d'enseignement).
+**Formation** : organisation qui soutient un processus d’apprentissage sanctionné par un diplôme ou un certificat. Elle est spécifiée par un triplet d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ; seule la composante Intitulé principal est toujours nommée ; les composantes Orientation et Finalité peuvent soit rester muettes, soit être nommées, càd posséder un intitulé.
 
-Ces organisations, ainsi que les _Formations_, sont ici dénommées collectivement
-par le terme _Quasi-formations_ (_QF_).
+**Mini-formation** : ensembles structurés d’UE conçus pour être inclus dans les Formations, sur base d’objectifs académiques et pédagogiques explicites. Types : approfondissement, majeures EPL, mineures, options.
 
-Une _QF_ est représentée dans le système OSIS par un ensemble d'attributs
-et par un _contenu_. Un _contenu_ de _QF_ est une liste de _QF_ et/ou d'UE.
+**Groupement** : ensemble structuré d’UE sans objectifs académiques et pédagogiques explicites. La raison d’être des groupements est d’organiser le contenu des OF et de présenter des choix.
+
+Le constituant atomique de toute OF est l’UE.
+
+
+
+
+
+
+
+ 
+ 
+ 
+Relations d’inclusion de contenu entre OF
+
+  
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+Une formation est représentée par un triplet d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ; seule la composante Intitulé principal est toujours nommée ; les composantes Orientation et Finalité peuvent soit rester muettes, soit être nommées, càd posséder un intitulé. 
+
+Donc, quand un Intitulé principal ne possède pas d’orientation, une orientation muette lui est cependant adjointe et permet de représenter les attributs communs et le contenu commun (TC) des finalités. (Dans l’arborescence des OF cette orientation muette sera présentée de la même manière que les orientations réelles.)
+
+De même, quand un Intitulé principal ou ses orientations ne possèdent pas de finalités, une finalité muette permettra cependant d’enregistrer le code de la Formation et tous les attributs des formations qui relèvent de ce niveau. (Dans l’arborescence des OF ces finalités muettes seront présentées de la même manière que les finalités réelles.)
+
+Une orientation ne peut rester muette que si elle est seule à appartenir à son intitulé principal.
+Une finalité ne peut rester muette que si elle est seule à appartenir à son orientation (que celle-ci soit muette ou nommée).
+
 
 
 ===== Relation de contenu entre _QF_
