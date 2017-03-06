@@ -1,0 +1,39 @@
+== Gestion des gestionnaires de programme
+Chaque faculté, il y a une (parfois plusieurs) personnes qui a le droit de modifier des gestionnaires de programme de cette faculté.
+Cette personne est souvent la DAF (Directeur administratif facultaire) de la faculté.
+
+La personne qui ont le droit de gerer des gestionnaires de programme
+
+image::images/encodage_notes/.png[]
+
+. Le menu déroulant "Entité" contient:
+ - "Tous"
+ - Tous les entités qui sont attachées à la faculté et
+ - L'entité faculté elle même (ex: ESPO).
+L'utilisateur peut choisir "Tous" ou un/plusieurs entités dans la liste en cochant l'entité.
+Si une entité est cochée, il faut décocher "Tous". Si "Tous" est cochée, il faut décocher tous les autres.
+
+. La liste de type du programme: Ces types peuvent être identifiés par les lettres finales de l'offre.
+ - Bachelier = BA
+ - Master en un an = M1
+ - Master approrondi = MA
+ - Master didactique = MD
+ - Master spécialisé = MS/.. (.. peut être "G" ou 2 lettres aux choix d'utilisateur)
+ - Master de spécialisation = MC (avant 2014 c'est Master complémentaire)
+ - Agrégation = A
+ - Formation Continue = FC
+ - Certificat = CE
+ - Doctorat Paysage= DP
+ - Formation doctorat Paysage = FP
+ - Doctorat = D
+ - Formation doctorat = FD
+ - Cours anticipé = AN
+ - Cours isolés = IS
+ - Junior Year = JY
+ - Cours de langue = LV
+
+
+ Dans le passé, on peut avoir des types:
+ - Année préparatoire = PM
+ - SA
+ - Cours anticipé = AN (type = 9 cours isolé)
