@@ -248,9 +248,22 @@ Il faut remplir toutes les notes finales pour pouvoir soumettre.
 
 image::images/encodage_notes/confirmer-la-soumission.png[]
 
-Un e-mail récapitulatif de la soumission envoyé à tous les enseignants du cours.
+==== Soumettre l'encodage
 
-==== Imprimer la feuille de notes*
+Si des gestionnaires finisent l'encodage pour un programme (100% des notes
+encodées pour un programme), au moment d'enregistrer des notes, il y a un mail
+envoyé à tous les enseignants de cette unité d'enseignement.
+
+Quand l'encodage de notes est complet pour un programme, si des gestionnaires
+corrigent une ou plusieurs notes, au moment d'enregistrer des notes, il y a un
+mail envoyé à tous les enseignants.
+
+Le mail contient le tableau des notes et un fichier .pdf avec des notes
+encodées/modifiées.
+
+image::images/encodage_notes/soumettre_encodage.png[]
+
+==== Imprimer la feuille de notes
 
 image::images/encodage_notes/imprimer-la-feuille-de-notes.png[]
 
