@@ -1,0 +1,440 @@
+= OSIS Software Process
+Hildeberto Mendonça, PhD
+v0.1, 2017-02-02
+:toc: right
+
+:sectnums!:
+
+== Introduction
+
+This document describes the development process of the application OSIS-Louvain.
+
+OSIS stands for Open Student Information System. It's an application designed to
+manage the core business of higher education institutions, such as universities,
+faculties, institutes and professional schools. The core business involves the
+administration of students, teachers, courses, programs and so on.
+
+OSIS is an open source software sponsored by Université catholique de Louvain.
+
+=== The Fundamental Principles
+
+==== Traceability
+
+When an event occurs, it is easily possible to identify what needs attention,
+where it is located, who has changed it and when.
+
+==== Previsibility
+
+The team is so reliable and known that their working behavior is predictable and
+they know by heart the effort to do anything.
+
+==== Reactivity
+
+Everyone in the team knows how everything works, so they can easily resume a
+work in progress or assume new responsibilities. They work with the same
+environment and configuration, so they can easily reestablish operations.
+
+==== Measurability
+
+Everything must be quantifiable to enable measurements. They can set goals and
+be compared. We manage better what we can measure.
+
+=== Communication
+
+For being open source, the communication strategy changes from the traditional
+internal communication to a global and transparent one. People should consider
+not only the participation of the internal team, but also developers and users
+all around the world. Therefore, to allow global and transparent communication,
+we have to comply with the following rules:
+
+ 1. Communication directed to the local community can be done in English or in
+    the native language.
+ 2. Communication directed to the global community should be done in English
+    only.
+ 3. The code should be written in English only.
+ 4. The user interface is multilingual but it will initially support English and
+    French. The support for additional languages depends on the adoption of the
+    software and the contributions from the community.
+ 5. Since there is not private source, all the communication is done using
+    public channels such as mailing lists, chats, wikis and others.
+ 6. To be taken into account, a communication should be registered textually and
+    preserved historically. Direct email communication between two or a subset
+    of the team is not considered valid because all stakeholders should be
+    equally informed.
+
+To support the communication rules, we have created the following channels:
+
+The team that maintains the context-free module communicates through the chat
+https://gitter.im/uclouvain/OSIS in English only.
+
+The team that discusses the context-specific module communicates through the
+chat https://gitter.im/uclouvain/OSIS-Louvain in English or in French, the local
+native language.
+
+The development community communicates through the group
+https://groups.google.com/d/forum/osis-dev in English only.
+
+The users community communicates through the group
+https://groups.google.com/d/forum/osis-user in English or in French.
+
+News about the project can be found at: http://uclouvain.github.io/OSIS/.
+
+Development statistics about the project can be found at
+https://www.openhub.net/p/OSIS.
+
+Organizations that support the development of OSIS through a context-specific
+module can follow their own internal rules of communication.
+
+=== The Process
+
+Our software methodology is composed of 4 processes: *Analysis*, *Development*,
+*Test*, and *Support*. These processes run in two parallel iterations and one
+on-demand execution.
+
+image::images/overview.png[Overview]
+
+The iteration of the analysis lasts for 2 weeks. This iteration is independent
+from the development, so analysts do not have to wait for the outcome of the
+development to advance with their analysis. It also means that we expect a
+release coming out from each iteration, just like application releases.
+Therefore, the analysis should be planned, executed, integrated, tested and
+released, as traditionally done with code.
+
+Development and test are in the same iteration because everything that is
+developed should be tested before going into production. The tests should be
+done by someone else not directly involved on the development of the ongoing
+version. This iteration also lasts from 2 weeks and occurs in the same time
+frame of the analysis. The output of the analysis serves as input for the
+development and test. However, the output is accumulated in a backlog before
+being allocated in the upcoming development iterations.
+
+The support is an on-demand process, executed only when an issue in production
+is reported. Every issue starts an independent instance of the process. There is
+no fixed duration of the execution, but it has higher priority than other
+processes and the minimal waiting time is 12 working hours.
+
+More details about each one of these processes are described in the following
+sections.
+
+==== Sprints
+
+image::images/sprints.png[Sprints]
+
+==== Queuing
+
+image::images/queues.png[Queues]
+
+==== Backlog
+
+image::images/backlog.png[Backlog]
+
+=== Roles
+
+User:: All those who use the application or lead other users. They can also be
+representatives of a larger group of users. They should transmit to analysts the
+maximum amount of information possible about the need they have and be available
+for questions and meetings as demanded by analysts once a RFC is created, in
+order to minimize the impact on the schedule. Users can only contact analysts.
+If they contact anybody else in the team, they risk to have their demand
+ignored.
+
+Analyst:: Responsible for documenting how the business works and translating the
+documentation into application functionalities. They produce the business
+process models and the user manual. The analysts are the only ones authorized to
+contact the users. If anybody else contact the user directly they risk to break
+the chain of traceability.
+
+Technical Leader:: Responsible for the leadership of the development team. It's
+the leader who create the tickets based on the RFCs, plan the releases and
+distribute the work among developers. The leader should also monitor the project
+to detect and fix non-conformities, identify deficiencies that impact the team's
+productivity and act to overcome those deficiencies. The technical leader can
+only talk to a user if followed by an analyst.
+
+Developer:: Responsible for developing the application according to the
+instructions in the user manual. They have the technical knowledge to transform
+business needs into application features, but they do not necessarily have
+business knowledge because they should always rely on the user manual. It makes
+possible that any developer is capable of developing any part of the application
+even if s/he know nothing about it.
+
+Tester:: Responsible for making sure the application behaves exactly as foreseen
+in the user manual. They have the technical knowledge to create test scripts to
+automate tests, checking whether everything works fine after every introduced
+change.
+
+Supporter:: Responsible for the support for users, explaining them how to use
+the application if the user manual is not sufficiently clear. In the case the
+application  is not behaving as expected, the supporter is responsible for
+reproducing the problem and create a high priority issue to be addressed by
+developers.
+
+=== Artefacts
+
+Process:: A graphical model that describes what is done, by whom and  in which
+sequence.
+
+User Manual:: Documentation maintained by analysts to describe how the process
+is executed and how the application helps on the matter.
+
+Technical User Manual:: Documentation maintained by developers to describe the
+domain model and other technical aspects of the system.
+
+Schedule:: A high level view of the project evolution in time. It is useful to
+analyze the impact of a delay on the final delivery date.
+
+Source Code:: Low level instructions, written according to the grammars of
+chosen programming languages, that technically describe how the application is
+expected to work and actually run it after compiled/interpreated.
+
+=== Tools
+
+AsciiDoctor:: A tool that interprets AsciiDoc instructions and generates stylish
+documents in different formats (html, pdf, etc.).
+
+Atom:: A text editor suitable to write AsciiDoc documents.
+
+Git:: A distributed version control system used to version the documentation
+produced in the project.
+
+GitHub:: An online Git service that adds an issue tracking system, a wiki and a
+collaborative code platform to Git.
+
+Jenkins:: An automation tool to implement continuous integration and delivery
+practices for Java applications.
+
+PyCharm:: A Python programming IDE.
+
+Visual Paradigm:: A modeling tool used to materialize the abstractions behind
+the data model, the business process, the software user interface, and many
+others.
+
+:sectnums:
+
+== Analysis
+
+Analysis is the part of the process that continuously investigates and document
+how the business work. The documentation assumes the format of a user manual.
+
+The user manual describes how the application works. So, instead of producing
+several documents, the analysts concentrate all their effort in a single one,
+written in a way that serves both the development team and the users.
+
+Writing the user manual before developing the application is not an unusual
+idea. In Test-Driven Development (TDD) developers are motivated to write the
+tests before reaching the code. The practice of doing useful things in advance
+is a form of continuous reasoning about what will be done in the code, which is
+the ultimate artifact to be delivered to users.
+
+image::images/analysis.png[Analyse]
+
+=== Report a business need
+
+The user can request new features or modifications in the application. It can be
+done in many different ways because it is not formalized. Users and analysts are
+free to decide how they will communicate. This is a moment to listen to the
+users, without interfering their way of thinking.
+
+=== Verify the impact on business processes
+
+In order to identify the impact on existing processes, the analyst should locate
+in the processes where the new business need applies. For that, the analyst asks
+the user about the roles involved, what they do, in which sequence, what they
+need, what they deliver and how they transform their needs into deliverables.
+
+Users requests should be aligned with what already exists in terms of processes.
+They should contribute to improve existing processes or add new processes
+connected to existing ones. Requests that are not aligned with existing
+processes or propose isolated processes must be rejected until the application
+evolves to a point that those requests can be connected.
+
+=== Create request for change
+
+When a context is found for the request then a ticket is created to track the
+changes. This ticket is also called RFC (Request For Change) and is allocated to
+an analyst who will proceed with the analysis.
+
+RFCs are managed in the repository
+https://github.com/uclouvain/osis-louvain-documentation/issues.
+
+A RFC must contain:
+
+- A *title* that summarizes in one sentence the content of the change;
+- A detailed *description* of the change;
+- The *analyst* responsible for the analysis of the change;
+- The *user* who requested the change;
+- The *full path to the process element* that is impacted by the change.
+
+A RFC is the equivalent of a user story. A user story is a description of what
+the user expects from the application in order to produce a certain outcome for
+the organization.
+
+=== Modify the impacted business processes
+
+A RFC allows the analyst to modify artifacts, such as the business process
+model. The number of the RFC is required to identify the version of the modified
+artifact in the version control system.
+
+Modifications in the processes do not necessarily imply on modifications in the
+application. Some activities are automated in the application and others are
+manual. Therefore, a change may modify the process and the application or only
+the process or only the application.
+
+If the processes don't change, then this activity is irrelevant.
+
+=== Create a new business process
+
+Sometimes the user request requires the creation of a new business process. The
+criteria to create a new process are extensive and sometimes subjective. In
+general, if the request does not fit in an existing process or it requires
+substantial amount of work then it is a potential candidate for a new process.
+In any case, it is not a simple decision and it needs to be extensively
+discussed with users.
+
+=== Review business process
+
+The user should review the process and approve it in order to move forward.
+Otherwise, analysts and users keep adjusting the process until it is in
+condition to be approved.
+
+=== Describe the execution of the process
+
+During this activity, the analyst is actually writing the user manual. It should
+describe the process as a whole, not only the automated activities. Activities
+performed manually are described shortly and activities automated by the
+application are described into details. The details include the definition of
+the activity, its inputs and outputs, the wireframes representing the user
+interface, and a sequence of steps about how to use them.
+
+=== Review the execution of the process
+
+The users should read the manual to make sure they understand the illustrations
+and the instructions. If they do not approve it, then analysts and users keep
+adjusting the manual until it is in condition to be approved.
+
+=== Verify technical feasibility
+
+Before entering in the development cycle, the changes in the user manual are
+validated by the technical leader to make sure they are technically feasible. In
+case of problems, the technical leader discusses with analysts until they find a
+workable solution.
+
+== Development
+
+image::images/development.png[Development]
+
+=== Create work breakdown structure
+=== Create requests for change
+
+These are the states of requests for change:
+
+- *Created*: A ticket is created but not yet planned.
+
+- *Assigned*: An existing ticket is assigned to a person and a milestone.
+
+- *Finished*: The assigned person has finished the work as described in the
+  ticket.
+
+- *Tested*: The tester has validated the work done in the ticket.
+
+- *Closed*: The technical leader has considered the ticket closed and ready to
+  be released.
+
+- *Canceled*: The ticket was created by mistake.
+
+=== Demand developers estimations
+=== Estimate requests
+
+These are the types of effort:
+
+- *Unknown*: the team does not have the necessary knowledge to address the
+  issue. Therefore, an investigation should be carried out and no extimation can
+  be done.
+
+- *Complex*: the team has the necessary knowledge to address the issue but
+  cannot estimate when the work will be finished.
+
+- *Heavy*: the team has the necessary knowledge to address the issue and
+  estimate the work but the issue cannot be solved in less than 5 working days.
+
+- *Regular*: the team has the neccessary knowledge to address the issue and
+  estimate the work but the issue cannot be solved in less than 2 days.
+
+- *Easy*: the team has the necessary knowledge to address the issue, estimate
+  the work and finish it in less than 2 days.
+
+- *Flash*: the issue can be solved in a couple of hours.
+
+=== Distribute requests in upcoming iterations
+
+The distribution of requests is done to a maximum of 3 sprints: The one that is
+about to start and the two upcoming ones. The reasons why we cannot have more
+than three sprints are:
+
+- Old tickets tend to be forgotten. In practice, new tickets are created to
+  solve a problem and when old tickets are revisited we finally notice they are
+  duplications of more recent tickets.
+
+- Increase the management cost by adding more control mechanisms. For instance:
+  the tickets must be revisited often to not be forgotten or duplicated.
+
+- Accumulation of non-planned tickets, which may freeze the size of the backlog.
+
+These are the types of priority:
+
+- *Blocking*: The application is blocking the work of a user who may not
+  complete his/her task on time. This is usually due to a bug and must be fixed
+  as soon as possible.
+- *Essential*: It must have. It is so crucial to have the functionality
+  implemented that the process couldn't run without it.
+- *Important*: It should have. The user can live without it, but his/her
+  productivity is heavily impacted.
+- *Desirable*: It is nice to have. An existing functionality can be improved, so
+  a user can perform his/her tasks faster.
+
+=== Review project schedule
+=== Inform user
+=== Start upcoming iteration
+=== Develop requests for change
+
+The last person allocated in a ticket is the only one authorized to close that
+ticket.
+
+=== Create automated tests for change
+=== Release QA version
+
+== Test
+
+image::images/test.png[Test]
+
+=== Execute all tests
+=== Create request for fix
+=== Fix based on failing test
+=== Update user manual
+=== Authorize release in production
+=== Release in production
+=== Inform user
+
+== Support
+
+image::images/support.png[Support]
+
+=== Report application issue
+=== Create reproduction test script
+=== Create request for fix
+=== Prioritize and allocate request
+=== Fix based on failing test
+=== Execute all tests
+=== Authorize release on production
+=== Release in production
+=== Inform user
+
+include::glossary.adoc[]
+
+[bibliography]
+== Bibliography
+
+- [[[evans2004]]] EVANS, Eric. Domain-Driven Design: Tackling Complexity in the
+  Heart of Software. Addison Wesley: Boston, 2004.
+
+Copyright (c) 2015 Université catholique de Louvain. All Rights Reserved.
