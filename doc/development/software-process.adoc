@@ -20,76 +20,43 @@ The process is inspired on agile and lean practices adapted to the context of a
 large education institution and open source development. It is constantly
 improved as contributors become more autonomous and tasks automated.
 
-=== The Fundamental Principles
+== The Fundamental Principles
 
-==== Traceability
+In order to stablish a baseline for this and future process improvements,
+independent of methodologies, practices or paradigms, we have defined some
+fundamental principles that should be respected in every future step. They are:
 
-When an event occurs, it is easily possible to identify what needs attention,
-where it is located, who has changed it and when.
+=== Traceability
 
-==== Previsibility
+When an event occurs, it is possible to identify what needs attention, where it
+is located, who has changed it and when. From documents to code, everything
+must be traceable to support the investigation of problems, from the causes to
+the effects, to minimize the changes they keep happening in the future.
 
-The team is so reliable and known that their working behavior is predictable and
-they know by heart the effort to do anything.
+=== Previsibility
 
-==== Reactivity
+The more we repeat the process the more it becomes predictable. So a simple
+process is memorable, but not that simple to leave important tasks uncovered.
+Important investiments should be made in training, reusable solutions and
+documentation to support estimations. Unfortunately, previsibility requires a
+lot of discipline, which is hard to achieve in a creative environment.
+Fortunately, many repetitive tasks can be automated, including the ones that
+verifies the work that has been done.
 
-Everyone in the team knows how everything works, so they can easily resume a
-work in progress or assume new responsibilities. They work with the same
-environment and configuration, so they can easily reestablish operations.
+=== Reactivity
 
-==== Measurability
+Given a certain state of the process, how long would it take to a person resume
+the work of another person? Given the report of a bug, how long it takes to
+solve it? The goal of reactivity is to reduce the time spent on unexpected
+events, thus more time is spent of predictable tasks.
 
-Everything must be quantifiable to enable measurements. They can set goals and
-be compared. We manage better what we can measure.
+=== Measurability
 
-=== Communication
+The more things can be quantified the better they can be measured. Indicators
+can be used to monitor measurable things so progress becomes visible, overheads
+can be avoided and decision making is properly supported.
 
-For being open source, the communication strategy changes from the traditional
-internal communication to a global and transparent one. People should consider
-not only the participation of the internal team, but also developers and users
-all around the world. Therefore, to allow global and transparent communication,
-we have to comply with the following rules:
-
- 1. Communication directed to the local community can be done in English or in
-    the native language.
- 2. Communication directed to the global community should be done in English
-    only.
- 3. The code should be written in English only.
- 4. The user interface is multilingual but it will initially support English and
-    French. The support for additional languages depends on the adoption of the
-    software and the contributions from the community.
- 5. Since there is not private source, all the communication is done using
-    public channels such as mailing lists, chats, wikis and others.
- 6. To be taken into account, a communication should be registered textually and
-    preserved historically. Direct email communication between two or a subset
-    of the team is not considered valid because all stakeholders should be
-    equally informed.
-
-To support the communication rules, we have created the following channels:
-
-The team that maintains the context-free module communicates through the chat
-https://gitter.im/uclouvain/OSIS in English only.
-
-The team that discusses the context-specific module communicates through the
-chat https://gitter.im/uclouvain/OSIS-Louvain in English or in French, the local
-native language.
-
-The development community communicates through the group
-https://groups.google.com/d/forum/osis-dev in English only.
-
-The users community communicates through the group
-https://groups.google.com/d/forum/osis-user in English or in French.
-
-News about the project can be found at: http://uclouvain.github.io/OSIS/.
-
-Development statistics about the project can be found at
-https://www.openhub.net/p/OSIS.
-
-Organizations that support the development of OSIS through a context-specific
-module can follow their own internal rules of communication.
-
-=== The Process
+== Process Map
 
 Our software methodology is composed of 4 processes: *Analysis*, *Development*,
 *Test*, and *Support*. These processes run in two parallel iterations and one
@@ -119,18 +86,6 @@ processes and the minimal waiting time is 12 working hours.
 
 More details about each one of these processes are described in the following
 sections.
-
-==== Sprints
-
-image::images/sprints.png[Sprints]
-
-==== Queuing
-
-image::images/queues.png[Queues]
-
-==== Backlog
-
-image::images/backlog.png[Backlog]
 
 === Roles
 
@@ -433,6 +388,18 @@ image::images/support.png[Support]
 === Release in production
 === Inform user
 
+== Sprints
+
+image::images/sprints.png[Sprints]
+
+== Queuing
+
+image::images/queues.png[Queues]
+
+== Backlog
+
+image::images/backlog.png[Backlog]
+
 include::glossary.adoc[]
 
 [bibliography]
@@ -441,4 +408,4 @@ include::glossary.adoc[]
 - [[[evans2004]]] EVANS, Eric. Domain-Driven Design: Tackling Complexity in the
   Heart of Software. Addison Wesley: Boston, 2004.
 
-Copyright (c) 2015 Université catholique de Louvain. All Rights Reserved.
+Copyright (c) 2015-2017 Université catholique de Louvain. All Rights Reserved.
