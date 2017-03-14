@@ -26,43 +26,51 @@ In order to stablish a baseline for this and future process improvements,
 independent of methodologies, practices or paradigms, we have defined some
 fundamental principles that should be respected in every future step. They are:
 
-=== Traceability
+Traceability:: When an event occurs, it is possible to identify what needs
+attention, where it is located, who has changed it and when. From documents to
+code, everything must be traceable to support the investigation of problems,
+from the causes to the effects, to minimize the changes they keep happening in
+the future.
 
-When an event occurs, it is possible to identify what needs attention, where it
-is located, who has changed it and when. From documents to code, everything
-must be traceable to support the investigation of problems, from the causes to
-the effects, to minimize the changes they keep happening in the future.
-
-=== Previsibility
-
-The more we repeat the process the more it becomes predictable. So a simple
-process is memorable, but not that simple to leave important tasks uncovered.
-Important investiments should be made in training, reusable solutions and
-documentation to support estimations. Unfortunately, previsibility requires a
-lot of discipline, which is hard to achieve in a creative environment.
+Previsibility:: The more we repeat the process the more it becomes predictable.
+So a simple process is memorable, but not that simple to leave important tasks
+uncovered. Important investiments should be made in training, reusable solutions
+and documentation to support estimations. Unfortunately, previsibility requires
+a lot of discipline, which is hard to achieve in a creative environment.
 Fortunately, many repetitive tasks can be automated, including the ones that
 verifies the work that has been done.
 
-=== Reactivity
+Reactivity:: Given a certain state of the process, how long would it take to a
+person resume the work of another person? Given the report of a bug, how long it
+takes to solve it? The goal of reactivity is to reduce the time spent on
+unexpected events, thus more time is spent of predictable tasks.
 
-Given a certain state of the process, how long would it take to a person resume
-the work of another person? Given the report of a bug, how long it takes to
-solve it? The goal of reactivity is to reduce the time spent on unexpected
-events, thus more time is spent of predictable tasks.
-
-=== Measurability
-
-The more things can be quantified the better they can be measured. Indicators
-can be used to monitor measurable things so progress becomes visible, overheads
-can be avoided and decision making is properly supported.
+Measurability:: The more things can be quantified the better they can be
+measured. Indicators can be used to monitor measurable things so progress
+becomes visible, overheads can be avoided and decision making is properly
+supported.
 
 == Process Map
 
-Our software methodology is composed of 4 processes: *Analysis*, *Development*,
-*Test*, and *Support*. These processes run in two parallel iterations and one
-on-demand execution.
+The OSIS project consists of 4 independent and interconnected processes:
+*Analysis*, *Development*, *Release*, and *Support*. They are independent
+because they don't block each other and run in different time frames. They are
+also interconnected because they provide information for each other to be able
+to run correctly and efficiently.
 
-image::images/overview.png[Overview]
+image::images/process-map.png[Process Map]
+
+The domain of higher education is complex, specially in countries where it is
+regulated by the government. There are issues difficult to model, such as the
+highly intricate composition of programs, prerequisites and corequisites among
+courses, the scheduling of classes while considering the availability of
+auditoriums, teachers, students and resources, special rules for international
+agreements with other countries and institutions and so on. Those issues have to
+be constantly investigated in depth by a team of experts. That's why *business
+analysis* is so important in this kind of domain. There is simply too much
+knowledge that has to be captured, organized, documented, revisited and shared,
+otherwise the institution will indefinitely depend on individuals instead of the
+collectivity.
 
 The iteration of the analysis lasts for 2 weeks. This iteration is independent
 from the development, so analysts do not have to wait for the outcome of the
@@ -71,102 +79,64 @@ release coming out from each iteration, just like application releases.
 Therefore, the analysis should be planned, executed, integrated, tested and
 released, as traditionally done with code.
 
-Development and test are in the same iteration because everything that is
-developed should be tested before going into production. The tests should be
-done by someone else not directly involved on the development of the ongoing
-version. This iteration also lasts from 2 weeks and occurs in the same time
-frame of the analysis. The output of the analysis serves as input for the
-development and test. However, the output is accumulated in a backlog before
-being allocated in the upcoming development iterations.
+The development also lasts for 2 weeks and occurs in parallel to the analysis.
+The output of the analysis serves as input for the development. However, the
+output is accumulated in a backlog before being allocated in the upcoming
+development iterations.
 
 The support is an on-demand process, executed only when an issue in production
-is reported. Every issue starts an independent instance of the process. There is
-no fixed duration of the execution, but it has higher priority than other
-processes and the minimal waiting time is 12 working hours.
+is reported. Every issue starts an independent instance of the process. The
+duration of the process is not fixed. It depends on the time needed to fix the
+issue, but it has higher priority than other processes.
 
-More details about each one of these processes are described in the following
-sections.
+== Roles
 
-=== Roles
+User:: All those who directly use the application or represent a large group of
+users. When there is a business need, they transmit to analysts the maximum
+amount of information about the need they have. They are aware that they have to
+be available for questions and meetings as demanded by the analysts, in
+order to clarify missing details. If users transmit their needs to another role
+other than the analyst they risk to have their need not documented neither
+implemented properly. It would break the traceability principle.
 
-User:: All those who use the application or lead other users. They can also be
-representatives of a larger group of users. They should transmit to analysts the
-maximum amount of information possible about the need they have and be available
-for questions and meetings as demanded by analysts once a RFC is created, in
-order to minimize the impact on the schedule. Users can only contact analysts.
-If they contact anybody else in the team, they risk to have their demand
-ignored.
+Business Analyst:: Responsible for documenting how the business works and
+translating the documentation into application functionalities. They produce the
+business process models and the user manual to be used by developers on the
+development of the functionalities, by themselves to validate those
+functionalities, by support analysts to assist users on their questions and by
+the users through the help menu in the application.
 
-Analyst:: Responsible for documenting how the business works and translating the
-documentation into application functionalities. They produce the business
-process models and the user manual. The analysts are the only ones authorized to
-contact the users. If anybody else contact the user directly they risk to break
-the chain of traceability.
-
-Technical Leader:: Responsible for the leadership of the development team. It's
-the leader who create the tickets based on the RFCs, plan the releases and
-distribute the work among developers. The leader should also monitor the project
-to detect and fix non-conformities, identify deficiencies that impact the team's
-productivity and act to overcome those deficiencies. The technical leader can
-only talk to a user if followed by an analyst.
+Technical Leader:: Responsible for the coordination of the development team.
+It's the leader who make sure the issues are having the necessary attention,
+making sure they don't get stuck or are forgotten in the backlog, and plan the
+releases. The leader should also monitor the project to detect non-conformities,
+identify deficiencies that impact the team's productivity and act to overcome
+those deficiencies.
 
 Developer:: Responsible for developing the application according to the
 instructions in the user manual. They have the technical knowledge to transform
-business needs into application features, but they do not necessarily have
-business knowledge because they should always rely on the user manual. It makes
-possible that any developer is capable of developing any part of the application
-even if s/he know nothing about it.
+business needs into application features. They are capable of maintaining any
+part of the application.
 
-Tester:: Responsible for making sure the application behaves exactly as foreseen
-in the user manual. They have the technical knowledge to create test scripts to
-automate tests, checking whether everything works fine after every introduced
-change.
+Support Analyst:: Responsible for the user support, explaining users how to use
+the application when the user manual is not sufficiently clear. In the case the
+application is not behaving as expected, the support analyst is responsible for
+reproducing the problem and creating a high priority issue to be addressed by
+developers as soon as possible.
 
-Supporter:: Responsible for the support for users, explaining them how to use
-the application if the user manual is not sufficiently clear. In the case the
-application  is not behaving as expected, the supporter is responsible for
-reproducing the problem and create a high priority issue to be addressed by
-developers.
-
-=== Artefacts
+== Artefacts
 
 Process:: A graphical model that describes what is done, by whom and  in which
 sequence.
 
 User Manual:: Documentation maintained by analysts to describe how the process
-is executed and how the application helps on the matter.
+is executed using the application.
 
 Technical User Manual:: Documentation maintained by developers to describe the
 domain model and other technical aspects of the system.
 
-Schedule:: A high level view of the project evolution in time. It is useful to
-analyze the impact of a delay on the final delivery date.
-
-Source Code:: Low level instructions, written according to the grammars of
-chosen programming languages, that technically describe how the application is
-expected to work and actually run it after compiled/interpreated.
-
-=== Tools
-
-AsciiDoctor:: A tool that interprets AsciiDoc instructions and generates stylish
-documents in different formats (html, pdf, etc.).
-
-Atom:: A text editor suitable to write AsciiDoc documents.
-
-Git:: A distributed version control system used to version the documentation
-produced in the project.
-
-GitHub:: An online Git service that adds an issue tracking system, a wiki and a
-collaborative code platform to Git.
-
-Jenkins:: An automation tool to implement continuous integration and delivery
-practices for Java applications.
-
-PyCharm:: A Python programming IDE.
-
-Visual Paradigm:: A modeling tool used to materialize the abstractions behind
-the data model, the business process, the software user interface, and many
-others.
+Source Code:: Computer level instructions, written in the various supported
+programming languages, which technically describe how the application works.
 
 :sectnums:
 
@@ -280,9 +250,223 @@ workable solution.
 
 == Development
 
+The development workflow defines the sequence of tasks and events that takes
+place during the development of OSIS, with the goal of producing stable
+releases. The workflow is controlled by Git because of its flexible branching
+features, and complemented by tools directly integrated to it, such as GitHub
+and ZenHub.
+
+The workflow is based on a lean technique called Kanban. It is a method for
+managing operational work with emphasis on just-in-time delivery while not
+overloading the team members. This approach covers the process from the
+definition of issues to the delivery to stakeholders. We have adopted a
+Kanban board composed of 7 distincted lanes: **New Issues**, **Backlog**,
+**To Do**, **In Progress**, **In Test**, **Done** and **Closed**.
+
+=== New Issues
+
+New issues are the ones recently created that were not yet accepted in the
+project. They are evaluated from time to time to check their relevance against a
+list of criteria defined by the team. The criteria are:
+
+- **Is the issue relevant at this point in time?** Sometimes, created issues are
+not directly related to the current stage of the project. They might be good
+ideas, but without a context they might be also uncertain or even unecessary.
+Our experience shows really good ideas are not forgotten. They will certainly
+come back in the future, in an appropriate moment.
+
+- **Is it well documented, clear, and free of doubts?** When the development
+team accepts a poorly documented issue, there is a high probability that the
+issue will go forward and backward between test and development, implying on
+overheads and delays.
+
+- **In case of bug, can it be reproduced?** Bugs can not be declared. They have
+to be demonstrated. The issue should contain a clear text explaining how to
+reproduce the bug, so the development team can act as fast as they can to solve
+the issue.
+
+- **If it big and complex, can it be divided in smaller issues?** Big issues are
+hard to manage because their are umpredictable. Nobody can say with confidence
+when they will finish. So, it is better to have small issues that are easier to
+document and develop than bigger ones that are hard in every sense.
+
+If there are enough reasons new issues can make to the next lanes. Others might
+be closed precociously. The judgment is made every 15 days in a meeting where
+analysts and developers get together to discuss each issue and make decisions.
+Meanwhile, new issues can also be accepted outside of this meeting in case they
+are urgent or bugs.
+
+=== Backlog
+
+Accepted new issues are moved to the backlog lane. It means they are accepted
+by the development team and they will be delivered soon. The size of the backlog
+represents the capacity of the development team. It should have enough work to
+keep the developers busy until the next team meeting, but with some room for
+umpredictable urgent issues.
+
+The backlog aswers the following questions:
+
+- The manager asks: what will be delivered in the coming days?
+- The team leader asks: what will be included in the release notes?
+- The analyst asks: are my priorities respected?
+- The developer asks: is there any issue I can work on?
+- The tester asks: for what should I get ready to test?
+
+=== Ready
+
+The To Do lane is a short backlog for issues that should be prioritized. Before
+taking issues from the the backlog, developers should take issues from the To
+Do until it is empty.
+
+=== In Progress
+
+When a developer picks an issue to work on, (s)he immediatly moves the issue to
+the In Progress lane to communicate to the team his(er) decision. This lane
+answers the following questions:
+
+- The manager asks: what are people doing right now?
+- The team leader asks: Is there any code review and applications checks to do?
+- Other developers ask: what should I NOT do?
+- The tester asks: for what should I get ready to test?
+
+It is recommended that a developer does not work in several issues at the same
+time. It increases overhead because of the time needed to remember and to
+refocus on the issue. We should finish what we started.
+
+If the issue requires changes in the code, the developer should create a branch
+for that issue. A new branch should be created from one of the following fixed
+branches:
+
+- *dev*: agregates developers' contributions that are related to new features or
+changes in existing features.
+- *qa*: it receives contributions when there is a patch to be applied in
+production, since it mirrors the code in production. Some environment-dependent
+tests can be performed to make sure eveything works in production, since both
+environments are similar.
+
+If the issue's number is `#234` then its respective branch is named
+`feature/234`, created to isolate the changes described in the issue. To create
+a new branch for the issue, perform the following commands:
+
+    $ git checkout dev
+    $ git pull origin dev
+    $ git checkout -b feature/234
+
+The first command enters in the branch `dev`, if the developer is not already in
+there. Within the branch `dev`, the latest commits in the remote branch
+`origin/dev` are downloaded and merged within the local branch `dev`. Then, the
+new branch `feature/234` is created from the local branch `dev`.
+
+If the issue aims to apply a patch, then the branch is named `patch/234` and
+created from `qa`:
+
+    $ git fetch origin qa
+    $ git checkout qa
+    $ git pull origin qa
+    $ git checkout -b patch/234
+
+The developer in charge of the issue `#234` changes the code within the branch
+`feature/234` or `patch/234`. Two commands are very useful to keep track of what
+has been done:
+
+    $ git status
+    $ git diff models.py
+
+The first command shows all created, modified, removed and untracked files that
+are candidates to be committed. The second shows the changes in one of the
+modified files. When we are ready to commit, we should decide whether all
+changed files will be included in the commit or just a subset of them. To
+include all files:
+
+    $ git commit -a -m "#234 New entities added."
+
+To include a subset of files, we have to add each file individually:
+
+    $ git add base/models/academic_year.py
+    $ git add base/models/academic_calendar.py
+    $ git add base/models/__init__.py
+    $ git commit -m "New entities added."
+
+Committing often is encouraged. All commits are done locally, thus there is no
+risk of conflicts until all commits are sent to the server. The `push` option
+sends all commits in a local branch to the server, identified by `origin`.
+
+    (venv)$ python manage.py jenkins
+    (venv)$ git push origin feature/234
+
+After the push the developer is ready to create a pull request to `dev`, if it
+is a feature, or to `qa` if it is a patch. A pull request allows the team leader
+to review the code. If the code is conflit free, PEP8 complient, readable and
+there is no evident logic error, then the team leader performs a stability check
+of the application in his(er) workstation. The basic operations are:
+
+    $ git fetch origin feature/234
+    $ git checkout feature/234
+    $ git pull origin feature/234
+
+Now the branch is in local and updated. Then (s)he checks the application:
+
+    $ source venv/bin/activate
+    (venv)$ ./manage.py migrate
+    (venv)$ ./manage.py jenkins
+    (venv)$ ./manage.py runserver
+
+The team leader may perform a simple test of the ticket, if possible, just to
+check runtime stability. If everything goes well, the team leader accepts the
+pull request and moves the issue to the lane In Test. In case of problems, s(he)
+notifies the developer about the found problems and they keep interacting until
+the pull request is accepted.
+
+=== In Test
+
+When the issue is In Test it means it is available to be tested on the
+DEV server, if it is a feature, or on the QA server, if it is a patch. The
+deployment is automatically done by Jenkins when it is notified right after
+commits are made in the branches `dev` and `qa`.
+
+The developer should perform this test and if everything goes well, s(he) moves
+the issue to the lane Done, but in case of problems, s(he) moves the issue to
+the lane In Progress to fix the remaining problems.
+
+=== Done
+
+Issues in this lane are considered done by the developer, but they still have to
+be validated by analysts or second level support. The issues are testable on the
+DEV server if they are new features or changes in existing features or on the QA
+server if they are patches to be applied in production.
+
+To validate a issue the analyst or the support closes the issue, automatically
+moving it to the Closed lane. But in case of problems, the issue should be moved
+to the lane In Progress, forcing the developer to go through all the
+verifications again.
+
+=== Closed
+
+Closed issues means they will be in production as soon as all the issues
+planned for the release are all closed too.
+
+The team leader creates a pull request from `dev` to `qa` to release new
+features and changes and then accept it. s(he) checks if the application is
+correctly deployed and is available on the QA server. In case of problems, a
+patch issue should be created from `qa` because we cannot be sure about which
+issue caused the problem since multiple issues were merged into `qa` at the same
+time.
+
+If everything goes well in QA, a new pull request is created from `qa` to
+`master`. The team leader notifies all the users through the notification
+feature in the application, informing at what date and time the release in
+production will happen, so the users may avoid doing critical operations during
+that period of time.
+
+From the creation of the pull request to `master` until the deployment time, the
+team leader must concentrate on the release notes, which must contain an user
+readable description of all changes made in the application since the last
+release.
+
 image::images/development.png[Development]
 
 === Create work breakdown structure
+
 === Create requests for change
 
 These are the states of requests for change:
@@ -302,6 +486,7 @@ These are the states of requests for change:
 - *Canceled*: The ticket was created by mistake.
 
 === Demand developers estimations
+
 === Estimate requests
 
 These are the types of effort:
@@ -399,8 +584,6 @@ image::images/queues.png[Queues]
 == Backlog
 
 image::images/backlog.png[Backlog]
-
-include::glossary.adoc[]
 
 [bibliography]
 == Bibliography
