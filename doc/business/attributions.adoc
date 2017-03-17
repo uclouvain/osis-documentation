@@ -1,7 +1,39 @@
 == Attributions
 
-Cette application est chargée d'assigner des tuteurs aux unités d'enseignement.
+=== Les suppléances
 
-Un tutor peut être à la fois cotitulaire et coordinateur, cotitulaire et
-suppléant. Mais il ne peut pas être cotitulaire 2 fois ou titulaire et
-cotitulaire au même temps.
+Il arrive donc que des enseignants doivent être remplacés pendant la durée de
+leur attribution; ce peut être à cause d'une mission, d'une maladie, d'un congé,
+ou tout autre raison qui n'est pas du ressort de EPC.
+
+Mr/Mme Y supplée Mr/Mme Z pour X heures, l'année N.
+
+Le cours reste attribué à la personne à laquelle il a été attribuée (le suppléé),
+et une seconde attribution est crée pour la personne qui va le remplacer (le
+suppléant).
+
+Les types de suppléant sont:
+
+Suppléant:: il doit toujours y avoir un suppléé
+
+Suppléant de sabbatique:: il doit toujours y avoir un suppléé. Quand le suppléé
+est parti en congé de 1 an.
+
+Suppléant d'autorité:: il doit toujours y avoir un suppléé. Le suppléé doit
+exercer une fonction d'autorité dasns l'UCL (par exemple le recteur).
+
+Suppléant de N:: le suppléé est inconnu (chef d'entreprise, politicien, mais
+lequel?)
+
+On peut ici faire évoluer le concept en obligeant de mettre une attribution à
+`SOMEBODY` (pas `NOBODY`) pour permettre la création d'une contrainte.
+
+Initialement, les suppléances devaient avoir une durée de 1 an, mais en realité
+tous les cas sont possible, comme constaté dans la base de données. Il y a bien
+sûr des cas particulier: des attributions viennent d'être faite mais une
+personne supplée toute la durée de l'attribution.
+
+On peut avoir plus d'un suppléant. Ex: un prof a 30h et il est suppléé par 2
+personnes pour 15h chacune.
+
+Les  co-suppléances ne sont pas utilisées actuellement.
