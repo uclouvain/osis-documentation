@@ -1,8 +1,12 @@
 = OSIS-Louvain Documentation
 
-OSIS-Louvain Documentation is a repository focused on the documentation of the 
-project https://github.com/uclouvain/osis[OSIS]. It contains business and 
-technical artefacts related to the business. It is separated from the 
-repository https://github.com/uclouvain/osis[osis] because the development 
-process in place requires that tickets to modify the documentation should be 
+OSIS-Louvain Documentation is a repository focused on the documentation of the
+project https://github.com/uclouvain/osis[OSIS]. It contains business and
+technical artefacts related to the business. It is separated from the
+repository https://github.com/uclouvain/osis[osis] because the development
+process in place requires that tickets to modify the documentation should be
 managed separatedly from the tickets to modify the application.
+
+    asciidoctor-pdf -a pdf-stylesdir=resources/themes
+                    -a pdf-style=osis
+                    doc/development/software-process.adoc

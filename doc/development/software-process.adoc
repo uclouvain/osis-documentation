@@ -1,28 +1,29 @@
-= OSIS Software Process
+= Software Process
 Hildeberto Mendonça, PhD
-v0.1, 2017-02-02
+v1.0, 2017-03-23
+:doctype: book
 :toc: right
 
 :sectnums!:
 
 == Introduction
 
-Software development is a creative work and as such it's very sensitive to
+Software development is a creative work and as such it’s very sensitive to
 formalizations. However, it is important to have some guidance about how the
 work is usually done, how information flows and what actions are taken in
-reccurrent situations.
+recurrent situations.
 
 This document describes a low overhead, flexible and structured process to guide
-contributors on the development of OSIS. It doesn't impose rules, but
-communicates how the team usually behaves in every foreseen situation.
+contributors on the development of OSIS. It doesn’t impose rules, but
+communicates how the team usually behaves in foreseen situations.
 
 The process is inspired on agile and lean practices adapted to the context of a
 large education institution and open source development. It is constantly
-improved as contributors become more autonomous and tasks automated.
+improved as contributors become more autonomous and tasks more automated.
 
-== The Fundamental Principles
+=== The Fundamental Principles
 
-In order to stablish a baseline for this and future process improvements,
+In order to establish a baseline for this and future process improvements,
 independent of methodologies, practices or paradigms, we have defined some
 fundamental principles that should be respected in every future step. They are:
 
@@ -32,13 +33,13 @@ code, everything must be traceable to support the investigation of problems,
 from the causes to the effects, to minimize the changes they keep happening in
 the future.
 
-Previsibility:: The more we repeat the process the more it becomes predictable.
+Predictability:: The more we repeat the process the more it becomes predictable.
 So a simple process is memorable, but not that simple to leave important tasks
-uncovered. Important investiments should be made in training, reusable solutions
-and documentation to support estimations. Unfortunately, previsibility requires
-a lot of discipline, which is hard to achieve in a creative environment.
-Fortunately, many repetitive tasks can be automated, including the ones that
-verifies the work that has been done.
+uncovered. Important investments should be made in training, reusable solutions
+and documentation to support estimations. Unfortunately, predictability requires
+discipline, which is hard to achieve in a creative environment. Fortunately,
+many repetitive tasks can be automated, including the ones that verifies the
+work that has been done.
 
 Reactivity:: Given a certain state of the process, how long would it take to a
 person resume the work of another person? Given the report of a bug, how long it
@@ -50,11 +51,24 @@ measured. Indicators can be used to monitor measurable things so progress
 becomes visible, overheads can be avoided and decision making is properly
 supported.
 
+=== Turing Complete
+
+In computer science, a programming language is said to be Turing complete if it
+can be used to simulate itself or another Turing complete language. We have
+bored this concept to write this document so it can also be used to define
+itself and other documents.
+
+In further sections we emphasize the user manual, an artifact as valuable as the
+code that produces the application. Our intension is that this document serves
+as inspiration of structure and style for the user manual. Actually, this is a
+user manual to guide the team on the implementation and execution of the
+software process.
+
 == Process Map
 
 The OSIS project consists of 4 independent and interconnected processes:
 *Analysis*, *Development*, *Release*, and *Support*. They are independent
-because they don't block each other and run in different time frames. They are
+because they don’t block each other and run in different time frames. They are
 also interconnected because they provide information for each other to be able
 to run correctly and efficiently.
 
@@ -66,7 +80,7 @@ highly intricate composition of programs, prerequisites and corequisites among
 courses, the scheduling of classes while considering the availability of
 auditoriums, teachers, students and resources, special rules for international
 agreements with other countries and institutions and so on. Those issues have to
-be constantly investigated in depth by a team of experts. That's why *business
+be constantly investigated in depth by a team of experts. That’s why *business
 analysis* is so important in this kind of domain. There is simply too much
 knowledge that has to be captured, organized, documented, revisited and shared,
 otherwise the institution will indefinitely depend on individuals instead of the
@@ -89,7 +103,7 @@ is reported. Every issue starts an independent instance of the process. The
 duration of the process is not fixed. It depends on the time needed to fix the
 issue, but it has higher priority than other processes.
 
-== Roles
+=== Roles
 
 User:: All those who directly use the application or represent a large group of
 users. When there is a business need, they transmit to analysts the maximum
@@ -107,10 +121,10 @@ functionalities, by support analysts to assist users on their questions and by
 the users through the help menu in the application.
 
 Technical Leader:: Responsible for the coordination of the development team.
-It's the leader who make sure the issues are having the necessary attention,
-making sure they don't get stuck or are forgotten in the backlog, and plan the
+It’s the leader who make sure the issues are having the necessary attention,
+making sure they don’t get stuck or are forgotten in the backlog, and plan the
 releases. The leader should also monitor the project to detect non-conformities,
-identify deficiencies that impact the team's productivity and act to overcome
+identify deficiencies that impact the team’s productivity and act to overcome
 those deficiencies.
 
 Developer:: Responsible for developing the application according to the
@@ -124,10 +138,10 @@ application is not behaving as expected, the support analyst is responsible for
 reproducing the problem and creating a high priority issue to be addressed by
 developers as soon as possible.
 
-== Artefacts
+=== Artefacts
 
-Process:: A graphical model that describes what is done, by whom and  in which
-sequence.
+Business Process Model:: A graphical model that describes what is done, by whom
+and in which sequence.
 
 User Manual:: Documentation maintained by analysts to describe how the process
 is executed using the application.
@@ -142,20 +156,38 @@ programming languages, which technically describe how the application works.
 
 == Analysis
 
-Analysis is the part of the process that continuously investigates and document
-how the business work. The documentation assumes the format of a user manual.
+The analysis process continuously investigates and documents how the business
+works to be able to represent it in terms of information systems. The
+documentation assumes the format of business processes and a user manual.
 
-The user manual describes how the application works. So, instead of producing
+*Business processes* describe how the business works, with and without
+application support, with tasks and sub-tasks organized in a logical sequence,
+with responsibilities distributed among roles and producing artifacts as output.
+A *user manual* describes how the application works. So, instead of producing
 several documents, the analysts concentrate all their effort in a single one,
-written in a way that serves both the development team and the users.
+written in a way that serves both developers and users.
 
 Writing the user manual before developing the application is not an unusual
-idea. In Test-Driven Development (TDD) developers are motivated to write the
-tests before reaching the code. The practice of doing useful things in advance
-is a form of continuous reasoning about what will be done in the code, which is
-the ultimate artifact to be delivered to users.
+idea. In Test-Driven Development (TDD) developers are motivated to write a
+failing test before writing the required production code to pass it. The
+practice of doing useful things in advance is a form of continuous reasoning
+about what will be done in the project.
 
-image::images/analysis.png[Analyse]
+<<process-analysis>> is a process, defined in BPMN (Business Process Modeling
+Notation), that describes the analysis of business requirements. In a first look,
+this process seems time consuming and bureaucratic, but it is simply a
+distribution of responsibilities among the roles: user, analyst and developer.
+An instance of this process can last weeks, but it also can take a 1 hour
+meeting, updating the process and the user manual right away as discussion goes,
+streamlining all decisions.
+
+This is also an illustration of a business process model artifact to be prepared
+by analysts during the analysis. Each one of its tasks is explained in its own
+section, as detailed as a user manual.
+
+[[process-analysis,Figure 1]]
+.Business process of the analysis
+image::images/analysis.png[]
 
 === Report a business need
 
@@ -183,9 +215,6 @@ When a context is found for the request then a ticket is created to track the
 changes. This ticket is also called RFC (Request For Change) and is allocated to
 an analyst who will proceed with the analysis.
 
-RFCs are managed in the repository
-https://github.com/uclouvain/osis-louvain-documentation/issues.
-
 A RFC must contain:
 
 - A *title* that summarizes in one sentence the content of the change;
@@ -211,7 +240,7 @@ application. Some activities are automated in the application and others are
 manual. Therefore, a change may modify the process and the application or only
 the process or only the application.
 
-If the processes don't change, then this activity is irrelevant.
+If the processes don’t change, then this activity is irrelevant.
 
 === Create a new business process
 
@@ -262,7 +291,7 @@ The workflow is based on a lean technique called Kanban. It is a method for
 managing operational work with emphasis on just-in-time delivery while not
 overloading the team members. This approach covers the process from the
 definition of issues to the delivery to stakeholders. We have adopted a
-Kanban board composed of 7 distincted lanes: **New Issues**, **Backlog**,
+Kanban board composed of 7 distinct lanes: **New Issues**, **Backlog**,
 **To Do**, **In Progress**, **In Test**, **Done** and **Closed**.
 
 === New Issues
@@ -273,7 +302,7 @@ list of criteria defined by the team. The criteria are:
 
 - **Is the issue relevant at this point in time?** Sometimes, created issues are
 not directly related to the current stage of the project. They might be good
-ideas, but without a context they might be also uncertain or even unecessary.
+ideas, but without a context they might be also uncertain or even unnecessary.
 Our experience shows really good ideas are not forgotten. They will certainly
 come back in the future, in an appropriate moment.
 
@@ -288,7 +317,7 @@ reproduce the bug, so the development team can act as fast as they can to solve
 the issue.
 
 - **If it big and complex, can it be divided in smaller issues?** Big issues are
-hard to manage because their are umpredictable. Nobody can say with confidence
+hard to manage because their are unpredictable. Nobody can say with confidence
 when they will finish. So, it is better to have small issues that are easier to
 document and develop than bigger ones that are hard in every sense.
 
@@ -304,9 +333,9 @@ Accepted new issues are moved to the backlog lane. It means they are accepted
 by the development team and they will be delivered soon. The size of the backlog
 represents the capacity of the development team. It should have enough work to
 keep the developers busy until the next team meeting, but with some room for
-umpredictable urgent issues.
+unpredictable urgent issues.
 
-The backlog aswers the following questions:
+The backlog answers the following questions:
 
 - The manager asks: what will be delivered in the coming days?
 - The team leader asks: what will be included in the release notes?
@@ -322,7 +351,7 @@ Do until it is empty.
 
 === In Progress
 
-When a developer picks an issue to work on, (s)he immediatly moves the issue to
+When a developer picks an issue to work on, (s)he immediately moves the issue to
 the In Progress lane to communicate to the team his(er) decision. This lane
 answers the following questions:
 
@@ -339,14 +368,14 @@ If the issue requires changes in the code, the developer should create a branch
 for that issue. A new branch should be created from one of the following fixed
 branches:
 
-- *dev*: agregates developers' contributions that are related to new features or
-changes in existing features.
+- *dev*: aggregates developers' contributions that are related to new features
+or changes in existing features.
 - *qa*: it receives contributions when there is a patch to be applied in
 production, since it mirrors the code in production. Some environment-dependent
-tests can be performed to make sure eveything works in production, since both
+tests can be performed to make sure everything works in production, since both
 environments are similar.
 
-If the issue's number is `#234` then its respective branch is named
+If the issue’s number is `#234` then its respective branch is named
 `feature/234`, created to isolate the changes described in the issue. To create
 a new branch for the issue, perform the following commands:
 
@@ -398,7 +427,7 @@ sends all commits in a local branch to the server, identified by `origin`.
 
 After the push the developer is ready to create a pull request to `dev`, if it
 is a feature, or to `qa` if it is a patch. A pull request allows the team leader
-to review the code. If the code is conflit free, PEP8 complient, readable and
+to review the code. If the code is conflict free, PEP8 compliant, readable and
 there is no evident logic error, then the team leader performs a stability check
 of the application in his(er) workstation. The basic operations are:
 
@@ -494,7 +523,7 @@ These are the states of requests for change:
 These are the types of effort:
 
 - *Unknown*: the team does not have the necessary knowledge to address the
-  issue. Therefore, an investigation should be carried out and no extimation can
+  issue. Therefore, an investigation should be carried out and no estimation can
   be done.
 
 - *Complex*: the team has the necessary knowledge to address the issue but
@@ -503,7 +532,7 @@ These are the types of effort:
 - *Heavy*: the team has the necessary knowledge to address the issue and
   estimate the work but the issue cannot be solved in less than 5 working days.
 
-- *Regular*: the team has the neccessary knowledge to address the issue and
+- *Regular*: the team has the necessary knowledge to address the issue and
   estimate the work but the issue cannot be solved in less than 2 days.
 
 - *Easy*: the team has the necessary knowledge to address the issue, estimate
@@ -532,7 +561,7 @@ These are the types of priority:
   complete his/her task on time. This is usually due to a bug and must be fixed
   as soon as possible.
 - *Essential*: It must have. It is so crucial to have the functionality
-  implemented that the process couldn't run without it.
+  implemented that the process couldn’t run without it.
 - *Important*: It should have. The user can live without it, but his/her
   productivity is heavily impacted.
 - *Desirable*: It is nice to have. An existing functionality can be improved, so
@@ -589,8 +618,5 @@ image::images/backlog.png[Backlog]
 
 [bibliography]
 == Bibliography
-
-- [[[evans2004]]] EVANS, Eric. Domain-Driven Design: Tackling Complexity in the
-  Heart of Software. Addison Wesley: Boston, 2004.
 
 Copyright (c) 2015-2017 Université catholique de Louvain. All Rights Reserved.
