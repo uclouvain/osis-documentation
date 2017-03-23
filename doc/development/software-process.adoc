@@ -177,7 +177,7 @@ connected to existing ones. Requests that are not aligned with existing
 processes or propose isolated processes must be rejected until the application
 evolves to a point that those requests can be connected.
 
-=== Create request for change
+=== Create Issues
 
 When a context is found for the request then a ticket is created to track the
 changes. This ticket is also called RFC (Request For Change) and is allocated to
@@ -194,9 +194,11 @@ A RFC must contain:
 - The *user* who requested the change;
 - The *full path to the process element* that is impacted by the change.
 
-A RFC is the equivalent of a user story. A user story is a description of what
-the user expects from the application in order to produce a certain outcome for
-the organization.
+An issue is the equivalent of a user story. A user story is a description of
+what the user expects from the application in order to produce a certain outcome
+for the organization. A user story is not supposed to be decomposed in smaller
+issues because those issues would have to be done in a sequence - not in
+parallel -, breaking the possibility of self assignment by developers.
 
 === Modify the impacted business processes
 
