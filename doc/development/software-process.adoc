@@ -1,6 +1,7 @@
-= OSIS Software Process
+= Software Process
 Hildeberto Mendonça, PhD
-v0.1, 2017-03-23
+v1.0, 2017-03-23
+:doctype: book
 :toc: right
 
 :sectnums!:
@@ -50,6 +51,19 @@ measured. Indicators can be used to monitor measurable things so progress
 becomes visible, overheads can be avoided and decision making is properly
 supported.
 
+=== Turing Complete
+
+In computer science, a programming language is said to be Turing complete if it
+can be used to simulate itself or another Turing complete language. We have
+bored this concept to write this document so it can also be used to define
+itself and other documents.
+
+In further sections we emphasize the user manual, an artifact as valuable as the
+code that produces the application. Our intension is that this document serves
+as inspiration of structure and style for the user manual. Actually, this is a
+user manual to guide the team on the implementation and execution of the
+software process.
+
 == Process Map
 
 The OSIS project consists of 4 independent and interconnected processes:
@@ -89,7 +103,7 @@ is reported. Every issue starts an independent instance of the process. The
 duration of the process is not fixed. It depends on the time needed to fix the
 issue, but it has higher priority than other processes.
 
-== Roles
+=== Roles
 
 User:: All those who directly use the application or represent a large group of
 users. When there is a business need, they transmit to analysts the maximum
@@ -124,10 +138,10 @@ application is not behaving as expected, the support analyst is responsible for
 reproducing the problem and creating a high priority issue to be addressed by
 developers as soon as possible.
 
-== Artefacts
+=== Artefacts
 
-Process:: A graphical model that describes what is done, by whom and  in which
-sequence.
+Business Process Model:: A graphical model that describes what is done, by whom
+and in which sequence.
 
 User Manual:: Documentation maintained by analysts to describe how the process
 is executed using the application.
@@ -144,19 +158,36 @@ programming languages, which technically describe how the application works.
 
 The analysis process continuously investigates and documents how the business
 works to be able to represent it in terms of information systems. The
-documentation assumes the format of a user manual.
+documentation assumes the format of business processes and a user manual.
 
-The user manual describes how the application works. So, instead of producing
+*Business processes* describe how the business works, with and without
+application support, with tasks and sub-tasks organized in a logical sequence,
+with responsibilities distributed among roles and producing artifacts as output.
+A *user manual* describes how the application works. So, instead of producing
 several documents, the analysts concentrate all their effort in a single one,
-written in a way that serves both the development team and the users.
+written in a way that serves both developers and users.
 
 Writing the user manual before developing the application is not an unusual
-idea. In Test-Driven Development (TDD) developers are motivated to write the
-tests before reaching the code. The practice of doing useful things in advance
-is a form of continuous reasoning about what will be done in the code, which is
-the ultimate artifact to be delivered to users.
+idea. In Test-Driven Development (TDD) developers are motivated to write a
+failing test before writing the required production code to pass it. The
+practice of doing useful things in advance is a form of continuous reasoning
+about what will be done in the project.
 
-image::images/analysis.png[Analysis]
+<<process-analysis>> is a process, defined in BPMN (Business Process Modeling
+Notation), that describes the analysis of business requirements. In a first look,
+this process seems time consuming and bureaucratic, but it is simply a
+distribution of responsibilities among the roles: user, analyst and developer.
+An instance of this process can last weeks, but it also can take a 1 hour
+meeting, updating the process and the user manual right away as discussion goes,
+streamlining all decisions.
+
+This is also an illustration of a business process model artifact to be prepared
+by analysts during the analysis. Each one of its tasks is explained in its own
+section, as detailed as a user manual.
+
+[[process-analysis,Figure 1]]
+.Business process of the analysis
+image::images/analysis.png[]
 
 === Report a business need
 
@@ -183,9 +214,6 @@ evolves to a point that those requests can be connected.
 When a context is found for the request then a ticket is created to track the
 changes. This ticket is also called RFC (Request For Change) and is allocated to
 an analyst who will proceed with the analysis.
-
-RFCs are managed in the repository
-https://github.com/uclouvain/osis-louvain-documentation/issues.
 
 A RFC must contain:
 
