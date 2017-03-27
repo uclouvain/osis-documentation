@@ -31,6 +31,8 @@ include::attributions.adoc[]
 
 include::encodage-notes.adoc[]
 
+include::gestion-des-droits.adoc[]
+
 include::glossary.adoc[]
 
 [bibliography]

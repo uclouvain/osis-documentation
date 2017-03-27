@@ -1,0 +1,65 @@
+== Publication des notes sur le bureau virtuel des étudiants
+=== Date et heure de publication des notes
+ - *Date et heure de publication des notes d'un programme:* il y a une date et une heure de publication des notes par programme, souvant c'est peu après la délibération.
+ Les gestionnaires doivent encoder la date et l'heure dans les données administrative des offres pour la publication de notes de ses programmes.
+ Les programmes n'encodent pas une date, les notes des étudiants de ces programmes ne sont pas pubilées (l'étudiant ne voit pas leur notes sur son bureau virtuel).
+ Les programmes encodent une date, avant cette date (heure) les notes ne sont pas encore publiées.
+
+ NOTE: Les facultés s'arrangent entre elles pour ne pas donner la même date, même heure pour ne pas surcharger les serveurs.
+
+ - *Date et heure de publication spécifique d'un étudiant:* pour des raisons des notes tardives, des délibération tardives,
+ ou pour une autre raison auxquelles l'étudiant doit avoir ses notes avant ou après la date de son programme
+ => le gestionnaire peut définir une date/heure de  de notes spécifique
+ pour un étudiant. Dès qu'il y a une date spécifique pour un étudiant, cette date a plus de valeur par rapport de la date/heure
+ de diffusion de notes du programme.
+
+ - Si une offre qui ne définit pas de date, il n'y a pas de publication de notes.
+
+=== Interface de la publication des notes sur le bureau virtuel de l'étudiant
+ . La liste des offfre (des programmes) auxquelles l'étudiant s'inscrivent dans l'ordre l'année académique plus récente au moins récente.
+IMPORTANT: On n'affiche pas des inscriptions aux offres avec des états d'inscription d'erreurs, d'annulation, ...
+On n'affiche que des inscription de l'état: +
+ - "Inscrit", +
+ - "En demande", +
+ - "Cessation": on affiche (cessation) à la fin de l'intitulé du programme, +
+ - "Fin de cycle".
+
+image::images\bureau_etudiant\les_offres.png[]
+
+ . Des détails des inscriptions aux cours, aux examens, note, état, ... d'une année académique: +
+
+image::images\bureau_etudiant\pub_notes.png[]
+ - La moyenne réussite:
+ - La moyenne générale:
+
+*L'état d'inscription aux cours:* On peut avoir l'etat: +
+ - Inscr = Inscrit (I) +
+ - EMP = cours reporté d'une épreuve modifiée (S) +
+ - Créd. = Crédit Bologne report de l'année antérieure (B) +
+ - C94 = Report d'un crédit à 12. Année en cours ou année antérieure (C) +
+ - Disp. = Dispense (D) +
+ - F = Note d'une autre faculté (F) +
+ - K94 = Report crédit année antérieure (K) +
+ - RIP = Report dans le cadre d'une partie d'épreuve => faire suivre la note jusque la délibé (N) +
+ - Q94 = Report d'un crédit à 14. Année en cours ou année antérieure (Q) +
+ - Rep. = Report (Transfert d'une note, délibérée ou non, à une session dans une même anac) (R) +
+ - Test = Note résultant d'un test (T) +
+ - V = L'étudiant a satisfait. Mais la note n'intervient pas dans la moyenne du résultat (V) +
+ - W = L'étudiant n'a pas satisfait => obligation de se réinscrire (W) +
+ - Ext. = Note d'une autre institution (X) +
+
+La légende bleu n'affiche qu'à partir de l'année académique 2014-2015
+
+== Inscription aux examens par l'étudiant sur son bureau virtuel
+Chaque programme
+
+== Mes attestations
+Quand l'étudiant se connecte sur leur bureau virtuel, on vérifie l'état de l'étudiant et la date du jour pour déterminer
+si l'étidiant peut télécharger ses attestations.
+
+*Etat de l'étudiant*: Pour une année académique, un étudiant peut s'inscrire à plusieurs programmes.
+En fonction de type du programme inscrit, des inscriptions aux cours ou pas, ... l'application détermine
+par défaut une inscription principale parmis des inscriptions. Le gestionnaire peut changer s'il souhait.
+On vérifie l'état d'inscription principale
+
+A partir du , on bascule vers la nouvelle année académique. L'étudiant ne peut plus acceder à ses attestions de cette année académique.
