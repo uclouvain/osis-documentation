@@ -5,7 +5,7 @@
  Les programmes n'encodent pas une date, les notes des étudiants de ces programmes ne sont pas pubilées (l'étudiant ne voit pas leur notes sur son bureau virtuel).
  Les programmes encodent une date, avant cette date (heure) les notes ne sont pas encore publiées.
 
- NOTE: Les facultés s'arrangent entre elles pour ne pas donner la même date, même heure pour ne pas surcharger les serveurs.
+ TIP: Les facultés s'arrangent entre elles pour ne pas donner la même date, même heure pour ne pas surcharger les serveurs.
 
  - *Date et heure de publication spécifique d'un étudiant:* pour des raisons des notes tardives, des délibération tardives,
  ou pour une autre raison auxquelles l'étudiant doit avoir ses notes avant ou après la date de son programme
@@ -61,3 +61,11 @@ image::images\bureau_etudiant\pub_notes.png[]
 La légende bleu n'affiche qu'à partir de l'année académique 2014-2015
 
 == Inscription aux examens par l'étudiant sur son bureau virtuel
+
+== Mes attestations
+
+Quand l’étudiant se connecte sur leur bureau virtuel, on vérifie l’état de l’étudiant et la date du jour pour déterminer si l’étidiant peut télécharger ses attestations.
+
+Etat de l’étudiant: Pour une année académique, un étudiant peut s’inscrire à plusieurs programmes. En fonction de type du programme inscrit, des inscriptions aux cours ou pas, …​ l’application détermine par défaut une inscription principale parmis des inscriptions. Le gestionnaire peut changer s’il souhait. On vérifie l’état d’inscription principale.
+
+A partir du , on bascule vers la nouvelle année académique. L’étudiant ne peut plus acceder à ses attestions de cette année académique.
