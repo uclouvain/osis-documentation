@@ -53,7 +53,8 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
  - Tous (par défaut)
  - La liste de tous les gestionnaires qui gèrent au moins un programme de la
    faculté concernée.
- - L'utilisateur peut choisir soit Tous, soit un ou plusieurs gestionnaires dans la liste des gestionnaires.
+ - L'utilisateur peut choisir soit Tous, soit un ou plusieurs gestionnaires dans
+   la liste des gestionnaires.
 
 TIP: Il existe d'autre types de programmes mais qui ne nécessitent pas d'être
 présentés dans cette partie de l'application. L'on ne présentera donc pas dans
@@ -75,7 +76,8 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
  - C'est la liste de tous les gestionnaires des programmes sélectionnées du
    tableau des programmes.
  - Le choix dans le menu déroulant "Gestionnaires" est servi uniquement pour
-   faire des critères de recherche. Il n'y a pas de lien direct vers le tableau de Gestionnaires.
+   faire des critères de recherche. Il n'y a pas de lien direct vers le tableau
+   de Gestionnaires.
  - Quand la souris passe sur "-", afficher l'info-bulle "Enlever le
    gestionnaire"
  - Si l'utilisateur clique sur le bouton "-" pour enlever un gestionnaire, le
