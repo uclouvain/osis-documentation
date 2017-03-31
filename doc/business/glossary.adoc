@@ -3,8 +3,16 @@
 [glossary]
 == Glossary
 
-Formation:: Aussi connu comme offre, La formation est une offre de l'enseignement supérieur géré par l'université et mis à la disposition pour des candidats et des étudiants.
+Formation:: Aussi connu comme offre, La formation est une offre de
+l'enseignement supérieur géré par l'université et mis à la disposition pour des
+candidats et des étudiants.
 
-OSIS:: OSIS signifie Open Student Information System (Système d'information de code ouvert pour les étudiants). C'est une application conçue pour gérer les activités de base des institutions d'enseignement supérieur, tels que les universités, facultés, instituts et écoles professionnelles. L'activité principale consiste en l'administration des étudiants, des enseignants, des cours, des programmes et ainsi de suite.
+OSIS:: OSIS signifie Open Student Information System (Système d'information de
+code ouvert pour les étudiants). C'est une application conçue pour gérer les
+activités de base des institutions d'enseignement supérieur, tels que les
+universités, facultés, instituts et écoles professionnelles. L'activité
+principale consiste en l'administration des étudiants, des enseignants, des
+cours, des programmes et ainsi de suite.
 
-Unité d'enseignement:: Actuellement connu comme activité, l'unité d'enseignement est un bloc des études dirigées à une matier en particulier couverte par le programme de formation.
+UE:: l'unité d'enseignement est un bloc des études dirigées à une matier en
+particulier couverte par le programme de formation.
