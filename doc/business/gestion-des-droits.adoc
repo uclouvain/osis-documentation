@@ -20,7 +20,7 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
 
 === Le contenu de l'écran
 
-. La faculté indiquée est la faculté à laquelle l'utilisateur est effecté pour
+. La faculté indiquée est la faculté à laquelle l'utilisateur est affecté pour
   la gestion des gestionnaires de programme.
 . Le menu déroulant "Entité" contient:
  - Toutes (par défaut)
@@ -53,6 +53,7 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
  - Tous (par défaut)
  - La liste de tous les gestionnaires qui gèrent au moins un programme de la
    faculté concernée.
+ - L'utilisateur peut choisir soit Tous, soit un ou plusieurs gestionnaires dans la liste des gestionnaires.
 
 TIP: Il existe d'autre types de programmes mais qui ne nécessitent pas d'être
 présentés dans cette partie de l'application. L'on ne présentera donc pas dans
@@ -73,6 +74,8 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
 . La liste des gestionnaires:
  - C'est la liste de tous les gestionnaires des programmes sélectionnées du
    tableau des programmes.
+ - Le choix dans le menu déroulant "Gestionnaires" est servi uniquement pour
+   faire des critères de recherche. Il n'y a pas de lien direct vers le tableau de Gestionnaires.
  - Quand la souris passe sur "-", afficher l'info-bulle "Enlever le
    gestionnaire"
  - Si l'utilisateur clique sur le bouton "-" pour enlever un gestionnaire, le
