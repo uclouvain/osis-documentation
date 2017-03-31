@@ -99,26 +99,23 @@ image::images/administrer_gestionnaire_programme/chercher-gestionnaires-de-progr
 IMPORTANT: Pour réduire les erreurs, il ne faut présenter que les personnels de
 l'UCL. On ne peut ajouter que les personnels comme gestionnaires de programme.
 
-
 == Administration des Responsables de notes pour les cours d’une faculté
 
-Pour chaque faculté, il y a une ou plusieurs personnes qui sont
-*Administrateurs de responsables de de notes*.
+Pour chaque faculté, il y a une ou plusieurs personnes qui sont *Administrateurs
+de responsables des notes*.
 
-Pour chaque UE qui est attribuée à au moins un professeur, il
-y a un et un seul *Responsable de notes*, qui est
-le ou l’un des professeurs auxquels le cours est attribué.
-C’est donc une propriété de l’attribution d'une UE
-à un professeur, qui donne à ce dernier un accès au bouton
-[Soumettre] pour l'UE concernée, dans l'environnement d'encodage de notes
-par les professeurs.
+Pour chaque UE qui est attribuée à au moins un professeur, il y a un et un seul
+*Responsable de notes*, qui est le ou l’un des professeurs auxquels le cours
+est attribué. C’est donc une propriété de l’attribution d'une UE à un
+professeur, qui donne à ce dernier un accès au bouton [Soumettre] pour l'UE
+concernée, dans l'environnement d'encodage de notes par les professeurs.
 
-L’*Administrateurs de responsables de de notes* peut désigner le Responsable
+L’*Administrateurs de responsables des notes* peuvent désigner le Responsable
 de notes parmi les professeurs auxquels le cours est attribué. Il peut aussi
 désigner des personnes, auxquelles le cours n'est pas attribué, comme habilitées
-à encoder des notes. Cependant, il ne pourra pas désigner celles-ci
-comme Responsables de notes. (Toute demande en ce sens devra être transmise
-par la DAF à SIPS.)
+à encoder des notes. Cependant, il ne pourra pas désigner celles-ci comme
+Responsables de notes. Toute demande en ce sens devra être transmise via
+service desk.
 
 Le droit d’*Administrateur de responsables de notes* sera typiquement attribué
 à la/le DAF mais peut aussi être assigné à d’autres personnes.
@@ -129,69 +126,68 @@ suivant :
 
 image::images/administrer_gestionnaire_programme/admin-resp-notes.jpg[]
 
-
-
-
 === Contenu de l’écran
-*	Intitulé de l’écran : La faculté concernée, indiquée dans le titre,
-est celle pour laquelle l’utilisateur est chargé de l'administration
-des responsables de notes.
-*	Formulaire de sélection de cours
+
+*	Intitulé de l’écran : La faculté concernée, indiquée dans le titre, est celle
+  pour laquelle l’utilisateur est chargé de l'administration des responsables de
+  notes.
+*	Formulaire de sélection de cours:
 **	Le menu déroulant « Entité » présente :
 ***	_Toutes_ (valeur initiale)
 ***	Le sigle de la faculté concernée
-***	Les sigles des CE de la faculté concernée ; l’utilisateur peut
-sélectionner soit _Toutes_ soit une ou plusieurs entités de la liste
-déroulante.
+***	Les sigles des CE de la faculté concernée ; l’utilisateur peut sélectionner
+    soit _Toutes_ soit une ou plusieurs entités de la liste déroulante.
 **	Code cours
 **	Mot(s) de l’intitulé du cours
-
-**	Le menu « Professeur » est initialisé à _Tous_ et présente aussi
-la liste de tous les professeurs auxquels sont attribués des
-cours rattachés à la faculté concernée.
+**	Le menu « Professeur » est initialisé à _Tous_ et présente aussi la liste de
+    tous les professeurs auxquels sont attribués des cours rattachés à la
+    faculté concernée.
 **	Le menu « Responsable de note » est initialisé à _Tous_ et présente aussi
-la liste des professeurs qui sont Responsables de notes pour des
-cours rattachés à la faculté concernée.
-
+    la liste des professeurs qui sont Responsables de notes pour des cours
+    rattachés à la faculté concernée.
 *	Colonnes du Tableau de la liste des cours sélectionnés
 **	Entité (sigle)
 **	Code cours
 **	Intitulé officiel
 **	Nombre de titulaires
 **	Gestionnaire de notes du cours (Nom, virgule-espace, Prénom)
-
 *	Tableau des titulaires d’un cours
 **	Intitulé du tableau : « Titulaires du cours [code cours] »
 **	Colonnes du tableau
 *** Professeur
-***	Statut d’attribution : Cotitulaire / coordonateur / etc…  Si la personne est une personne ajoutée, son statut (Professeur ou Assistant) est indiqué entre parenthèses car il ne s’agit pas d’un statut d’attibution. À côté de ce pseudo-statut est ajouté un bouton [ - ] pour supprimer la personne ajoutée.
-***	Responsable de notes : bouton-radio (un seul titulaire peut être responsable de notes). Les personnes ajoutées ne peuvent pas être responsables de notes.
-**	Bouton [Ajouter] pour donner le droit d'encoder à une personne
-(qui n'est pas nécessairement un professeur)
-**	Bouton [Enregistrer] pour enregistrer un changement de
-Responsable de notes
+***	Statut d’attribution : Cotitulaire / coordonateur / etc…  Si la personne est
+    une personne ajoutée, son statut (Professeur ou Assistant) est indiqué entre
+    parenthèses car il ne s’agit pas d’un statut d’attibution. À côté de ce
+    pseudo-statut est ajouté un bouton [ - ] pour supprimer la personne ajoutée.
+***	Responsable de notes : bouton-radio (un seul titulaire peut être responsable
+    de notes). Les personnes ajoutées ne peuvent pas être responsables de notes.
+**	Bouton [Ajouter] pour donner le droit d'encoder à une personne (qui n'est
+    pas nécessairement un professeur).
+**	Bouton [Enregistrer] pour enregistrer un changement de Responsable de notes
 
 === Comportement de l’écran
-*	La sélection de cours est définie dans le formulaire et appelée par le bouton [Rechercher].
 
-*	Les résultats de cette sélection sont affichés dans le tableau de cours.
-**	Le *tri initial* se fait selon Entité, Code cours.
-**	On peut trier le tableau sur tous les champs
-**	Les tris se font avec mémoire des trix précédents
+La sélection de cours est définie dans le formulaire et appelée par le bouton
+[Rechercher].
 
-*	Quand on clique sur l’un des cours sélectionnés, le tableau des titulaires
-et son intitulé sont rafraîchis avec les informations corerspondant à ce cours.
+Les résultats de cette sélection sont affichés dans le tableau de cours.
+*	Le *tri initial* se fait selon Entité, Code cours.
+*	On peut trier le tableau sur tous les champs.
+*	Les tris se font avec mémoire des trix précédents.
 
-*	Si, dans le tableau des titulaires d’un cours on change de responsable
+Quand on clique sur l’un des cours sélectionnés, le tableau des titulaires et
+son intitulé sont rafraîchis avec les informations corerspondant à ce cours.
+
+Si, dans le tableau des titulaires d’un cours on change de responsable
 de notes, les boutons deviennent rouges jusqu’à ce qu’on enregistre
 (ou qu’on resélectionne le responsable actuel).
 
-*	Quand on ajoute une personne, on peut lui préciser un statut
-« (Professeur) «  ou « (Assistant) » (tels quels, avec parenthèses),
-pour information.
+Quand on ajoute une personne, on peut lui préciser un statut « (Professeur) «
+ou « (Assistant) » (tels quels, avec parenthèses), pour information.
 
-* Info-bulles
-** Bouton [Rechercher] : "Rechercher des cours"
-** Bouton [Ajouter] : "Donner le droit d'encodage à une personne autre"
-** Bouton [Enregistrer] : "Enregistrer le responsable de notes"
-** Bouton [ - ] : "Enlever le droit d'encodage de notes à la personne ajoutée"
+Info-bulles:
+
+* Bouton [Rechercher] : "Rechercher des cours"
+* Bouton [Ajouter] : "Donner le droit d'encodage à une personne autre"
+* Bouton [Enregistrer] : "Enregistrer le responsable de notes"
+* Bouton [ - ] : "Enlever le droit d'encodage de notes à la personne ajoutée"
