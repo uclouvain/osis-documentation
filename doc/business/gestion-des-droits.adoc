@@ -1,3 +1,5 @@
+= Gestion des droits
+
 == Administration des gestionnaires de programmes
 
 Pour chaque faculté, il y a une (ou plusieurs) personnes qui ont le droit de
@@ -96,3 +98,68 @@ image::images/administrer_gestionnaire_programme/chercher-gestionnaires-de-progr
 
 IMPORTANT: Pour réduire les erreurs, il ne faut présenter que les personnels de
 l'UCL. On ne peut ajouter que les personnels comme gestionnaires de programme.
+
+
+== Administration des Responsables de notes pour les cours d’une faculté
+
+Pour chaque faculté, il y a une ou plusieurs personnes qui sont
+*Administrateurs de responsables de de notes*.
+
+Pour chaque UE qui est attribuée à au moins un professeur, il
+y a un et un seul *Responsable de notes*, qui est
+le ou l’un des professeurs auxquels le cours est attribué.
+C’est donc une propriété de l’attribution d'une UE
+à un professeur, qui donne à ce dernier un accès au bouton
+[Soumettre] pour l'UE concernée.
+
+Le droit d’Administrateur de responsables de notes sera typiquement attribué
+à la/le DAF mais peut aussi être assigné à d’autres personnes.
+L’ « Administrateurs de responsables de de notes » peut choisir le responsable
+de notes parmi les titulaires du cours. Toute autre demande doit être transmise
+par la DAF à SIPS.
+Quand l’Administrateur de responsables de notes d’une faculté accède à la
+fonctionnalité « Administration des gestionnaires de notes », il voit l’écran
+suivant :
+
+image::images/administrer_gestionnaire_programme/Admin_resp_notes.jpg[]
+
+
+
+
+=== Contenu de l’écran
+*	Intitulé de l’écran : La faculté concernée, indiquée dans le titre, est celle pour laquelle l’utilisateur est chargé de la gestion des responsables de notes.
+*	Formulaire de sélection de cours
+**	Le menu déroulant « Entité » présente :
+***	Toutes (valeur initiale)
+***	La faculté concernée
+***	Les CE de la faculté concernée ; l’utilisateur peut sélectionner soit Toutes soit une ou plusieurs entités de la liste déroulante.
+**	Code cours
+**	Mot(s) de l’intitulé du cours
+
+**	Le menu « Professeur » présente la liste de tous les professeurs titulaires de [ cours rattachés à la Faculté concernée ].
+**	Le menu « Responsable de note » présente la liste des professeurs qui sont responsables de notes de [ cours rattachés à la Faculté concernée ].
+*	Tableau de la liste des cours sélectionnés
+**	Entité
+**	Code cours
+**	Intitulé officiel
+**	Nombre de titulaires
+**	Gestionnaire de notes du cours
+*	Tableau des titulaires d’un cours
+**	Intitulé du tableau : « Titulaires du cours [code cours] »
+**	Colonne professeur
+**	Colonne Statut d’attribution : Cotitulaire / coordonateur / etc…  Si la personne est une personne ajoutée, son statut (Professeur ou Assistant) est indiqué entre parenthèses car il ne s’agit pas d’un statut d’attibution. À côté de ce pseudo-statut est ajouté un bouton [ - ] pour supprimer la personne ajoutée.
+**	Colonne Responsable de notes : bouton-radio (un seul titulaire peut être responsable de notes). Les personnes ajoutées ne peuvent pas être responsables de notes.
+**	Bouton [Ajouter] pour ajouter une personne
+**	Bouton [Enregistrer] pour enregistrer un changement de Responsable de notes
+
+=== Comportement de l’écran
+*	La sélection de cours est définie dans le formulaire et appelée par le bouton [Rechercher].
+*	Les résultats de cette sélection sont affichés dans le tableau de cours.
+**	Le tri initial se fait selon Entité, Code cours (acronyme).
+**	On peut trier le tableau sur tous les champs
+**	Les tris se font avec mémoire des trix précédents
+*	Quand on clique sur l’un des cours sélectionnés, le tableau des titulaires et son intitulé sont mis à jour.
+*	Si, dans le tableau des titulaires d’un cours on change de responsable de notes, les boutons deviennent rouges jusqu’à ce qu’on enregistre ou qu’on resélectionne le responsable actuel.
+*	Quand on ajoute une personne, on peut lui préciser un statut « (Professeur) «  ou « (Assistant) », pour information.
+* Info-bulles
+**
