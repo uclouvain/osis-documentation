@@ -41,7 +41,7 @@ Types d'OF :
 *** Choix de mineure et approfondissements
 *** Choix de majeures
 *** Choix d'options
-** Choix/présentation de cours 
+** Choix/présentation de cours
 
 NB : types de mineures :
 
@@ -62,26 +62,26 @@ De même, quand un Intitulé principal ou ses orientations ne possèdent pas de 
 Une orientation ne peut rester muette que si elle est seule à appartenir à son intitulé principal.
 Une finalité ne peut rester muette que si elle est seule à appartenir à son orientation (que celle-ci soit muette ou nommée).
 
-image::images/OF_Formations_Situations-possibles.png[]
+image::images/OF_organisations_de_formation/OF-Formations-Situations-possibles.png[]
 
 Une Formation possède un programme-type, contenu _construit_ à partir des contenus _propres_ aux OF du triplet définissant la formation.
 
 ===== Relations d’inclusion de contenu entre OF
 
-====== Relations entre Intitulé principal, Orientation, Finalité 
+====== Relations entre Intitulé principal, Orientation, Finalité
 *	ces 3 niveaux coexistent toujours, bien que l’orientation et/ou la finalité puissent être muettes
 ** 	une _Orientation_ ne peut être incluse que dans le contenu d'un et un seul _Intitulé principal_ ;
-** 	une _Finalité_ ne peut être incluse que dans le contenu (de second degré) d'une et une seule _Orientation_ (qui peut être muette), et dans le contenu (de quatrième degré) d'un et un seul _Intitulé principal_ ; 
+** 	une _Finalité_ ne peut être incluse que dans le contenu (de second degré) d'une et une seule _Orientation_ (qui peut être muette), et dans le contenu (de quatrième degré) d'un et un seul _Intitulé principal_ ;
 *	héritage des attributs et du contenu, avec possibilité de surcharge
 **	une _Orientation_ hérite des attributs de son _Intitulé principal_
 **	une _Finalité_ hérite des attributs de l'_Intitulé principal_, et, le cas échéant, de l'_Orientation_, auxquels elle appartient.
 
 
 ====== Relations entre MF, Grpm et UE et avec F
-*	existence indépendante 
+*	existence indépendante
 * 	une Mini-formation peut être incluse dans le contenu de plusieurs Choix de mini-formations, appartenant à des foramtions différentes
 *	pas d’héritage des attributs
-*	certains attributs sont 
+*	certains attributs sont
 **	toujours contextuels (ex.: attribut "Obligatoire")
 **	intrinsèques avec une possibilité de surcharge contextuelle (Poids absolu + Poids relatif)
 
@@ -89,7 +89,7 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 Permission d'Inclusion et unicité
 
 |===
-| Intitulé principal | unique | TC d'i.pr. (inutilisé) 
+| Intitulé principal | unique | TC d'i.pr. (inutilisé)
 | Intitulé principal | unique | Orientation
 | Orientation        | unique | TC d'orientation
 | Orientation        | unique | Finalité
@@ -100,14 +100,14 @@ Permission d'Inclusion et unicité
 | Finalité           |        | Choix / Présentation de cours
 | Finalité           | ?      | Choix de MF (1)
 | Choix de MF        |        | MF
-| Choix 
+| Choix
 |===
 
 (1) restrictions propres au cycle
 | Finalité muette de Bac | unique | Choix de mineures / approfondissements |
 | Finalité muette de Bac | unique | Choix de majeures EPL        |
 | Finalité de master     | ?      | Choix d'options              |
- 
+
 ====== Exemple typique de structure de programme-type
 
 |===
@@ -126,10 +126,10 @@ Permission d'Inclusion et unicité
 |   |   |   |   | Mini- formation  |   |
 |   |   |   |   |   | UE  |
 |   |   |   |   |   | Choix/ présen- tations d'UE |
-|   |   |   |   |   |   | UE  
+|   |   |   |   |   |   | UE
 |===
 
-====== Attributs des OF 
+====== Attributs des OF
 
 |===
 |                  | Intit. princ. | Orientation | Finalité | Mini-F  | Choix/prés. UE |
@@ -162,7 +162,7 @@ Permission d'Inclusion et unicité
 | Caract. inter-univ.|  x          | x           | x        | x       | x              |
 |===
 
-====== Héritage et surcharges des attributs 
+====== Héritage et surcharges des attributs
 
 
 
@@ -334,7 +334,7 @@ Il est parfois nécessaire de construire un composant incluant qui n’entre dan
 
 _Exemple_
 
-image::images/UE_Inclusion_composants.png[]
+image::images/UE_unites_d_enseignement/UE-Inclusion-composants.png[]
 
 
 ===== Inclusion de classes
@@ -351,11 +351,11 @@ _Exemples_
 
 ====== Classes de cours magistral (complet, 1ère partie, 2ème partie)
 
-image::images/UE_Inclusion_classes_1.png[]
+image::images/UE_unites_d_enseignement/UE-Inclusion-classes-1.png[]
 
 ====== Classes de TP (complets, 1ère partie, 2ème partie) 
 
-image::images/UE_Inclusion_classes_2.png[]
+image::images/UE_unites_d_enseignement/UE-Inclusion-classes-2.png[]
 
 
 ==== Composants et classes : exemple détaillé
@@ -372,7 +372,7 @@ Le partim A n’a besoin que d’une classe du cours magistral complet. On peut 
 
 Dans le tableau ci-dessous, on voit que l’UE Z (cours principal) fait appel à toutes les classes qui ont été créées, tandis que le partim A ne fait appel qu’à la classe /C01. Pour construire le partim A, les composants et classes créés pour organiser le cours principal sont suffisants.
 
-image::images/UE_Composition_principe_tableau1.png[]
+image::images/UE_unites_d_enseignement/UE-Composition-principe-tableau1.png[]
 
 Pour le partim B, en revanche, il faut définir un nouveau composant
 « Cours magistral 1ère partie », dont le contenu correspond à la première
@@ -391,7 +391,7 @@ la classe /D01, et le local réservé pour la classe /T03 devra accueillir
 aussi les étudiants inscrits à la classe /U01, pour la partie du calendrier
 correspondant à la première partie de la matière.
 
-image::images/UE_Composition_principe_tableau2.png[]
+image::images/UE_unites_d_enseignement/UE-Composition-principe-tableau2.png[]
 
 
 De même, pour le partim C, il faut définir un composant « Cours magistral
@@ -402,11 +402,11 @@ composant « TP 2ème partie », dont le contenu correspond à la seconde partie
 Dans le tableau ci-dessous, la classe /V02 n’est pas incluse dans une classe
 de /C, elle est alors dite autonome.
 
-image::images/UE_Composition_principe_tableau3.png[]
+image::images/UE_unites_d_enseignement/UE-Composition-principe-tableau3.png[]
 
 ==== Articulation entre UE, Parcours et attributions
 
-image::images/UE_Interface_UE_autresModules.png[]
+image::images/UE_unites_d_enseignement/UE-Interface-UE-autresModules.png[]
 
 ==== Types de conteneurs
 
@@ -424,12 +424,12 @@ que de promoteurs.
 (à discuter)
 
 |===
-| *Statut*       | *Signification*     | *Condition* | *Utilisation, droits d’accès* 
+| *Statut*       | *Signification*     | *Condition* | *Utilisation, droits d’accès*
 | _Préparation_  | L’UE a été créée.   |          	 | Les auteurs de la proposition peuvent y travailler.
-| _Proposition_  | L’UE fait partie d’une proposition soumise à QOPA, qui peut l’étudier. | Les attributs et éléments de composition nécessaires à une proposition sont introduits.	QOPA peut étudier la proposition. | 
-| _Vérifié_      | QOPA a approuvé la proposition.	| | La faculté ou CE concernée peut préparer les classes (locaux, horaires, titulaires). 
-| _Publiable_    | Feu vert.		    | L’UE peut apparaître sur le portail, notamment dans des programmes-types. |  
-| _Organisé_     | Les classes sont prêtes.	| Pour chaque composant associé à l’UE, au moins une classe doit être associée à l’UE. | 
+| _Proposition_  | L’UE fait partie d’une proposition soumise à QOPA, qui peut l’étudier. | Les attributs et éléments de composition nécessaires à une proposition sont introduits.	QOPA peut étudier la proposition. |
+| _Vérifié_      | QOPA a approuvé la proposition.	| | La faculté ou CE concernée peut préparer les classes (locaux, horaires, titulaires).
+| _Publiable_    | Feu vert.		    | L’UE peut apparaître sur le portail, notamment dans des programmes-types. |
+| _Organisé_     | Les classes sont prêtes.	| Pour chaque composant associé à l’UE, au moins une classe doit être associée à l’UE. |
 |===
 
 
@@ -595,7 +595,7 @@ Classe annualisée
 
 ===== Approche utilisateur
 
-====== Container 
+====== Container
 Il sera seulement perçu comme le code commun des acronymes d’un groupe des cours reliés. Il est pertinent de ne pas le montrer. Les attributs liés à cet objetsont hérités par l’UE cours principal, et peuvent donc être géré dans le cadre de celle-ci.
 
 ====== Composant
@@ -650,13 +650,13 @@ Libre pour l’UE « cours principal », mais obligatoire si l’intitulé princ
 
 
 
-image::images/UE_details_onglet-Identif.png[]
+image::images/UE_unites_d_enseignement/UE-details-onglet-Identif.png[]
 
 ===== Onglet Composition de principe de l'UE
 Règles
 *	Le système présente tous les composants existants (learning_component_year)
 **	ils sont triés par type (CM, TP, ST (Stage), M (Mémoire))
-**	Attributs présentés 
+**	Attributs présentés
 ***	code
 ***	type de composant
 ***	Intitulé du composant
@@ -674,9 +674,9 @@ Règles
 Exemples d'écrans :
 
 
-image::images/UE_details_composPrincipe-1.png[]
+image::images/UE_unites_d_enseignement/UE-details-composPrincipe-1.png[]
 
-image::images/UE_details_composPrincipe-2.png[]
+image::images/UE_unites_d_enseignement/UE-details-composPrincipe-2.png[]
 
 
 
@@ -699,21 +699,21 @@ Règles
 
 Exemples d'écrans :
 
-image::images/UE_details_composClasses-1.png[]
+image::images/UE_unites_d_enseignement/UE-details-composClasses-1.png[]
 
-image::images/UE_details_composClasses-2.png[]
+image::images/UE_unites_d_enseignement/UE-details-composClasses-2.png[]
 
 ===== Onglet Organisation de l'UE
 
 Règles
 
 |====
-|                        	| Entité			| Surcharge	
-| Entité de cahier de charge	| UE_year		        |	
+|                        	| Entité			| Surcharge
+| Entité de cahier de charge	| UE_year		        |
 | Entité d’attribution		| Container_year (via détails de l’UE principale) |	UE_year (partims)
-| Anac de fin			| UE (petit chapeau)		|	
-| Site 				| Container_year (via détails de l’UE principale)  |	UE_year (partims)	
-|Périodicité 			| UE (petit chapeau)		|	
+| Anac de fin			| UE (petit chapeau)		|
+| Site 				| Container_year (via détails de l’UE principale)  |	UE_year (partims)
+|Périodicité 			| UE (petit chapeau)		|
 | Langue			| Container_year (via UE principale) |	Classe_year
 |====
 
@@ -726,9 +726,9 @@ Règles
 Onglet Organisation
 
 
-image::images/UE_details_onglet-Org.pgn[]
+image::images/UE_unites_d_enseignement/UE-details-onglet-Org.pgn[]
 
- 
+
 Onglet Informations pédagogiques
 
 •	Préalables
@@ -773,19 +773,19 @@ Mots clefs : Suivre, Suivre excepté semaine(s) …, Supprimer
 Classe
 incluse	Classe incluante	Règles de la classe incluantes	Règles de la classe incluse
 U02	T01	T01/1	Quadrimestre	Q1	Suivre excepté semaine 14
-			Semaine début	1	
-			Nb semaines	14	
-			Excepté semaine n°		
-			Jour semaine	Lundi	
-			Heure début	14 :00	
-			Durée	1	
+			Semaine début	1
+			Nb semaines	14
+			Excepté semaine n°
+			Jour semaine	Lundi
+			Heure début	14 :00
+			Durée	1
 		T01/2	Quadrimestre	Q2	Supprimer
-			Semaine début	1	
-			Nb semaines	14	
-			Excepté semaine n°	--	
-			Jour semaine	Lundi	
-			Heure début	14 :00	
-			Durée	1	
+			Semaine début	1
+			Nb semaines	14
+			Excepté semaine n°	--
+			Jour semaine	Lundi
+			Heure début	14 :00
+			Durée	1
 
 Volume horaire effectif = 14 X 1 + 0 = 14 h
 

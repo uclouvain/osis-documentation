@@ -106,16 +106,21 @@ de responsables des notes*.
 
 Pour chaque UE qui est attribuée à au moins un professeur, il y a un et un seul
 *Responsable de notes*, qui est le ou l’un des professeurs auxquels le cours
-est attribué. C’est donc une propriété de l’attribution d'une UE à un
-professeur, qui donne à ce dernier un accès au bouton [Soumettre] pour l'UE
+est attribué. (C’est donc une propriété de l’attribution d'une UE à un
+professeur.) Être Responsable de notes donne accès au bouton
+[Soumettre] pour l'UE
 concernée, dans l'environnement d'encodage de notes par les professeurs.
 
-L’*Administrateurs de responsables des notes* peuvent désigner le Responsable
-de notes parmi les professeurs auxquels le cours est attribué. Il peut aussi
+Le ou les *Administrateurs de responsables des notes* gèrent les
+*Responsables de notes* des cours pour lesquels l'_Entité d'attribution_
+(sur EPC : Dpt-attrib) est leur faculté ou une Commission d'Ensignement (CE)
+appartenant à leur faculté. Ils peuvent désigner le Responsable
+de notes parmi les professeurs auxquels le cours est attribué. Ils peuvent
+aussi
 désigner des personnes, auxquelles le cours n'est pas attribué, comme habilitées
-à encoder des notes. Cependant, il ne pourra pas désigner celles-ci comme
-Responsables de notes. Toute demande en ce sens devra être transmise via
-service desk.
+à encoder des notes. Cependant, ils ne pourront pas désigner celles-ci comme
+Responsables de notes. (Toute demande en ce sens devra être transmise via
+service desk.)
 
 Le droit d’*Administrateur de responsables de notes* sera typiquement attribué
 à la/le DAF mais peut aussi être assigné à d’autres personnes.
@@ -167,8 +172,10 @@ image::images/administrer_gestionnaire_programme/admin-resp-notes.jpg[]
 
 === Comportement de l’écran
 
-La sélection de cours est définie dans le formulaire et appelée par le bouton
-[Rechercher].
+La sélection d'UE est définie dans le formulaire et appelée par le bouton
+[Rechercher]. Seules des UE dont l'_Entité d'attribution_ est ou appartient à
+la faculté de l'Administrateur de responsables de notes peuvent être
+sélectionnés.
 
 Les résultats de cette sélection sont affichés dans le tableau de cours.
 *	Le *tri initial* se fait selon Entité, Code cours.
