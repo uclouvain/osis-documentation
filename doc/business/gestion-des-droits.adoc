@@ -18,7 +18,7 @@ interface. Les demandes devront passer par le Service Desk.
 Quand la personne en charge se connecte pour gérer les gestionnaires de sa
 faculté, elle voit l'écran suivant:
 
-image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-programme.png[]
+image::images/gestion_des_droits/gestion-des-gestionnaires-programme.png[]
 
 === Le contenu de l'écran
 
@@ -64,7 +64,7 @@ la liste.
 
 === Le comportement de l'écran
 
-image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-programme-resultat.png[]
+image::images/gestion_des_droits/gestion-des-gestionnaires-programme-resultat.png[]
 
 . La liste des programmes:
  - Par défaut, on affiche la liste des programmes en fonction du résultat de la
@@ -85,7 +85,7 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
  - Si l'utilisateur clique sur le bouton "-" pour enlever un gestionnaire, le
    message pour demander la confirmation:
 
-image::images/administrer_gestionnaire_programme/enlever-gestionnaire.png[]
+image::images/gestion_des_droits/enlever-gestionnaire.png[]
 
 Si l'utilisateur choisit "Confirmer", on supprime pour la personne pointée le
 droit de gestionnaires de programme pour tous les programmes sélectionnés.
@@ -94,7 +94,7 @@ Le bouton "Ajouter un gestionnaire" est actif seulement si au moins un programme
 coché. Si l'utilisateur veut "Ajouter un gestionnaire", on aura l'écran de
 recherche des personnes à l'UCL.
 
-image::images/administrer_gestionnaire_programme/chercher-gestionnaires-de-programme.png[]
+image::images/gestion_des_droits/chercher-gestionnaires-de-programme.png[]
 
 IMPORTANT: Pour réduire les erreurs, il ne faut présenter que les personnels de
 l'UCL. On ne peut ajouter que les personnels comme gestionnaires de programme.
@@ -129,7 +129,7 @@ Quand l’Administrateur de responsables de notes d’une faculté accède à la
 fonctionnalité « Administration des gestionnaires de notes », il voit l’écran
 suivant :
 
-image::images/administrer_gestionnaire_programme/admin-resp-notes.jpg[]
+image::images/gestion_des_droits/admin-resp-notes.jpg[]
 
 === Contenu de l’écran
 
