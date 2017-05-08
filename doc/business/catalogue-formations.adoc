@@ -53,14 +53,29 @@ NB : types de mineures :
 
 ===== Formation
 
-Une **Formation** est une organisation qui soutient un processus d’apprentissage sanctionné par un diplôme ou un certificat. Elle est spécifiée par un triplet d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ; seule la composante Intitulé principal est toujours _nommée_ càd possède toujours un intitulé ; les composantes Orientation et Finalité peuvent soit rester _muettes_, soit être _nommées_.
+Une **Formation** est une organisation qui soutient un processus d’apprentissage
+sanctionné par un diplôme ou un certificat. Elle est spécifiée par un triplet
+d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ;
+seule la composante Intitulé principal est toujours _nommée_ càd possède
+toujours un intitulé ; les composantes Orientation et Finalité peuvent s
+oit rester _muettes_, soit être _nommées_.
 
-Donc, quand un Intitulé principal ne possède pas d’orientation, une orientation muette lui est cependant adjointe et permet de représenter les attributs communs et le contenu commun (TC) des finalités. (Dans l’arborescence des OF cette orientation muette sera présentée de la même manière que les orientations réelles.)
+Donc, quand un Intitulé principal ne possède pas d’orientation, une orientation
+muette lui est cependant adjointe et permet de représenter les attributs
+communs et le contenu commun (TC) des finalités. (Dans l’arborescence des
+OF cette orientation muette sera présentée de la même manière que les
+orientations réelles.)
 
-De même, quand un Intitulé principal ou ses orientations ne possèdent pas de finalités, une finalité muette permettra cependant d’enregistrer le code de la Formation et tous les attributs des formations qui relèvent de ce niveau. (Dans l’arborescence des OF ces finalités muettes seront présentées de la même manière que les finalités réelles.)
+De même, quand un Intitulé principal ou ses orientations ne possèdent pas
+de finalités, une finalité muette permettra cependant d’enregistrer le
+code de la Formation et tous les attributs des formations qui relèvent de
+ce niveau. (Dans l’arborescence des OF ces finalités muettes seront présentées
+de la même manière que les finalités réelles.)
 
-Une orientation ne peut rester muette que si elle est seule à appartenir à son intitulé principal.
-Une finalité ne peut rester muette que si elle est seule à appartenir à son orientation (que celle-ci soit muette ou nommée).
+Une orientation ne peut rester muette que si elle est seule à appartenir
+à son intitulé principal.
+Une finalité ne peut rester muette que si elle est seule à appartenir à
+son orientation (que celle-ci soit muette ou nommée).
 
 image::images/OF_organisations_de_formation/OF-Formations-Situations-possibles.png[]
 
@@ -213,10 +228,27 @@ masters de bioingénieurs seront gérés un un seul écran.
 
 === Gestion des unités d'enseignement
 
+==== Objectifs
+
+Le module OSIS/UE reprend les objectifs et fonctionnalités de EPC/Activités.
+
+En outre, la représentation des structures d’enseignement dans OSIS doit permettre de :
+
+*	bien distinguer les aspects académiques des aspects organisationnels des UE ;
+*	représenter toutes les charges réelles des professeurs et assistants, y compris sur les classes de TP  ;
+*	garantir la cohérence des aspects organisationnels : inscriptions aux classes, lien avec ADE
+
+Ces objectifs supplémentaires nécessitent de représenter le détail réel des
+différents composants dont se compose une UE, leur organisation matérielle
+en classes, et de représenter comment ces composants et classes sont parfois
+utilisés dans plusieurs UE, et comment une classe d’un composant partiel peut
+être incluse dans une classe d’un composant complet.
+
+
 ==== Concepts
 
-Les Unités d’enseignement (UE) sont les pièces de base des programmes d’études.
-À une UE correspond un intitulé, un cahier de charges, des acquis
+Les **Unités d’enseignement (UE)** sont les pièces de base des programmes
+d’études. À une UE correspond un intitulé, un cahier de charges, des acquis
 d’apprentissage (AA), un nombre d’unités de crédits ECTS (poids ECTS).
 L’inscription d’un étudiant à une UE, dans le cadre de son inscription à un
 programme d’études, conduit à l’obtention d’une note.
@@ -224,11 +256,38 @@ programme d’études, conduit à l’obtention d’une note.
 Les UE ont donc une signification académique, indépendemment des aspects
 organisationnels, qui sont gérés dans les composants et classes associés aux UE.
 
-Les UE sont actuellement de l’un des types suivants : cours, mémoire, stage,
-cours externe, ??????
+Dans EPC, les "activités sont actuellement de l’un des types suivants : cours, partim,
+stage, mémoire, autre collectif, autre individuel, thèse, cours externe,
+classe.
+
+Dans OSIS, les UE sont classées en types et sous-types à partir des idées suivantes :
+(1)	que les types d’UE classifient la manière dont les étudiants les abordent, la procédure à suivre pour s’y inscrire ;
+(2)	que des sous-types permettent d’autres distinctions, nécessaires à différents processus impliquant es UE.
+
+Le principe est synthétisé par la table suivante:
+
+
+|===
+| *Type*         | *Sous-type*
+| _Cours_        | complet
+|                | partim
+|                | autre
+|                | de mobilité
+| _Stage_        | stage
+|                | d'enseignement
+|                | clinique
+|                | socio-professionnel
+|                | de recherche
+| _TFE_          | Mémoire
+|                | Thèse
+|===
+
+
+
 
 Le contenu des UE de type cours comporte souvent deux composants, le cours
-magistral (CM) et les travaux pratiques (TP). Les UE de type mémoire et stage ne comportent qu’un seul composant.
+magistral (CM) et les travaux pratiques (TP). Les UE de type mémoire et
+stage ne comportent qu’un seul composant.
 
 Chacun des composants est organisé en un ou plusieurs horaires, les classes.
 Les classes peuvent être organisées avec des horaires, locaux, enseignants différents.
@@ -247,29 +306,6 @@ Pour cette raison, une UE cours principal et des UE partim qui dérivent
 de ce cours principal sont regroupés en un conteneur, qui contient aussi
 les composants et leurs classes.
 
-==== Objectifs
-
-La représentation des structures d’enseignement dans OSIS doit permettre :
-
--	de bien distinguer les aspects académiques des aspects organisationnels des UE ;
--	de représenter les charges réelles des professeurs et assistants ;
--	de garantir la cohérence des aspects organisationnels : inscriptions aux
-classes, horaires, charges
--	de détailler les « attributions au sens large », càd y compris sur les
-classes de TP.
-Ces objectifs nécessitent de représenter le détail réel des différents
-composants dont se compose une UE, leur organisation matérielle en classes
-(séries), et de représenter comment ces composants et classes sont parfois
-utilisés dans plusieurs UE, et comment une classe composant peut être
-incluse dans une classe d’un autre composant.
-
-Les UE présentent la vision académique de l’enseignement : objectifs, AA,
-inscriptions, crédits …
-Les composants et classes sont l’aspect organisationnel de l’enseignement.
-
-Ces différents éléments et leurs associations seront regroupés dans un objet
-technique nommé le conteneur, auquel correspond la partie commune de leurs
-acronymes respectifs.
 
 ==== Notations
 
