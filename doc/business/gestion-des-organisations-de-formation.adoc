@@ -55,6 +55,10 @@ type des OFs dans la recherche que le tableau de résultat est différent.
 
 image::images/gestion_organisations_de_formation/rechercher_une_formation.png[]
 
+NOTE: Comme on regroupe des finalités des masters en Programme de master => On
+n'affiche que des formations qui n'ont pas d'enfant. On n'affiche pas de
+programme de master 120, ni de programme de master 180 ou 240.
+
 == Résultat de recherche des mini-formations:
 
 (à completer)
@@ -86,6 +90,12 @@ image::images/gestion_organisations_de_formation/consulter-une-formation-identif
 ou Français, Français et Anglais.
 - Activité dans d'autres langues: valeurs possibles: Oui, Non, Optionnel, vide
 (cette valeur est servir pour ne pas afficher cette information sur Portail).
+- Inscriptible
+- Sous-épreuve
+- Concours
+- Certificat universitaire
+- Travail de fin d'étude
+- Stage
 . Pavé Organisation:
 - Actif: valeur possbile: Actif (par défaut), Inactif, Actif uniquement pour des
 réinscriptions.
@@ -97,22 +107,19 @@ réinscriptions.
 - Orientation et Orientation coopération internationale CCD/CUD: valeurs
 possibles: A, B, C, D, E, S.
 . Pavé partenariat/co-diplômation:
+- Info bulle du bouton "+": Ajouter une institution
+- Avoir la possibilité de trier sur tous les colonnes.
+- Quand l'utilisateur choisit le bouton "+", le popup pour ajouter un partenariat
+apparaît.
+
 (à completer)
-
-=== Onglet Diplômes/Certificats
-
-(à completer)
-
-=== Onglet Infos générales
-
-image::images/gestion_organisations_de_formation/consulter-une-formation-infos-generales.png[]
 
 IMPORTANT: Pour des formations de type Master 120, 180 ou 240 (Master
 Approfondise, Master Didactique, Master spécialisé), ce sont des formations qui
 ont une formation parent, on a un onglet "2M" en plus et l'onglet Identification
 est un peu différent
 
-- Onglet 2M:
+- Onglet 2M: contient:
 
 image::images/gestion_organisations_de_formation/consulter-une-formation-master-2M.png[]
 
@@ -125,14 +132,29 @@ image::images/gestion_organisations_de_formation/consulter-une-formation-master-
 
 - Onglet Identification: au niveau d'affichage, c'est légèrement différent par
 rapport d'autres formations qui n'ont pas de niveaux:
-  * Des intitulés: affiché (en héritant) l'intitulé de formation parent.
+  * Des intitulés: affiche d'abord l'intitulé de formation parent en
+  couleur grise et puis l'intitulé de la finalité.
   * D'autres champs: sont affichés de manière distincte si le valeur est hérité
  de son parent ou c'est un valeur propre de cette formation. Par exemple: en
- même couleur si c'est hérité et une autre couleur s'il s'agit une surchage de
+ couleur grise si c'est hérité et en noir couleur s'il s'agit une surchage de
  sa formation parent.
+  * Pavé partenariat: affiche en grise tous les Institutions partenariats qui
+  hérihent du parent. Et les institutions partenariats de la finalité.
 
 - La navigation quand l'utilisateur passe à une autre finalité, des informations
 propres à cette finalité apparaissent dans tous les onglets.
+
+=== Onglet Diplômes/Certificats
+
+image::images/gestion_organisations_de_formation/consulter-une-formation-diplomes.png[]
+
+=== Onglet Infos générales
+
+image::images/gestion_organisations_de_formation/consulter-une-formation-infos-generales.png[]
+
+=== Onglet Infos acquis d'apprentissage
+
+(à préciser avec l'utilisateur)
 
 == Consultation d'une mini-formation
 == Consultation d'un groupement
