@@ -1,0 +1,34 @@
+== Button
+
+All buttons are aligned to the right. When the space available is limited (e.g.
+search button in view's filters) the button comes with an icon. When there is
+enough space, the button comes with an icon and a label. All buttons comes with
+a tooltip to describe its action.
+
+In terms of color representation, the button is:
+
+* white (btn-default): when it is secondary in the screen, performing actions
+  that are optional or not part of the normal flow.
+* dark blue (btn-primary): the main action on the screen. There is only one
+  primary button per screen and it performs the main action or the action by
+  default. The action of this button can be activated when the keyboard button
+  "Enter/Return" is pressed.
+
+== Dropbox
+
+When the select box shows records from the database, the `value` parameter
+contains the id of the record. There are three possible scenarios:
+
+1. An empty value means that no real value was selected. So, if the field is
+   required then the validation will block this option:
+
+    <option value="">-----</option>
+
+2. value is equal to `0` (not a valid id), which means the option should be
+   considered as a valid input to be considered in the view:
+
+    <option value="0">All</option>
+
+3. The option is an item that comes from the database and contains a valid id:
+
+    <option value="23">LBIO1234</option>
