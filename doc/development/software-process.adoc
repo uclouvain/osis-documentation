@@ -191,8 +191,8 @@ image::images/analysis.png[]
 
 === Report a business need
 
-The user can request new features or modifications in the application. It can be
-done in many different ways because it is not formalized. Users and analysts are
+The user can request new features or modifications in the application. It's
+done in many different ways because it isn't formalized. Users and analysts are
 free to decide how they will communicate. This is a moment to listen to the
 users, without interfering their way of thinking.
 
@@ -201,98 +201,98 @@ users, without interfering their way of thinking.
 In order to identify the impact on existing processes, the analyst should locate
 in the processes where the new business need applies. For that, the analyst asks
 the user about the roles involved, what they do, in which sequence, what they
-need, what they deliver and how they transform their needs into deliverables.
+need and what they deliver (reports, scores, assignments, etc.).
 
 Users requests should be aligned with what already exists in terms of processes.
 They should contribute to improve existing processes or add new processes
 connected to existing ones. Requests that are not aligned with existing
-processes or propose isolated processes must be rejected until the application
-evolves to a point that those requests can be connected.
-
-=== Create Issues
-
-When a context is found for the request then a ticket is created to track the
-changes. This ticket is also called RFC (Request For Change) and is allocated to
-an analyst who will proceed with the analysis.
-
-A RFC must contain:
-
-- A *title* that summarizes in one sentence the content of the change;
-- A detailed *description* of the change;
-- The *analyst* responsible for the analysis of the change;
-- The *user* who requested the change;
-- The *full path to the process element* that is impacted by the change.
-
-An issue is the equivalent of a user story. A user story is a description of
-what the user expects from the application in order to produce a certain outcome
-for the organization. A user story is not supposed to be decomposed in smaller
-issues because those issues would have to be done in a sequence - not in
-parallel -, breaking the possibility of self assignment by developers.
-
-=== Modify the impacted business processes
-
-A RFC allows the analyst to modify artifacts, such as the business process
-model. The number of the RFC is required to identify the version of the modified
-artifact in the version control system.
-
-Modifications in the processes do not necessarily imply on modifications in the
-application. Some activities are automated in the application and others are
-manual. Therefore, a change may modify the process and the application or only
-the process or only the application.
-
-If the processes don’t change, then this activity is irrelevant.
+processes are isolated and must be rejected until the application evolves to a
+point that those requests can be connected. The problem we want to avoid here is
+the disparity of data. They have to be integrated at some point in time. If we
+pick 2 different processes that are completely disconnected, we risk to have
+serious issues to integrate the data they manage.
 
 === Create a new business process
 
-Sometimes the user request requires the creation of a new business process. The
-criteria to create a new process are extensive and sometimes subjective. In
-general, if the request does not fit in an existing process or it requires
-substantial amount of work then it is a potential candidate for a new process.
-In any case, it is not a simple decision and it needs to be extensively
-discussed with users.
+If the user is requesting something that was not yet described as a process,
+then a new process is created. The criteria to create a new process are
+extensive and sometimes subjective. In general, if the request does not fit in
+an existing process or it requires substantial amount of work then it is a
+potential candidate for a new process.
+
+=== Modify the impacted business processes
+
+Sometimes, the user requests changes in an existing process. Those changes don't
+necessarily imply on modifications in the model. They can also represent the way
+existing tasks are performed. The model changes when roles, tasks, decisions
+or the flow need to be improved. The model doesn't have to change if the request
+impacts only the execution of the tasks or the logic behind the decisions.
 
 === Review business process
 
-The user should review the process and approve it in order to move forward.
-Otherwise, analysts and users keep adjusting the process until it is in
-condition to be approved.
+The user reviews the process and approve it in order to move forward. Otherwise,
+analysts and users keep adjusting the process until it is good enough to be
+approved. This task is usually done at the same time the process is created
+(1.3) or modified (1.4). Users and analysts get together to agree on how things
+are done, without formalisms, in order to move fast.
 
 === Describe the execution of the process
 
-During this activity, the analyst is actually writing the user manual. It should
-describe the process as a whole, not only the automated activities. Activities
-performed manually are described shortly and activities automated by the
-application are described into details. The details include the definition of
-the activity, its inputs and outputs, the wireframes representing the user
-interface, and a sequence of steps about how to use them.
+During this task, the analyst is actually writing the user manual. It describes
+the process as a whole, not only the automated activities. Activities performed
+manually are described shortly and activities automated by the application are
+described into details. The details include the definition of the activity, its
+inputs and outputs, the wireframes representing the user interface, and a
+sequence of steps about how to use them.
 
 === Review the execution of the process
 
-The users should read the manual to make sure they understand the illustrations
+The user reads the manual to make sure they understand the illustrations
 and the instructions. If they do not approve it, then analysts and users keep
-adjusting the manual until it is in condition to be approved.
+adjusting the manual until it is good enough to be approved.
 
 === Verify technical feasibility
 
 Before entering in the development cycle, the changes in the user manual are
-validated by the technical leader to make sure they are technically feasible. In
-case of problems, the technical leader discusses with analysts until they find a
-workable solution.
+validated by the developer to make sure they are technically feasible. In
+case of problems, the developer discusses with analysts until they find a
+workable solution. It may impact the user manual, thus it's important that the
+analyst, the user and the developer take the opportunity to perform the tasks
+1.6, 1.7 and 1.8 together.
+
+=== Create development issues
+
+The changes may result in one or more issues to be addressed by the development
+team. Those issues are self-contained, which means they don't depend on each
+other, because developers should be able to work on them in parallel. An issue
+created by an analyst takes the form of a user story and has the following
+properties:
+
+* A *title* that summarizes in one sentence the content of the issue;
+* A detailed *description* of the issue in the format:
+** As a *[role]*
+** I want *[goal]*
+** so that *[reason]*
+** plus a link to the modified part in user manual.
+
+A user story is a description of what the user expects from the application in
+order to produce a certain outcome for the organization.
 
 == Development
 
-The development workflow defines the sequence of tasks and events that takes
-place during the development of OSIS, with the goal of producing stable
-releases. The workflow is controlled by Git because of its flexible branching
-features, and complemented by tools directly integrated to it, such as GitHub
-and ZenHub.
+The development process defines the sequence of tasks and events that takes
+place during the development of OSIS, with the goal of producing features
+that work as foreseen in the analysis.
 
 The workflow is based on a lean technique called Kanban. It is a method for
 managing operational work with emphasis on just-in-time delivery while not
 overloading the team members. This approach covers the process from the
 definition of issues to the delivery to stakeholders. We have adopted a
 Kanban board composed of 7 distinct lanes: **New Issues**, **Backlog**,
-**To Do**, **In Progress**, **In Test**, **Done** and **Closed**.
+**Ready**, **To Do**, **In Progress**, **In Test**, **Test failed** **Done** and
+**Closed**.
+
+image::images/development.png[Development]
 
 === New Issues
 
@@ -493,8 +493,6 @@ From the creation of the pull request to `master` until the deployment time, the
 team leader must concentrate on the release notes, which must contain an user
 readable description of all changes made in the application since the last
 release.
-
-image::images/development.png[Development]
 
 === Create work breakdown structure
 

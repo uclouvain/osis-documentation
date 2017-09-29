@@ -1,3 +1,5 @@
+= Gestion des droits
+
 == Administration des gestionnaires de programmes
 
 Pour chaque faculté, il y a une (ou plusieurs) personnes qui ont le droit de
@@ -16,11 +18,11 @@ interface. Les demandes devront passer par le Service Desk.
 Quand la personne en charge se connecte pour gérer les gestionnaires de sa
 faculté, elle voit l'écran suivant:
 
-image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-programme.png[]
+image::images/gestion_des_droits/gestion-des-gestionnaires-programme.png[]
 
 === Le contenu de l'écran
 
-. La faculté indiquée est la faculté à laquelle l'utilisateur est effecté pour
+. La faculté indiquée est la faculté à laquelle l'utilisateur est affecté pour
   la gestion des gestionnaires de programme.
 . Le menu déroulant "Entité" contient:
  - Toutes (par défaut)
@@ -53,6 +55,8 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
  - Tous (par défaut)
  - La liste de tous les gestionnaires qui gèrent au moins un programme de la
    faculté concernée.
+ - L'utilisateur peut choisir soit Tous, soit un ou plusieurs gestionnaires dans
+   la liste des gestionnaires.
 
 TIP: Il existe d'autre types de programmes mais qui ne nécessitent pas d'être
 présentés dans cette partie de l'application. L'on ne présentera donc pas dans
@@ -60,7 +64,7 @@ la liste.
 
 === Le comportement de l'écran
 
-image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-programme-resultat.png[]
+image::images/gestion_des_droits/gestion-des-gestionnaires-programme-resultat.png[]
 
 . La liste des programmes:
  - Par défaut, on affiche la liste des programmes en fonction du résultat de la
@@ -73,12 +77,15 @@ image::images/administrer_gestionnaire_programme/gestion-des-gestionnaires-progr
 . La liste des gestionnaires:
  - C'est la liste de tous les gestionnaires des programmes sélectionnées du
    tableau des programmes.
+ - Le choix dans le menu déroulant "Gestionnaires" est servi uniquement pour
+   faire des critères de recherche. Il n'y a pas de lien direct vers le tableau
+   de Gestionnaires.
  - Quand la souris passe sur "-", afficher l'info-bulle "Enlever le
    gestionnaire"
  - Si l'utilisateur clique sur le bouton "-" pour enlever un gestionnaire, le
    message pour demander la confirmation:
 
-image::images/administrer_gestionnaire_programme/enlever-gestionnaire.png[]
+image::images/gestion_des_droits/enlever-gestionnaire.png[]
 
 Si l'utilisateur choisit "Confirmer", on supprime pour la personne pointée le
 droit de gestionnaires de programme pour tous les programmes sélectionnés.
@@ -87,7 +94,107 @@ Le bouton "Ajouter un gestionnaire" est actif seulement si au moins un programme
 coché. Si l'utilisateur veut "Ajouter un gestionnaire", on aura l'écran de
 recherche des personnes à l'UCL.
 
-image::images/administrer_gestionnaire_programme/chercher-gestionnaires-de-programme.png[]
+image::images/gestion_des_droits/chercher-gestionnaires-de-programme.png[]
 
 IMPORTANT: Pour réduire les erreurs, il ne faut présenter que les personnels de
 l'UCL. On ne peut ajouter que les personnels comme gestionnaires de programme.
+
+== Administration des Responsables de notes pour les cours d’une faculté
+
+Pour chaque faculté, il y a une ou plusieurs personnes qui sont *Administrateurs
+de responsables des notes*.
+
+Pour chaque UE qui est attribuée à au moins un professeur, il y a un et un seul
+*Responsable de notes*, qui est le ou l’un des professeurs auxquels le cours
+est attribué. (C’est donc une propriété de l’attribution d'une UE à un
+professeur.) Être Responsable de notes donne accès au bouton
+[Soumettre] pour l'UE
+concernée, dans l'environnement d'encodage de notes par les professeurs.
+
+Le ou les *Administrateurs de responsables des notes* gèrent les
+*Responsables de notes* des cours pour lesquels l'_Entité d'attribution_
+(sur EPC : Dpt-attrib) est leur faculté ou une Commission d'Ensignement (CE)
+appartenant à leur faculté. Ils peuvent désigner le Responsable
+de notes parmi les professeurs auxquels le cours est attribué. Ils peuvent
+aussi
+désigner des personnes, auxquelles le cours n'est pas attribué, comme habilitées
+à encoder des notes. Cependant, ils ne pourront pas désigner celles-ci comme
+Responsables de notes. (Toute demande en ce sens devra être transmise via
+service desk.)
+
+Le droit d’*Administrateur de responsables de notes* sera typiquement attribué
+à la/le DAF mais peut aussi être assigné à d’autres personnes.
+
+Quand l’Administrateur de responsables de notes d’une faculté accède à la
+fonctionnalité « Administration des gestionnaires de notes », il voit l’écran
+suivant :
+
+image::images/gestion_des_droits/admin-resp-notes.jpg[]
+
+=== Contenu de l’écran
+
+*	Intitulé de l’écran : La faculté concernée, indiquée dans le titre, est celle
+  pour laquelle l’utilisateur est chargé de l'administration des responsables de
+  notes.
+*	Formulaire de sélection de cours:
+**	Le menu déroulant « Entité » présente :
+***	_Toutes_ (valeur initiale)
+***	Le sigle de la faculté concernée
+***	Les sigles des CE de la faculté concernée ; l’utilisateur peut sélectionner
+    soit _Toutes_ soit une ou plusieurs entités de la liste déroulante.
+**	Code cours
+**	Mot(s) de l’intitulé du cours
+**	Le menu « Professeur » est initialisé à _Tous_ et présente aussi la liste de
+    tous les professeurs auxquels sont attribués des cours rattachés à la
+    faculté concernée.
+**	Le menu « Responsable de note » est initialisé à _Tous_ et présente aussi
+    la liste des professeurs qui sont Responsables de notes pour des cours
+    rattachés à la faculté concernée.
+*	Colonnes du Tableau de la liste des cours sélectionnés
+**	Entité (sigle)
+**	Code cours
+**	Intitulé officiel
+**	Nombre de titulaires
+**	Gestionnaire de notes du cours (Nom, virgule-espace, Prénom)
+*	Tableau des titulaires d’un cours
+**	Intitulé du tableau : « Titulaires du cours [code cours] »
+**	Colonnes du tableau
+*** Professeur
+***	Statut d’attribution : Cotitulaire / coordonateur / etc…  Si la personne est
+    une personne ajoutée, son statut (Professeur ou Assistant) est indiqué entre
+    parenthèses car il ne s’agit pas d’un statut d’attibution. À côté de ce
+    pseudo-statut est ajouté un bouton [ - ] pour supprimer la personne ajoutée.
+***	Responsable de notes : bouton-radio (un seul titulaire peut être responsable
+    de notes). Les personnes ajoutées ne peuvent pas être responsables de notes.
+**	Bouton [Ajouter] pour donner le droit d'encoder à une personne (qui n'est
+    pas nécessairement un professeur).
+**	Bouton [Enregistrer] pour enregistrer un changement de Responsable de notes
+
+=== Comportement de l’écran
+
+La sélection d'UE est définie dans le formulaire et appelée par le bouton
+[Rechercher]. Seules des UE dont l'_Entité d'attribution_ est ou appartient à
+la faculté de l'Administrateur de responsables de notes peuvent être
+sélectionnés.
+
+Les résultats de cette sélection sont affichés dans le tableau de cours.
+*	Le *tri initial* se fait selon Entité, Code cours.
+*	On peut trier le tableau sur tous les champs.
+*	Les tris se font avec mémoire des trix précédents.
+
+Quand on clique sur l’un des cours sélectionnés, le tableau des titulaires et
+son intitulé sont rafraîchis avec les informations corerspondant à ce cours.
+
+Si, dans le tableau des titulaires d’un cours on change de responsable
+de notes, les boutons deviennent rouges jusqu’à ce qu’on enregistre
+(ou qu’on resélectionne le responsable actuel).
+
+Quand on ajoute une personne, on peut lui préciser un statut « (Professeur) «
+ou « (Assistant) » (tels quels, avec parenthèses), pour information.
+
+Info-bulles:
+
+* Bouton [Rechercher] : "Rechercher des cours"
+* Bouton [Ajouter] : "Donner le droit d'encodage à une personne autre"
+* Bouton [Enregistrer] : "Enregistrer le responsable de notes"
+* Bouton [ - ] : "Enlever le droit d'encodage de notes à la personne ajoutée"
