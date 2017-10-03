@@ -56,17 +56,6 @@ ces 4 éléments, mais de fournir un checkbox pour cocher ou non la valeur
 "Quadrimestre non défini (Q1 OU Q2)". Si cette chkbox est cochée, alors la règle
 **c.volume_total == c.volume_premier_quadri + c.volume.second_quadri** est ignorée.
 
-== A éclaircir avec le business
-
-- Il est possible que certaines UE ne possèdent pas de volumes horaires ; lesquelles?
-Et comment représenter cela dans l'écran? Proposer un flag "répartir_volumes" True/False?
-
-- Certaines UE pourraient ne pas avoir de volume horaire total mais quand même
-avoir un Q1 ou Q2 déjà remplis?
-
-
-
-
 
 == (Ré)utilisation des composants dans plusieurs UE
 
@@ -83,3 +72,13 @@ de même type pour une même UE (exemple : un TP de type "Labo" et un TP de type
   Question :: Si 2 UE utilisent un même composant, pourquoi créer 2 UE différentes?
 
 Car ces 2 UE peuvent avoir le même Cours Magistral mais des TP différents !
+
+
+
+== A éclaircir avec le business
+
+- Il est possible que certaines UE ne possèdent pas de volumes horaires ; lesquelles?
+Et comment représenter cela dans l'écran? Proposer un flag "répartir_volumes" True/False?
+
+- Certaines UE pourraient ne pas avoir de volume horaire total mais quand même
+avoir un Q1 ou Q2 déjà remplis?
