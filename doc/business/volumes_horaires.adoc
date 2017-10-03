@@ -2,6 +2,9 @@
 
 == Règles de calculs
 
+image::images/volumes_horaires_modif.png[]
+
+
 === Pour un composant (d'une même UE)
 
 Le volume total est un attribut qui est propre au composant.
