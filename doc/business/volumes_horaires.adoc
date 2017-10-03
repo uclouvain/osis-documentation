@@ -1,0 +1,85 @@
+= Volumes horaires
+
+== Règles de calculs
+
+=== Pour un composant (d'une même UE)
+
+Le volume total est un attribut qui est propre au composant.
+
+En notant que __c == "Composant"__ :
+
+* c.volume_total == c.volume_premier_quadri + c.volume.second_quadri
+  (**peut être ignorée en fonction de la valeur du quadrimestre - voir plus loin dans la doc**).
+
+* c.volume_de_charge_total == c.volume_total * c.classes_prévues
+
+Pour la répartition des volumes horaires (comment répartir le budget/volume total
+d'un composant sur plusieurs entités) :
+
+* c.volume_de_charge_total == c.volume_entité_charge + c.volume_entité_supplémentaire_1 + c.volume_entité_supplémentaire_2
+
+=== Entre les composants des partims et les composants de l'UE complète
+
+En notant que __ cp == "Composant d'une UE partim"__ et __ cc == "Composant d'une UE cours complet"__:
+
+* cp.volume_total < cc.volume_total
+* cp.classes_prévues < = cc.classes_prévues
+* cp.volume_premier_quadri < = cc.volume_premier_quadri
+* cp.volume_second_quadri < = cc.second_quadri
+* cp.volume_de_charge_total < = cc.volume_de_charge_total
+* cp.volume_entité_supplémentaire_1 < = cc.volume_entité_supplémentaire_1
+* cp.volume_entité_supplémentaire_2 < = cc.volume_entité_supplémentaire_2
+
+
+== Lien avec le champs "quadrimestre" (répartition des volumes sur les quadris)
+
+Le champs "quadrimestre" indique à quel quadri se donne le composant sélectionné.
+Les valeurs possibles sont :
+
+* Q1
+* Q2
+* Q1 ET Q2
+* Q1 OU Q2
+
+Les 3 premières valeurs peuvent être calculées automatiquement en fonction des valeurs remplies
+dans le tableau de gestion des volumes horaires (si Q1 et Q2 sont remplis, alors quadri = "Q1 ET Q2", etc).
+
+La 4ème valeur doit être explicitement indiquée par l'utilisateur ; dans ce cas,
+cela signifie que la répartition des volumes horaires n'est pas connue lors de
+la création de l'UE (et de ses composants). Cette répartition sera déterminée
+plus tard en fonction de l'organisation des classes.
+**Dans ce cas, la règle c.volume_total == c.volume_premier_quadri + c.volume.second_quadri
+doit être ignorée !**.
+
+Note : une proposition pour l'écran serait non pas de proposer un dropdownList avec
+ces 4 éléments, mais de fournir un checkbox pour cocher ou non la valeur
+"Quadrimestre non défini (Q1 OU Q2)". Si cette chkbox est cochée, alors la règle
+**c.volume_total == c.volume_premier_quadri + c.volume.second_quadri** est ignorée.
+
+== A éclaircir avec le business
+
+- Il est possible que certaines UE ne possèdent pas de volumes horaires ; lesquelles?
+Et comment représenter cela dans l'écran? Proposer un flag "répartir_volumes" True/False?
+
+- Certaines UE pourraient ne pas avoir de volume horaire total mais quand même
+avoir un Q1 ou Q2 déjà remplis?
+
+
+
+
+
+== (Ré)utilisation des composants dans plusieurs UE
+
+La notion d'utilisation d'un composant dans une UE permet de spécifier qu'un partim
+et une UE/autre partim **ont accès aux mêmes TP/classes**
+
+- Dans les données de l'UCL, il n'existe pas d'UE possédants 2 composants de mêmes
+types. Autrement dit, il n'existe qu'une seule occurence de type de composant par UE,
+et donc, au maximum 2 composants par UE (1 TP et 1 UE).
+
+NOTE: Il est possible que les données de Saint-Louis aient plusieurs composants
+de même type pour une même UE (exemple : un TP de type "Labo" et un TP de type "Excursion")
+
+  Question :: Si 2 UE utilisent un même composant, pourquoi créer 2 UE différentes?
+
+Car ces 2 UE peuvent avoir le même Cours Magistral mais des TP différents !
