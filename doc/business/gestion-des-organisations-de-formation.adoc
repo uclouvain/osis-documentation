@@ -128,7 +128,7 @@ image::images/gestion_organisations_de_formation/consulter-une-formation-master-
 pas de sont des on a la liste des finalités de ce programme de
 master.
 
-image::images/gestion_organisations_de_formation/consulter-une-formation-master-2M.png[]
+image::images/gestion_organisations_de_formation/consulter-une-formation-master-identification.png[]
 
 - Onglet Identification: au niveau d'affichage, c'est légèrement différent par
 rapport d'autres formations qui n'ont pas de niveaux:
