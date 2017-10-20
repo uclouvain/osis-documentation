@@ -74,7 +74,7 @@ Suppléant de sabbatique:: il doit toujours y avoir un suppléé. Quand le suppl
 est parti en congé de 1 an.
 
 Suppléant d'autorité:: il doit toujours y avoir un suppléé. Le suppléé doit
-exercer une fonction d'autorité dasns l'UCL (par exemple le recteur).
+exercer une fonction d'autorité dans l'UCL (par exemple le recteur).
 
 Suppléant de N:: le suppléé est inconnu (chef d'entreprise, politicien, mais
 lequel?)
