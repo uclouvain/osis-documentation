@@ -8,7 +8,7 @@
 
 ===== Organisations de formation (OF)
 
-Une _OF_ est organisation qui soutient un processus d’apprentissage,
+Une _OF_ est une organisation qui soutient un processus d’apprentissage,
 
 * définie par des attributs
 * et possédant un _contenu_, qui est une liste d’UE et/ou d’OF.
@@ -43,7 +43,7 @@ Types d'OF :
 *** Choix d'options
 ** Choix/présentation de cours
 
-NB : types de mineures :
+NB : Les types de mineures sont:
 
 *** Mineure de sensibilisation
 *** Mineure d'ouverture
@@ -57,8 +57,8 @@ Une **Formation** est une organisation qui soutient un processus d’apprentissa
 sanctionné par un diplôme ou un certificat. Elle est spécifiée par un triplet
 d’OF des 3 premiers niveaux {Intitulé principal, Orientation, Finalité} ;
 seule la composante Intitulé principal est toujours _nommée_ càd possède
-toujours un intitulé ; les composantes Orientation et Finalité peuvent s
-oit rester _muettes_, soit être _nommées_.
+toujours un intitulé ; les composantes Orientation et Finalité peuvent soit
+rester _muettes_, soit être _nommées_.
 
 Donc, quand un Intitulé principal ne possède pas d’orientation, une orientation
 muette lui est cependant adjointe et permet de représenter les attributs
@@ -94,7 +94,7 @@ Une Formation possède un programme-type, contenu _construit_ à partir des cont
 
 ====== Relations entre MF, Grpm et UE et avec F
 *	existence indépendante
-* 	une Mini-formation peut être incluse dans le contenu de plusieurs Choix de mini-formations, appartenant à des foramtions différentes
+* 	une Mini-formation peut être incluse dans le contenu de plusieurs Choix de mini-formations, appartenant à des formations différentes
 *	pas d’héritage des attributs
 *	certains attributs sont
 **	toujours contextuels (ex.: attribut "Obligatoire")
@@ -351,6 +351,7 @@ Exemple avec un exemple fictif de 4 UE liées par des contenus communs :
 Les différents composants seront désignées explicitement par une lettre
 précédée d’un ‘/’.
 On choisira de préférence les lettres
+
 -	/C, /D, /E, … pour les composants de type C.Mag.
 -	/T, /U, /V, … pour les composants de type TP.
 -	/M pour le composant unique (de type mémoire) d’une UE de type mémoire.
