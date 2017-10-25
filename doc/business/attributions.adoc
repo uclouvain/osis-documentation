@@ -22,7 +22,7 @@ image::images/charge_enseignement/affichage_charge_enseignement.png[]
 | Etudiants | Lien pour accèder à la liste des étudiants inscrits au cours.
 | Horaire   | Lien pour accèder à l'horaire du cours dans ADE. Une nouvelle page
               est ouverte pour afficher l'horaire.
-| Email     | Fait un mailto à une adresse correspondant à une liste Sympa.
+| Email     | Fait un mailto à une adresse correspondant à une liste. Sympa.
 |===
 
 ==== Liste des étudiants
@@ -74,7 +74,7 @@ Suppléant de sabbatique:: il doit toujours y avoir un suppléé. Quand le suppl
 est parti en congé de 1 an.
 
 Suppléant d'autorité:: il doit toujours y avoir un suppléé. Le suppléé doit
-exercer une fonction d'autorité dasns l'UCL (par exemple le recteur).
+exercer une fonction d'autorité dans l'UCL (par exemple le recteur).
 
 Suppléant de N:: le suppléé est inconnu (chef d'entreprise, politicien, mais
 lequel?)

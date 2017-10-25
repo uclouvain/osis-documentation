@@ -1,0 +1,37 @@
+= Open Student Information System - OSIS
+:toc: left
+:toclevels: 4
+:numbered:
+
+:sectnums!:
+
+== Introduction
+
+=== The Goal of the Application
+
+=== The Ergonomic Rules
+
+=== Sécurité
+
+==== Autorisation Management
+
+=== Support
+
+== Process Map
+
+image::../images/process-map.png[]
+
+include::education-catalog.adoc[]
+
+== Attributions
+
+== Academic Actors
+
+== Students' Path
+
+include::scores-encoding.adoc[]
+
+== Glossary
+
+[bibliography]
+== Bibliography

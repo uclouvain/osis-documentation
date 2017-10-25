@@ -280,18 +280,19 @@ order to produce a certain outcome for the organization.
 
 == Development
 
-The development workflow defines the sequence of tasks and events that takes
-place during the development of OSIS, with the goal of producing stable
-releases. The workflow is controlled by Git because of its flexible branching
-features, and complemented by tools directly integrated to it, such as GitHub
-and ZenHub.
+The development process defines the sequence of tasks and events that takes
+place during the development of OSIS, with the goal of producing features
+that work as foreseen in the analysis.
 
 The workflow is based on a lean technique called Kanban. It is a method for
 managing operational work with emphasis on just-in-time delivery while not
 overloading the team members. This approach covers the process from the
 definition of issues to the delivery to stakeholders. We have adopted a
 Kanban board composed of 7 distinct lanes: **New Issues**, **Backlog**,
-**To Do**, **In Progress**, **In Test**, **Done** and **Closed**.
+**Ready**, **To Do**, **In Progress**, **In Test**, **Test failed** **Done** and
+**Closed**.
+
+image::images/development.png[Development]
 
 === New Issues
 
@@ -492,8 +493,6 @@ From the creation of the pull request to `master` until the deployment time, the
 team leader must concentrate on the release notes, which must contain an user
 readable description of all changes made in the application since the last
 release.
-
-image::images/development.png[Development]
 
 === Create work breakdown structure
 
