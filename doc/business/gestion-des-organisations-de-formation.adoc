@@ -17,13 +17,12 @@ Explication des champs
  . Type de formation: ça varie en fonction de type d'organisation de formation:
  .. Si c'est une Formation: la liste des types de formation est:
 - Bachelier
-- Programme de Master 120 (c'est un groupement de Master Approfondi, Master
-Didactique et Master Spécialisé du programme de Master 120).
-- Programme de Master 180 ou 240 (c'est un groupement de Master Approfondi,
-Master Didactique et Master Spécialisé du programme de Master 180 ou 240).
-- Master Approfondi
-- Master Didactique
-- Master Spécialisé
+- Programme de Master 120 (c'est un regroupement de Master Approfondi, Master
+Didactique et Master Spécialisé du programme de Master  => dans le résultat, on
+n'affiche que les finalités de ce type de master).
+- Programme de Master 180 ou 240 (c'est un regroupement de Master Approfondi,
+Master Didactique et Master Spécialisé du programme de Master 180 ou 240 => dans
+le résultat, on n'affiche que les finalités de ce type de master).
 - Master en un an
 - Master de spécialisation
 - Agregation
@@ -95,18 +94,21 @@ ou Français, Français et Anglais.
 - Concours
 - Certificat universitaire
 - Travail de fin d'étude
-- Stage
+- Stage: valeur possible: vide, Oui, Non, Optionnel
 . Pavé Organisation:
 - Actif: valeur possbile: Actif (par défaut), Inactif, Actif uniquement pour des
 réinscriptions.
 - Type horaire: Horaire de jour (par défaut), Horaire décalé, Horaire adapté.
 - Lieux: la lites des campus de l'UCL.
+- Activité sur d'autres sites: valeurs possibles: vide, Oui, Non, Optionnel
 - Entité d'administration et Entité academique de la formation.
 - Début d'enseignement et fin d'enseignement de l'offre.
 . Pavé Financement:
 - Orientation et Orientation coopération internationale CCD/CUD: valeurs
 possibles: A, B, C, D, E, S.
 . Pavé partenariat/co-diplômation:
+- Diplôme: 3 valeurs possibles: Diplôme unique, Diplôme séparé, Non
+concerné.
 - Info bulle du bouton "+": Ajouter une institution
 - Avoir la possibilité de trier sur tous les colonnes.
 - Quand l'utilisateur choisit le bouton "+", le popup pour ajouter un partenariat
@@ -128,10 +130,11 @@ image::images/gestion_organisations_de_formation/consulter-une-formation-master-
 pas de sont des on a la liste des finalités de ce programme de
 master.
 
-image::images/gestion_organisations_de_formation/consulter-une-formation-master-2M.png[]
-
 - Onglet Identification: au niveau d'affichage, c'est légèrement différent par
 rapport d'autres formations qui n'ont pas de niveaux:
+
+image::images/gestion_organisations_de_formation/consulter-une-formation-master-identification.png[]
+
   * Des intitulés: affiche d'abord l'intitulé de formation parent en
   couleur grise et puis l'intitulé de la finalité.
   * D'autres champs: sont affichés de manière distincte si le valeur est hérité
@@ -147,6 +150,66 @@ propres à cette finalité apparaissent dans tous les onglets.
 === Onglet Diplômes/Certificats
 
 image::images/gestion_organisations_de_formation/consulter-une-formation-diplomes.png[]
+
+=== Onglet Données administratives
+
+image::images/gestion_organisations_de_formation/consulter-une-formation-donnees_admin.png[]
+
+*Partie des dates*: ce sont des évènements liés à une formation pour chaque année
+académique. On souhait d'avoir un contrôle lors de l'encodage de ces dates.
+On met un intervalle de temps (une date minimum et une date maximum) pour chaque
+évènement. Les gestionnaires ne peuvent pas encoder des dates (pour leurs formations)
+qui ne respectent pas cet intervalle.
+
+Les intervalles par défaut de ces évènements sont:
+
+* La période d’inscription aux cours : d’une date à une autre date
+
+   01/09/2017 – 31/10/2018
+
+*	Par chaque session (1, 2, 3) on a:
+** La période d’inscription aux examens : d’une date à une autre date
+*** Session 1 : 01/11/1017 – 31/11/2017
+*** Session 2 : 01/03/2018 – 30/03/2018
+*** Session 3 : 15/06/2018 – 15/07/2018
+**	La date de remise des notes : une date
+*** Session 1 : 5/12/2018 – 31/01/2018
+*** Session 2 : 01/05/2018 – 15/07/2018
+*** Session 3 : 01/08/2018 – 15/09/2018
+**	La date de remise du mémoire : une date
+*** Session 1 : 01/12/2017 – 31/01/2018
+*** Session 2 : 01/05/2018 – 15/07/2018
+*** Session 3 : 01/08/2018 – 15/09/2018
+**	La date et heure de délibération : une date et une heure
+*** Session 1 : 15/01/2018 – 15/02/2018
+*** Session 2 : 01/06/2018 – 15/07/2018
+*** Session 3 : 01/09/2018 – 15/09/2018
+**	La date et heure de diffusion des notes : une date et une heure
+*** Session 1 : 15/09/2017 – 15/02/2018
+*** Session 2 : 01/02/2018 – 15/07/2018
+*** Session 3 : 01/07/2018 – 15/09/2018
+
+*Partie Jury*: On affiche les mandataires de 3 mandats: Président, Secrétaire, Signataire.
+Chaque mandataire il y a une date de début et une date de fin. On n'affiche que
+les mandataires actifs de l'année académique choisie.
+Pour le mandat de "Signataire", on a l'information sur le titre du signataire,
+"En tant que ..." Ex: "Adjointe au directeur administratif"
+
+NOTE: Dans EPC: +
+    Les mandats des offres se trouvent dans la table MND_MND avec le code_organe
+= sigle de l'offre. (Attention pour des offres qui n'ont pas de cycle, ni de niveau:
+il y a une espace entre le sigle et les lettres finales). La qualification se trouve
+à MND_MND.EN_TANT_QUE. Ces 3 types de mandat ont CODE_TYPE = JURYEX. Et
+CODE_FONCTION = PRESI pour Président; CODE_FONCTION = SECRET pour Secrétaire;
+CODE_FONCTION = SIGN pour Signataire. +
+    Les mandataires se trouvent dans la table
+MND_MNA, pour chaque mandat, on peut avoir plusieurs mandataires, il faut tenir
+compte la période (date_debut, date_fin) et afficher les mandataires qui sont
+actifs pour l'année académique choisie.
+
+*Partie Gestionnaires de programme*: La liste des gestionnaires de programme
+se trouve sur des formations (elle n'est pas liée à la version annualisé de
+formation).
 
 === Onglet Infos générales
 
