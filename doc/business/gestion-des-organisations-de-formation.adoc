@@ -82,9 +82,11 @@ image::images/gestion_organisations_de_formation/consulter-une-formation-identif
 - Type de formation: des types de formation qui n'ont pas d'enfant.
 - Nature du grade: valeurs possibles: Académique, Non acad "autres", Non acad
 "CREF".
-- Domaine d'études: un des domaines ou sous-domaines.
+- Domaine d'études: un des domaines ou sous-domaines. Il faut afficher le numréro
+du domaine et aussi préciser le décret. Exemple: Pasage-17-Science.
 - Durée: Un nombre durée et Un type durée (quadrimetre, trimestre, mois, semaine,
  jour). Par défaut: quadrimestre.
+- Nombre de crédits: un nombre entier, il doit être entre 0 à 360
 - Langue principale: valeurs possibles: Français (par défaut), Anglais, Français
 ou Français, Français et Anglais.
 - Activité dans d'autres langues: valeurs possibles: Oui, Non, Optionnel, vide
@@ -100,12 +102,21 @@ ou Français, Français et Anglais.
 réinscriptions.
 - Type horaire: Horaire de jour (par défaut), Horaire décalé, Horaire adapté.
 - Lieux: la lites des campus de l'UCL.
-- Activité sur d'autres sites: valeurs possibles: vide, Oui, Non, Optionnel
+- Activité sur d'autres lieux: valeurs possibles: vide, Oui, Non, Optionnel
 - Entité d'administration et Entité academique de la formation.
 - Début d'enseignement et fin d'enseignement de l'offre.
 . Pavé Financement:
 - Orientation et Orientation coopération internationale CCD/CUD: valeurs
 possibles: A, B, C, D, E, S.
+- Code tarif: il y a un numéro et un libellé:
+  * 1. Sans frais complémentaire
+  * 3. AESS et CAPAES
+  * 5. Minerval complet
+  * 6. Certificat universitaire
+  * 7. Master complémentaire spécialisation médicale
+  * 8. Concours d'accès
+  * 10. Certificat universitaire 30 crédits
+  * 11. Certificat compétence medecine
 . Pavé partenariat/co-diplômation:
 - Diplôme: 3 valeurs possibles: Diplôme unique, Diplôme séparé, Non
 concerné.

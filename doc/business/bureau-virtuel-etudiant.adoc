@@ -3,11 +3,11 @@
 === Date et heure de publication des notes
 
 *Date et heure de publication des notes d'un programme*:: il y a une date et
-une heure de publication des notes par programme, souvent c'est peu après la
+une heure de publication des notes par programme, souvant c'est peu après la
 délibération. Les gestionnaires doivent encoder la date et l'heure dans les
 données administrative des offres pour la publication de notes de ses
 programmes. Les programmes n'encodent pas une date, les notes des étudiants
-de ces programmes ne sont pas publiées (l'étudiant ne voit pas leur notes sur
+de ces programmes ne sont pas pubilées (l'étudiant ne voit pas leur notes sur
 son bureau virtuel). Les programmes encodent une date, avant cette date
 (heure) les notes ne sont pas encore publiées.
 
@@ -19,12 +19,12 @@ notes tardives, des délibération tardives, ou pour une autre raison auxquelles
 l'étudiant doit avoir ses notes avant ou après la date de son programme => le
 gestionnaire peut définir une date/heure de  de notes spécifique pour un
 étudiant. Dès qu'il y a une date spécifique pour un étudiant, cette date a plus
-de valeur par rapport à la date/heure de diffusion de notes du programme.
+de valeur par rapport de la date/heure de diffusion de notes du programme.
 
 === Interface de la publication des notes sur le bureau virtuel de l'étudiant
 
-La liste des offres (des programmes) auxquelles l'étudiant a été inscrit dans
-l'ordre d'année académique de la plus récente à la moins récente.
+La liste des offfres (des programmes) auxquelles l'étudiant s'inscrivent dans
+l'ordre l'année académique plus récente au moins récente.
 
 On n'affiche pas des inscriptions aux offres avec des états
 d'inscription d'erreurs, d'annulation, etc. On n'affiche que des inscription de
@@ -80,40 +80,48 @@ On peut avoir l'etat:
 
 TIP: La légende bleu n'affiche qu'à partir de l'année académique 2014-2015.
 
+NOTE: s'il s'agit une inscription hors programme ou des unités d'enseignement du
+bloc complémentaire (module préparatoire) (mention_5 = H, Q) => il y a (+) devant
+l'état d'inscription aux cours et une légende qui apparaît: "Cette inscription
+est "hors programme" ou "préalable" et les crédits associés ne sont pas pris en
+compte pour atteindre le nombre de crédits requis."
+
 == Inscription aux examens par l'étudiant sur son bureau virtuel
 
-Seulement les étudiants qui ont l’état « inscrit » à l’offre peuvent
-s’inscrire aux examens. Ceux qui ont l'état d'annulation ou de cessation ne
-peuvent pas.
+IMPORTANT :
+Seulement des étudiants qui ont l’état « inscrit » à l’offre peuvent s’inscrit
+aux examens. Ceux qui ont l'état d'annulation, de cessation ne peuvent pas.
+IMPORTANT :
+Seulement des étudiants qui ont l’état « inscrit » à l’offre peuvent s’inscrit
+aux examens. La liste des offres affichée contient uniquement des inscription à
+l'offre avec l'état: Inscrit et Provisoire. Ceux qui ont l'état d'annulation, de
+cessation ou inscrit par erreur ne sont pas affichées.
 
-Quand l'étudiant clique sur le lien "Inscription aux examens", s'il n'a jamais
-été inscrit ni par lui même, ni par les gestionnaires, l'inscription par défaut
-se fait automatiquement et directement (on a refait le même comportement dans
+Quand l'étudiant clique sur le lien "Inscription aux examens", s'il n'est jamais
+inscrit ni par lui même, ni par les gestionnaires, l'inscription par défaut se
+fait automatiquement et directement (on a refait le même comportement dans
 l'ancien portail et EPC) et on affiche le formulaire. Sinon, on affiche l'état
 d'inscription sur le formulaire.
 Les étudiants de 11BA:
 
-Il est toutefois important de savoir qu'un étudiant *ne peut pas s'inscrire
-aux examens* s'il est inscrit à une offre mais ne disposent d'aucune
-inscriptions à aucun cours. Ou s'il est inscrit à des cours mais qui n'ont aucun
- crédits.
+Attention: - Des étudiants qui s'inscrit à l'offre mais qu'ils n'on aucune
+inscription aux cours ne peuvent pas s'inscrire aux examens.
+- Des inscriptions aux cours qui n'ont pas de crédit.
 
-Le formulaire d'inscription aux examens contient la liste des cours auxquelles
-l'étudiant peut choisir de s'inscrire au moyen de cases à cocher.
+Le formulaire contient la liste des cours que l'étudiant s'inscrit avec une
+colonne
+- Pour des
 
 == Mes attestations
 
 Quand l’étudiant se connecte sur leur bureau virtuel, on vérifie l’état de
 l’étudiant et la date du jour pour déterminer si l’étudiant peut télécharger
-ses attestations ou non. Les attestations comprennent notamment l'avis
-d'enregistrement, la carte étudiant provisoire et preuve pour transport en
-commun, etc.
+ses attestations ou non.
 
 Etat de l’étudiant: Pour une année académique, un étudiant peut s’inscrire à
-plusieurs programmes. En fonction du type du programme inscrit, des inscriptions
-aux cours ou pas, et ainsi de suite, l’application va déterminée par défaut une
-inscription principale parmi ses inscriptions. Le gestionnaire peut changer s’il
-le souhaite.
+plusieurs programmes. En fonction de type du programme inscrit, des inscriptions
+aux cours ou pas, … l’application détermine par défaut une inscription
+principale parmi des inscriptions. Le gestionnaire peut changer s’il souhait.
 On vérifie l’état d’inscription principale.
 
 A compléter …
