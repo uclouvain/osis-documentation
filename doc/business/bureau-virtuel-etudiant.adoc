@@ -80,11 +80,19 @@ On peut avoir l'etat:
 
 TIP: La légende bleu n'affiche qu'à partir de l'année académique 2014-2015.
 
+NOTE: s'il s'agit une inscription hors programme ou des unités d'enseignement du
+bloc complémentaire (module préparatoire) (mention_5 = H, Q) => il y a (+) devant
+l'état d'inscription aux cours et une légende qui apparaît: "Cette inscription
+est "hors programme" ou "préalable" et les crédits associés ne sont pas pris en
+compte pour atteindre le nombre de crédits requis."
+
 == Inscription aux examens par l'étudiant sur son bureau virtuel
 
 IMPORTANT :
 Seulement des étudiants qui ont l’état « inscrit » à l’offre peuvent s’inscrit
-aux examens. Ceux qui ont l'état d'annulation, de cessation ne peuvent pas.
+aux examens. La liste des offres affichée contient uniquement des inscription à
+l'offre avec l'état: Inscrit et Provisoire. Ceux qui ont l'état d'annulation, de
+cessation ou inscrit par erreur ne sont pas affichées.
 
 Quand l'étudiant clique sur le lien "Inscription aux examens", s'il n'est jamais
 inscrit ni par lui même, ni par les gestionnaires, l'inscription par défaut se
