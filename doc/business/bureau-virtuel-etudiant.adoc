@@ -90,6 +90,9 @@ compte pour atteindre le nombre de crédits requis."
 
 IMPORTANT :
 Seulement des étudiants qui ont l’état « inscrit » à l’offre peuvent s’inscrit
+aux examens. Ceux qui ont l'état d'annulation, de cessation ne peuvent pas.
+IMPORTANT :
+Seulement des étudiants qui ont l’état « inscrit » à l’offre peuvent s’inscrit
 aux examens. La liste des offres affichée contient uniquement des inscription à
 l'offre avec l'état: Inscrit et Provisoire. Ceux qui ont l'état d'annulation, de
 cessation ou inscrit par erreur ne sont pas affichées.
