@@ -162,6 +162,17 @@ propres à cette finalité apparaissent dans tous les onglets.
 
 image::images/gestion_organisations_de_formation/consulter-une-formation-diplomes.png[]
 
+- Mène à diplôme/à certificat
+- Intitulé du diplôme/du certificat (se trouve dans epc_offre_uclouvain.intit_diplome)
+- Titre professionnel
+
+- La parties des attendus: il y a 2 tableaux:
+* Attendus disponibles: l'utilisateur peut choisir le rubrique qu'il veut afficher.
+Par défaut: "Tous les rubriques". A l'affichage, on affiche d'abord le numéro de
+rubrique - numéro d'attendu et puis le texte de l'attendu.
+
+NOTE: dans EPC, ça vient de la table epc_attendus
+
 === Onglet Données administratives
 
 image::images/gestion_organisations_de_formation/consulter-une-formation-donnees_admin.png[]
@@ -176,29 +187,29 @@ Les intervalles par défaut de ces évènements sont:
 
 * La période d’inscription aux cours : d’une date à une autre date
 
-   01/09/2017 – 31/10/2018
+   01/09/2017 – 31/10/2017
 
 *	Par chaque session (1, 2, 3) on a:
 ** La période d’inscription aux examens : d’une date à une autre date
-*** Session 1 : 01/11/1017 – 31/11/2017
-*** Session 2 : 01/03/2018 – 30/03/2018
+*** Session 1 : 01/11/2017 – 30/11/2017
+*** Session 2 : 01/03/2018 – 30/04/2018
 *** Session 3 : 15/06/2018 – 15/07/2018
 **	La date de remise des notes : une date
-*** Session 1 : 5/12/2018 – 31/01/2018
-*** Session 2 : 01/05/2018 – 15/07/2018
-*** Session 3 : 01/08/2018 – 15/09/2018
+*** Session 1 : 15/12/2017 – 27/02/2018
+*** Session 2 : 18/05/2018 – 15/07/2018
+*** Session 3 : 07/08/2018 – 15/09/2018
 **	La date de remise du mémoire : une date
 *** Session 1 : 01/12/2017 – 31/01/2018
 *** Session 2 : 01/05/2018 – 15/07/2018
 *** Session 3 : 01/08/2018 – 15/09/2018
 **	La date et heure de délibération : une date et une heure
-*** Session 1 : 15/01/2018 – 15/02/2018
-*** Session 2 : 01/06/2018 – 15/07/2018
-*** Session 3 : 01/09/2018 – 15/09/2018
-**	La date et heure de diffusion des notes : une date et une heure
-*** Session 1 : 15/09/2017 – 15/02/2018
-*** Session 2 : 01/02/2018 – 15/07/2018
-*** Session 3 : 01/07/2018 – 15/09/2018
+*** Session 1 : 05/01/2018 – 28/02/2018
+*** Session 2 : 15/06/2018 – 15/07/2018
+*** Session 3 : 15/08/2018 – 15/09/2018
+**	La date et heure de publication des notes : une date et une heure
+*** Session 1 : 05/01/2018 – 28/02/2018
+*** Session 2 : 15/06/2018 – 15/07/2018
+*** Session 3 : 15/08/2018 – 15/09/2018
 
 *Partie Jury*: On affiche les mandataires de 3 mandats: Président, Secrétaire, Signataire.
 Chaque mandataire il y a une date de début et une date de fin. On n'affiche que
