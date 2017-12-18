@@ -342,3 +342,27 @@ image::images/encodage_notes/recapituler-l-importation.png[]
 ==== Confirmer l'importation
 
 image::images/encodage_notes/confirmer-l-importation.png[]
+
+==== Règles pour désigner le responsable de notes:
+On se base sur des attributions de l'unité d'enseignement pour déterminer le
+responsable de notes de cette unité d'enseignement, la règle de déterminer le
+responsable de notes est:
+1. S'il n'y a pas d'attribution, il n'y a pas de responsable des notes.
+2. S'il y a une seule attribution, celui-ci devient responsable des notes.
+3. S'il y a plusieurs enseignants et pas de coordinateur, le premier enseignant
+effectif [ = pas de suppléant ] par ordre alphabétique devient le responsable
+des notes. rem: Dans le cas où tous les enseignants ont un suppléant, on ne
+désigne pas de responsable des notes.
+4. S'il y a plusieurs enseignants et un coordinateur avec une charge > 0, le
+coordinateur devient responsable des notes.
+5. S'il y a plusieurs enseignants et un coordinateur avec une charge = 0 avec
+aucun suppléant, le coordinateur devient responsable des notes.
+6. S'il y a plusieurs enseignants et un coordinateur avec une charge = 0 avec
+plusieurs suppléants [=tous les suppléants des différentes attributions pour la
+même personne], le premier suppléant par ordre alphabétique devient responsable
+des notes.
+7. S'il y a plusieurs enseignants et plusieurs coordinateurs, le premier
+coordinateur avec une charge > 0 dans l'ordre alphabétique devient responsable 
+des notes.
+8. S'il y a plusieurs enseignants et plusieurs coordinateurs, et tous les
+coordinateurs ont une charge = 0, on ne désigne pas de responsable des notes.
