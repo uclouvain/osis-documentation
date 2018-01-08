@@ -134,10 +134,11 @@ On vérifie également que le nombre de titres présents dans 'header_titles' so
 
 Simplement en appelant la fonctionnalité suivante:
 [source,xml]
-xls_build.generate_xls('dictionnaire contenant tous paramètres nécessaires)
+data = {} # Dictionnaire contenant tous les paramètres nécessaires
+xls_build.generate_xls(data)
 
 +++<u>Un HttpResponse sera retourné en résultat:</u>+++
-[source,xml]
+[source,python]
 response = HttpResponse(save_virtual_workbook(workbook), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=binary')
 response['Content-Disposition'] = "%s%s" % ("attachment; filename=", filename)
 
