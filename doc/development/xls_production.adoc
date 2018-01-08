@@ -134,7 +134,7 @@ On vérifie également que le nombre de titres présents dans 'header_titles' so
 === Comment utiliser la fonctionnalité
 
 Simplement en appelant la fonctionnalité suivante:
-[source,xml]
+[source,python]
 data = {} # Dictionnaire contenant tous les paramètres nécessaires
 xls_build.generate_xls(data)
 
